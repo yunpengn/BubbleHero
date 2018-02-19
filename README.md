@@ -1,11 +1,11 @@
 CS3217 Problem Set 5
 ==
 
-**Name:** Your name
+**Name:** Niu Yunpeng
 
-**Matric No:** Your matric no
+**Matric No:** A0162492A
 
-**Tutor:** Your tutor's name
+**Tutor:** Louie Tan
 
 ## Tips
 
