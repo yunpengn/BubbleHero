@@ -1,0 +1,41 @@
+excluded:
+  - Pods
+
+disabled_rules:
+  - type_name
+  - valid_docs
+  - trailing_comma
+
+opt_in_rules:
+  - array_init
+  - attributes
+  - closure_end_indentation
+  - closure_spacing
+  - compiler_protocol_init
+  - conditional_returns_on_newline
+  - contains_over_first_not_nil
+  - empty_count
+  - explicit_init
+  - fatal_error_message
+  - first_where
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - joined_default_parameter
+  - nimble_operator
+  - number_separator
+  - operator_usage_whitespace
+  - pattern_matching_keywords
+  - private_outlet
+  - redundant_nil_coalescing
+  - single_test_class
+  - sorted_first_last
+  - trailing_closure
+  - unneeded_parentheses_in_closure_argument
+  - yoda_condition
+
+line_length:
+  warning: 120
+  # Some improbably large number because we don't want compile errors 
+  # just because of style problems
+  error: 300 
+  ignores_urls: true
