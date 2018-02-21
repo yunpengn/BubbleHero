@@ -13,6 +13,7 @@
 		F29CD04C203D203800C94061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F29CD04B203D203800C94061 /* Assets.xcassets */; };
 		F29CD04F203D203800C94061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29CD04D203D203800C94061 /* LaunchScreen.storyboard */; };
 		F29CD05A203D203800C94061 /* BubbleHeroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD059203D203800C94061 /* BubbleHeroUITests.swift */; };
+		F29CD066203D217900C94061 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F29CD065203D217900C94061 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		F29CD055203D203800C94061 /* BubbleHeroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubbleHeroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29CD059203D203800C94061 /* BubbleHeroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleHeroUITests.swift; sourceTree = "<group>"; };
 		F29CD05B203D203800C94061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F29CD065203D217900C94061 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		F29CD038203D203800C94061 = {
 			isa = PBXGroup;
 			children = (
+				F29CD065203D217900C94061 /* README.md */,
 				F29CD043203D203800C94061 /* BubbleHero */,
 				F29CD058203D203800C94061 /* BubbleHeroUITests */,
 				F29CD042203D203800C94061 /* Products */,
@@ -182,6 +185,7 @@
 			files = (
 				F29CD04F203D203800C94061 /* LaunchScreen.storyboard in Resources */,
 				F29CD04C203D203800C94061 /* Assets.xcassets in Resources */,
+				F29CD066203D217900C94061 /* README.md in Resources */,
 				F29CD04A203D203800C94061 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
