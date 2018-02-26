@@ -131,82 +131,90 @@
                                 </cells>
                             </collectionView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoC-YT-hPD" userLabel="Palette">
-                                <rect key="frame" x="0.0" y="894" width="768" height="130"/>
+                                <rect key="frame" x="0.0" y="904" width="768" height="120"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxN-bk-AhO" userLabel="BubbleBlue" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="70" height="70"/>
+                                        <rect key="frame" x="10" y="10" width="65" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="2iJ-El-C5h"/>
-                                            <constraint firstAttribute="height" constant="70" id="HR5-p2-PFG"/>
+                                            <constraint firstAttribute="width" constant="65" id="2iJ-El-C5h"/>
+                                            <constraint firstAttribute="height" constant="65" id="HR5-p2-PFG"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-blue"/>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-Yn-Oty" userLabel="BubbleRed" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
-                                        <rect key="frame" x="90" y="10" width="70" height="70"/>
+                                        <rect key="frame" x="85" y="10" width="65" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="9dp-Jw-GGG"/>
-                                            <constraint firstAttribute="width" constant="70" id="Ntp-Gz-gyE"/>
+                                            <constraint firstAttribute="height" constant="65" id="9dp-Jw-GGG"/>
+                                            <constraint firstAttribute="width" constant="65" id="Ntp-Gz-gyE"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-red"/>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nX-EM-LvX" userLabel="BubbleOrange" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
-                                        <rect key="frame" x="170" y="10" width="70" height="70"/>
+                                        <rect key="frame" x="160" y="10" width="65" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="6gP-mG-Y8v"/>
-                                            <constraint firstAttribute="width" constant="70" id="w2e-f8-MKI"/>
+                                            <constraint firstAttribute="height" constant="65" id="6gP-mG-Y8v"/>
+                                            <constraint firstAttribute="width" constant="65" id="w2e-f8-MKI"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-orange"/>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPP-yE-3Jc" userLabel="BubbleGreen" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
-                                        <rect key="frame" x="250" y="10" width="70" height="70"/>
+                                        <rect key="frame" x="235" y="10" width="65" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="8Tj-pq-kpB"/>
-                                            <constraint firstAttribute="width" constant="70" id="Ib5-El-8D5"/>
+                                            <constraint firstAttribute="height" constant="65" id="8Tj-pq-kpB"/>
+                                            <constraint firstAttribute="width" constant="65" id="Ib5-El-8D5"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-green"/>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJt-pp-eCr" userLabel="BubbleIndestructible" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
-                                        <rect key="frame" x="330" y="10" width="70" height="70"/>
+                                        <rect key="frame" x="310" y="10" width="65" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="4u3-94-suV"/>
-                                            <constraint firstAttribute="width" constant="70" id="83L-hV-sUP"/>
+                                            <constraint firstAttribute="height" constant="65" id="4u3-94-suV"/>
+                                            <constraint firstAttribute="width" constant="65" id="83L-hV-sUP"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-indestructible"/>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cho-08-UXD" userLabel="BubbleLightning" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
-                                        <rect key="frame" x="410" y="10" width="70" height="70"/>
+                                        <rect key="frame" x="385" y="10" width="65" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="ncF-mP-INa"/>
-                                            <constraint firstAttribute="height" constant="70" id="r1q-2c-cPm"/>
+                                            <constraint firstAttribute="width" constant="65" id="ncF-mP-INa"/>
+                                            <constraint firstAttribute="height" constant="65" id="r1q-2c-cPm"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-lightning"/>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOY-D9-uHZ" userLabel="BubbleBomb" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
-                                        <rect key="frame" x="490" y="10" width="70" height="70"/>
+                                        <rect key="frame" x="460" y="10" width="65" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="kCm-od-MLa"/>
-                                            <constraint firstAttribute="height" constant="70" id="xNP-Ut-AK0"/>
+                                            <constraint firstAttribute="width" constant="65" id="kCm-od-MLa"/>
+                                            <constraint firstAttribute="height" constant="65" id="xNP-Ut-AK0"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-bomb"/>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWF-TR-mhE" userLabel="BubbleStar" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
-                                        <rect key="frame" x="570" y="10" width="70" height="70"/>
+                                        <rect key="frame" x="535" y="10" width="65" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="LUs-ca-dRM"/>
-                                            <constraint firstAttribute="width" constant="70" id="t31-Wy-q0K"/>
+                                            <constraint firstAttribute="height" constant="65" id="LUs-ca-dRM"/>
+                                            <constraint firstAttribute="width" constant="65" id="t31-Wy-q0K"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-star"/>
                                     </button>
-                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCT-QC-R0g" userLabel="BubbleErase" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
-                                        <rect key="frame" x="688" y="10" width="70" height="70"/>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doK-tf-Taq" userLabel="BubbleMagnetic" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
+                                        <rect key="frame" x="610" y="10" width="65" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="55b-xf-vyW"/>
-                                            <constraint firstAttribute="height" constant="70" id="RlC-lA-UXh"/>
+                                            <constraint firstAttribute="height" constant="65" id="0CQ-vi-1BK"/>
+                                            <constraint firstAttribute="width" constant="65" id="mFL-61-kQU"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="bubble-magnetic"/>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCT-QC-R0g" userLabel="BubbleErase" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
+                                        <rect key="frame" x="693" y="10" width="65" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="55b-xf-vyW"/>
+                                            <constraint firstAttribute="height" constant="65" id="RlC-lA-UXh"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="erase"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ey8-zN-eN2" userLabel="ButtonBack">
-                                        <rect key="frame" x="10" y="95" width="44" height="30"/>
+                                        <rect key="frame" x="10" y="85" width="44" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6pk-RQ-GYI"/>
                                         </constraints>
@@ -214,7 +222,7 @@
                                         <state key="normal" title="Back"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3Z-Ww-IFy" userLabel="ButtonReset">
-                                        <rect key="frame" x="708" y="95" width="50" height="30"/>
+                                        <rect key="frame" x="708" y="85" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="oOC-k6-Fbf"/>
                                         </constraints>
@@ -222,7 +230,7 @@
                                         <state key="normal" title="Reset"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40K-da-mKF" userLabel="ButtonLoad">
-                                        <rect key="frame" x="654" y="95" width="44" height="30"/>
+                                        <rect key="frame" x="654" y="85" width="44" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="xmX-CG-x9M"/>
                                         </constraints>
@@ -230,7 +238,7 @@
                                         <state key="normal" title="Load"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwc-nY-xWq" userLabel="ButtonSave">
-                                        <rect key="frame" x="601" y="95" width="43" height="30"/>
+                                        <rect key="frame" x="601" y="85" width="43" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="qfh-df-2uH"/>
                                         </constraints>
@@ -238,7 +246,7 @@
                                         <state key="normal" title="Save"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lb3-e6-E6N" userLabel="ButtonStart">
-                                        <rect key="frame" x="549" y="95" width="42" height="30"/>
+                                        <rect key="frame" x="549" y="85" width="42" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="DGV-IY-843"/>
                                         </constraints>
@@ -250,15 +258,17 @@
                                 <constraints>
                                     <constraint firstItem="Ey8-zN-eN2" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="SoC-YT-hPD" secondAttribute="trailing" constant="20" symbolic="YES" id="3Ki-LT-htC"/>
                                     <constraint firstItem="bPP-yE-3Jc" firstAttribute="leading" secondItem="1nX-EM-LvX" secondAttribute="trailing" constant="10" id="8mf-80-Zgz"/>
+                                    <constraint firstItem="doK-tf-Taq" firstAttribute="top" secondItem="SoC-YT-hPD" secondAttribute="top" constant="10" id="DK0-DW-KRC"/>
                                     <constraint firstItem="cOY-D9-uHZ" firstAttribute="top" secondItem="SoC-YT-hPD" secondAttribute="top" constant="10" id="Db7-xw-L7y"/>
                                     <constraint firstItem="E3Z-Ww-IFy" firstAttribute="bottom" secondItem="SoC-YT-hPD" secondAttribute="bottom" constant="-5" id="DrV-ew-aRT"/>
+                                    <constraint firstItem="doK-tf-Taq" firstAttribute="leading" secondItem="vWF-TR-mhE" secondAttribute="trailing" constant="10" id="EHy-r3-Hpx"/>
                                     <constraint firstItem="MCT-QC-R0g" firstAttribute="trailing" secondItem="SoC-YT-hPD" secondAttribute="trailing" constant="-10" id="Ike-90-H8z"/>
                                     <constraint firstItem="vWF-TR-mhE" firstAttribute="top" secondItem="SoC-YT-hPD" secondAttribute="top" constant="10" id="IyK-3f-lne"/>
                                     <constraint firstItem="Cho-08-UXD" firstAttribute="leading" secondItem="FJt-pp-eCr" secondAttribute="trailing" constant="10" id="JeN-tY-kR3"/>
                                     <constraint firstItem="1nX-EM-LvX" firstAttribute="top" secondItem="SoC-YT-hPD" secondAttribute="top" constant="10" id="K0q-vr-KEh"/>
                                     <constraint firstItem="lb3-e6-E6N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SoC-YT-hPD" secondAttribute="leading" constant="20" symbolic="YES" id="LVd-ns-xEg"/>
                                     <constraint firstItem="lb3-e6-E6N" firstAttribute="bottom" secondItem="SoC-YT-hPD" secondAttribute="bottom" constant="-5" id="MUo-BP-fE6"/>
-                                    <constraint firstAttribute="height" constant="130" id="MeR-iy-aJL"/>
+                                    <constraint firstAttribute="height" constant="120" id="MeR-iy-aJL"/>
                                     <constraint firstItem="E3Z-Ww-IFy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SoC-YT-hPD" secondAttribute="leading" constant="20" symbolic="YES" id="OzB-Pr-Ojk"/>
                                     <constraint firstItem="bPP-yE-3Jc" firstAttribute="top" secondItem="SoC-YT-hPD" secondAttribute="top" constant="10" id="Qf1-Ws-MjT"/>
                                     <constraint firstItem="NxN-bk-AhO" firstAttribute="top" secondItem="SoC-YT-hPD" secondAttribute="top" constant="10" id="SQi-x2-bJH"/>
@@ -314,6 +324,7 @@
         <image name="bubble-green" width="168" height="168"/>
         <image name="bubble-indestructible" width="168" height="168"/>
         <image name="bubble-lightning" width="168" height="168"/>
+        <image name="bubble-magnetic" width="168" height="168"/>
         <image name="bubble-orange" width="168" height="168"/>
         <image name="bubble-red" width="168" height="168"/>
         <image name="bubble-star" width="168" height="168"/>
