@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87489C39370A8D0CC5A6CD48 /* Pods_BubbleHero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44AB22D696344AF18AE8F279 /* Pods_BubbleHero.framework */; };
 		F29CD045203D203800C94061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD044203D203800C94061 /* AppDelegate.swift */; };
 		F29CD047203D203800C94061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD046203D203800C94061 /* ViewController.swift */; };
 		F29CD04A203D203800C94061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29CD048203D203800C94061 /* Main.storyboard */; };
@@ -27,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10C402CCDFA6625A170B2354 /* Pods-BubbleHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleHero/Pods-BubbleHero.debug.xcconfig"; sourceTree = "<group>"; };
+		44AB22D696344AF18AE8F279 /* Pods_BubbleHero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleHero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C7309CA0D8BAB10889F6898 /* Pods-BubbleHero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleHero.release.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleHero/Pods-BubbleHero.release.xcconfig"; sourceTree = "<group>"; };
 		F29CD041203D203800C94061 /* BubbleHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29CD044203D203800C94061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F29CD046203D203800C94061 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87489C39370A8D0CC5A6CD48 /* Pods_BubbleHero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A52096690C8599FA03A4453 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10C402CCDFA6625A170B2354 /* Pods-BubbleHero.debug.xcconfig */,
+				8C7309CA0D8BAB10889F6898 /* Pods-BubbleHero.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		849C236299CAEEC0ABE96E40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44AB22D696344AF18AE8F279 /* Pods_BubbleHero.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F29CD038203D203800C94061 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +87,8 @@
 				F29CD043203D203800C94061 /* BubbleHero */,
 				F29CD058203D203800C94061 /* BubbleHeroUITests */,
 				F29CD042203D203800C94061 /* Products */,
+				6A52096690C8599FA03A4453 /* Pods */,
+				849C236299CAEEC0ABE96E40 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,10 +130,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F29CD05E203D203800C94061 /* Build configuration list for PBXNativeTarget "BubbleHero" */;
 			buildPhases = (
+				8C7C819D310EE0FC58EAB2A5 /* [CP] Check Pods Manifest.lock */,
 				F29CD03D203D203800C94061 /* Sources */,
 				F29CD03E203D203800C94061 /* Frameworks */,
 				F29CD03F203D203800C94061 /* Resources */,
 				F29CD064203D207F00C94061 /* SwiftLint */,
+				6C492BFC1744EA83F857C143 /* [CP] Embed Pods Frameworks */,
+				5502246F42B1FC1F83C3F8B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,6 +227,57 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5502246F42B1FC1F83C3F8B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BubbleHero/Pods-BubbleHero-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C492BFC1744EA83F857C143 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BubbleHero/Pods-BubbleHero-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GameEngine/GameEngine.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GameEngine.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BubbleHero/Pods-BubbleHero-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C7C819D310EE0FC58EAB2A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BubbleHero-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F29CD064203D207F00C94061 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,6 +452,7 @@
 		};
 		F29CD05F203D203800C94061 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10C402CCDFA6625A170B2354 /* Pods-BubbleHero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -389,6 +468,7 @@
 		};
 		F29CD060203D203800C94061 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C7309CA0D8BAB10889F6898 /* Pods-BubbleHero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

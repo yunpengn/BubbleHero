@@ -1,0 +1,22 @@
+PODS:
+  - GameEngine (0.0.1)
+
+DEPENDENCIES:
+  - GameEngine (from `git@github.com:cs3217/2018-ps4-yunpengn.git`, branch `cocoapod`)
+
+EXTERNAL SOURCES:
+  GameEngine:
+    :branch: cocoapod
+    :git: git@github.com:cs3217/2018-ps4-yunpengn.git
+
+CHECKOUT OPTIONS:
+  GameEngine:
+    :commit: bc97a9f0249fc20cf78bbc43b2d977d8981aed31
+    :git: git@github.com:cs3217/2018-ps4-yunpengn.git
+
+SPEC CHECKSUMS:
+  GameEngine: 09174e997304fbd4e48d6d00024db9e66ac96c20
+
+PODFILE CHECKSUM: 9ede09619268a32d084cf8e4802efedd3309868c
+
+COCOAPODS: 1.4.0
