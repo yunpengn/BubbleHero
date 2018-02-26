@@ -19,6 +19,17 @@ import UIKit
 class PaletteBubbleButton: UIButton {
     /// Only one of the palette bubbles should be selected at the same time.
     static var currentSelected: PaletteBubbleButton?
+    /// Each `PaletteBubbleButton` should correspond to one and only one `BubbleType`.
+    var bubbleType: BubbleType?
+    /// Acts as an adapter, since @IBInspectable does not support custom type.
+    @IBInspectable var bubbleTypeAdapter: Int {
+        get {
+            return bubbleType?.rawValue ?? -1
+        }
+        set (typeRawValue) {
+            bubbleType = BubbleType(rawValue: typeRawValue)
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

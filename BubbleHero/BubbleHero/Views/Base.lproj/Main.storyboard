@@ -141,14 +141,24 @@
                                             <constraint firstAttribute="height" constant="65" id="HR5-p2-PFG"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-blue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bubbleTypeAdapter">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-Yn-Oty" userLabel="BubbleRed" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-Yn-Oty" userLabel="BubbleGreen" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
                                         <rect key="frame" x="85" y="10" width="65" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="9dp-Jw-GGG"/>
                                             <constraint firstAttribute="width" constant="65" id="Ntp-Gz-gyE"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="bubble-red"/>
+                                        <state key="normal" backgroundImage="bubble-green"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bubbleTypeAdapter">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nX-EM-LvX" userLabel="BubbleOrange" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
                                         <rect key="frame" x="160" y="10" width="65" height="65"/>
@@ -157,14 +167,24 @@
                                             <constraint firstAttribute="width" constant="65" id="w2e-f8-MKI"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-orange"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bubbleTypeAdapter">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPP-yE-3Jc" userLabel="BubbleGreen" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPP-yE-3Jc" userLabel="BubbleRed" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
                                         <rect key="frame" x="235" y="10" width="65" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="8Tj-pq-kpB"/>
                                             <constraint firstAttribute="width" constant="65" id="Ib5-El-8D5"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="bubble-green"/>
+                                        <state key="normal" backgroundImage="bubble-red"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bubbleTypeAdapter">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJt-pp-eCr" userLabel="BubbleIndestructible" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
                                         <rect key="frame" x="310" y="10" width="65" height="65"/>
@@ -173,6 +193,11 @@
                                             <constraint firstAttribute="width" constant="65" id="83L-hV-sUP"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-indestructible"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bubbleTypeAdapter">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cho-08-UXD" userLabel="BubbleLightning" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
                                         <rect key="frame" x="385" y="10" width="65" height="65"/>
@@ -181,6 +206,11 @@
                                             <constraint firstAttribute="height" constant="65" id="r1q-2c-cPm"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-lightning"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bubbleTypeAdapter">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOY-D9-uHZ" userLabel="BubbleBomb" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
                                         <rect key="frame" x="460" y="10" width="65" height="65"/>
@@ -189,6 +219,11 @@
                                             <constraint firstAttribute="height" constant="65" id="xNP-Ut-AK0"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-bomb"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bubbleTypeAdapter">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWF-TR-mhE" userLabel="BubbleStar" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
                                         <rect key="frame" x="535" y="10" width="65" height="65"/>
@@ -197,6 +232,11 @@
                                             <constraint firstAttribute="width" constant="65" id="t31-Wy-q0K"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-star"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bubbleTypeAdapter">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doK-tf-Taq" userLabel="BubbleMagnetic" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
                                         <rect key="frame" x="610" y="10" width="65" height="65"/>
@@ -205,6 +245,11 @@
                                             <constraint firstAttribute="width" constant="65" id="mFL-61-kQU"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bubble-magnetic"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bubbleTypeAdapter">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCT-QC-R0g" userLabel="BubbleErase" customClass="PaletteBubbleButton" customModule="BubbleHero" customModuleProvider="target">
                                         <rect key="frame" x="693" y="10" width="65" height="65"/>

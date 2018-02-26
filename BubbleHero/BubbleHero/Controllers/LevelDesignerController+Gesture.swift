@@ -72,9 +72,9 @@ extension LevelDesignerController {
         let column = indexPath.row
 
         var type: BubbleType? = nil
-        if let image = selectedBubbleButton?.backgroundImage(for: .normal) {
+        if selectedBubbleButton != nil {
             // Fills the cell with a different image if one bubble button is selected.
-            type = toBubbleType(image: image)
+            type = selectedBubbleButton?.bubbleType
         } else if let oldBubble = level.getBubbleAt(row: row, column: column) {
             // Cycles the color of a filled cell if no bubble button is selected.
             type = oldBubble.nextColor()
@@ -85,35 +85,6 @@ extension LevelDesignerController {
             level.addOrUpdateBubble(newType, row: row, column: column)
             level.addOrUpdateBubble(newType, row: row, column: column)
             designerGrid.reloadItems(at: [indexPath])
-        }
-    }
-
-    /// Converts from the `UIImage` to `BubbleType`.
-    /// - Parameter image: The image that will be shown in the bubble cell.
-    /// - Returns: the `BubbleType` value if the image matches one of the
-    /// types; nil otherwise.
-    private func toBubbleType(image: UIImage) -> BubbleType? {
-        switch image {
-        case #imageLiteral(resourceName: "bubble-green"):
-            return .green
-        case #imageLiteral(resourceName: "bubble-orange"):
-            return .orange
-        case #imageLiteral(resourceName: "bubble-red"):
-            return .red
-        case #imageLiteral(resourceName: "bubble-blue"):
-            return .blue
-        case #imageLiteral(resourceName: "bubble-bomb"):
-            return .bomb
-        case #imageLiteral(resourceName: "bubble-indestructible"):
-            return .indestructible
-        case #imageLiteral(resourceName: "bubble-star"):
-            return .star
-        case #imageLiteral(resourceName: "bubble-magnetic"):
-            return .magnetic
-        case #imageLiteral(resourceName: "bubble-lightning"):
-            return .lightning
-        default:
-            return nil
         }
     }
 }
