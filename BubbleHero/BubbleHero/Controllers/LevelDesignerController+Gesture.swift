@@ -102,6 +102,16 @@ extension LevelDesignerController {
             return .red
         case #imageLiteral(resourceName: "bubble-blue"):
             return .blue
+        case #imageLiteral(resourceName: "bubble-bomb"):
+            return .bomb
+        case #imageLiteral(resourceName: "bubble-indestructible"):
+            return .indestructible
+        case #imageLiteral(resourceName: "bubble-star"):
+            return .star
+        case #imageLiteral(resourceName: "bubble-magnetic"):
+            return .magnetic
+        case #imageLiteral(resourceName: "bubble-lightning"):
+            return .lightning
         default:
             return nil
         }

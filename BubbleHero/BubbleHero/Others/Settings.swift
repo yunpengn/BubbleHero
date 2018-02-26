@@ -28,7 +28,7 @@ class Settings {
     /// The allowed number of bubbles on even rows.
     static let cellPerRow = 12
     /// The number of types of bubbles in the game currently.
-    static let numOfTypes = UInt32(4)
+    static let numOfTypes = UInt32(9)
     /// The identifier for cells in the collection view of level designer scene.
     static let designerCellId = "fillableBubbleCell"
 }
