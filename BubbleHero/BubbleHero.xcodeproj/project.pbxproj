@@ -26,6 +26,8 @@
 		F2CAFB2F204440D9002078B2 /* LevelDesignerController+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB2E204440D9002078B2 /* LevelDesignerController+Gesture.swift */; };
 		F2CAFB4020444A38002078B2 /* LevelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB3F20444A38002078B2 /* LevelTests.swift */; };
 		F2CAFB4220444B46002078B2 /* BubbleTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB4120444B46002078B2 /* BubbleTypeTests.swift */; };
+		F2CAFB44204454BF002078B2 /* LevelDesignerStorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB43204454BF002078B2 /* LevelDesignerStorageController.swift */; };
+		F2CAFB462044568A002078B2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB452044568A002078B2 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		F2CAFB3820444A0A002078B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2CAFB3F20444A38002078B2 /* LevelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTests.swift; sourceTree = "<group>"; };
 		F2CAFB4120444B46002078B2 /* BubbleTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTypeTests.swift; sourceTree = "<group>"; };
+		F2CAFB43204454BF002078B2 /* LevelDesignerStorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDesignerStorageController.swift; sourceTree = "<group>"; };
+		F2CAFB452044568A002078B2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 				F23CD69C2043DC880053A099 /* LevelDesignerController.swift */,
 				F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */,
 				F2CAFB2E204440D9002078B2 /* LevelDesignerController+Gesture.swift */,
+				F2CAFB43204454BF002078B2 /* LevelDesignerStorageController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				F29CD044203D203800C94061 /* AppDelegate.swift */,
+				F2CAFB452044568A002078B2 /* Helpers.swift */,
 				F23CD6A12043F5D20053A099 /* Settings.swift */,
 			);
 			path = Others;
@@ -435,10 +441,12 @@
 				F29CD047203D203800C94061 /* MenuViewController.swift in Sources */,
 				F23CD69D2043DC880053A099 /* LevelDesignerController.swift in Sources */,
 				F29CD045203D203800C94061 /* AppDelegate.swift in Sources */,
+				F2CAFB44204454BF002078B2 /* LevelDesignerStorageController.swift in Sources */,
 				F2CAFB2F204440D9002078B2 /* LevelDesignerController+Gesture.swift in Sources */,
 				F2CAFB2520442FC6002078B2 /* BubbleType.swift in Sources */,
 				F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */,
 				F23CD69A2043C2EE0053A099 /* MenuButton.swift in Sources */,
+				F2CAFB462044568A002078B2 /* Helpers.swift in Sources */,
 				F2CAFB2720443020002078B2 /* Level.swift in Sources */,
 				F23CD6A02043ED1A0053A099 /* PaletteBubbleButton.swift in Sources */,
 			);

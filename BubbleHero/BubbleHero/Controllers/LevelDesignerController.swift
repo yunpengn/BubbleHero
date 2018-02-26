@@ -38,4 +38,22 @@ class LevelDesignerController: UIViewController {
     @IBAction func backButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+
+    /// Starts the game when start button is pressed.
+    @IBAction func startButtonPressed(_ sender: UIButton) {
+
+    }
+
+    /// Saves the level design when save button is pressed.
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+
+    }
+
+    /// Loads a level from the gallery when load button is pressed.
+    @IBAction func loadButtonPressed(_ sender: UIButton) {
+
+    }
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
+        
+    }
 }

@@ -277,6 +277,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetButtonPressed:" destination="u3j-eL-eiO" eventType="touchUpInside" id="rCF-Uk-sRt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40K-da-mKF" userLabel="ButtonLoad">
                                         <rect key="frame" x="654" y="85" width="44" height="30"/>
@@ -285,6 +288,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Load"/>
+                                        <connections>
+                                            <action selector="loadButtonPressed:" destination="u3j-eL-eiO" eventType="touchUpInside" id="nQc-YI-g0L"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwc-nY-xWq" userLabel="ButtonSave">
                                         <rect key="frame" x="601" y="85" width="43" height="30"/>
@@ -293,6 +299,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="u3j-eL-eiO" eventType="touchUpInside" id="hHI-uI-6Fa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lb3-e6-E6N" userLabel="ButtonStart">
                                         <rect key="frame" x="549" y="85" width="42" height="30"/>
@@ -301,6 +310,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="startButtonPressed:" destination="u3j-eL-eiO" eventType="touchUpInside" id="Vmp-9V-Yuh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
