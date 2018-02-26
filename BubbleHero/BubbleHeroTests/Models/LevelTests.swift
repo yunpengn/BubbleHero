@@ -48,9 +48,9 @@ class LevelTests: XCTestCase {
         let level = Level()
         level.addOrUpdateBubble(BubbleType.blue, row: 0, column: 0)
         XCTAssertTrue(level.hasBubbleAt(row: 0, column: 0), "The bubble is not inserted correctly.")
-        level.addOrUpdateBubble(BubbleType.green, row: 0, column: 0)
+        level.deleteBubbleAt(row: 0, column: 1)
         XCTAssertTrue(level.hasBubbleAt(row: 0, column: 0), "deleteBubble is wrong.")
-        level.addOrUpdateBubble(BubbleType.blue, row: 0, column: 0)
+        level.deleteBubbleAt(row: 0, column: 0)
         XCTAssertFalse(level.hasBubbleAt(row: 0, column: 0), "deleteBubble is wrong.")
 
         level.addOrUpdateBubble(BubbleType.blue, row: 1, column: 1)
