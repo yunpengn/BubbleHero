@@ -24,10 +24,19 @@
 		F2CAFB2520442FC6002078B2 /* BubbleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB2420442FC6002078B2 /* BubbleType.swift */; };
 		F2CAFB2720443020002078B2 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB2620443020002078B2 /* Level.swift */; };
 		F2CAFB2F204440D9002078B2 /* LevelDesignerController+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB2E204440D9002078B2 /* LevelDesignerController+Gesture.swift */; };
+		F2CAFB4020444A38002078B2 /* LevelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB3F20444A38002078B2 /* LevelTests.swift */; };
+		F2CAFB4220444B46002078B2 /* BubbleTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB4120444B46002078B2 /* BubbleTypeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		F29CD056203D203800C94061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F29CD039203D203800C94061 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F29CD040203D203800C94061;
+			remoteInfo = BubbleHero;
+		};
+		F2CAFB3920444A0A002078B2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F29CD039203D203800C94061 /* Project object */;
 			proxyType = 1;
@@ -60,6 +69,10 @@
 		F2CAFB2420442FC6002078B2 /* BubbleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleType.swift; sourceTree = "<group>"; };
 		F2CAFB2620443020002078B2 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		F2CAFB2E204440D9002078B2 /* LevelDesignerController+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+Gesture.swift"; sourceTree = "<group>"; };
+		F2CAFB3420444A0A002078B2 /* BubbleHeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubbleHeroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2CAFB3820444A0A002078B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2CAFB3F20444A38002078B2 /* LevelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTests.swift; sourceTree = "<group>"; };
+		F2CAFB4120444B46002078B2 /* BubbleTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTypeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +85,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F29CD052203D203800C94061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2CAFB3120444A0A002078B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -136,6 +156,7 @@
 			children = (
 				F29CD065203D217900C94061 /* README.md */,
 				F29CD043203D203800C94061 /* BubbleHero */,
+				F2CAFB3520444A0A002078B2 /* BubbleHeroTests */,
 				F29CD058203D203800C94061 /* BubbleHeroUITests */,
 				F29CD042203D203800C94061 /* Products */,
 				6A52096690C8599FA03A4453 /* Pods */,
@@ -148,6 +169,7 @@
 			children = (
 				F29CD041203D203800C94061 /* BubbleHero.app */,
 				F29CD055203D203800C94061 /* BubbleHeroUITests.xctest */,
+				F2CAFB3420444A0A002078B2 /* BubbleHeroTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,6 +200,24 @@
 			children = (
 				F2CAFB2420442FC6002078B2 /* BubbleType.swift */,
 				F2CAFB2620443020002078B2 /* Level.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F2CAFB3520444A0A002078B2 /* BubbleHeroTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2CAFB3E20444A20002078B2 /* Models */,
+				F2CAFB3820444A0A002078B2 /* Info.plist */,
+			);
+			path = BubbleHeroTests;
+			sourceTree = "<group>";
+		};
+		F2CAFB3E20444A20002078B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2CAFB4120444B46002078B2 /* BubbleTypeTests.swift */,
+				F2CAFB3F20444A38002078B2 /* LevelTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,6 +264,24 @@
 			productReference = F29CD055203D203800C94061 /* BubbleHeroUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F2CAFB3320444A0A002078B2 /* BubbleHeroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2CAFB3B20444A0A002078B2 /* Build configuration list for PBXNativeTarget "BubbleHeroTests" */;
+			buildPhases = (
+				F2CAFB3020444A0A002078B2 /* Sources */,
+				F2CAFB3120444A0A002078B2 /* Frameworks */,
+				F2CAFB3220444A0A002078B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2CAFB3A20444A0A002078B2 /* PBXTargetDependency */,
+			);
+			name = BubbleHeroTests;
+			productName = BubbleHeroTests;
+			productReference = F2CAFB3420444A0A002078B2 /* BubbleHeroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -240,6 +298,12 @@
 					};
 					F29CD054203D203800C94061 = {
 						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F29CD040203D203800C94061;
+					};
+					F2CAFB3320444A0A002078B2 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F29CD040203D203800C94061;
 					};
@@ -260,6 +324,7 @@
 			targets = (
 				F29CD040203D203800C94061 /* BubbleHero */,
 				F29CD054203D203800C94061 /* BubbleHeroUITests */,
+				F2CAFB3320444A0A002078B2 /* BubbleHeroTests */,
 			);
 		};
 /* End PBXProject section */
@@ -277,6 +342,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F29CD053203D203800C94061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2CAFB3220444A0A002078B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -380,6 +452,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F2CAFB3020444A0A002078B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2CAFB4020444A38002078B2 /* LevelTests.swift in Sources */,
+				F2CAFB4220444B46002078B2 /* BubbleTypeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -387,6 +468,11 @@
 			isa = PBXTargetDependency;
 			target = F29CD040203D203800C94061 /* BubbleHero */;
 			targetProxy = F29CD056203D203800C94061 /* PBXContainerItemProxy */;
+		};
+		F2CAFB3A20444A0A002078B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F29CD040203D203800C94061 /* BubbleHero */;
+			targetProxy = F2CAFB3920444A0A002078B2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -582,6 +668,41 @@
 			};
 			name = Release;
 		};
+		F2CAFB3C20444A0A002078B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q8RFHAF8MS;
+				INFOPLIST_FILE = BubbleHeroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nus.cs3217.a0162492a.BubbleHeroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BubbleHero.app/BubbleHero";
+			};
+			name = Debug;
+		};
+		F2CAFB3D20444A0A002078B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q8RFHAF8MS;
+				INFOPLIST_FILE = BubbleHeroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nus.cs3217.a0162492a.BubbleHeroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BubbleHero.app/BubbleHero";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -608,6 +729,15 @@
 			buildConfigurations = (
 				F29CD062203D203800C94061 /* Debug */,
 				F29CD063203D203800C94061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2CAFB3B20444A0A002078B2 /* Build configuration list for PBXNativeTarget "BubbleHeroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2CAFB3C20444A0A002078B2 /* Debug */,
+				F2CAFB3D20444A0A002078B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
