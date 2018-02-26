@@ -55,13 +55,15 @@ class PaletteBubbleButton: UIButton {
     /// - Parameter button: The button being selected.
     private func applySelectEffect(on button: PaletteBubbleButton) {
         button.alpha = Settings.alphaPaletteBubbleSelected
-        button.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        button.transform = CGAffineTransform(scaleX: Settings.scalePaletteBubbleSelected,
+                                             y: Settings.scalePaletteBubbleSelected)
     }
 
     /// Reverts the effect applied to a previously selected button in the palette.
     /// - Parameter button: The button being deselected.
     private func applyDeselectEffect(on button: PaletteBubbleButton?) {
         button?.alpha = Settings.alphaPaletteBubbleNormal
-        button?.transform = CGAffineTransform(scaleX: 10 / 11, y: 10 / 11)
+        button?.transform = CGAffineTransform(scaleX: Settings.scalePaletteBubbleDeselected,
+                                              y: Settings.scalePaletteBubbleDeselected)
     }
 }

@@ -23,6 +23,10 @@ class Settings {
     static let alphaBubbleCellEmpty = CGFloat(0.6)
     /// The alpha value for bubble cells in the designer grid when it is filled.
     static let alphaBubbleCellFilled = CGFloat(1)
+    /// The `CGAffineTransform` scale for bubble buttons in the palette when it is selected.
+    static let scalePaletteBubbleSelected = CGFloat(1.1)
+    /// The reverse scale for bubble buttons in the palette when it is selected.
+    static let scalePaletteBubbleDeselected = 1 / Settings.scalePaletteBubbleSelected
     /// The allowed number of rows in a `Level`.
     static let numOfRows = 12
     /// The allowed number of bubbles on even rows.
