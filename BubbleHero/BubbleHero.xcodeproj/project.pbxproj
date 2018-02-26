@@ -19,6 +19,10 @@
 		F29CD04F203D203800C94061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29CD04D203D203800C94061 /* LaunchScreen.storyboard */; };
 		F29CD05A203D203800C94061 /* BubbleHeroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD059203D203800C94061 /* BubbleHeroUITests.swift */; };
 		F29CD066203D217900C94061 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F29CD065203D217900C94061 /* README.md */; };
+		F2CAFB1E20442D51002078B2 /* FillableBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */; };
+		F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */; };
+		F2CAFB2520442FC6002078B2 /* BubbleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB2420442FC6002078B2 /* BubbleType.swift */; };
+		F2CAFB2720443020002078B2 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB2620443020002078B2 /* Level.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,10 @@
 		F29CD059203D203800C94061 /* BubbleHeroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleHeroUITests.swift; sourceTree = "<group>"; };
 		F29CD05B203D203800C94061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F29CD065203D217900C94061 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillableBubbleCell.swift; sourceTree = "<group>"; };
+		F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+BubbleGrid.swift"; sourceTree = "<group>"; };
+		F2CAFB2420442FC6002078B2 /* BubbleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleType.swift; sourceTree = "<group>"; };
+		F2CAFB2620443020002078B2 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,7 @@
 		F23CD6982043C2D20053A099 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */,
 				F23CD6992043C2EE0053A099 /* MenuButton.swift */,
 				F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */,
 				F29CD04B203D203800C94061 /* Assets.xcassets */,
@@ -105,6 +114,7 @@
 			children = (
 				F29CD046203D203800C94061 /* MenuViewController.swift */,
 				F23CD69C2043DC880053A099 /* LevelDesignerController.swift */,
+				F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -143,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				F23CD69B2043DAFC0053A099 /* Controllers */,
+				F2CAFB2320442FB4002078B2 /* Models */,
 				F23CD6982043C2D20053A099 /* Views */,
 				F23CD69E2043DC990053A099 /* Others */,
 				F29CD050203D203800C94061 /* Info.plist */,
@@ -157,6 +168,15 @@
 				F29CD05B203D203800C94061 /* Info.plist */,
 			);
 			path = BubbleHeroUITests;
+			sourceTree = "<group>";
+		};
+		F2CAFB2320442FB4002078B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2CAFB2420442FC6002078B2 /* BubbleType.swift */,
+				F2CAFB2620443020002078B2 /* Level.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,11 +355,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2CAFB1E20442D51002078B2 /* FillableBubbleCell.swift in Sources */,
 				F23CD6A22043F5D20053A099 /* Settings.swift in Sources */,
 				F29CD047203D203800C94061 /* MenuViewController.swift in Sources */,
 				F23CD69D2043DC880053A099 /* LevelDesignerController.swift in Sources */,
 				F29CD045203D203800C94061 /* AppDelegate.swift in Sources */,
+				F2CAFB2520442FC6002078B2 /* BubbleType.swift in Sources */,
+				F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */,
 				F23CD69A2043C2EE0053A099 /* MenuButton.swift in Sources */,
+				F2CAFB2720443020002078B2 /* Level.swift in Sources */,
 				F23CD6A02043ED1A0053A099 /* PaletteBubbleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

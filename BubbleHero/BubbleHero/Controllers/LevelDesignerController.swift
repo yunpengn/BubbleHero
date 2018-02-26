@@ -16,13 +16,25 @@ import UIKit
  - Date: Feb 2018
  */
 class LevelDesignerController: UIViewController {
+    /// The collection view used to design the bubble grid.
+    @IBOutlet weak var designerGrid: UICollectionView!
+
+    /// The `Level` object as the access point to model.
+    var level = Level()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        designerGrid.delegate = self
+        designerGrid.dataSource = self
     }
 
-    // Always hide the status bar on the top.
+    /// Always hide the status bar on the top.
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+
+    /// Goes back to the menu view when back button is pressed.
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
 }
