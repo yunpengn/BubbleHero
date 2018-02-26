@@ -6,9 +6,11 @@
 //  Copyright © 2018 Yunpeng Niu. All rights reserved.
 //
 
-class LevelDesignerStorageController {
-    func saveLevel(_ level: Level) {
+import UIKit
 
+class LevelDesignerStorageController {
+    func saveLevel(for viewController: UIViewController,level: Level) {
+        
     }
 
     func loadLevel(from path: String) -> Level {

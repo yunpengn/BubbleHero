@@ -14,7 +14,7 @@ import UIKit
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
  */
-class Helpers {
+class DialogHelpers {
     /// Shows a message in an alert dialog box to the user. The user can click "OK"
     /// to dismiss this alert dialog box.
     /// - Parameters:
