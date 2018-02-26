@@ -27,12 +27,20 @@ class Settings {
     static let scalePaletteBubbleSelected = CGFloat(1.1)
     /// The reverse scale for bubble buttons in the palette when it is selected.
     static let scalePaletteBubbleDeselected = 1 / Settings.scalePaletteBubbleSelected
+
     /// The allowed number of rows in a `Level`.
     static let numOfRows = 12
     /// The allowed number of bubbles on even rows.
     static let cellPerRow = 12
     /// The number of types of bubbles in the game currently.
     static let numOfTypes = UInt32(9)
+
     /// The identifier for cells in the collection view of level designer scene.
     static let designerCellId = "fillableBubbleCell"
+
+    /// The confirm title before level design is reset.
+    static let resetLevelDesignTitle = "Reset Level Design"
+    /// The confirm message before level design is reset.
+    static let resetLevelDesignMessage = "Are you sure to reset the level design? "
+        + "The current design will be lost irreversibly."
 }

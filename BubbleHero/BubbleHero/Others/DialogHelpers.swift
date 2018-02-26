@@ -36,6 +36,7 @@ class DialogHelpers {
     ///    - viewController: The view controller used to present this prompt dialog.
     ///    - title: The text shown as the title of the prompt dialog.
     ///    - message: The text shown as the main body of the prompt dialog.
+    ///    - placeholder: The placeholder shown in the text field.
     ///    - confirmHandler: The handler to be called when the input is entered.
     static func promptInput(in viewController: UIViewController,
                             title: String, message: String, placeholder: String,
