@@ -18,4 +18,9 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    // Always hide the status bar on the top.
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }

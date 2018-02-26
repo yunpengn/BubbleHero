@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		87489C39370A8D0CC5A6CD48 /* Pods_BubbleHero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44AB22D696344AF18AE8F279 /* Pods_BubbleHero.framework */; };
+		F23CD69A2043C2EE0053A099 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CD6992043C2EE0053A099 /* MenuButton.swift */; };
 		F29CD045203D203800C94061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD044203D203800C94061 /* AppDelegate.swift */; };
 		F29CD047203D203800C94061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD046203D203800C94061 /* ViewController.swift */; };
 		F29CD04A203D203800C94061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29CD048203D203800C94061 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		10C402CCDFA6625A170B2354 /* Pods-BubbleHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleHero/Pods-BubbleHero.debug.xcconfig"; sourceTree = "<group>"; };
 		44AB22D696344AF18AE8F279 /* Pods_BubbleHero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleHero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7309CA0D8BAB10889F6898 /* Pods-BubbleHero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleHero.release.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleHero/Pods-BubbleHero.release.xcconfig"; sourceTree = "<group>"; };
+		F23CD6992043C2EE0053A099 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		F29CD041203D203800C94061 /* BubbleHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29CD044203D203800C94061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F29CD046203D203800C94061 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F23CD6982043C2D20053A099 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F23CD6992043C2EE0053A099 /* MenuButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F29CD038203D203800C94061 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		F29CD043203D203800C94061 /* BubbleHero */ = {
 			isa = PBXGroup;
 			children = (
+				F23CD6982043C2D20053A099 /* Views */,
 				F29CD044203D203800C94061 /* AppDelegate.swift */,
 				F29CD046203D203800C94061 /* ViewController.swift */,
 				F29CD048203D203800C94061 /* Main.storyboard */,
@@ -290,7 +301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\n    // echo \"Ignored\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    // swiftlint\n    echo \"Ignored\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -301,6 +312,7 @@
 			files = (
 				F29CD047203D203800C94061 /* ViewController.swift in Sources */,
 				F29CD045203D203800C94061 /* AppDelegate.swift in Sources */,
+				F23CD69A2043C2EE0053A099 /* MenuButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
