@@ -39,13 +39,14 @@ class Level: Codable {
     /// Adds (or updates) a new bubble to the current `Level` at a certain
     /// position. If there already exists a bubble there, replace it. This
     /// method will simply do nothing if the given bubble is not at a legal
-    /// position of the current `Level`.
+    /// position of the current `Level` or the existing bubble at the intended
+    /// location is the same as the supplied bubble.
     /// - Parameters:
     ///    - toAdd: The type of the bubble being added.
     ///    - row: The row number of the intended location (zero-based).
     ///    - column: The column number of the intended location (zero-based).
     func addOrUpdateBubble(_ toAdd: BubbleType, row: Int, column: Int) {
-        guard isValidLocation(row: row, column: column) else {
+        guard getBubbleAt(row: row, column: column) != toAdd else {
             return
         }
         bubbles[row][column] = toAdd
@@ -81,7 +82,7 @@ class Level: Codable {
     ///    - row: The row number of the intended location (zero-based).
     ///    - column: The column number of the intended location (zero-based).
     func deleteBubbleAt(row: Int, column: Int) {
-        guard isValidLocation(row: row, column: column) else {
+        guard hasBubbleAt(row: row, column: column) else {
             return
         }
         bubbles[row][column] = nil
@@ -92,14 +93,14 @@ class Level: Codable {
     ///    - row: The row number of the checked location (zero-based).
     ///    - column: The column number of the checked location (zero-based).
     private func isValidLocation(row: Int, column: Int) -> Bool {
-        guard row < numOfRows else {
+        guard row >= 0 && row < numOfRows else {
             return false
         }
 
         if row % 2 == 0 {
-            return column < evenCount
+            return column >= 0 && column < evenCount
         } else {
-            return column < oddCount
+            return column >= 0 && column < oddCount
         }
     }
 }

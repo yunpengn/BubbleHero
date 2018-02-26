@@ -18,7 +18,8 @@ import UIKit
 class LevelDesignerController: UIViewController {
     /// The collection view used to design the bubble grid.
     @IBOutlet weak var designerGrid: UICollectionView!
-
+    /// The button representation of bubble eraser.
+    @IBOutlet weak var eraser: PaletteBubbleButton!
     /// The `Level` object as the access point to model.
     var level = Level()
 

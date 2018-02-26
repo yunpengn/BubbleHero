@@ -300,6 +300,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="SoC-YT-hPD" firstAttribute="leading" secondItem="GNa-rK-ztt" secondAttribute="leading" id="7hj-H9-Pt5"/>
                             <constraint firstItem="SoC-YT-hPD" firstAttribute="bottom" secondItem="GNa-rK-ztt" secondAttribute="bottom" id="FMQ-YJ-Lsn"/>
@@ -314,12 +315,33 @@
                             <constraint firstItem="TR8-ma-9vN" firstAttribute="trailing" secondItem="GNa-rK-ztt" secondAttribute="trailing" id="zNq-Tg-Qov"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GNa-rK-ztt"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="bfo-hQ-vpt" appends="YES" id="A7f-bS-euK"/>
+                            <outletCollection property="gestureRecognizers" destination="l1v-al-RUx" appends="YES" id="c3h-QM-jIQ"/>
+                            <outletCollection property="gestureRecognizers" destination="41c-JW-UHQ" appends="YES" id="5Nv-wR-jfY"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="designerGrid" destination="aLi-TT-r9d" id="3gl-DC-1qM"/>
+                        <outlet property="eraser" destination="MCT-QC-R0g" id="kbS-H4-PzT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtQ-FK-wsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bfo-hQ-vpt">
+                    <connections>
+                        <action selector="handleSingleTapGesture:" destination="u3j-eL-eiO" id="jac-Sw-cYs"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="l1v-al-RUx">
+                    <connections>
+                        <action selector="handleDragGesture:" destination="u3j-eL-eiO" id="9R3-pe-zxE"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="41c-JW-UHQ">
+                    <connections>
+                        <action selector="handleLongPressGesture:" destination="u3j-eL-eiO" id="Vsp-ds-zFK"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="199" y="728"/>
         </scene>

@@ -93,6 +93,16 @@ extension LevelDesignerController: UICollectionViewDataSource {
             return #imageLiteral(resourceName: "bubble-orange")
         case .red:
             return #imageLiteral(resourceName: "bubble-red")
+        case .indestructible:
+            return #imageLiteral(resourceName: "bubble-indestructible")
+        case .lightning:
+            return #imageLiteral(resourceName: "bubble-lightning")
+        case .magnetic:
+            return #imageLiteral(resourceName: "bubble-magnetic")
+        case .star:
+            return #imageLiteral(resourceName: "bubble-star")
+        case .bomb:
+            return #imageLiteral(resourceName: "bubble-bomb")
         }
     }
 }

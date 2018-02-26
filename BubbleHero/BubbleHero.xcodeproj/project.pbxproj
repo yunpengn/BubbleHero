@@ -23,6 +23,7 @@
 		F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */; };
 		F2CAFB2520442FC6002078B2 /* BubbleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB2420442FC6002078B2 /* BubbleType.swift */; };
 		F2CAFB2720443020002078B2 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB2620443020002078B2 /* Level.swift */; };
+		F2CAFB2F204440D9002078B2 /* LevelDesignerController+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB2E204440D9002078B2 /* LevelDesignerController+Gesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+BubbleGrid.swift"; sourceTree = "<group>"; };
 		F2CAFB2420442FC6002078B2 /* BubbleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleType.swift; sourceTree = "<group>"; };
 		F2CAFB2620443020002078B2 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		F2CAFB2E204440D9002078B2 /* LevelDesignerController+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+Gesture.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				F29CD046203D203800C94061 /* MenuViewController.swift */,
 				F23CD69C2043DC880053A099 /* LevelDesignerController.swift */,
 				F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */,
+				F2CAFB2E204440D9002078B2 /* LevelDesignerController+Gesture.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				F29CD047203D203800C94061 /* MenuViewController.swift in Sources */,
 				F23CD69D2043DC880053A099 /* LevelDesignerController.swift in Sources */,
 				F29CD045203D203800C94061 /* AppDelegate.swift in Sources */,
+				F2CAFB2F204440D9002078B2 /* LevelDesignerController+Gesture.swift in Sources */,
 				F2CAFB2520442FC6002078B2 /* BubbleType.swift in Sources */,
 				F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */,
 				F23CD69A2043C2EE0053A099 /* MenuButton.swift in Sources */,

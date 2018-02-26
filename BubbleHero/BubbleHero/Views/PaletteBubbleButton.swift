@@ -18,7 +18,7 @@ import UIKit
  */
 class PaletteBubbleButton: UIButton {
     /// Only one of the palette bubbles should be selected at the same time.
-    private static var currentSelected: PaletteBubbleButton?
+    static var currentSelected: PaletteBubbleButton?
 
     override func awakeFromNib() {
         super.awakeFromNib()
