@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		87489C39370A8D0CC5A6CD48 /* Pods_BubbleHero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44AB22D696344AF18AE8F279 /* Pods_BubbleHero.framework */; };
 		F23CD69A2043C2EE0053A099 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CD6992043C2EE0053A099 /* MenuButton.swift */; };
+		F23CD69D2043DC880053A099 /* LevelDesignerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CD69C2043DC880053A099 /* LevelDesignerController.swift */; };
 		F29CD045203D203800C94061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD044203D203800C94061 /* AppDelegate.swift */; };
-		F29CD047203D203800C94061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD046203D203800C94061 /* ViewController.swift */; };
+		F29CD047203D203800C94061 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD046203D203800C94061 /* MenuViewController.swift */; };
 		F29CD04A203D203800C94061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29CD048203D203800C94061 /* Main.storyboard */; };
 		F29CD04C203D203800C94061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F29CD04B203D203800C94061 /* Assets.xcassets */; };
 		F29CD04F203D203800C94061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29CD04D203D203800C94061 /* LaunchScreen.storyboard */; };
@@ -33,9 +34,10 @@
 		44AB22D696344AF18AE8F279 /* Pods_BubbleHero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleHero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7309CA0D8BAB10889F6898 /* Pods-BubbleHero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleHero.release.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleHero/Pods-BubbleHero.release.xcconfig"; sourceTree = "<group>"; };
 		F23CD6992043C2EE0053A099 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		F23CD69C2043DC880053A099 /* LevelDesignerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDesignerController.swift; sourceTree = "<group>"; };
 		F29CD041203D203800C94061 /* BubbleHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29CD044203D203800C94061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F29CD046203D203800C94061 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F29CD046203D203800C94061 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F29CD049203D203800C94061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F29CD04B203D203800C94061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F29CD04E203D203800C94061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,8 +88,28 @@
 			isa = PBXGroup;
 			children = (
 				F23CD6992043C2EE0053A099 /* MenuButton.swift */,
+				F29CD04B203D203800C94061 /* Assets.xcassets */,
+				F29CD04D203D203800C94061 /* LaunchScreen.storyboard */,
+				F29CD048203D203800C94061 /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F23CD69B2043DAFC0053A099 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F29CD046203D203800C94061 /* MenuViewController.swift */,
+				F23CD69C2043DC880053A099 /* LevelDesignerController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F23CD69E2043DC990053A099 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				F29CD044203D203800C94061 /* AppDelegate.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		F29CD038203D203800C94061 = {
@@ -114,12 +136,9 @@
 		F29CD043203D203800C94061 /* BubbleHero */ = {
 			isa = PBXGroup;
 			children = (
+				F23CD69B2043DAFC0053A099 /* Controllers */,
 				F23CD6982043C2D20053A099 /* Views */,
-				F29CD044203D203800C94061 /* AppDelegate.swift */,
-				F29CD046203D203800C94061 /* ViewController.swift */,
-				F29CD048203D203800C94061 /* Main.storyboard */,
-				F29CD04B203D203800C94061 /* Assets.xcassets */,
-				F29CD04D203D203800C94061 /* LaunchScreen.storyboard */,
+				F23CD69E2043DC990053A099 /* Others */,
 				F29CD050203D203800C94061 /* Info.plist */,
 			);
 			path = BubbleHero;
@@ -310,7 +329,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F29CD047203D203800C94061 /* ViewController.swift in Sources */,
+				F29CD047203D203800C94061 /* MenuViewController.swift in Sources */,
+				F23CD69D2043DC880053A099 /* LevelDesignerController.swift in Sources */,
 				F29CD045203D203800C94061 /* AppDelegate.swift in Sources */,
 				F23CD69A2043C2EE0053A099 /* MenuButton.swift in Sources */,
 			);

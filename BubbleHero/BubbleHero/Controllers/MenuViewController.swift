@@ -8,15 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+/**
+ Controller for the main menu view, which is also the entry point for the whole
+ application.
+
+ - Author: Niu Yunpeng @ CS3217
+ - Date: Feb 2018
+ */
+class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // Always hide the status bar on the top.
