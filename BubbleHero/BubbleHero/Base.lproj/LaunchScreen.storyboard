@@ -17,13 +17,42 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-planet" translatesAutoresizingMaskIntoConstraints="NO" id="kLg-T6-i1p" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="CuG-7R-cpF" userLabel="BrandLogo">
+                                <rect key="frame" x="284.5" y="412.5" width="200" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Niu Yunpeng 2018 © NUS CS3217" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbQ-Ej-bZh" userLabel="AuthorLabel">
+                                <rect key="frame" x="196" y="944" width="376.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kLg-T6-i1p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0qP-tu-QUo"/>
+                            <constraint firstItem="CuG-7R-cpF" firstAttribute="centerY" secondItem="kLg-T6-i1p" secondAttribute="centerY" id="BAh-wk-kpg"/>
+                            <constraint firstItem="CuG-7R-cpF" firstAttribute="centerX" secondItem="kLg-T6-i1p" secondAttribute="centerX" id="EHA-k8-p3x"/>
+                            <constraint firstItem="gbQ-Ej-bZh" firstAttribute="centerX" secondItem="kLg-T6-i1p" secondAttribute="centerX" id="PIM-Ou-tti"/>
+                            <constraint firstItem="kLg-T6-i1p" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RB5-sc-7LT"/>
+                            <constraint firstItem="kLg-T6-i1p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WHV-yU-eYk"/>
+                            <constraint firstItem="kLg-T6-i1p" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="mXx-kS-M2r"/>
+                            <constraint firstItem="gbQ-Ej-bZh" firstAttribute="bottom" secondItem="kLg-T6-i1p" secondAttribute="bottom" constant="-50" id="ucd-eo-C2k"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.34375" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background-planet" width="374" height="640"/>
+        <image name="logo" width="200" height="200"/>
+    </resources>
 </document>
