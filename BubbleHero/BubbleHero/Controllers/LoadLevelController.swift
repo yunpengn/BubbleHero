@@ -19,7 +19,7 @@ class LoadLevelController: UIViewController {
     /// The collection view that shows all saved levels found.
     @IBOutlet weak var galleryGrid: UICollectionView!
     /// The model representation of all previously saved levels.
-    let levelGallery = LevelGallery.getInstance()
+    let levelGallery = LevelGallery()
     /// Delegate for the controller to Level Designer view.
     var designerDelegate: LevelDesignerControllerDelegate?
     

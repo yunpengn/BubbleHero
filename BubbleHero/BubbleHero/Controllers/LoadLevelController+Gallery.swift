@@ -15,7 +15,6 @@ import UIKit
  - Date: Feb 2018
  */
 extension LoadLevelController: UICollectionViewDelegate {
-
 }
 
 /**

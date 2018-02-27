@@ -21,15 +21,13 @@ import UIKit
  - Date: Feb 2018
  */
 class LevelGallery {
-    /// Applies singleton patterns to avoid concurrency issues.
-    private static let instance = LevelGallery()
     /// The URLs to all screenshots saved.
-    var imageURLs: [URL]
+    private var imageURLs: [URL]
     /// The URLs to all level data saved.
-    var dataURLs: [URL]
+    private var dataURLs: [URL]
 
     /// Creates a new `LevelGallery` by adding all the currently
-    private init() {
+    init() {
         let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         guard let files = try? FileManager.default.contentsOfDirectory(at: folder,
                                                                        includingPropertiesForKeys: nil,
@@ -42,12 +40,6 @@ class LevelGallery {
         dataURLs = imageURLs.map { imageURL in
             return imageURL.deletingPathExtension().appendingPathExtension("json")
         }
-    }
-
-    /// Returns an instance of `LevelGallery`.
-    /// - Returns: an instance of `LevelGallery`.
-    static func getInstance() -> LevelGallery {
-        return instance
     }
 
     /// Gets the screenshot image path to the level at a specific index.

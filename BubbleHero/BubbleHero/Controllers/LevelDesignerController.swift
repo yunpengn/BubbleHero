@@ -38,7 +38,7 @@ class LevelDesignerController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "showLoadView" else {
+        guard segue.identifier == "levelDesignerToLoadLevel" else {
             return
         }
 

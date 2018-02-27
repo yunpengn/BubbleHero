@@ -43,6 +43,8 @@ class Messages {
 
     /// The message when encoding data to JSON format fails.
     static let failEncodeJson = "Couldn't encode data to JSON format."
+    /// The message when decoding data from JSON format fails.
+    static let failDecodeJson = "Couldn't decode data from JSON format."
     /// The message when a screenshot cannot be taken.
     static let failScreenshot = "Couldn't save a screenshot."
 

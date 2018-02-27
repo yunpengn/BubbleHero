@@ -291,6 +291,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Load"/>
+                                        <connections>
+                                            <segue destination="Dc0-7E-MPc" kind="show" identifier="levelDesignerToLoadLevel" id="fJ9-2H-N25"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwc-nY-xWq" userLabel="ButtonSave">
                                         <rect key="frame" x="601" y="85" width="43" height="30"/>
@@ -510,6 +513,7 @@
                         <viewLayoutGuide key="safeArea" id="ig7-GO-zZp"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="hjc-3m-nNF" appends="YES" id="H0i-vm-l3q"/>
+                            <outletCollection property="gestureRecognizers" destination="RNX-Ji-dwK" appends="YES" id="8L8-Co-tHx"/>
                         </connections>
                     </view>
                     <connections>
@@ -522,6 +526,11 @@
                         <action selector="handleLongPressGesture:" destination="Dc0-7E-MPc" id="vaX-WR-RFg"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="RNX-Ji-dwK">
+                    <connections>
+                        <action selector="handleSingleTapGesture:" destination="Dc0-7E-MPc" id="K4s-Qa-pa5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="551.5625" y="750"/>
         </scene>
@@ -559,4 +568,7 @@
         <image name="erase" width="168" height="168"/>
         <image name="logo" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fJ9-2H-N25"/>
+    </inferredMetricsTieBreakers>
 </document>
