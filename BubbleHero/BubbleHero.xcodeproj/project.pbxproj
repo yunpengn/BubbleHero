@@ -19,6 +19,7 @@
 		F252D49B20450DE8004FDA03 /* LoadLevelController+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D49A20450DE8004FDA03 /* LoadLevelController+Gesture.swift */; };
 		F252D49D20450EF0004FDA03 /* LevelGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D49C20450EF0004FDA03 /* LevelGallery.swift */; };
 		F252D49F20451C29004FDA03 /* LevelDesignerController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D49E20451C29004FDA03 /* LevelDesignerController+Delegate.swift */; };
+		F252D4A3204522B9004FDA03 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4A2204522B9004FDA03 /* SettingsController.swift */; };
 		F29CD045203D203800C94061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD044203D203800C94061 /* AppDelegate.swift */; };
 		F29CD047203D203800C94061 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD046203D203800C94061 /* MenuViewController.swift */; };
 		F29CD04A203D203800C94061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29CD048203D203800C94061 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		F252D49A20450DE8004FDA03 /* LoadLevelController+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadLevelController+Gesture.swift"; sourceTree = "<group>"; };
 		F252D49C20450EF0004FDA03 /* LevelGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGallery.swift; sourceTree = "<group>"; };
 		F252D49E20451C29004FDA03 /* LevelDesignerController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+Delegate.swift"; sourceTree = "<group>"; };
+		F252D4A2204522B9004FDA03 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		F29CD041203D203800C94061 /* BubbleHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29CD044203D203800C94061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F29CD046203D203800C94061 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				F252D494204500B5004FDA03 /* LoadLevelController.swift */,
 				F252D4982045086A004FDA03 /* LoadLevelController+Gallery.swift */,
 				F252D49A20450DE8004FDA03 /* LoadLevelController+Gesture.swift */,
+				F252D4A2204522B9004FDA03 /* SettingsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				F2CAFB1E20442D51002078B2 /* FillableBubbleCell.swift in Sources */,
 				F23CD6A22043F5D20053A099 /* Settings.swift in Sources */,
 				F29CD047203D203800C94061 /* MenuViewController.swift in Sources */,
+				F252D4A3204522B9004FDA03 /* SettingsController.swift in Sources */,
 				F252D4932044F751004FDA03 /* Messages.swift in Sources */,
 				F252D49F20451C29004FDA03 /* LevelDesignerController+Delegate.swift in Sources */,
 				F23CD69D2043DC880053A099 /* LevelDesignerController.swift in Sources */,
