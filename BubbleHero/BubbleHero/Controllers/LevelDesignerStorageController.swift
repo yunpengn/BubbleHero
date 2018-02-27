@@ -27,9 +27,9 @@ class LevelDesignerStorageController {
     /// - Parameter level: The level design being saved.
     func saveLevel(level: Level) {
         promptLevelName(level: level,
-                        title: "Save Level",
-                        message: "Enter a name for this Level",
-                        placeholder: "Enter name:")
+                        title: Messages.saveLevelTitle,
+                        message: Messages.saveLevelNormalMessage,
+                        placeholder: Messages.saveLevelNormalPlaceholder)
     }
 
     func loadLevel(from path: String) -> Level {
@@ -42,35 +42,36 @@ class LevelDesignerStorageController {
         // Asks the user to enter a new name if the name is empty.
         if fileName == "" {
             promptLevelName(level: level,
-                            title: "Save Level",
-                            message: "The name cannot be empty.",
-                            placeholder: "Enter a non-empty name:")
+                            title: Messages.saveLevelTitle,
+                            message: Messages.saveLevelEmptyMessage,
+                            placeholder: Messages.saveLevelEmptyPlaceholder)
             return
         }
 
         // Gets the url of the file & screenshoot being saved to.
         let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let jsonPath = folder.appendingPathComponent(fileName + ".json")
-        let imagePath = folder.appendingPathComponent(fileName + ".png")
+        let jsonPath = folder.appendingPathComponent(fileName + Settings.extensionNameData)
+        let imagePath = folder.appendingPathComponent(fileName + Settings.extensionNameImage)
+
         // Asks the user to enter a new name if the file already exists.
         if FileManager.default.fileExists(atPath: jsonPath.path)
             || FileManager.default.fileExists(atPath: imagePath.path) {
             promptLevelName(level: level,
-                            title: "Save Level",
-                            message: "The name already exists. Choose a different one.",
-                            placeholder: "Enter a different name:")
+                            title: Messages.saveLevelTitle,
+                            message: Messages.saveLevelExistingMessage,
+                            placeholder: Messages.saveLevelExistingPlaceholder)
             return
         }
 
         // Encodes the current level data to JSON format.
         guard let jsonData = try? JSONEncoder().encode(level) else {
-            showAlertMessage(title: "Failed", message: "Couldn't encode data to JSON format.")
+            showAlertMessage(title: Messages.failAlertTitle, message: Messages.failEncodeJson)
             return
         }
 
         // Encodes the screenshot of the current level to PNG format.
-        guard let imageData = takeScreenShoot(of: designArea) else {
-            showAlertMessage(title: "Failed", message: "Couldn't save a screenshot.")
+        guard let imageData = takeScreenshot(of: designArea) else {
+            showAlertMessage(title: Messages.failAlertTitle, message: Messages.failScreenshot)
             return
         }
 
@@ -81,13 +82,13 @@ class LevelDesignerStorageController {
         savedImage.write(to: imagePath, atomically: true)
 
         // Alerts to user that the saving is successful.
-        showAlertMessage(title: "Succeed", message: "The current Level has been saved.")
+        showAlertMessage(title: Messages.succeedAlertTitle, message: Messages.saveLevelSucceed)
     }
 
     /// Takes a screenshot of the area within `view` and converts it to PNG format data.
     /// - Parameter view: The area where the screenshot will be taken.
     /// - Returns: the screenshot in PNG format; nil if the screenshot cannot be taken.
-    private func takeScreenShoot(of view: UIView) -> Data? {
+    private func takeScreenshot(of view: UIView) -> Data? {
         UIGraphicsBeginImageContext(view.frame.size)
         guard let context = UIGraphicsGetCurrentContext() else {
             return nil
@@ -113,7 +114,6 @@ class LevelDesignerStorageController {
                                   placeholder: placeholder,
                                   onConfirm: { (input) in
             self.saveData(for: level, to: input)
-            return
         })
     }
 

@@ -38,9 +38,8 @@ class Settings {
     /// The identifier for cells in the collection view of level designer scene.
     static let designerCellId = "fillableBubbleCell"
 
-    /// The confirm title before level design is reset.
-    static let resetLevelDesignTitle = "Reset Level Design"
-    /// The confirm message before level design is reset.
-    static let resetLevelDesignMessage = "Are you sure to reset the level design? "
-        + "The current design will be lost irreversibly."
+    /// The extension file name for data storage.
+    static let extensionNameData = ".json"
+    /// The extension file name for image storage.
+    static let extensionNameImage = ".png"
 }

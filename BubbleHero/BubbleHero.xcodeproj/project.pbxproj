@@ -12,6 +12,7 @@
 		F23CD69D2043DC880053A099 /* LevelDesignerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CD69C2043DC880053A099 /* LevelDesignerController.swift */; };
 		F23CD6A02043ED1A0053A099 /* PaletteBubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */; };
 		F23CD6A22043F5D20053A099 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CD6A12043F5D20053A099 /* Settings.swift */; };
+		F252D4932044F751004FDA03 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4922044F751004FDA03 /* Messages.swift */; };
 		F29CD045203D203800C94061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD044203D203800C94061 /* AppDelegate.swift */; };
 		F29CD047203D203800C94061 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD046203D203800C94061 /* MenuViewController.swift */; };
 		F29CD04A203D203800C94061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29CD048203D203800C94061 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		F23CD69C2043DC880053A099 /* LevelDesignerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDesignerController.swift; sourceTree = "<group>"; };
 		F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteBubbleButton.swift; sourceTree = "<group>"; };
 		F23CD6A12043F5D20053A099 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		F252D4922044F751004FDA03 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		F29CD041203D203800C94061 /* BubbleHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29CD044203D203800C94061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F29CD046203D203800C94061 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				F29CD044203D203800C94061 /* AppDelegate.swift */,
 				F2CAFB452044568A002078B2 /* DialogHelpers.swift */,
+				F252D4922044F751004FDA03 /* Messages.swift */,
 				F23CD6A12043F5D20053A099 /* Settings.swift */,
 			);
 			path = Others;
@@ -439,6 +442,7 @@
 				F2CAFB1E20442D51002078B2 /* FillableBubbleCell.swift in Sources */,
 				F23CD6A22043F5D20053A099 /* Settings.swift in Sources */,
 				F29CD047203D203800C94061 /* MenuViewController.swift in Sources */,
+				F252D4932044F751004FDA03 /* Messages.swift in Sources */,
 				F23CD69D2043DC880053A099 /* LevelDesignerController.swift in Sources */,
 				F29CD045203D203800C94061 /* AppDelegate.swift in Sources */,
 				F2CAFB44204454BF002078B2 /* LevelDesignerStorageController.swift in Sources */,
