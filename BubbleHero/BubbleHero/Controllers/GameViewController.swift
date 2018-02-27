@@ -9,9 +9,12 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    /// The body of the cannon used to shoot bubble.
+    @IBOutlet weak var cannonBody: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        cannonBody.image = #imageLiteral(resourceName: "cannon").slice(row: 0, column: 0, numOfRows: 2, numOfColumns: 6)
     }
 
     // Always hide the status bar on the top.

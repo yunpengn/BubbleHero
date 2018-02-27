@@ -120,6 +120,18 @@
                                             <segue destination="B7M-TK-zUx" kind="show" identifier="menuToSettings" id="cih-zd-9bN"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eod-9R-Avm" userLabel="AboutButton" customClass="MenuButton" customModule="BubbleHero" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="380" width="200" height="70"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="9mw-Sp-Zl7"/>
+                                            <constraint firstAttribute="height" constant="70" id="Jxb-aQ-8yW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="About">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -127,6 +139,8 @@
                                     <constraint firstItem="ae5-N9-g5X" firstAttribute="centerX" secondItem="GGn-zv-Icu" secondAttribute="centerX" id="IrD-Ne-OTS"/>
                                     <constraint firstItem="yE4-h0-Pnb" firstAttribute="top" secondItem="GGn-zv-Icu" secondAttribute="top" constant="20" symbolic="YES" id="KEa-M7-Izv"/>
                                     <constraint firstItem="Q3b-dS-mgs" firstAttribute="centerX" secondItem="GGn-zv-Icu" secondAttribute="centerX" id="XDq-mh-5Nc"/>
+                                    <constraint firstItem="Eod-9R-Avm" firstAttribute="centerX" secondItem="GGn-zv-Icu" secondAttribute="centerX" id="awW-tg-4UM"/>
+                                    <constraint firstItem="Eod-9R-Avm" firstAttribute="top" secondItem="ae5-N9-g5X" secondAttribute="bottom" constant="50" id="g1X-b4-J32"/>
                                     <constraint firstItem="yE4-h0-Pnb" firstAttribute="centerX" secondItem="GGn-zv-Icu" secondAttribute="centerX" id="iNO-Cz-ZxU"/>
                                     <constraint firstItem="ae5-N9-g5X" firstAttribute="top" secondItem="Q3b-dS-mgs" secondAttribute="bottom" constant="50" id="mOE-T8-zXC"/>
                                     <constraint firstItem="Q3b-dS-mgs" firstAttribute="top" secondItem="yE4-h0-Pnb" secondAttribute="bottom" constant="50" id="ya7-om-atM"/>
@@ -596,10 +610,33 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon" translatesAutoresizingMaskIntoConstraints="NO" id="44i-uH-q2k" userLabel="CannonBody">
+                                <rect key="frame" x="341" y="862" width="85" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="6ny-12-LK9"/>
+                                    <constraint firstAttribute="width" constant="85" id="sV0-vZ-fe2"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon-base" translatesAutoresizingMaskIntoConstraints="NO" id="js1-VT-KKL" userLabel="CannonBase">
+                                <rect key="frame" x="349" y="954" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="2OO-q1-xJc"/>
+                                    <constraint firstAttribute="width" constant="70" id="cap-lh-q1A"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="44i-uH-q2k" firstAttribute="centerX" secondItem="js1-VT-KKL" secondAttribute="centerX" id="N1y-cS-qFp"/>
+                            <constraint firstItem="js1-VT-KKL" firstAttribute="centerX" secondItem="seM-ed-1kp" secondAttribute="centerX" id="alq-u6-n9p"/>
+                            <constraint firstItem="44i-uH-q2k" firstAttribute="bottom" secondItem="js1-VT-KKL" secondAttribute="top" constant="28" id="iTK-Bl-WIY"/>
+                            <constraint firstItem="js1-VT-KKL" firstAttribute="bottom" secondItem="seM-ed-1kp" secondAttribute="bottom" id="lHV-ho-1P9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="seM-ed-1kp"/>
                     </view>
+                    <connections>
+                        <outlet property="cannonBody" destination="44i-uH-q2k" id="X6F-Vh-FO0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFO-us-cgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -636,10 +673,12 @@
         <image name="bubble-orange" width="168" height="168"/>
         <image name="bubble-red" width="168" height="168"/>
         <image name="bubble-star" width="168" height="168"/>
+        <image name="cannon" width="800" height="533"/>
+        <image name="cannon-base" width="133" height="139"/>
         <image name="erase" width="168" height="168"/>
         <image name="logo" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fJ9-2H-N25"/>
+        <segue reference="ciA-Un-bay"/>
     </inferredMetricsTieBreakers>
 </document>
