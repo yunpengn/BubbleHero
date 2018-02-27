@@ -62,7 +62,7 @@ extension LoadLevelController {
             designerDelegate?.loadLevel(level)
             navigationController?.popViewController(animated: true)
         } else {
-            // Otherwise, start the game with this level.
+            // Otherwise, starts the game with this level.
             let id = Settings.gameViewControllerId
             guard let gameViewController = storyboard?.instantiateViewController(withIdentifier: id)
                 as? GameViewController else {
