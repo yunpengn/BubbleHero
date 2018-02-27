@@ -37,6 +37,15 @@ class LevelDesignerController: UIViewController {
         return true
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "showLoadView" else {
+            return
+        }
+
+        let loadViewController = segue.destination as? LoadLevelController
+        loadViewController?.designerDelegate = self
+    }
+
     /// Goes back to the menu view when back button is pressed.
     @IBAction func backButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
