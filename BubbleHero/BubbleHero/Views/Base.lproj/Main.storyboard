@@ -13,7 +13,7 @@
         <!--SettingsController-->
         <scene sceneID="SZF-rQ-ySe">
             <objects>
-                <viewController id="B7M-TK-zUx" userLabel="SettingsController" sceneMemberID="viewController">
+                <viewController id="B7M-TK-zUx" userLabel="SettingsController" customClass="SettingsController" customModule="BubbleHero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vht-rY-oTH">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,14 +27,27 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="413-yj-OSH" userLabel="BackButton">
+                                <rect key="frame" x="10" y="74" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="XRS-qQ-feo"/>
+                                    <constraint firstAttribute="width" constant="65" id="xAx-BV-o8x"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="back-green"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="B7M-TK-zUx" eventType="touchUpInside" id="pRK-rq-9FL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="S0Q-t0-9OF" firstAttribute="bottom" secondItem="9p1-Ti-JIb" secondAttribute="bottom" id="2Uv-6R-dhu"/>
                             <constraint firstItem="WJb-hF-QDO" firstAttribute="centerX" secondItem="9p1-Ti-JIb" secondAttribute="centerX" id="9ab-ep-BFQ"/>
+                            <constraint firstItem="413-yj-OSH" firstAttribute="top" secondItem="9p1-Ti-JIb" secondAttribute="top" constant="10" id="AJA-bR-Gax"/>
                             <constraint firstItem="S0Q-t0-9OF" firstAttribute="trailing" secondItem="9p1-Ti-JIb" secondAttribute="trailing" id="OK9-oH-96n"/>
                             <constraint firstItem="S0Q-t0-9OF" firstAttribute="top" secondItem="9p1-Ti-JIb" secondAttribute="top" id="l0b-57-Fkc"/>
                             <constraint firstItem="WJb-hF-QDO" firstAttribute="centerY" secondItem="9p1-Ti-JIb" secondAttribute="centerY" id="vx3-Ar-dGp"/>
+                            <constraint firstItem="413-yj-OSH" firstAttribute="leading" secondItem="9p1-Ti-JIb" secondAttribute="leading" constant="10" id="xCF-m4-C4S"/>
                             <constraint firstItem="S0Q-t0-9OF" firstAttribute="leading" secondItem="9p1-Ti-JIb" secondAttribute="leading" id="zR8-jf-Z3y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9p1-Ti-JIb"/>

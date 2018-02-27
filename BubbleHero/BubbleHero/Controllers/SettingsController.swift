@@ -24,4 +24,9 @@ class SettingsController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return false
     }
+
+    /// Goes back to the menu view when back button is pressed.
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }

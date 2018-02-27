@@ -34,7 +34,7 @@ class LoadLevelController: UIViewController {
         return true
     }
 
-    /// Goes back to the menu view when back button is pressed.
+    /// Goes back to the last view when back button is pressed.
     @IBAction func backButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
