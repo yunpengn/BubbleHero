@@ -20,9 +20,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var cannonBody: CannonView!
     /// The controller for bubble launch.
     private var launchController: GameViewLaunchController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        cannonBody.image = #imageLiteral(resourceName: "cannon").slice(index: 0, numOfRows: 2, numOfColumns: 6)
         launchController = GameViewLaunchController(cannon: cannonBody)
     }
 

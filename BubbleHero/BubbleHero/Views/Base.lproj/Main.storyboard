@@ -681,7 +681,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon" translatesAutoresizingMaskIntoConstraints="NO" id="44i-uH-q2k" userLabel="CannonBody" customClass="CannonView" customModule="BubbleHero" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon-single" translatesAutoresizingMaskIntoConstraints="NO" id="44i-uH-q2k" userLabel="CannonBody" customClass="CannonView" customModule="BubbleHero" customModuleProvider="target">
                                 <rect key="frame" x="343.5" y="862" width="80" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="6ny-12-LK9"/>
@@ -756,8 +756,8 @@
         <image name="bubble-orange" width="168" height="168"/>
         <image name="bubble-red" width="168" height="168"/>
         <image name="bubble-star" width="168" height="168"/>
-        <image name="cannon" width="800" height="533"/>
         <image name="cannon-base" width="133" height="139"/>
+        <image name="cannon-single" width="126" height="253"/>
         <image name="erase" width="168" height="168"/>
         <image name="logo" width="200" height="200"/>
         <image name="studio_brand" width="200" height="200"/>
