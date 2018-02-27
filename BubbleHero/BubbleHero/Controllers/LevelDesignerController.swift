@@ -60,8 +60,8 @@ class LevelDesignerController: UIViewController {
     /// Resets the level design when reset button is pressed.
     @IBAction func resetButtonPressed(_ sender: UIButton) {
         DialogHelpers.promptConfirm(in: self,
-                                    title: Settings.resetLevelDesignTitle,
-                                    message: Settings.resetLevelDesignMessage,
+                                    title: Messages.resetLevelDesignTitle,
+                                    message: Messages.resetLevelDesignMessage,
                                     onConfirm: {
             self.designerGrid.reloadData()
             self.level = Level()
