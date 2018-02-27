@@ -43,6 +43,8 @@ class Settings {
     static let designerCellId = "fillableBubbleCell"
     /// The identifier for cells in the collection view of level gallery.
     static let galleryCellId = "levelGalleryCell"
+    /// The identifier for `GameViewController` in main storyboard.
+    static let gameViewControllerId = "gameViewController"
 
     /// The extension file name for data storage.
     static let extensionNameData = ".json"

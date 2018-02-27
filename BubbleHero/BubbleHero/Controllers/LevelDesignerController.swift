@@ -53,7 +53,13 @@ class LevelDesignerController: UIViewController {
 
     /// Starts the game when start button is pressed.
     @IBAction func startButtonPressed(_ sender: UIButton) {
-        
+        let id = Settings.gameViewControllerId
+        guard let gameViewController = storyboard?.instantiateViewController(withIdentifier: id)
+            as? GameViewController else {
+            fatalError("Could not find the controller for game view")
+        }
+        gameViewController.level = level
+        present(gameViewController, animated: true, completion: nil)
     }
 
     /// Saves the level design when save button is pressed.

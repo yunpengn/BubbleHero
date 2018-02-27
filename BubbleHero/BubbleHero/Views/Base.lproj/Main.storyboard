@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4m-BI-jyE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1253.90625" y="750"/>
+            <point key="canvasLocation" x="1026" y="40"/>
         </scene>
         <!--MenuViewController-->
         <scene sceneID="tne-QT-ifu">
@@ -453,7 +453,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-130" y="750"/>
+            <point key="canvasLocation" x="-246" y="752"/>
         </scene>
         <!--LoadLevelController-->
         <scene sceneID="96P-uY-HOQ">
@@ -582,12 +582,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="551.5625" y="750"/>
+            <point key="canvasLocation" x="663" y="752"/>
         </scene>
         <!--GameViewController-->
         <scene sceneID="4vO-5E-nYS">
             <objects>
-                <viewController id="6AN-0y-jQ3" userLabel="GameViewController" customClass="GameViewController" customModule="BubbleHero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameViewController" id="6AN-0y-jQ3" userLabel="GameViewController" customClass="GameViewController" customModule="BubbleHero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xGH-vM-5tf">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -603,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFO-us-cgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="198" y="1405"/>
+            <point key="canvasLocation" x="199" y="1467"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Txg-eZ-nsX">
@@ -621,7 +621,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXn-XQ-fAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199" y="-647"/>
+            <point key="canvasLocation" x="198" y="-665"/>
         </scene>
     </scenes>
     <resources>
@@ -640,6 +640,6 @@
         <image name="logo" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ciA-Un-bay"/>
+        <segue reference="fJ9-2H-N25"/>
     </inferredMetricsTieBreakers>
 </document>
