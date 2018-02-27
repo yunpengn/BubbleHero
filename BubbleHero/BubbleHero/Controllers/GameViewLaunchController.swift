@@ -23,14 +23,17 @@ class GameViewLaunchController {
 
     init(cannon: UIView) {
         self.cannon = cannon
-        cannon.layer.anchorPoint = CGPoint(x: 0.5, y: 0.9)
-        cannon.transform = cannon.transform.translatedBy(x: 0, y: 50)
+        cannon.layer.anchorPoint = Settings.launchCannonAnchorPoint
+        cannon.transform = cannon.transform.translatedBy(x: 0, y: Settings.launchCannonTransformY)
     }
 
     /// Rotates the cannon body so that it faces a certain point.
     /// - Parameter point: The point that the cannon is supposed to face.
     func rotateCannon(to point: CGPoint) {
         let newAngle = getShootAngle(by: point)
+        guard isAcceptedAngle(newAngle) else {
+            return
+        }
         cannon.transform = cannon.transform.rotated(by: newAngle - cannonAngle)
         cannonAngle = newAngle
     }
@@ -39,6 +42,10 @@ class GameViewLaunchController {
     /// - Parameter point: The point that the direction of the shooted bubble
     /// should be in.
     func launchBubble(to point: CGPoint) {
+        let angle = getShootAngle(by: point)
+        guard isAcceptedAngle(angle) else {
+            return
+        }
 
     }
 
@@ -54,5 +61,11 @@ class GameViewLaunchController {
         let deltaY = cannon.center.y - point.y
         let newDeltaY = deltaY > 0 ? deltaY : 0
         return atan2(newDeltaY, deltaX)
+    }
+
+    /// Checks whether the given angle is accepted, i.e., the angle must be upwards.
+    private func isAcceptedAngle(_ angle: CGFloat) -> Bool {
+        return angle > Settings.launchAngleLowerLimit
+            && angle < Settings.launchAngleUpperLimit
     }
 }

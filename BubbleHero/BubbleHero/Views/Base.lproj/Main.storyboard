@@ -677,9 +677,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-planet" translatesAutoresizingMaskIntoConstraints="NO" id="vsV-kG-o4L" userLabel="Background">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-planet" translatesAutoresizingMaskIntoConstraints="NO" id="vsV-kG-o4L" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon" translatesAutoresizingMaskIntoConstraints="NO" id="44i-uH-q2k" userLabel="CannonBody">
@@ -699,10 +698,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vsV-kG-o4L" firstAttribute="top" secondItem="xGH-vM-5tf" secondAttribute="top" id="A30-FX-WUn"/>
+                            <constraint firstItem="vsV-kG-o4L" firstAttribute="leading" secondItem="seM-ed-1kp" secondAttribute="leading" id="Fhg-Xw-bq5"/>
                             <constraint firstItem="44i-uH-q2k" firstAttribute="centerX" secondItem="js1-VT-KKL" secondAttribute="centerX" id="N1y-cS-qFp"/>
+                            <constraint firstItem="vsV-kG-o4L" firstAttribute="bottom" secondItem="seM-ed-1kp" secondAttribute="bottom" id="V6B-kn-Bmp"/>
                             <constraint firstItem="js1-VT-KKL" firstAttribute="centerX" secondItem="seM-ed-1kp" secondAttribute="centerX" id="alq-u6-n9p"/>
                             <constraint firstItem="44i-uH-q2k" firstAttribute="bottom" secondItem="js1-VT-KKL" secondAttribute="top" constant="28" id="iTK-Bl-WIY"/>
                             <constraint firstItem="js1-VT-KKL" firstAttribute="bottom" secondItem="seM-ed-1kp" secondAttribute="bottom" id="lHV-ho-1P9"/>
+                            <constraint firstItem="vsV-kG-o4L" firstAttribute="trailing" secondItem="seM-ed-1kp" secondAttribute="trailing" id="n1x-cL-ulT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="seM-ed-1kp"/>
                         <connections>

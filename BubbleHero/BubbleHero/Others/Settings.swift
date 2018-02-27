@@ -50,4 +50,13 @@ class Settings {
     static let extensionNameData = ".json"
     /// The extension file name for image storage.
     static let extensionNameImage = ".png"
+
+    /// The lower limit for launch angle.
+    static let launchAngleLowerLimit = CGFloat.pi / 10
+    /// The upper limit for launch angle.
+    static let launchAngleUpperLimit = CGFloat.pi / 10 * 9
+    /// The anchor point for the launch cannon.
+    static let launchCannonAnchorPoint = CGPoint(x: 0.5, y: 0.9)
+    /// The offset transform for the launch cannon.
+    static let launchCannonTransformY = CGFloat(50)
 }
