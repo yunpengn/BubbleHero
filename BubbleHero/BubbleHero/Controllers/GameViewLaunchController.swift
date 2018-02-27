@@ -18,15 +18,21 @@ import UIKit
 class GameViewLaunchController {
     /// The view for cannon which can visually shoot a bubble.
     private let cannon: UIView
+    /// The current angle for the cannon.
+    private var cannonAngle = CGFloat(CGFloat.pi / 2)
 
     init(cannon: UIView) {
         self.cannon = cannon
+        cannon.layer.anchorPoint = CGPoint(x: 0.5, y: 0.9)
+        cannon.transform = cannon.transform.translatedBy(x: 0, y: 50)
     }
 
     /// Rotates the cannon body so that it faces a certain point.
     /// - Parameter point: The point that the cannon is supposed to face.
     func rotateCannon(to point: CGPoint) {
-        cannon.transform = cannon.transform.rotated(by: getShootAngle(by: point))
+        let newAngle = getShootAngle(by: point)
+        cannon.transform = cannon.transform.rotated(by: newAngle - cannonAngle)
+        cannonAngle = newAngle
     }
 
     /// Launches a bubble in the direction of a point.

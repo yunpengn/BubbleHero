@@ -681,15 +681,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Jub-bm-kqT" appends="YES" id="rhv-tl-PyU"/>
-                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon" translatesAutoresizingMaskIntoConstraints="NO" id="44i-uH-q2k" userLabel="CannonBody">
-                                <rect key="frame" x="341" y="862" width="85" height="120"/>
+                                <rect key="frame" x="343.5" y="862" width="80" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="6ny-12-LK9"/>
-                                    <constraint firstAttribute="width" constant="85" id="sV0-vZ-fe2"/>
+                                    <constraint firstAttribute="width" constant="80" id="sV0-vZ-fe2"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon-base" translatesAutoresizingMaskIntoConstraints="NO" id="js1-VT-KKL" userLabel="CannonBase">
@@ -708,6 +705,9 @@
                             <constraint firstItem="js1-VT-KKL" firstAttribute="bottom" secondItem="seM-ed-1kp" secondAttribute="bottom" id="lHV-ho-1P9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="seM-ed-1kp"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Jub-bm-kqT" appends="YES" id="vgJ-Rh-vRU"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="cannonBody" destination="44i-uH-q2k" id="X6F-Vh-FO0"/>
