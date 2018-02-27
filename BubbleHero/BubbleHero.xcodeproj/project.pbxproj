@@ -23,6 +23,7 @@
 		F252D4A520452559004FDA03 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4A420452559004FDA03 /* GameViewController.swift */; };
 		F252D4A720454704004FDA03 /* UIImage+Slice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4A620454704004FDA03 /* UIImage+Slice.swift */; };
 		F252D4A920455F26004FDA03 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4A820455F26004FDA03 /* Helpers.swift */; };
+		F252D4AD20456C8A004FDA03 /* GameViewLaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */; };
 		F29CD045203D203800C94061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD044203D203800C94061 /* AppDelegate.swift */; };
 		F29CD047203D203800C94061 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD046203D203800C94061 /* MenuViewController.swift */; };
 		F29CD04A203D203800C94061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29CD048203D203800C94061 /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		F252D4A420452559004FDA03 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		F252D4A620454704004FDA03 /* UIImage+Slice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Slice.swift"; sourceTree = "<group>"; };
 		F252D4A820455F26004FDA03 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewLaunchController.swift; sourceTree = "<group>"; };
 		F29CD041203D203800C94061 /* BubbleHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29CD044203D203800C94061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F29CD046203D203800C94061 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				F29CD046203D203800C94061 /* MenuViewController.swift */,
 				F252D4A420452559004FDA03 /* GameViewController.swift */,
+				F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */,
 				F23CD69C2043DC880053A099 /* LevelDesignerController.swift */,
 				F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */,
 				F252D49E20451C29004FDA03 /* LevelDesignerController+Delegate.swift */,
@@ -485,6 +488,7 @@
 				F2CAFB2520442FC6002078B2 /* BubbleType.swift in Sources */,
 				F252D4992045086A004FDA03 /* LoadLevelController+Gallery.swift in Sources */,
 				F252D4A720454704004FDA03 /* UIImage+Slice.swift in Sources */,
+				F252D4AD20456C8A004FDA03 /* GameViewLaunchController.swift in Sources */,
 				F252D49B20450DE8004FDA03 /* LoadLevelController+Gesture.swift in Sources */,
 				F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */,
 				F23CD69A2043C2EE0053A099 /* MenuButton.swift in Sources */,
