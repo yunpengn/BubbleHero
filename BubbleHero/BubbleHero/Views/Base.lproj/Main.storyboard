@@ -584,6 +584,27 @@
             </objects>
             <point key="canvasLocation" x="551.5625" y="750"/>
         </scene>
+        <!--GameViewController-->
+        <scene sceneID="4vO-5E-nYS">
+            <objects>
+                <viewController id="6AN-0y-jQ3" userLabel="GameViewController" customClass="GameViewController" customModule="BubbleHero" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xGH-vM-5tf">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-planet" translatesAutoresizingMaskIntoConstraints="NO" id="vsV-kG-o4L" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="seM-ed-1kp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFO-us-cgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="1405"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Txg-eZ-nsX">
             <objects>
