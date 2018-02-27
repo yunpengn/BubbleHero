@@ -18,6 +18,9 @@
 
  The grid (2D array) has different number of items on odd/even rows. Odd rows
  should have one fewer item than even rows.
+
+ - Author: Niu Yunpeng @ CS3217
+ - Date: Feb 2018
  */
 class Level: Codable {
     /// The allowed number of rows in a `Level`.

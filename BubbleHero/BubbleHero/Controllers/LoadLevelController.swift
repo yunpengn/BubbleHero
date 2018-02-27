@@ -16,24 +16,15 @@ import UIKit
  - Date: Feb 2018
  */
 class LoadLevelController: UIViewController {
-    /// The URLs to all screenshots saved.
-    var imageURLs: [URL] = []
-    /// The URLs to all level data saved.
-    var dataURLs: [URL] = []
-
     /// The collection view that shows all saved levels found.
-    @IBOutlet weak var levelGallery: UICollectionView!
+    @IBOutlet weak var galleryGrid: UICollectionView!
+    /// The model representation of all previously saved levels.
+    let levelGallery = LevelGallery.getInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        levelGallery.delegate = self
-        levelGallery.dataSource = self
-
-        // Gets the urls of the files & screenshoots being saved to.
-        imageURLs = getAllSavedFiles().filter { $0.pathExtension == "png" }
-        dataURLs = imageURLs.map { imageURL in
-            return imageURL.deletingPathExtension().appendingPathExtension("json")
-        }
+        galleryGrid.delegate = self
+        galleryGrid.dataSource = self
     }
 
     /// Always hide the status bar on the top.
@@ -44,17 +35,5 @@ class LoadLevelController: UIViewController {
     /// Goes back to the menu view when back button is pressed.
     @IBAction func backButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
-    }
-
-    /// Gets all the files saved to the document directory.
-    /// - Returns: an array of URLs to all the files saved.
-    private func getAllSavedFiles() -> [URL] {
-        let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        guard let files = try? FileManager.default.contentsOfDirectory(at: folder,
-                                                                       includingPropertiesForKeys: nil,
-                                                                       options: []) else {
-            fatalError("Couldn't read the document directory.")
-        }
-        return files
     }
 }

@@ -493,6 +493,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="aGh-Iz-LTf" firstAttribute="leading" secondItem="ig7-GO-zZp" secondAttribute="leading" id="56V-8M-dzr"/>
                             <constraint firstItem="aGh-Iz-LTf" firstAttribute="top" secondItem="ig7-GO-zZp" secondAttribute="top" id="B58-zN-ZCI"/>
@@ -507,12 +508,20 @@
                             <constraint firstItem="WR5-na-jY2" firstAttribute="leading" secondItem="ig7-GO-zZp" secondAttribute="leading" id="yJO-FG-fmF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ig7-GO-zZp"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hjc-3m-nNF" appends="YES" id="H0i-vm-l3q"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="levelGallery" destination="WR5-na-jY2" id="Hdb-pE-WE1"/>
+                        <outlet property="galleryGrid" destination="WR5-na-jY2" id="Hdb-pE-WE1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aq9-cr-5BD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="hjc-3m-nNF">
+                    <connections>
+                        <action selector="handleLongPressGesture:" destination="Dc0-7E-MPc" id="vaX-WR-RFg"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="551.5625" y="750"/>
         </scene>

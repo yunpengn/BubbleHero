@@ -9,7 +9,7 @@
 import UIKit
 
 /**
- Extension for `LoadLevelController`, which acts as the delegate for `levelGallery`.
+ Extension for `LoadLevelController`, which acts as the delegate for `galleryGrid`.
 
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
@@ -19,7 +19,7 @@ extension LoadLevelController: UICollectionViewDelegate {
 }
 
 /**
- Extension for `LoadLevelController`, which controls the size of all cells in `levelGallery`.
+ Extension for `LoadLevelController`, which controls the size of all cells in `galleryGrid`.
  */
 extension LoadLevelController: UICollectionViewDelegateFlowLayout {
     /// Sets the size of each cell.
@@ -39,13 +39,13 @@ extension LoadLevelController: UICollectionViewDelegateFlowLayout {
 }
 
 /**
- Extension for `LoadLevelController`, which is the data source for `levelGallery` (all
+ Extension for `LoadLevelController`, which is the data source for `galleryGrid` (all
  previously saved levels).
  */
 extension LoadLevelController: UICollectionViewDataSource {
     /// Sets the number of cells.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageURLs.count
+        return levelGallery.numOfLevels
     }
 
     /// Data source for each cell.
@@ -56,14 +56,15 @@ extension LoadLevelController: UICollectionViewDataSource {
             fatalError("Unable to dequeue a reusable cell.")
         }
 
-        let path = imageURLs[indexPath.row].path
-        guard let levelImage = UIImage(contentsOfFile: path) else {
+        let index = indexPath.row
+        let imagePath = levelGallery.getImagePath(at: index)
+        guard let levelImage = UIImage(contentsOfFile: imagePath.path) else {
             fatalError("Cannot retrieve the image")
         }
         cell.image.image = levelImage
 
-        let name = imageURLs[indexPath.row].deletingPathExtension().lastPathComponent
-        cell.name.text = name
+        let dataPath = levelGallery.getDataPath(at: index)
+        cell.name.text = dataPath.deletingPathExtension().lastPathComponent
 
         return cell
     }
