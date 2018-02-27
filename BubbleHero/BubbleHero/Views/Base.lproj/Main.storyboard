@@ -57,6 +57,70 @@
             </objects>
             <point key="canvasLocation" x="1026" y="40"/>
         </scene>
+        <!--AboutViewController-->
+        <scene sceneID="mJe-vP-J1f">
+            <objects>
+                <viewController id="S7P-ma-7KV" userLabel="AboutViewController" customClass="AboutViewController" customModule="BubbleHero" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CDf-rd-FrK">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-planet" translatesAutoresizingMaskIntoConstraints="NO" id="kZa-BJ-hBe" userLabel="Background">
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="studio_brand" translatesAutoresizingMaskIntoConstraints="NO" id="ihh-cl-Qyu" userLabel="BrandLogo">
+                                <rect key="frame" x="184" y="294" width="400" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="DeQ-RH-L7d"/>
+                                    <constraint firstAttribute="width" constant="400" id="wXX-0c-z7m"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designed with love for CS3217" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcG-mW-lI2">
+                                <rect key="frame" x="205.5" y="474" width="357" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Niu Yunpeng © 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBz-U4-6GO">
+                                <rect key="frame" x="261" y="514" width="245" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksY-i6-odG" userLabel="BackButton">
+                                <rect key="frame" x="0.0" y="64" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="1Jk-N1-Csm"/>
+                                    <constraint firstAttribute="width" constant="65" id="vWo-F7-xfs"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="back-green"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="S7P-ma-7KV" eventType="touchUpInside" id="SYP-G0-c4N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lcG-mW-lI2" firstAttribute="centerX" secondItem="ros-1l-C7G" secondAttribute="centerX" id="1Rg-UK-hx9"/>
+                            <constraint firstItem="kZa-BJ-hBe" firstAttribute="top" secondItem="ros-1l-C7G" secondAttribute="top" id="II5-PS-sRV"/>
+                            <constraint firstItem="ihh-cl-Qyu" firstAttribute="centerX" secondItem="ros-1l-C7G" secondAttribute="centerX" id="Liy-AP-AfG"/>
+                            <constraint firstItem="kZa-BJ-hBe" firstAttribute="leading" secondItem="ros-1l-C7G" secondAttribute="leading" id="NFS-fA-DTR"/>
+                            <constraint firstItem="jBz-U4-6GO" firstAttribute="top" secondItem="lcG-mW-lI2" secondAttribute="bottom" constant="8" symbolic="YES" id="Qo5-Z1-f4n"/>
+                            <constraint firstItem="ihh-cl-Qyu" firstAttribute="centerY" secondItem="ros-1l-C7G" secondAttribute="centerY" constant="-150" id="b4O-Dh-v4t"/>
+                            <constraint firstItem="lcG-mW-lI2" firstAttribute="top" secondItem="ihh-cl-Qyu" secondAttribute="bottom" constant="-20" id="bQD-De-4b7"/>
+                            <constraint firstItem="kZa-BJ-hBe" firstAttribute="trailing" secondItem="ros-1l-C7G" secondAttribute="trailing" id="c0l-4E-E7X"/>
+                            <constraint firstItem="ksY-i6-odG" firstAttribute="leading" secondItem="ros-1l-C7G" secondAttribute="leading" id="gpw-sV-jr4"/>
+                            <constraint firstItem="kZa-BJ-hBe" firstAttribute="bottom" secondItem="ros-1l-C7G" secondAttribute="bottom" id="laj-hh-SVA"/>
+                            <constraint firstItem="ksY-i6-odG" firstAttribute="top" secondItem="ros-1l-C7G" secondAttribute="top" id="xx9-mO-DBm"/>
+                            <constraint firstItem="jBz-U4-6GO" firstAttribute="centerX" secondItem="ros-1l-C7G" secondAttribute="centerX" id="zOs-cj-Xzj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ros-1l-C7G"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhy-cl-cA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-613.28125" y="39.84375"/>
+        </scene>
         <!--MenuViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -131,6 +195,9 @@
                                         <state key="normal" title="About">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="S7P-ma-7KV" kind="show" id="vDC-4o-5ed"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -609,6 +676,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-planet" translatesAutoresizingMaskIntoConstraints="NO" id="vsV-kG-o4L" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Lrk-Zr-zpR" appends="YES" id="jPJ-4l-8Wf"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon" translatesAutoresizingMaskIntoConstraints="NO" id="44i-uH-q2k" userLabel="CannonBody">
                                 <rect key="frame" x="341" y="862" width="85" height="120"/>
@@ -639,6 +710,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFO-us-cgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Lrk-Zr-zpR">
+                    <connections>
+                        <action selector="handleLongPressGesture:" destination="6AN-0y-jQ3" id="Aig-s6-BZT"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="199" y="1467"/>
         </scene>
@@ -677,6 +753,7 @@
         <image name="cannon-base" width="133" height="139"/>
         <image name="erase" width="168" height="168"/>
         <image name="logo" width="200" height="200"/>
+        <image name="studio_brand" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ciA-Un-bay"/>

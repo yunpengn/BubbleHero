@@ -8,20 +8,46 @@
 
 import UIKit
 
+/**
+ Controller for the game view, which is the scene for the player to play the
+ actual game.
+
+ - Author: Niu Yunpeng @ CS3217
+ - Date: Feb 2018
+ */
 class GameViewController: UIViewController {
     /// The body of the cannon used to shoot bubble.
     @IBOutlet weak var cannonBody: UIImageView!
+    /// The controller for bubble launch.
+    private var launchController: GameViewLaunchController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         cannonBody.image = #imageLiteral(resourceName: "cannon").slice(index: 0, numOfRows: 2, numOfColumns: 6)
+        launchController = GameViewLaunchController(cannon: cannonBody)
     }
 
-    // Always hide the status bar on the top.
+    /// Always hide the status bar on the top.
     override var prefersStatusBarHidden: Bool {
         return true
     }
 
+    /// Updates the cannon and launches the bubble when the long press gesture is recognized.
+    /// - Parameter sender: The gesture recognizer being triggered.
+    @IBAction func handleLongPressGesture(_ sender: UILongPressGestureRecognizer) {
+        let location = sender.location(in: view)
+
+        // Rotates the angle of the cannon during the duration of the long press gesture.
+        if sender.state == .changed {
+            launchController?.rotateCannon(to: location)
+        }
+
+        // Launches the bubble when the long press gesture is released.
+        if sender.state == .ended {
+            
+        }
+    }
+    
     func loadLevel(_ level: Level) {
         
     }
