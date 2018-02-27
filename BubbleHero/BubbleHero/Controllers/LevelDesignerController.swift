@@ -21,7 +21,7 @@ class LevelDesignerController: UIViewController {
     /// The button representation of bubble eraser.
     @IBOutlet weak var eraser: PaletteBubbleButton!
     /// The controller for saving a level.
-    private var storageController: LevelDesignerStorageController?
+    private var storageController: LevelDesignerSavingController?
     /// The `Level` object as the access point to model.
     var level = Level()
 
@@ -29,7 +29,7 @@ class LevelDesignerController: UIViewController {
         super.viewDidLoad()
         designerGrid.delegate = self
         designerGrid.dataSource = self
-        storageController = LevelDesignerStorageController(for: self, designArea: designerGrid)
+        storageController = LevelDesignerSavingController(for: self, designArea: designerGrid)
     }
 
     /// Always hide the status bar on the top.
@@ -50,11 +50,6 @@ class LevelDesignerController: UIViewController {
     /// Saves the level design when save button is pressed.
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         storageController?.saveLevel(level: level)
-    }
-
-    /// Loads a level from the gallery when load button is pressed.
-    @IBAction func loadButtonPressed(_ sender: UIButton) {
-
     }
 
     /// Resets the level design when reset button is pressed.

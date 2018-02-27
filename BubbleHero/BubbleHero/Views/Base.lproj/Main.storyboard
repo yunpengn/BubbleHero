@@ -288,9 +288,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Load"/>
-                                        <connections>
-                                            <action selector="loadButtonPressed:" destination="u3j-eL-eiO" eventType="touchUpInside" id="nQc-YI-g0L"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwc-nY-xWq" userLabel="ButtonSave">
                                         <rect key="frame" x="601" y="85" width="43" height="30"/>

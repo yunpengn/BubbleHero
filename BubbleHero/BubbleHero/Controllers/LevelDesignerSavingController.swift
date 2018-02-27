@@ -1,5 +1,5 @@
 //
-//  LevelDesignerStorageController.swift
+//  LevelDesignerSavingController.swift
 //  BubbleHero
 //
 //  Created by Yunpeng Niu on 26/02/18.
@@ -8,7 +8,14 @@
 
 import UIKit
 
-class LevelDesignerStorageController {
+/**
+ Manages the functionalities related to saving the level design data to local
+ storage file.
+
+ - Author: Niu Yunpeng @ CS3217
+ - Date: Feb 2018
+ */
+class LevelDesignerSavingController {
     /// The main controller for level designer.
     private let viewController: UIViewController
     /// The view representing the level design area.
@@ -32,13 +39,27 @@ class LevelDesignerStorageController {
                         placeholder: Messages.saveLevelNormalPlaceholder)
     }
 
-    func loadLevel(from path: String) -> Level {
-        return Level()
+    /// Prompts the user to enter the name for the current `Level`.
+    /// - Parameters:
+    ///    - level: The level to be saved.
+    ///    - title: The text shown as the title of the prompt dialog.
+    ///    - message: The text shown as the main body of the prompt dialog.
+    ///    - placeholder: The placeholder shown in the text field.
+    private func promptLevelName(level: Level, title: String, message: String, placeholder: String) {
+        DialogHelpers.promptInput(in: viewController,
+                                  title: title,
+                                  message: message,
+                                  placeholder: placeholder,
+                                  onConfirm: { (input) in
+            self.validateFileName(for: level, to: input)
+        })
     }
 
-    /// Saves the current `Level` to a local file.
-    /// - Parameter fileName: The name of the file being saved to.
-    private func saveData(for level: Level, to fileName: String) {
+    /// Validates the file name to save level design.
+    /// - Parameters:
+    ///    - level: The level to be saved.
+    ///    - fileName: The name of the file being saved to.
+    private func validateFileName(for level: Level, to fileName: String) {
         // Asks the user to enter a new name if the name is empty.
         if fileName == "" {
             promptLevelName(level: level,
@@ -49,9 +70,8 @@ class LevelDesignerStorageController {
         }
 
         // Gets the url of the file & screenshoot being saved to.
-        let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let jsonPath = folder.appendingPathComponent(fileName + Settings.extensionNameData)
-        let imagePath = folder.appendingPathComponent(fileName + Settings.extensionNameImage)
+        let jsonPath = getJsonPath(to: fileName)
+        let imagePath = getImagePath(to: fileName)
 
         // Asks the user to enter a new name if the file already exists.
         if FileManager.default.fileExists(atPath: jsonPath.path)
@@ -62,6 +82,18 @@ class LevelDesignerStorageController {
                             placeholder: Messages.saveLevelExistingPlaceholder)
             return
         }
+
+        saveData(for: level, to: fileName)
+    }
+
+    /// Saves the current `Level` to a local file.
+    /// - Parameters:
+    ///    - level: The level to be saved.
+    ///    - fileName: The name of the file being saved to.
+    private func saveData(for level: Level, to fileName: String) {
+        // Gets the url of the file & screenshoot being saved to.
+        let jsonPath = getJsonPath(to: fileName)
+        let imagePath = getImagePath(to: fileName)
 
         // Encodes the current level data to JSON format.
         guard let jsonData = try? JSONEncoder().encode(level) else {
@@ -101,20 +133,20 @@ class LevelDesignerStorageController {
         return UIImagePNGRepresentation(image)
     }
 
-    /// Prompts the user to enter the name for the current `Level`.
-    /// - Parameters:
-    ///    - level: The level to be saved.
-    ///    - title: The text shown as the title of the prompt dialog.
-    ///    - message: The text shown as the main body of the prompt dialog.
-    ///    - placeholder: The placeholder shown in the text field.
-    private func promptLevelName(level: Level, title: String, message: String, placeholder: String) {
-        DialogHelpers.promptInput(in: viewController,
-                                  title: title,
-                                  message: message,
-                                  placeholder: placeholder,
-                                  onConfirm: { (input) in
-            self.saveData(for: level, to: input)
-        })
+    /// Given a file name, gets the URL to the JSON file.
+    /// - Parameter fileName: The name of the JSON file.
+    /// - Returns: The URL of the JSON file.
+    private func getJsonPath(to fileName: String) -> URL {
+        let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return folder.appendingPathComponent(fileName + Settings.extensionNameData)
+    }
+
+    /// Given a file name, gets the URL to the PNG image.
+    /// - Parameter fileName: The name of the PNG image.
+    /// - Returns: The URL of the PNG image.
+    private func getImagePath(to fileName: String) -> URL {
+        let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return folder.appendingPathComponent(fileName + Settings.extensionNameImage)
     }
 
     /// Shows an alert message to the user.
