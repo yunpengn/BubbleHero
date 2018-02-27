@@ -423,6 +423,9 @@
                                             <constraint firstAttribute="width" constant="64" id="g1G-Lv-PlA"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="back-green"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="Dc0-7E-MPc" eventType="touchUpInside" id="ZDe-WX-cMP"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select one of the levels below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQi-Ib-BtQ">
                                         <rect key="frame" x="175.5" y="0.0" width="417" height="100"/>
@@ -463,10 +466,10 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qlA-Q8-LuX" userLabel="LevelImage">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNp-Wb-9pA" userLabel="Name">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNp-Wb-9pA" userLabel="Name">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -481,6 +484,10 @@
                                             <constraint firstItem="qlA-Q8-LuX" firstAttribute="height" secondItem="Xyp-Mf-AIF" secondAttribute="height" id="mY1-v9-Jc3"/>
                                             <constraint firstItem="UNp-Wb-9pA" firstAttribute="leading" secondItem="Xyp-Mf-AIF" secondAttribute="leading" id="rmb-9y-hlc"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="image" destination="qlA-Q8-LuX" id="f7k-J4-w5e"/>
+                                            <outlet property="name" destination="UNp-Wb-9pA" id="LUa-YM-wYr"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

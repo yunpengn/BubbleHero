@@ -30,13 +30,7 @@ class LoadLevelController: UIViewController {
         levelGallery.dataSource = self
 
         // Gets the urls of the files & screenshoots being saved to.
-        let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        guard let files = try? FileManager.default.contentsOfDirectory(at: folder,
-                                                                       includingPropertiesForKeys: nil,
-                                                                       options: []) else {
-            fatalError("Couldn't read the document directory.")
-        }
-        imageURLs = files.filter { $0.pathExtension == "png" }
+        imageURLs = getAllSavedFiles().filter { $0.pathExtension == "png" }
         dataURLs = imageURLs.map { imageURL in
             return imageURL.deletingPathExtension().appendingPathExtension("json")
         }
@@ -45,5 +39,22 @@ class LoadLevelController: UIViewController {
     /// Always hide the status bar on the top.
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+
+    /// Goes back to the menu view when back button is pressed.
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+
+    /// Gets all the files saved to the document directory.
+    /// - Returns: an array of URLs to all the files saved.
+    private func getAllSavedFiles() -> [URL] {
+        let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        guard let files = try? FileManager.default.contentsOfDirectory(at: folder,
+                                                                       includingPropertiesForKeys: nil,
+                                                                       options: []) else {
+            fatalError("Couldn't read the document directory.")
+        }
+        return files
     }
 }
