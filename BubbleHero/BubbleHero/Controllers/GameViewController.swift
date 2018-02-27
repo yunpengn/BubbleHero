@@ -9,9 +9,17 @@
 import UIKit
 
 class GameViewController: UIViewController {
-    var level: Level?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+
+    // Always hide the status bar on the top.
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+    func loadLevel(_ level: Level) {
+        
     }
 }

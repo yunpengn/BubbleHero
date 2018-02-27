@@ -58,8 +58,18 @@ extension LoadLevelController {
         }
 
         if designerDelegate != nil {
+            // Goes back to the level designer view if coming from there.
             designerDelegate?.loadLevel(level)
             navigationController?.popViewController(animated: true)
+        } else {
+            // Otherwise, start the game with this level.
+            let id = Settings.gameViewControllerId
+            guard let gameViewController = storyboard?.instantiateViewController(withIdentifier: id)
+                as? GameViewController else {
+                    fatalError("Could not find the controller for game view")
+            }
+            gameViewController.loadLevel(level)
+            present(gameViewController, animated: true, completion: nil)
         }
     }
 
