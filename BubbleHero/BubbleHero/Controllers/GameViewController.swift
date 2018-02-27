@@ -32,19 +32,18 @@ class GameViewController: UIViewController {
         return true
     }
 
-    /// Updates the cannon and launches the bubble when the long press gesture is recognized.
+    /// Updates the cannon and launches the bubble when the drag gesture is recognized.
     /// - Parameter sender: The gesture recognizer being triggered.
-    @IBAction func handleLongPressGesture(_ sender: UILongPressGestureRecognizer) {
+    @IBAction func handleDragGesture(_ sender: UIPanGestureRecognizer) {
         let location = sender.location(in: view)
 
         // Rotates the angle of the cannon during the duration of the long press gesture.
         if sender.state == .changed {
             launchController?.rotateCannon(to: location)
         }
-
         // Launches the bubble when the long press gesture is released.
         if sender.state == .ended {
-            
+            launchController?.launchBubble(to: location)
         }
     }
     

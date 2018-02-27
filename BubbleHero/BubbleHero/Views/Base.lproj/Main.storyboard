@@ -682,7 +682,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Lrk-Zr-zpR" appends="YES" id="jPJ-4l-8Wf"/>
+                                    <outletCollection property="gestureRecognizers" destination="Jub-bm-kqT" appends="YES" id="rhv-tl-PyU"/>
                                 </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon" translatesAutoresizingMaskIntoConstraints="NO" id="44i-uH-q2k" userLabel="CannonBody">
@@ -714,11 +714,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFO-us-cgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Lrk-Zr-zpR">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Jub-bm-kqT">
                     <connections>
-                        <action selector="handleLongPressGesture:" destination="6AN-0y-jQ3" id="Aig-s6-BZT"/>
+                        <action selector="handleDragGesture:" destination="6AN-0y-jQ3" id="IUs-DW-S3J"/>
                     </connections>
-                </pongPressGestureRecognizer>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="199" y="1467"/>
         </scene>
