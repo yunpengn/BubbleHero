@@ -25,6 +25,7 @@
 		F252D4A920455F26004FDA03 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4A820455F26004FDA03 /* Helpers.swift */; };
 		F252D4AD20456C8A004FDA03 /* GameViewLaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */; };
 		F29045692045A4CB003CAF7C /* CannonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29045682045A4CB003CAF7C /* CannonView.swift */; };
+		F290456B2045B5A0003CAF7C /* BubbleSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290456A2045B5A0003CAF7C /* BubbleSource.swift */; };
 		F29CD045203D203800C94061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD044203D203800C94061 /* AppDelegate.swift */; };
 		F29CD047203D203800C94061 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD046203D203800C94061 /* MenuViewController.swift */; };
 		F29CD04A203D203800C94061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29CD048203D203800C94061 /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 		F252D4A820455F26004FDA03 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewLaunchController.swift; sourceTree = "<group>"; };
 		F29045682045A4CB003CAF7C /* CannonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannonView.swift; sourceTree = "<group>"; };
+		F290456A2045B5A0003CAF7C /* BubbleSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSource.swift; sourceTree = "<group>"; };
 		F29CD041203D203800C94061 /* BubbleHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29CD044203D203800C94061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F29CD046203D203800C94061 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				F2CAFB2420442FC6002078B2 /* BubbleType.swift */,
+				F290456A2045B5A0003CAF7C /* BubbleSource.swift */,
 				F2CAFB2620443020002078B2 /* Level.swift */,
 				F252D49C20450EF0004FDA03 /* LevelGallery.swift */,
 			);
@@ -480,6 +483,7 @@
 			files = (
 				F2CAFB1E20442D51002078B2 /* FillableBubbleCell.swift in Sources */,
 				F23CD6A22043F5D20053A099 /* Settings.swift in Sources */,
+				F290456B2045B5A0003CAF7C /* BubbleSource.swift in Sources */,
 				F29CD047203D203800C94061 /* MenuViewController.swift in Sources */,
 				F252D4A3204522B9004FDA03 /* SettingsController.swift in Sources */,
 				F252D4932044F751004FDA03 /* Messages.swift in Sources */,

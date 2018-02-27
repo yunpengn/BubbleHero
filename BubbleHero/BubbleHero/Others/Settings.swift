@@ -34,6 +34,8 @@ class Settings {
     static let cellPerRow = 12
     /// The number of types of bubbles in the game currently.
     static let numOfTypes = UInt32(9)
+    /// The number of basic types of bubbles in the game currently.
+    static let numOfBasicTypes = UInt32(4)
     /// The inset for level gallery cells.
     static let levelGalleryCellInset = CGFloat(20)
     /// The number of levels to show in level gallery on each row.
@@ -59,4 +61,7 @@ class Settings {
     static let launchCannonAnchorPoint = CGPoint(x: 0.5, y: 0.9)
     /// The offset transform for the launch cannon.
     static let launchCannonTransformY = CGFloat(50)
+
+    /// The speed in which the shooting bubble will travel.
+    static let shootSpeed = CGFloat(15)
 }

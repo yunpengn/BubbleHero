@@ -41,7 +41,16 @@ class GameViewLaunchController {
     /// should be in.
     func launchBubble(to point: CGPoint) {
         let angle = getShootAngle(by: point)
+        shootBubble(type: BubbleType.blue, angle: angle)
         cannon.startAnimating()
+    }
+
+    /// Shoots a certain `BubbleType` of bubble towards the specific angle.
+    /// - Parameters:
+    ///    - type: The type of the bubble to be shooted.
+    ///    - angle: The angle to shoot towards.
+    func shootBubble(type: BubbleType, angle: CGFloat) {
+
     }
 
     /// Given a point at which the user touches, computes the initial angle of the
@@ -56,6 +65,15 @@ class GameViewLaunchController {
         let deltaY = cannon.center.y - point.y
         let newDeltaY = deltaY > 0 ? deltaY : 0
         return atan2(newDeltaY, deltaX)
+    }
+
+    /// Computes the initial speed of the shooted bubble according to the angle.
+    /// - Parameter angle: The angle in which the bubble is shooted.
+    /// - Returns: A `CGVector` representing the speed of the shooted bubble.
+    private func getShootSpeed(by angle: CGFloat) -> CGVector {
+        let dX = -Settings.shootSpeed * cos(angle)
+        let dY = -Settings.shootSpeed * sin(angle)
+        return CGVector(dx: dX, dy: dY)
     }
 
     /// Checks whether the given angle is accepted, i.e., the angle must be upwards.
