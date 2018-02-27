@@ -17,14 +17,12 @@ import UIKit
  */
 class GameViewLaunchController {
     /// The view for cannon which can visually shoot a bubble.
-    private let cannon: UIView
+    private let cannon: CannonView
     /// The current angle for the cannon.
     private var cannonAngle = CGFloat(CGFloat.pi / 2)
 
-    init(cannon: UIView) {
+    init(cannon: CannonView) {
         self.cannon = cannon
-        cannon.layer.anchorPoint = Settings.launchCannonAnchorPoint
-        cannon.transform = cannon.transform.translatedBy(x: 0, y: Settings.launchCannonTransformY)
     }
 
     /// Rotates the cannon body so that it faces a certain point.
@@ -46,7 +44,6 @@ class GameViewLaunchController {
         guard isAcceptedAngle(angle) else {
             return
         }
-
     }
 
     /// Given a point at which the user touches, computes the initial angle of the

@@ -681,7 +681,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon" translatesAutoresizingMaskIntoConstraints="NO" id="44i-uH-q2k" userLabel="CannonBody">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon" translatesAutoresizingMaskIntoConstraints="NO" id="44i-uH-q2k" userLabel="CannonBody" customClass="CannonView" customModule="BubbleHero" customModuleProvider="target">
                                 <rect key="frame" x="343.5" y="862" width="80" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="6ny-12-LK9"/>
@@ -713,7 +713,7 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="cannonBody" destination="44i-uH-q2k" id="X6F-Vh-FO0"/>
+                        <outlet property="cannonBody" destination="44i-uH-q2k" id="saV-Ek-SaH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFO-us-cgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
