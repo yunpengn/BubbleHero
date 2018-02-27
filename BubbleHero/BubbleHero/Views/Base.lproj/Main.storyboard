@@ -501,6 +501,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ig7-GO-zZp"/>
                     </view>
+                    <connections>
+                        <outlet property="levelGallery" destination="WR5-na-jY2" id="Hdb-pE-WE1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aq9-cr-5BD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
