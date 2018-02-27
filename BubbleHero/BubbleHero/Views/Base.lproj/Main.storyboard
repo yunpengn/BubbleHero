@@ -68,21 +68,25 @@
                             <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-planet" translatesAutoresizingMaskIntoConstraints="NO" id="kZa-BJ-hBe" userLabel="Background">
                                 <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="studio_brand" translatesAutoresizingMaskIntoConstraints="NO" id="ihh-cl-Qyu" userLabel="BrandLogo">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofz-HV-pRn" userLabel="BrandLogo">
                                 <rect key="frame" x="184" y="294" width="400" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="DeQ-RH-L7d"/>
-                                    <constraint firstAttribute="width" constant="400" id="wXX-0c-z7m"/>
+                                    <constraint firstAttribute="width" constant="400" id="agD-h7-Vcf"/>
+                                    <constraint firstAttribute="height" constant="200" id="kyQ-RD-5Fk"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" image="studio_brand"/>
+                                <connections>
+                                    <action selector="brandLogoClicked:" destination="S7P-ma-7KV" eventType="touchUpInside" id="bS5-2T-3zO"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designed with love for CS3217" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcG-mW-lI2">
-                                <rect key="frame" x="205.5" y="474" width="357" height="32.5"/>
+                                <rect key="frame" x="205.5" y="502" width="357" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Niu Yunpeng © 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBz-U4-6GO">
-                                <rect key="frame" x="261" y="514" width="245" height="32.5"/>
+                                <rect key="frame" x="261" y="542" width="245" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -103,14 +107,14 @@
                         <constraints>
                             <constraint firstItem="lcG-mW-lI2" firstAttribute="centerX" secondItem="ros-1l-C7G" secondAttribute="centerX" id="1Rg-UK-hx9"/>
                             <constraint firstItem="kZa-BJ-hBe" firstAttribute="top" secondItem="ros-1l-C7G" secondAttribute="top" id="II5-PS-sRV"/>
-                            <constraint firstItem="ihh-cl-Qyu" firstAttribute="centerX" secondItem="ros-1l-C7G" secondAttribute="centerX" id="Liy-AP-AfG"/>
                             <constraint firstItem="kZa-BJ-hBe" firstAttribute="leading" secondItem="ros-1l-C7G" secondAttribute="leading" id="NFS-fA-DTR"/>
                             <constraint firstItem="jBz-U4-6GO" firstAttribute="top" secondItem="lcG-mW-lI2" secondAttribute="bottom" constant="8" symbolic="YES" id="Qo5-Z1-f4n"/>
-                            <constraint firstItem="ihh-cl-Qyu" firstAttribute="centerY" secondItem="ros-1l-C7G" secondAttribute="centerY" constant="-150" id="b4O-Dh-v4t"/>
-                            <constraint firstItem="lcG-mW-lI2" firstAttribute="top" secondItem="ihh-cl-Qyu" secondAttribute="bottom" constant="-20" id="bQD-De-4b7"/>
+                            <constraint firstItem="lcG-mW-lI2" firstAttribute="top" secondItem="Ofz-HV-pRn" secondAttribute="bottom" constant="8" symbolic="YES" id="aRZ-hw-9J8"/>
                             <constraint firstItem="kZa-BJ-hBe" firstAttribute="trailing" secondItem="ros-1l-C7G" secondAttribute="trailing" id="c0l-4E-E7X"/>
                             <constraint firstItem="ksY-i6-odG" firstAttribute="leading" secondItem="ros-1l-C7G" secondAttribute="leading" id="gpw-sV-jr4"/>
                             <constraint firstItem="kZa-BJ-hBe" firstAttribute="bottom" secondItem="ros-1l-C7G" secondAttribute="bottom" id="laj-hh-SVA"/>
+                            <constraint firstItem="Ofz-HV-pRn" firstAttribute="centerY" secondItem="ros-1l-C7G" secondAttribute="centerY" constant="-150" id="ojI-dz-pcg"/>
+                            <constraint firstItem="Ofz-HV-pRn" firstAttribute="centerX" secondItem="ros-1l-C7G" secondAttribute="centerX" id="vkO-Jw-UgY"/>
                             <constraint firstItem="ksY-i6-odG" firstAttribute="top" secondItem="ros-1l-C7G" secondAttribute="top" id="xx9-mO-DBm"/>
                             <constraint firstItem="jBz-U4-6GO" firstAttribute="centerX" secondItem="ros-1l-C7G" secondAttribute="centerX" id="zOs-cj-Xzj"/>
                         </constraints>
