@@ -14,7 +14,7 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        cannonBody.image = #imageLiteral(resourceName: "cannon").slice(row: 0, column: 0, numOfRows: 2, numOfColumns: 6)
+        cannonBody.image = #imageLiteral(resourceName: "cannon").slice(index: 0, numOfRows: 2, numOfColumns: 6)
     }
 
     // Always hide the status bar on the top.
