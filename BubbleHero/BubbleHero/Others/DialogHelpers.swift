@@ -9,7 +9,7 @@
 import UIKit
 
 /**
- Defines some useful helper methods for the application.
+ Defines some helper methods for popup dialog boxes and interactions with the player.
 
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018

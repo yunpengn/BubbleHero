@@ -64,7 +64,7 @@ extension LevelDesignerController: UICollectionViewDataSource {
 
         // Fills the cell with the correct color of the bubble.
         if let bubbleType = level.getBubbleAt(row: row, column: column) {
-            cell.fill(image: toBubbleImage(of: bubbleType))
+            cell.fill(image: Helpers.toBubbleImage(of: bubbleType))
         }
 
         return cell
@@ -78,31 +78,5 @@ extension LevelDesignerController: UICollectionViewDataSource {
         }
         cell.clear()
         return cell
-    }
-
-    /// Gets an image of the bubble cell according to its type.
-    /// - Parameter type: The type of the bubble
-    /// - Returns: The background image corresponding to this type.
-    private func toBubbleImage(of type: BubbleType) -> UIImage {
-        switch type {
-        case .blue:
-            return #imageLiteral(resourceName: "bubble-blue")
-        case .green:
-            return #imageLiteral(resourceName: "bubble-green")
-        case .orange:
-            return #imageLiteral(resourceName: "bubble-orange")
-        case .red:
-            return #imageLiteral(resourceName: "bubble-red")
-        case .indestructible:
-            return #imageLiteral(resourceName: "bubble-indestructible")
-        case .lightning:
-            return #imageLiteral(resourceName: "bubble-lightning")
-        case .magnetic:
-            return #imageLiteral(resourceName: "bubble-magnetic")
-        case .star:
-            return #imageLiteral(resourceName: "bubble-star")
-        case .bomb:
-            return #imageLiteral(resourceName: "bubble-bomb")
-        }
     }
 }
