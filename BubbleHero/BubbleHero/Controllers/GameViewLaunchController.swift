@@ -41,9 +41,7 @@ class GameViewLaunchController {
     /// should be in.
     func launchBubble(to point: CGPoint) {
         let angle = getShootAngle(by: point)
-        guard isAcceptedAngle(angle) else {
-            return
-        }
+        cannon.startAnimating()
     }
 
     /// Given a point at which the user touches, computes the initial angle of the

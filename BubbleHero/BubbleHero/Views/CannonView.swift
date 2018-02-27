@@ -9,7 +9,8 @@
 import UIKit
 
 class CannonView: UIImageView {
-    static let sprite = Array(0..<12).map { index in
+    /// An array of images used as the animation spritesheet.
+    private static let sprite = Array(0..<12).map { index in
         return #imageLiteral(resourceName: "cannon").slice(index: index, numOfRows: 2, numOfColumns: 6) ?? #imageLiteral(resourceName: "cannon-single")
     }
 
@@ -20,5 +21,6 @@ class CannonView: UIImageView {
 
         image = CannonView.sprite[0]
         animationImages = CannonView.sprite
+        animationRepeatCount = 1
     }
 }
