@@ -45,4 +45,11 @@ class Messages {
     static let failEncodeJson = "Couldn't encode data to JSON format."
     /// The message when a screenshot cannot be taken.
     static let failScreenshot = "Couldn't save a screenshot."
+
+    /// The titel for deleting a level.
+    static let deleteLevelTitle = "Delete Level"
+    /// The message for deleting a level.
+    static let deleteLevelMessage = "Are you sure to delete this level design permanently?"
+    /// The message when deleting a level fails.
+    static let deleteLevelFailMessage = "Sorry, the level is not deleted correctly."
 }

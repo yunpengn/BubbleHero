@@ -6,7 +6,7 @@
 //  Copyright © 2018 Yunpeng Niu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /**
  `LevelGallery` is an abstract data structure that represents a collection of all
@@ -62,6 +62,23 @@ class LevelGallery {
     /// - Returns: The URL to the level design data.
     func getDataPath(at index: Int) -> URL {
         return dataURLs[index]
+    }
+
+    /// Deletes the level at a specific index; does nothing if there is no
+    /// level at the specified index.
+    /// - Parameter index: The index of the intended level (zero-based).
+    func deleteLevel(at index: Int) throws {
+        guard index >= 0 && index < numOfLevels else {
+            return
+        }
+
+        let imagePath = getImagePath(at: index)
+        try FileManager.default.removeItem(at: imagePath)
+        let dataPath = getDataPath(at: index)
+        try FileManager.default.removeItem(at: dataPath)
+
+        imageURLs.remove(at: index)
+        dataURLs.remove(at: index)
     }
 
     /// Counts the number of levels that have been saved previously.

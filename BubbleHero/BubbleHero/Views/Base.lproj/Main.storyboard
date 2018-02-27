@@ -447,7 +447,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WR5-na-jY2" userLabel="LevelGallery">
-                                <rect key="frame" x="0.0" y="164" width="768" height="710"/>
+                                <rect key="frame" x="0.0" y="164" width="768" height="860"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mHB-FR-DV2" userLabel="FlowLayout">
                                     <size key="itemSize" width="50" height="50"/>
@@ -499,7 +499,7 @@
                             <constraint firstItem="aGh-Iz-LTf" firstAttribute="top" secondItem="ig7-GO-zZp" secondAttribute="top" id="B58-zN-ZCI"/>
                             <constraint firstItem="WR5-na-jY2" firstAttribute="top" secondItem="Gh9-5t-k1G" secondAttribute="bottom" id="Bmq-Lh-is9"/>
                             <constraint firstItem="aGh-Iz-LTf" firstAttribute="bottom" secondItem="ig7-GO-zZp" secondAttribute="bottom" id="Kcf-Av-VR5"/>
-                            <constraint firstItem="WR5-na-jY2" firstAttribute="bottom" secondItem="ig7-GO-zZp" secondAttribute="bottom" constant="-150" id="PIj-rO-G7H"/>
+                            <constraint firstItem="WR5-na-jY2" firstAttribute="bottom" secondItem="ig7-GO-zZp" secondAttribute="bottom" id="PIj-rO-G7H"/>
                             <constraint firstItem="Gh9-5t-k1G" firstAttribute="trailing" secondItem="ig7-GO-zZp" secondAttribute="trailing" id="Uqw-fI-SJO"/>
                             <constraint firstItem="WR5-na-jY2" firstAttribute="trailing" secondItem="ig7-GO-zZp" secondAttribute="trailing" id="V4g-V8-9GM"/>
                             <constraint firstItem="Gh9-5t-k1G" firstAttribute="leading" secondItem="ig7-GO-zZp" secondAttribute="leading" id="h4u-dV-hgz"/>

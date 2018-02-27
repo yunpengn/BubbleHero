@@ -23,5 +23,25 @@ extension LoadLevelController {
         guard let indexPath = galleryGrid.indexPathForItem(at: location) else {
             return
         }
+
+        DialogHelpers.promptConfirm(in: self,
+                                    title: Messages.deleteLevelTitle,
+                                    message: Messages.deleteLevelMessage,
+                                    onConfirm: {
+            self.deleteLevel(at: indexPath.row)
+        })
+    }
+
+    /// Deletes the level at a specific index.
+    /// - Parameter index: The index of the level being deleted.
+    private func deleteLevel(at index: Int) {
+        do {
+            try levelGallery.deleteLevel(at: index)
+            galleryGrid.reloadData()
+        } catch {
+            DialogHelpers.showAlertMessage(in: self,
+                                           title: Messages.failAlertTitle,
+                                           message: Messages.deleteLevelFailMessage)
+        }
     }
 }
