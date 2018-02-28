@@ -14,7 +14,19 @@
  - Date: Feb 2018
  */
 struct BubbleSource {
+    /// Tht total number of bubbles that the source will be able to provide,
+    /// after which the source will be considered exhausted and will not
+    /// produce new bubbles any more.
+    private let total: Int
+    /// The number of upcoming bubbles that the source is able to preview,
+    /// which works like a buffer zone or gives players a hint.
+    private let next: Int
     private var current = BubbleType.getRandomType()
+
+    init(total: Int, next: Int) {
+        self.total = total
+        self.next = next
+    }
 
     func peek() -> BubbleType {
         return current

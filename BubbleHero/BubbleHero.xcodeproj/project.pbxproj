@@ -33,6 +33,7 @@
 		F29CD04F203D203800C94061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29CD04D203D203800C94061 /* LaunchScreen.storyboard */; };
 		F29CD05A203D203800C94061 /* BubbleHeroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD059203D203800C94061 /* BubbleHeroUITests.swift */; };
 		F29CD066203D217900C94061 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F29CD065203D217900C94061 /* README.md */; };
+		F2B2A52A2046583900B4FD6A /* FixedQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A5292046583900B4FD6A /* FixedQueue.swift */; };
 		F2C70E372045909B00C27EBC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70E362045909B00C27EBC /* AboutViewController.swift */; };
 		F2CAFB1E20442D51002078B2 /* FillableBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */; };
 		F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */; };
@@ -95,6 +96,7 @@
 		F29CD059203D203800C94061 /* BubbleHeroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleHeroUITests.swift; sourceTree = "<group>"; };
 		F29CD05B203D203800C94061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F29CD065203D217900C94061 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F2B2A5292046583900B4FD6A /* FixedQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedQueue.swift; sourceTree = "<group>"; };
 		F2C70E362045909B00C27EBC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillableBubbleCell.swift; sourceTree = "<group>"; };
 		F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+BubbleGrid.swift"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			children = (
 				F2CAFB2420442FC6002078B2 /* BubbleType.swift */,
 				F290456A2045B5A0003CAF7C /* BubbleSource.swift */,
+				F2B2A5292046583900B4FD6A /* FixedQueue.swift */,
 				F2CAFB2620443020002078B2 /* Level.swift */,
 				F252D49C20450EF0004FDA03 /* LevelGallery.swift */,
 			);
@@ -497,6 +500,7 @@
 				F252D49D20450EF0004FDA03 /* LevelGallery.swift in Sources */,
 				F2CAFB2520442FC6002078B2 /* BubbleType.swift in Sources */,
 				F252D4992045086A004FDA03 /* LoadLevelController+Gallery.swift in Sources */,
+				F2B2A52A2046583900B4FD6A /* FixedQueue.swift in Sources */,
 				F252D4A720454704004FDA03 /* UIImage+Slice.swift in Sources */,
 				F252D4AD20456C8A004FDA03 /* GameViewLaunchController.swift in Sources */,
 				F252D49B20450DE8004FDA03 /* LoadLevelController+Gesture.swift in Sources */,
