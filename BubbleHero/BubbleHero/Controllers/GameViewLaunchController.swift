@@ -60,7 +60,7 @@ class GameViewLaunchController {
     ///    - type: The type of the bubble to be shooted.
     ///    - angle: The angle to shoot towards.
     private func shootBubble(type: BubbleType, angle: CGFloat) {
-        
+
     }
 
     /// Updates the status of the view elements after one bubble in shooted.
