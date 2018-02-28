@@ -41,11 +41,73 @@ import UIKit
  - Date: Feb 2018
  */
 class PhysicsEngine2D {
-    /// A list of all `PhysicsObject`s controlled by this `PhysicsEngine`.
+    /// A list of all `PhysicsBody`s controlled by this `PhysicsEngine`.
     private var physicsObjects: [PhysicsBody] = []
+    /// The area for this physics engine, in which all `PhysicsBody`s should reside.
+    private let area: CGRect
+    /// The delegate for the game engine it belongs to.
+    private let gameEngine: GameEngineDelegate
+
+    /// Creates a physics engine with a certain area.
+    /// - Parameters:
+    ///    - area: The area for the physics engine.
+    ///    - gameEngine: The delegate for the game engine.
+    init(area: CGRect, gameEngine: GameEngineDelegate) {
+        self.area = area
+        self.gameEngine = gameEngine
+    }
 
     func update() {
-        
+        for object in physicsObjects {
+            guard !object.isStatic else {
+                continue
+            }
+            object.move()
+            checkHorizontalReflect(of: object)
+            checkTouchButtom(of: object)
+            checkTouchTop(of: object)
+            checkCollision(of: object)
+        }
+    }
+
+    /// Reflects (by reversing the x-component of its speed) when it touches the left
+    /// or right side of the screen (acting as the "wall").
+    /// - Parameter object: The `PhysicsBody` being checked.
+    private func checkHorizontalReflect(of object: PhysicsBody) {
+        let center = object.center.x
+        if center - object.radius <= 0 || center + object.radius >= area.maxX {
+            object.reflectX()
+        }
+    }
+
+    /// Removes the `PhysicsBody` when it touches the buttom of the screen.
+    /// - Parameter object: The `PhysicsBody` being checked.
+    private func checkTouchButtom(of object: PhysicsBody) {
+        if object.center.y + object.radius >= area.maxY {
+            object.stop()
+            deregisterPhysicsObject(object)
+        }
+    }
+
+    /// Stops the `PhysicsBody` and notifies when it touches the top of the screen.
+    /// - Parameter object: The `PhysicsBody` being checked.
+    private func checkTouchTop(of object: PhysicsBody) {
+        if object.center.y - object.radius <= 0 {
+            object.onCollideWith(nil)
+        }
+    }
+
+    /// Checks whether this `PhysicsBody` collides with any other `PhysicsBody`
+    /// registered in the same `PhysicsEngine`.
+    /// - Parameter object: The `PhysicsBody` being checked.
+    private func checkCollision(of object: PhysicsBody) {
+        for otherObject in physicsObjects {
+            // Notice: Here, the lhs object is the one that is moving and actively causes
+            // the collision. The rhs object is static and waiting for being crashed.
+            if otherObject !== object && object.willCollideWith(otherObject) {
+                object.onCollideWith(otherObject)
+            }
+        }
     }
 
     /// Registers a new `GameObject` into this `PhysicsEngine`. The movement
@@ -61,5 +123,8 @@ class PhysicsEngine2D {
     /// - Parameter toDeregister: The `PhysicsObject` being deregistered.
     func deregisterPhysicsObject(_ toDeregister: PhysicsBody) {
         physicsObjects = physicsObjects.filter { $0 !== toDeregister }
+        if let object = toDeregister as? PhysicsObject {
+            gameEngine.deregisterPhysicsObject(object)
+        }
     }
 }

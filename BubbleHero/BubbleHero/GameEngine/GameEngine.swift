@@ -20,20 +20,24 @@ import UIKit
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
  */
-class GameEngine {
+class GameEngine: GameEngineDelegate {
     /// The rendering engine for this game engine.
     private let renderer: Renderer
     /// The 2D physics engine for this game engine.
-    private let physics = PhysicsEngine2D()
+    private let physics: PhysicsEngine2D
     /// The area for this game engine, in which all `GameObject`s should reside.
     private let area: CGRect
     /// A list of all `GameObject`s controlled by this `GameEngine`.
     private var gameObjects: [GameObject] = []
 
     /// Creates a new game engine by attaching a rending engine to it.
+    /// - Parameters:
+    ///    - renderer: The rendering engine for the game engine.
+    ///    - area: The area for the game engine.
     init(renderer: Renderer, area: CGRect) {
         self.renderer = renderer
         self.area = area
+        physics = PhysicsEngine2D(area: area, gameEngine: self)
 
         let displayLink = CADisplayLink(target: self, selector: #selector(step))
         displayLink.add(to: .current, forMode: .defaultRunLoopMode)
@@ -48,9 +52,7 @@ class GameEngine {
         // Use the physics engine to update all `PhysicsObject`s.
         physics.update()
         // Use the rendering engine to render all `GameObject`s.
-        for object in gameObjects {
-            renderer.render(for: object)
-        }
+        gameObjects.forEach { renderer.render(for: $0) }
     }
 
     /// Registers a new `GameObject` into this `GameEngine`, which will be managed
@@ -85,11 +87,18 @@ class GameEngine {
         renderer.disappear(toDeregister)
     }
 
-    /// Deregisters a `PhysicsObject` from this `GameEngine` and the associated
-    /// `PhysicsEngine`.
-    /// - Parameter toDeregister: The `PhysicsObject` being registered.
     func deregisterPhysicsObject(_ toDeregister: PhysicsObject) {
         deregisterGameObject(toDeregister)
         physics.deregisterPhysicsObject(toDeregister)
     }
+}
+
+/**
+ Acts as a delegate for game engine.
+ */
+protocol GameEngineDelegate {
+    /// Deregisters a `PhysicsObject` from this `GameEngine` and the associated
+    /// `PhysicsEngine`.
+    /// - Parameter toDeregister: The `PhysicsObject` being registered.
+    func deregisterPhysicsObject(_ toDeregister: PhysicsObject)
 }

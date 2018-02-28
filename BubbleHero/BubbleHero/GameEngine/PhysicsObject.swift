@@ -73,6 +73,21 @@ class PhysicsObject: GameObject, PhysicsBody {
         speed = CGVector.zero
     }
 
+    func willCollideWith(_ object: PhysicsBody) -> Bool {
+        guard isRigidBody && object.isRigidBody else {
+            return false
+        }
+        let sqrX = (center.x - object.center.x) * (center.x - object.center.x)
+        let sqrY = (center.y - object.center.y) * (center.y - object.center.y)
+        let sqrRadius = (radius + object.radius) * (radius + object.radius)
+        return sqrX + sqrY <= sqrRadius * EngineSettings.collisionThreshold
+    }
+
+    func onCollideWith(_ object: PhysicsBody?) {
+        stop()
+        object?.stop()
+    }
+
     func reflectX() {
         speed = CGVector(dx: -speed.dx, dy: speed.dy)
     }
