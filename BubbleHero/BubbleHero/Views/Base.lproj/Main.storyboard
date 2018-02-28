@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -695,14 +696,32 @@
                                     <constraint firstAttribute="width" constant="70" id="cap-lh-q1A"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble-blue" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-k4-cwU" userLabel="NextBubble" customClass="BubbleView" customModule="BubbleHero" customModuleProvider="target">
+                                <rect key="frame" x="508" y="924" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="EZN-ST-aPq"/>
+                                    <constraint firstAttribute="height" constant="60" id="Lf3-AX-auD"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble-green" translatesAutoresizingMaskIntoConstraints="NO" id="poj-Yf-att" userLabel="NextSecondBubble" customClass="BubbleView" customModule="BubbleHero" customModuleProvider="target">
+                                <rect key="frame" x="628" y="934" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="JEx-Co-PCO"/>
+                                    <constraint firstAttribute="height" constant="40" id="Nmm-3n-FL7"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vsV-kG-o4L" firstAttribute="top" secondItem="xGH-vM-5tf" secondAttribute="top" id="A30-FX-WUn"/>
+                            <constraint firstItem="poj-Yf-att" firstAttribute="trailing" secondItem="seM-ed-1kp" secondAttribute="trailing" constant="-100" id="EYx-4w-wQ8"/>
                             <constraint firstItem="vsV-kG-o4L" firstAttribute="leading" secondItem="seM-ed-1kp" secondAttribute="leading" id="Fhg-Xw-bq5"/>
                             <constraint firstItem="44i-uH-q2k" firstAttribute="centerX" secondItem="js1-VT-KKL" secondAttribute="centerX" id="N1y-cS-qFp"/>
+                            <constraint firstItem="uh5-k4-cwU" firstAttribute="centerY" secondItem="js1-VT-KKL" secondAttribute="top" id="Ubh-gx-Lrs"/>
                             <constraint firstItem="vsV-kG-o4L" firstAttribute="bottom" secondItem="seM-ed-1kp" secondAttribute="bottom" id="V6B-kn-Bmp"/>
                             <constraint firstItem="js1-VT-KKL" firstAttribute="centerX" secondItem="seM-ed-1kp" secondAttribute="centerX" id="alq-u6-n9p"/>
+                            <constraint firstItem="poj-Yf-att" firstAttribute="centerY" secondItem="js1-VT-KKL" secondAttribute="top" id="dAJ-41-73j"/>
+                            <constraint firstItem="uh5-k4-cwU" firstAttribute="trailing" secondItem="poj-Yf-att" secondAttribute="trailing" constant="-100" id="djx-7B-JbB"/>
                             <constraint firstItem="44i-uH-q2k" firstAttribute="bottom" secondItem="js1-VT-KKL" secondAttribute="top" constant="28" id="iTK-Bl-WIY"/>
                             <constraint firstItem="js1-VT-KKL" firstAttribute="bottom" secondItem="seM-ed-1kp" secondAttribute="bottom" id="lHV-ho-1P9"/>
                             <constraint firstItem="vsV-kG-o4L" firstAttribute="trailing" secondItem="seM-ed-1kp" secondAttribute="trailing" id="n1x-cL-ulT"/>
@@ -714,6 +733,8 @@
                     </view>
                     <connections>
                         <outlet property="cannonBody" destination="44i-uH-q2k" id="saV-Ek-SaH"/>
+                        <outlet property="nextBubble" destination="uh5-k4-cwU" id="cBA-yp-ECj"/>
+                        <outlet property="nextSecondBubble" destination="poj-Yf-att" id="a3A-R5-cl7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFO-us-cgA" userLabel="First Responder" sceneMemberID="firstResponder"/>

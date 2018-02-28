@@ -35,6 +35,7 @@
 		F29CD066203D217900C94061 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F29CD065203D217900C94061 /* README.md */; };
 		F2B2A52A2046583900B4FD6A /* FixedQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A5292046583900B4FD6A /* FixedQueue.swift */; };
 		F2B2A52E204660A400B4FD6A /* Double+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A52D204660A400B4FD6A /* Double+Random.swift */; };
+		F2B2A53020466FBF00B4FD6A /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A52F20466FBF00B4FD6A /* BubbleView.swift */; };
 		F2C70E372045909B00C27EBC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70E362045909B00C27EBC /* AboutViewController.swift */; };
 		F2CAFB1E20442D51002078B2 /* FillableBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */; };
 		F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */; };
@@ -99,6 +100,7 @@
 		F29CD065203D217900C94061 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F2B2A5292046583900B4FD6A /* FixedQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedQueue.swift; sourceTree = "<group>"; };
 		F2B2A52D204660A400B4FD6A /* Double+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Random.swift"; sourceTree = "<group>"; };
+		F2B2A52F20466FBF00B4FD6A /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		F2C70E362045909B00C27EBC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillableBubbleCell.swift; sourceTree = "<group>"; };
 		F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+BubbleGrid.swift"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		F23CD6982043C2D20053A099 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F2B2A52F20466FBF00B4FD6A /* BubbleView.swift */,
 				F29045682045A4CB003CAF7C /* CannonView.swift */,
 				F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */,
 				F252D49620450475004FDA03 /* LevelGalleryCell.swift */,
@@ -507,6 +510,7 @@
 				F252D4A720454704004FDA03 /* UIImage+Slice.swift in Sources */,
 				F252D4AD20456C8A004FDA03 /* GameViewLaunchController.swift in Sources */,
 				F252D49B20450DE8004FDA03 /* LoadLevelController+Gesture.swift in Sources */,
+				F2B2A53020466FBF00B4FD6A /* BubbleView.swift in Sources */,
 				F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */,
 				F2B2A52E204660A400B4FD6A /* Double+Random.swift in Sources */,
 				F23CD69A2043C2EE0053A099 /* MenuButton.swift in Sources */,

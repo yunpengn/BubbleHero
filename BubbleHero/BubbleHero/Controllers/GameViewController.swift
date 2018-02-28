@@ -18,12 +18,18 @@ import UIKit
 class GameViewController: UIViewController {
     /// The body of the cannon used to shoot bubble.
     @IBOutlet weak var cannonBody: CannonView!
+    /// The next bubble to be launched.
+    @IBOutlet weak var nextBubble: BubbleView!
+    /// The next second bubble to be launched.
+    @IBOutlet weak var nextSecondBubble: BubbleView!
     /// The controller for bubble launch.
     private var launchController: GameViewLaunchController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        launchController = GameViewLaunchController(cannon: cannonBody)
+        launchController = GameViewLaunchController(cannon: cannonBody,
+                                                    nextBubble: nextBubble,
+                                                    nextSecondBubble: nextSecondBubble)
     }
 
     /// Always hide the status bar on the top.

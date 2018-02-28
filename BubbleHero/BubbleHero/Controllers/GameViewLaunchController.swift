@@ -18,11 +18,20 @@ import UIKit
 class GameViewLaunchController {
     /// The view for cannon which can visually shoot a bubble.
     private let cannon: CannonView
+    /// The view to show the next bubble to be launched.
+    private let nextBubble: BubbleView
+    /// The view to show the next second bubble to be launched.
+    private let nextSecondBubble: BubbleView
     /// The current angle for the cannon.
     private var cannonAngle = CGFloat(CGFloat.pi / 2)
+    /// The source for bubbles to launch.
+    private var source = BubbleSource(next: Settings.numOfPreviewBubbles)
 
-    init(cannon: CannonView) {
+    init(cannon: CannonView, nextBubble: BubbleView, nextSecondBubble: BubbleView) {
         self.cannon = cannon
+        self.nextBubble = nextBubble
+        self.nextSecondBubble = nextSecondBubble
+        updateView()
     }
 
     /// Rotates the cannon body so that it faces a certain point.
@@ -43,14 +52,33 @@ class GameViewLaunchController {
         let angle = getShootAngle(by: point)
         shootBubble(type: BubbleType.blue, angle: angle)
         cannon.startAnimating()
+        updateView()
     }
 
     /// Shoots a certain `BubbleType` of bubble towards the specific angle.
     /// - Parameters:
     ///    - type: The type of the bubble to be shooted.
     ///    - angle: The angle to shoot towards.
-    func shootBubble(type: BubbleType, angle: CGFloat) {
+    private func shootBubble(type: BubbleType, angle: CGFloat) {
+        
+    }
 
+    /// Updates the status of the view elements after one bubble in shooted.
+    private func updateView() {
+        guard let nextOne = source.getBubble(at: 0),
+            let nextSecond = source.getBubble(at: 1) else {
+            fatalError("Some internal settings are wrong.")
+        }
+
+        nextBubble.image = Helpers.toBubbleImage(of: nextOne.type)
+        if !nextOne.isSnapping {
+            nextBubble.addBorder()
+        }
+
+        nextSecondBubble.image = Helpers.toBubbleImage(of: nextSecond.type)
+        if !nextSecond.isSnapping {
+            nextSecondBubble.addBorder()
+        }
     }
 
     /// Given a point at which the user touches, computes the initial angle of the

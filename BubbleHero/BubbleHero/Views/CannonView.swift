@@ -8,6 +8,12 @@
 
 import UIKit
 
+/**
+ An `UIImageView` designated for cannon body.
+
+ - Author: Niu Yunpeng @ CS3217
+ - Date: Feb 2018
+ */
 class CannonView: UIImageView {
     /// An array of images used as the animation spritesheet.
     private static let sprite = Array(0..<12).map { index in
