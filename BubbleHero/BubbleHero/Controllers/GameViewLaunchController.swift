@@ -60,7 +60,7 @@ class GameViewLaunchController {
     ///    - type: The type of the bubble to be shooted.
     ///    - angle: The angle to shoot towards.
     private func shootBubble(type: BubbleType, angle: CGFloat) {
-
+        let _ = source.pop()
     }
 
     /// Updates the status of the view elements after one bubble in shooted.
@@ -73,11 +73,14 @@ class GameViewLaunchController {
         nextBubble.image = Helpers.toBubbleImage(of: nextOne.type)
         if !nextOne.isSnapping {
             nextBubble.addBorder()
+        } else {
+            nextBubble.removeBorder()
         }
-
         nextSecondBubble.image = Helpers.toBubbleImage(of: nextSecond.type)
         if !nextSecond.isSnapping {
             nextSecondBubble.addBorder()
+        } else {
+            nextSecondBubble.removeBorder()
         }
     }
 

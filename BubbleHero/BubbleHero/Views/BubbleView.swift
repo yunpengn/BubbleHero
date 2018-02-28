@@ -18,17 +18,17 @@ class BubbleView: UIImageView {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = frame.width / 2
-        layer.borderColor = UIColor.purple.cgColor
+        layer.borderWidth = 2
         removeBorder()
     }
 
     /// Adds a purple border with a width of 2 around the bubble image.
     func addBorder() {
-        layer.borderWidth = 2
+        layer.borderColor = UIColor.purple.cgColor
     }
 
     /// Removes the purple border from the bubble image.l
     func removeBorder() {
-        layer.borderWidth = 0
+        layer.borderColor = UIColor.clear.cgColor
     }
 }
