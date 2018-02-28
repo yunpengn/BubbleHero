@@ -22,7 +22,7 @@ import UIKit
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
  */
-protocol PhysicsBody {
+protocol PhysicsBody: AnyObject {
     /// The current acceleration of the `PhysicsBody`.
     var acceleration: CGVector { get set }
     /// The current speed of the `PhysicsBody`.

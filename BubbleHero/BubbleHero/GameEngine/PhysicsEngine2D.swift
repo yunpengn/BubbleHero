@@ -37,7 +37,7 @@ import UIKit
  */
 class PhysicsEngine2D {
     /// A list of all `PhysicsObject`s controlled by this `PhysicsEngine`.
-    private var physicsObjects: [PhysicsObject] = []
+    private var physicsObjects: [PhysicsBody] = []
 
     func update() {
         
@@ -47,14 +47,14 @@ class PhysicsEngine2D {
     /// and collision detection of this `GameObject` will be managed by this
     /// `PhysicsEngine` from now on.
     /// - Parameter toRegister: The `PhysicsObject` being registered.
-    func registerPhysicsObject(_ toRegister: PhysicsObject) {
+    func registerPhysicsObject(_ toRegister: PhysicsBody) {
         physicsObjects.append(toRegister)
     }
 
     /// Deregisters a `PhysicsObject` from this `PhysicsEngine`, who will not be in
     /// charge of its movement and collision detection from on.
     /// - Parameter toDeregister: The `PhysicsObject` being deregistered.
-    func deregisterPhysicsObject(_ toDeregister: PhysicsObject) {
+    func deregisterPhysicsObject(_ toDeregister: PhysicsBody) {
         physicsObjects = physicsObjects.filter { $0 !== toDeregister }
     }
 }
