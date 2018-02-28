@@ -91,29 +91,6 @@ class Level: Codable {
         bubbles[row][column] = nil
     }
 
-    /// Gets the neighbors of a certain location, the items at the nearby indices
-    /// are not `nil`.
-    ///
-    /// Notice: the nearby indices here are defined as the cellular network. Thus,
-    /// there are at most 6 neighbors.
-    /// - Parameters:
-    ///    - row: The row number of the intended location (zero-based).
-    ///    - column: The column number of the intended location (zero-based).
-    /// - Returns: An array of neighbors if there exists; empty array otherwise.
-    private func getNeighborsOf(row: Int, column: Int) -> [BubbleType] {
-        var neighbors: [BubbleType?] = []
-
-        let nearRowOffset = (row % 2 == 0) ? -1 : 1
-        neighbors.append(getBubbleAt(row: row, column: column - 1))
-        neighbors.append(getBubbleAt(row: row, column: column + 1))
-        neighbors.append(getBubbleAt(row: row - 1, column: column))
-        neighbors.append(getBubbleAt(row: row - 1, column: column + nearRowOffset))
-        neighbors.append(getBubbleAt(row: row + 1, column: column))
-        neighbors.append(getBubbleAt(row: row + 1, column: column + nearRowOffset))
-
-        return neighbors.flatMap { $0 }
-    }
-
     /// Checks whether a certain location is valid in a `Level`.
     /// - Parameters:
     ///    - row: The row number of the checked location (zero-based).

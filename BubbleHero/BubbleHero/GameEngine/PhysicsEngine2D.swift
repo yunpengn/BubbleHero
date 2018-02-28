@@ -46,15 +46,14 @@ class PhysicsEngine2D {
     /// The area for this physics engine, in which all `PhysicsBody`s should reside.
     private let area: CGRect
     /// The delegate for the game engine it belongs to.
-    private let gameEngine: GameEngineDelegate
+    var gameEngine: GameEngineDelegate?
 
     /// Creates a physics engine with a certain area.
     /// - Parameters:
     ///    - area: The area for the physics engine.
     ///    - gameEngine: The delegate for the game engine.
-    init(area: CGRect, gameEngine: GameEngineDelegate) {
+    init(area: CGRect) {
         self.area = area
-        self.gameEngine = gameEngine
     }
 
     func update() {
@@ -124,7 +123,7 @@ class PhysicsEngine2D {
     func deregisterPhysicsObject(_ toDeregister: PhysicsBody) {
         physicsObjects = physicsObjects.filter { $0 !== toDeregister }
         if let object = toDeregister as? PhysicsObject {
-            gameEngine.deregisterPhysicsObject(object)
+            gameEngine?.deregisterPhysicsObject(object)
         }
     }
 }

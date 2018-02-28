@@ -37,7 +37,8 @@ class GameEngine: GameEngineDelegate {
     init(renderer: Renderer, area: CGRect) {
         self.renderer = renderer
         self.area = area
-        physics = PhysicsEngine2D(area: area, gameEngine: self)
+        physics = PhysicsEngine2D(area: area)
+        physics.gameEngine = self
 
         let displayLink = CADisplayLink(target: self, selector: #selector(step))
         displayLink.add(to: .current, forMode: .defaultRunLoopMode)

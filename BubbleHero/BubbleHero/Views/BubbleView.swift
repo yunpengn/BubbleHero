@@ -15,7 +15,18 @@ import UIKit
  - Date: Feb 2018
  */
 class BubbleView: UIImageView {
-    override func awakeFromNib() {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    /// Performs some intial settings.
+    private func setup() {
         super.awakeFromNib()
         layer.cornerRadius = frame.width / 2
         layer.borderWidth = 2

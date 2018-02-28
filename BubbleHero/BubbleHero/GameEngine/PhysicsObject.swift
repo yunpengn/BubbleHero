@@ -40,16 +40,17 @@ class PhysicsObject: GameObject, PhysicsBody {
         super.init(view: view)
     }
 
-    /// Creates a `GameObject` with the default setting that its visual center is its
+    /// Creates a `PhysicsObject` with the default setting that its visual center is its
     /// actual center.
-    convenience init(radius: CGFloat, isRigidBody: Bool, view: UIView) {
+    convenience init(isRigidBody: Bool, view: UIView) {
         let center = CGPoint(x: view.frame.midX, y: view.frame.midY)
+        let radius = view.frame.width / 2
         self.init(center: center, radius: radius, isRigidBody: isRigidBody, view: view)
     }
 
-    /// Creates a `GameObject` with the default setting that it is a rigid body.
-    convenience init(radius: CGFloat, view: UIView) {
-        self.init(radius: radius, isRigidBody: true, view: view)
+    /// Creates a `PhysicsObject` with the default setting that it is a rigid body.
+    convenience override init(view: UIView) {
+        self.init(isRigidBody: true, view: view)
     }
 
     func move() {
