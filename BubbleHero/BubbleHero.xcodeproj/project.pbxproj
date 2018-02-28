@@ -178,12 +178,11 @@
 		F23CD69B2043DAFC0053A099 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F2B2A5332046845000B4FD6A /* GameView */,
 				F2B2A5312046765900B4FD6A /* LevelDesigner */,
 				F2B2A5322046768100B4FD6A /* LoadLevel */,
 				F29CD046203D203800C94061 /* MenuViewController.swift */,
 				F2C70E362045909B00C27EBC /* AboutViewController.swift */,
-				F252D4A420452559004FDA03 /* GameViewController.swift */,
-				F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */,
 				F252D4A2204522B9004FDA03 /* SettingsController.swift */,
 			);
 			path = Controllers;
@@ -266,6 +265,15 @@
 				F252D49A20450DE8004FDA03 /* LoadLevelController+Gesture.swift */,
 			);
 			path = LoadLevel;
+			sourceTree = "<group>";
+		};
+		F2B2A5332046845000B4FD6A /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				F252D4A420452559004FDA03 /* GameViewController.swift */,
+				F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */,
+			);
+			path = GameView;
 			sourceTree = "<group>";
 		};
 		F2CAFB2320442FB4002078B2 /* Models */ = {
