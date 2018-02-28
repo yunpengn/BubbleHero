@@ -36,36 +36,25 @@ import UIKit
  - Date: Feb 2018
  */
 class PhysicsEngine2D {
-    /// A list of all `GameObject`s controlled by this `PhysicsEngine`.
-    private var physicsObjects: [GameObject] = []
+    /// A list of all `PhysicsObject`s controlled by this `PhysicsEngine`.
+    private var physicsObjects: [PhysicsObject] = []
 
-    /// Initializes a physics engine.
-    init() {
-        let displayLink = CADisplayLink(target: self, selector: #selector(step))
-        displayLink.add(to: .current, forMode: .defaultRunLoopMode)
-    }
-
-    /// A "step" that each registered `GameObject` should perform per frame of the
-    /// `CADisplayLink`. This object includes the control over object movement and
-    /// collision detection.
-    /// - Parameter displayLink: The timer object that synchronizes the drawing to
-    /// the refresh rate of the display.
-    @objc private func step(displayLink: CADisplayLink) {
-
+    func update() {
+        
     }
 
     /// Registers a new `GameObject` into this `PhysicsEngine`. The movement
     /// and collision detection of this `GameObject` will be managed by this
     /// `PhysicsEngine` from now on.
-    /// - Parameter toRegister: The `GameObject` being registered.
-    func registerPhysicsObject(_ toRegister: GameObject) {
+    /// - Parameter toRegister: The `PhysicsObject` being registered.
+    func registerPhysicsObject(_ toRegister: PhysicsObject) {
         physicsObjects.append(toRegister)
     }
 
-    /// Deregisters a `GameObject` from this `PhysicsEngine`, who will not be in
+    /// Deregisters a `PhysicsObject` from this `PhysicsEngine`, who will not be in
     /// charge of its movement and collision detection from on.
-    /// - Parameter toDeregister: The `GameObject` being deregistered.
-    func deregisterPhysicsObject(_ toDeregister: GameObject) {
+    /// - Parameter toDeregister: The `PhysicsObject` being deregistered.
+    func deregisterPhysicsObject(_ toDeregister: PhysicsObject) {
         physicsObjects = physicsObjects.filter { $0 !== toDeregister }
     }
 }

@@ -34,23 +34,62 @@ class GameEngine {
     init(renderer: Renderer, area: CGRect) {
         self.renderer = renderer
         self.area = area
+
+        let displayLink = CADisplayLink(target: self, selector: #selector(step))
+        displayLink.add(to: .current, forMode: .defaultRunLoopMode)
+    }
+
+    /// A "step" that each registered `GameObject` should perform per frame of the
+    /// `CADisplayLink`, which will in turn be controlled by the physics engine and
+    /// rendering engine.
+    /// - Parameter displayLink: The timer object that synchronizes the drawing to
+    /// the refresh rate of the display.
+    @objc private func step(displayLink: CADisplayLink) {
+        // Use the physics engine to update all `PhysicsObject`s.
+        physics.update()
+        // Use the rendering engine to render all `GameObject`s.
+        for object in gameObjects {
+            renderer.render(for: object)
+        }
     }
 
     /// Registers a new `GameObject` into this `GameEngine`, which will be managed
-    /// by the game engine from now on. The `GameObject` must be deregistered if
-    /// it has been registered into any `GameEngine` before.
+    /// by the game engine from now on. You should deregister this `GameObject`
+    /// before you call this method if it has been registered into any `GameEngine`
+    /// before.
+    ///
+    /// Notice: You should call `registerPhysicsObject` if it is a `PhysicsObject`
+    /// and you want the physics engine to manage its movement & collision.
     /// - Parameter toRegister: The `GameObject` being registered.
     func registerGameObject(_ toRegister: GameObject) {
         gameObjects.append(toRegister)
     }
 
+    /// Registers a `PhysicsObject` into this `GameEngine` and the associated
+    /// `PhysicsEngine`.
+    /// - Parameter toRegister: The `PhysicsObject` being registered.
+    func registerPhysicsObject(_ toRegister: PhysicsObject) {
+        registerGameObject(toRegister)
+        physics.registerPhysicsObject(toRegister)
+    }
+
     /// Deregisters a `GameObject` from this `GameEngine`, which will not be managed
     /// by the game engine anymore. This method will do nothing if the `GameObject`
     /// was not registered with this `GameEngine` before.
+    ///
+    /// Notice: You should call `deregisterPhysicsObject` if it is a `PhysicsObject`
+    /// and it is managed by the physics engine.
     /// - Parameter toDeregister: The `GameObject` being deregistered.
     func deregisterGameObject(_ toDeregister: GameObject) {
-        // We have to use identity operator because there is no other possible
-        // way to identify the most generic form of a `GameObject`.
         gameObjects = gameObjects.filter { $0 !== toDeregister }
+        renderer.disappear(toDeregister)
+    }
+
+    /// Deregisters a `PhysicsObject` from this `GameEngine` and the associated
+    /// `PhysicsEngine`.
+    /// - Parameter toDeregister: The `PhysicsObject` being registered.
+    func deregisterPhysicsObject(_ toDeregister: PhysicsObject) {
+        deregisterGameObject(toDeregister)
+        physics.deregisterPhysicsObject(toDeregister)
     }
 }

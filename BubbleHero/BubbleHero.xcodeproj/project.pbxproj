@@ -40,6 +40,7 @@
 		F2B2A5392046956400B4FD6A /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A5382046956400B4FD6A /* Renderer.swift */; };
 		F2B2A53B204695D200B4FD6A /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A53A204695D200B4FD6A /* GameObject.swift */; };
 		F2B2A53D2046990700B4FD6A /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A53C2046990700B4FD6A /* GameEngine.swift */; };
+		F2B2A53F2046C6D700B4FD6A /* PhysicsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A53E2046C6D700B4FD6A /* PhysicsObject.swift */; };
 		F2C70E372045909B00C27EBC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70E362045909B00C27EBC /* AboutViewController.swift */; };
 		F2CAFB1E20442D51002078B2 /* FillableBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */; };
 		F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */; };
@@ -109,6 +110,7 @@
 		F2B2A5382046956400B4FD6A /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		F2B2A53A204695D200B4FD6A /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		F2B2A53C2046990700B4FD6A /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		F2B2A53E2046C6D700B4FD6A /* PhysicsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsObject.swift; sourceTree = "<group>"; };
 		F2C70E362045909B00C27EBC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillableBubbleCell.swift; sourceTree = "<group>"; };
 		F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+BubbleGrid.swift"; sourceTree = "<group>"; };
@@ -289,8 +291,9 @@
 			isa = PBXGroup;
 			children = (
 				F2B2A53C2046990700B4FD6A /* GameEngine.swift */,
-				F2B2A53A204695D200B4FD6A /* GameObject.swift */,
 				F2B2A5362046879000B4FD6A /* PhysicsEngine2D.swift */,
+				F2B2A53A204695D200B4FD6A /* GameObject.swift */,
+				F2B2A53E2046C6D700B4FD6A /* PhysicsObject.swift */,
 				F2B2A5382046956400B4FD6A /* Renderer.swift */,
 			);
 			path = GameEngine;
@@ -550,6 +553,7 @@
 				F252D49720450475004FDA03 /* LevelGalleryCell.swift in Sources */,
 				F252D49D20450EF0004FDA03 /* LevelGallery.swift in Sources */,
 				F2CAFB2520442FC6002078B2 /* BubbleType.swift in Sources */,
+				F2B2A53F2046C6D700B4FD6A /* PhysicsObject.swift in Sources */,
 				F252D4992045086A004FDA03 /* LoadLevelController+Gallery.swift in Sources */,
 				F2B2A52A2046583900B4FD6A /* FixedQueue.swift in Sources */,
 				F252D4A720454704004FDA03 /* UIImage+Slice.swift in Sources */,
