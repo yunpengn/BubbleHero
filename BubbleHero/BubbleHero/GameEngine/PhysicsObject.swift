@@ -18,15 +18,10 @@ import UIKit
  - Date: Feb 2018
  */
 class PhysicsObject: GameObject, PhysicsBody {
-    /// The current acceleration of the `GameObject`, whose initial value is (0, 0).
     var acceleration = CGVector.zero
-    /// The current speed of the `GameObject`, whose initial value is (0, 0).
     var speed = CGVector.zero
-    /// The coordinate of the center of the `GameObject`.
     var center: CGPoint
-    /// The radius of the `GameObject`.
     let radius: CGFloat
-    /// Indiciates whether the `GameObject` is a rigid body.
     let isRigidBody: Bool
 
     /// Creates a `PhysicsObject` by associating it with a `UIView` object.
