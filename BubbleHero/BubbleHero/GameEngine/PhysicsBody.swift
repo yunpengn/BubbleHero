@@ -19,6 +19,9 @@ import UIKit
  3. The object does not have a mass or volumn because it is a 2D idealized object.
  4. The object can optionally be a rigid body. Collision can only happen between
  two rigid bodies.
+ 5. In this imaginary world, `PhysicsBody` is sticky, i.e., it can be "attached"
+ to other `PhysicsBody`s. Notice that "attachment" should be double-way for it to
+ make sense, i.e, A is attached to B implies B is attached to A.
 
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
@@ -66,6 +69,12 @@ protocol PhysicsBody: AnyObject {
     /// The handler when the `PhysicsBody` collides with others.
     /// - Parameter object: The other `PhysicsBody` collided with; nil if we do not know.
     func onCollideWith(_ object: PhysicsBody?)
+
+    /// Attachs this `PhysicsBody` to another `PhysicsBody`.
+    func attachTo(_ object: PhysicsBody)
+
+    /// Checks whether this `PhysicsBody` is attached to another `PhysicsBody`.
+    func isAttachedTo(_ object: PhysicsBody) -> Bool
 
     /// Reverses the x-component of the speed to simulate a horizontal "reflect".
     func reflectX()

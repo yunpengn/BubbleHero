@@ -24,6 +24,9 @@ class PhysicsObject: GameObject, PhysicsBody {
     let radius: CGFloat
     let isRigidBody: Bool
 
+    // An array of objects that it is attached to.
+    private var attachedWith: [PhysicsBody] = []
+
     /// Creates a `PhysicsObject` by associating it with a `UIView` object.
     /// - Parameters:
     ///    - center: The coordinate for the center of the `GameObject`.
@@ -86,6 +89,14 @@ class PhysicsObject: GameObject, PhysicsBody {
     func onCollideWith(_ object: PhysicsBody?) {
         stop()
         object?.stop()
+    }
+
+    func attachTo(_ object: PhysicsBody) {
+        attachedWith.append(object)
+    }
+
+    func isAttachedTo(_ object: PhysicsBody) -> Bool {
+        return attachedWith.first { $0 === object } != nil
     }
 
     func reflectX() {
