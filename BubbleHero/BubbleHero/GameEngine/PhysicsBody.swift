@@ -16,7 +16,8 @@ import UIKit
  the same shape.
  2. Each object has its own independent position, velocity and acceleration.
  The position is referred as the center of the circle.
- 3. The object can optionally be a rigid body. Collision can only happen between
+ 3. The object does not have a mass or volumn because it is a 2D idealized object.
+ 4. The object can optionally be a rigid body. Collision can only happen between
  two rigid bodies.
 
  - Author: Niu Yunpeng @ CS3217

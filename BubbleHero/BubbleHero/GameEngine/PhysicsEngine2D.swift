@@ -10,11 +10,11 @@ import UIKit
 
 /**
  This class implements a simplified 2D physics engine which supports simple object
- movement and collision detection.
+ movement, collision detection and attraction (according to Coulomb's law).
 
  ## Object movement:
  Any object can start moving by giving it an initial speed or giving it an initial
- acceleration. Notice that since `GameObject` does not have a mass, it will not obey
+ acceleration. Notice that since `PhysicsBody` does not have a mass, it will not obey
  Newton's 2nd law and thus all acceleration must be explicitly given rather than derived
  from an external force.
 
@@ -31,6 +31,11 @@ import UIKit
 
  In addition, collision can only happen between two rigid bodies. This idea of "rigid
  body" is inspired by Unity3d game engine.
+
+ ## Attraction:
+ Any `MagneticPhysicsBody` can attract other objects. Due to the natural of the application,
+ the calculation here is a bit different from the actual physics. A `MagnetricPhysicsBody`
+ will actually move every moving object by a certain distance.
 
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
