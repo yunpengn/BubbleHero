@@ -93,6 +93,9 @@ class PhysicsObject: GameObject, PhysicsBody {
     }
 
     func attachTo(_ object: PhysicsBody) {
+        guard !isAttachedTo(object) else {
+            return
+        }
         attachedWith.append(object)
     }
 
