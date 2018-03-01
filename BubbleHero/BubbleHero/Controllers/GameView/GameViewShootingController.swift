@@ -35,16 +35,15 @@ class GameViewShootingController: EngineControllerDelegate {
 
     /// Handles the collsion between two `BubbleObject`s.
     private func handleCollsion(lhs: BubbleObject, rhs: BubbleObject?) {
+        // Moves the bubble according to whether it is snapping bubble.
         if lhs.isSnapping {
             snapToNearbyCell(lhs)
             addAttachment(object: lhs)
         } else {
-            adjustPosition(to: rhs)
+            adjustPosition(from: lhs, to: rhs)
         }
-        let sameColor = getSameColorConnectedBubbles(from: lhs)
-        if sameColor.count >= Settings.sameColorThreshold {
-            engine.deregisterPhysicsObject(contentsOf: sameColor)
-        }
+        removeSameColorConnectedBubbles(from: lhs)
+        removeUnattachedBubbles()
     }
 
     /// Finds the position of the nearby cell and moves to it.
@@ -71,13 +70,25 @@ class GameViewShootingController: EngineControllerDelegate {
                 item.attachTo(object)
             }
         }
-        print(object.attachedWith.count)
     }
 
     /// Adjusts the position a little bit so that a non-snapping bubble can barely
     /// touch its attached bubble.
-    private func adjustPosition(to object: PhysicsBody?) {
+    private func adjustPosition(from: BubbleObject, to: BubbleObject?) {
+        guard let other = to else {
+            return
+        }
+        from.attachTo(other)
+        other.attachTo(from)
+    }
 
+    /// Removes the same-color connected bubbles if there are more than 3 of them.
+    /// - Parameter object: The `BubbleObject` to start from.
+    private func removeSameColorConnectedBubbles(from object: BubbleObject) {
+        let sameColor = getSameColorConnectedBubbles(from: object)
+        if sameColor.count >= Settings.sameColorThreshold {
+            engine.deregisterPhysicsObject(contentsOf: sameColor)
+        }
     }
 
     /// Gets the connected bubbles (with the same color) starting from this bubble.
@@ -103,5 +114,51 @@ class GameViewShootingController: EngineControllerDelegate {
         }
 
         return result
+    }
+
+    /// Finds and removes the unattached bubbles. A bubble is defined as "unattached"
+    /// if it is not connected to the top wall or any other attached bubbles.
+    private func removeUnattachedBubbles() {
+        updateAttachToTop()
+        // Removes those "unattached" ones.
+        for item in engine.physicsObjects {
+            guard let bubble = item as? BubbleObject else {
+                continue
+            }
+            if !bubble.isAttachedToTop {
+                engine.deregisterPhysicsObject(bubble)
+            }
+        }
+    }
+
+    /// Updates the status of all bubbles regarding whether they are attached to the
+    /// top wall, either directly or indirectly.
+    private func updateAttachToTop() {
+        var toCheck = Stack<BubbleObject>()
+
+        // Gets those who can directly touch the top wall first.
+        for item in engine.physicsObjects {
+            guard let bubble = item as? BubbleObject else {
+                continue
+            }
+            if bubble.canTouchTopWall {
+                bubble.isAttachedToTop = true
+                toCheck.push(bubble)
+            }
+            bubble.visited = false
+        }
+
+        // Starts a DFS to update the status of all bubbles.
+        while let next = toCheck.pop() {
+            if next.visited {
+                continue
+            }
+
+            next.visited = true
+            for neighbor in next.getNeighbors() where !neighbor.visited {
+                neighbor.isAttachedToTop = true
+                toCheck.push(neighbor)
+            }
+        }
     }
 }

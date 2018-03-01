@@ -14,8 +14,14 @@ import UIKit
  - Date: Feb 2018
  */
 class BubbleObject: PhysicsObject {
+    /// The type of this bubble.
     let type: BubbleType
+    /// Indicates whether the bubble is a snapping bubble.
     let isSnapping: Bool
+    /// Indicates whether the bubble is attached to the top wall (either directly or indirectly).
+    var isAttachedToTop = false
+    /// Assists the traversal when checking unattached bubbles.
+    var visited = false
 
     init(type: BubbleType, isSnapping: Bool, view: UIView) {
         self.type = type
@@ -43,5 +49,10 @@ class BubbleObject: PhysicsObject {
     /// - Returns: An array of same color neighbors if there exists; empty array otherwise.
     func getSameColorNeighbors() -> [BubbleObject] {
         return getNeighbors().filter { $0.type == type }
+    }
+
+    /// Indicates whether this bubble can touch the top wall directly.
+    var canTouchTopWall: Bool {
+        return center.y <= radius
     }
 }
