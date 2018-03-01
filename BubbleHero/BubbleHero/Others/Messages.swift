@@ -31,7 +31,7 @@ class Messages {
     /// The normal placeholder for saving level.
     static let saveLevelNormalPlaceholder = "Enter name:"
     /// The prompt message when level name is emtpy.
-    static let saveLevelInvalidNameMessage = "The name is invalid. A legal name can only contains"
+    static let saveLevelInvalidNameMessage = "The name is invalid. A legal name can only contains "
         + "alphanumeric characters (a-z, A-Z, 0-9)."
     /// The prompt placeholder when level name is empty.
     static let saveLevelInvalidNamePlaceholder = "Enter a legal name:"
