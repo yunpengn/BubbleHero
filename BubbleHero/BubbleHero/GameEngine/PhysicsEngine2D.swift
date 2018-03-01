@@ -119,20 +119,20 @@ class PhysicsEngine2D {
         }
     }
 
-    /// Registers a new `GameObject` into this `GameEngine`, which will be managed
-    /// by the game engine from now on. You should deregister this `GameObject`
-    /// before you call this method if it has been registered into any `GameEngine`
+    /// Registers a new `PhysicsBody` into this engine, which will be managed
+    /// by the game engine from now on. You should deregister this `PhysicsBody`
+    /// before you call this method if it has been registered into any other engine
     /// before.
-    /// - Parameter toRegister: The `PhysicsObject` being registered.
+    /// - Parameter toRegister: The `PhysicsBody` being registered.
     func registerPhysicsObject(_ toRegister: PhysicsBody) {
         physicsObjects.append(toRegister)
         renderer.appear(toRegister)
     }
 
-    /// Deregisters a `GameObject` from this `GameEngine`, which will not be managed
-    /// by the game engine anymore. This method will do nothing if the `GameObject`
-    /// was not registered with this `GameEngine` before.
-    /// - Parameter toDeregister: The `PhysicsObject` being deregistered.
+    /// Deregisters a `PhysicsBody` from this engine, which will not be managed
+    /// by the game engine anymore. This method will do nothing if the `PhysicsBody`
+    /// was not registered with this engine before.
+    /// - Parameter toDeregister: The `PhysicsBody` being deregistered.
     func deregisterPhysicsObject(_ toDeregister: PhysicsBody) {
         physicsObjects = physicsObjects.filter { $0 !== toDeregister }
         renderer.disappear(toDeregister)

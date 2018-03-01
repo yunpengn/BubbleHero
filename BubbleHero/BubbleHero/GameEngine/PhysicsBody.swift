@@ -22,17 +22,19 @@ import UIKit
  5. In this imaginary world, `PhysicsBody` is sticky, i.e., it can be "attached"
  to other `PhysicsBody`s. Notice that "attachment" should be double-way for it to
  make sense, i.e, A is attached to B implies B is attached to A.
+ 6. Each `PhysicsBody` should be associated with a `UIView` object for the rendering
+ engine to use.
 
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
  */
 protocol PhysicsBody: AnyObject {
-    /// The `UIView` object associated with this `GameObject`.
+    /// The `UIView` object associated with this `PhysicsBody`.
     var view: UIView { get }
     /// The current acceleration of the `PhysicsBody`.
     var acceleration: CGVector { get set }
-    /// The current speed of the `PhysicsBody`.
-    var speed: CGVector { get set }
+    /// The current velocity of the `PhysicsBody`.
+    var velocity: CGVector { get set }
     /// The coordinate of the center of the `PhysicsBody`.
     var center: CGPoint { get set }
     /// The radius of the `PhysicsBody`.
@@ -55,10 +57,10 @@ protocol PhysicsBody: AnyObject {
     /// - Parameter point: The new position of the `PhysicsBody`.
     func move(to point: CGPoint)
 
-    /// Stops a `GameObject` by setting its speed and acceleration both to (0, 0).
+    /// Stops a `PhysicsBody` by setting its speed and acceleration both to (0, 0).
     func stop()
 
-    /// Applies an instantaneous brake to the `GameObject` by settings its speed to (0, 0)
+    /// Applies an instantaneous brake to the `PhysicsBody` by settings its speed to (0, 0)
     /// without affecting its acceleration.
     func brake()
 

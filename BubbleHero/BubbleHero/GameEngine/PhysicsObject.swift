@@ -9,18 +9,18 @@
 import UIKit
 
 /**
- Each object registered in the `PhysicsEngine` must be a `PhysicsObject`. A
- `PhysicsObject` is a `GameObject`, which conforms to the `PhysicsBody`
- protocol. Thus, it possesses some physics properties, like position, velocity
- & acceleration, etc.
+ Each object registered in the `PhysicsEngine` must be a `PhysicsBody`. A
+ `PhysicsObject` is a class which conforms to the `PhysicsBody` protocol.
+ Thus, it possesses some physics properties, like position, velocity &
+ acceleration, etc.
 
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
  */
 class PhysicsObject: PhysicsBody {
-    var view: UIView
+    let view: UIView
     var acceleration = CGVector.zero
-    var speed = CGVector.zero
+    var velocity = CGVector.zero
     var center: CGPoint
     let radius: CGFloat
     let isRigidBody: Bool
@@ -30,9 +30,9 @@ class PhysicsObject: PhysicsBody {
 
     /// Creates a `PhysicsObject` by associating it with a `UIView` object.
     /// - Parameters:
-    ///    - center: The coordinate for the center of the `GameObject`.
-    ///    - radius: The radius of this `GameObject`.
-    ///    - isRigidBody: Indicates whether this `GameObject` is a rigid body.
+    ///    - center: The coordinate for the center of the `PhysicsObject`.
+    ///    - radius: The radius of this `PhysicsObject`.
+    ///    - isRigidBody: Indicates whether this `PhysicsObject` is a rigid body.
     ///    - view: The `UIView` object associated with.
     init(center: CGPoint, radius: CGFloat, isRigidBody: Bool, view: UIView) {
         self.center = center
@@ -55,14 +55,12 @@ class PhysicsObject: PhysicsBody {
     }
 
     func move() {
-        // Applies changes to the `GameObject`'s location.
-        move(by: speed)
-        // Applies changes to the `GameObject`'s speed.
-        speed = CGVector(dx: speed.dx + acceleration.dx, dy: speed.dy + acceleration.dy)
+        move(by: velocity)
+        velocity = CGVector(dx: velocity.dx + acceleration.dx, dy: velocity.dy + acceleration.dy)
     }
 
     func move(by delta: CGVector) {
-        center = CGPoint(x: center.x + speed.dx, y: center.y + speed.dy)
+        center = CGPoint(x: center.x + velocity.dx, y: center.y + velocity.dy)
     }
 
     func move(to point: CGPoint) {
@@ -70,12 +68,12 @@ class PhysicsObject: PhysicsBody {
     }
 
     func stop() {
-        speed = CGVector.zero
+        velocity = CGVector.zero
         acceleration = CGVector.zero
     }
 
     func brake() {
-        speed = CGVector.zero
+        velocity = CGVector.zero
     }
 
     func didCollideWith(_ object: PhysicsBody) -> Bool {
@@ -105,14 +103,14 @@ class PhysicsObject: PhysicsBody {
     }
 
     func reflectX() {
-        speed = CGVector(dx: -speed.dx, dy: speed.dy)
+        velocity = CGVector(dx: -velocity.dx, dy: velocity.dy)
     }
 
     func reflectY() {
-        speed = CGVector(dx: speed.dx, dy: -speed.dy)
+        velocity = CGVector(dx: velocity.dx, dy: -velocity.dy)
     }
 
     var isStatic: Bool {
-        return speed == CGVector.zero && acceleration == CGVector.zero
+        return velocity == CGVector.zero && acceleration == CGVector.zero
     }
 }
