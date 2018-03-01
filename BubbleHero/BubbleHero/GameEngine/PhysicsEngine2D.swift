@@ -43,20 +43,29 @@ import UIKit
 class PhysicsEngine2D {
     /// A list of all `PhysicsBody`s controlled by this `PhysicsEngine`.
     private var physicsObjects: [PhysicsBody] = []
+    /// The rendering engine for this game engine.
+    private let renderer: Renderer
     /// The area for this physics engine, in which all `PhysicsBody`s should reside.
     private let area: CGRect
-    /// The delegate for the game engine it belongs to.
-    var gameEngine: GameEngineDelegate?
 
-    /// Creates a physics engine with a certain area.
+    /// Creates a new physics engine by attaching a rending engine to it.
     /// - Parameters:
-    ///    - area: The area for the physics engine.
-    ///    - gameEngine: The delegate for the game engine.
-    init(area: CGRect) {
+    ///    - renderer: The rendering engine for the game engine.
+    ///    - area: The area for the game engine.
+    init(renderer: Renderer, area: CGRect) {
+        self.renderer = renderer
         self.area = area
+
+        let displayLink = CADisplayLink(target: self, selector: #selector(step))
+        displayLink.add(to: .current, forMode: .defaultRunLoopMode)
     }
 
-    func update() {
+    /// A "step" that each registered `PhysicsBody` should perform per frame of the
+    /// `CADisplayLink`, which will in turn be controlled by the physics engine and
+    /// rendering engine.
+    /// - Parameter displayLink: The timer object that synchronizes the drawing to
+    /// the refresh rate of the display.
+    @objc private func step(displayLink: CADisplayLink) {
         for object in physicsObjects {
             guard !object.isStatic else {
                 continue
@@ -66,6 +75,7 @@ class PhysicsEngine2D {
             checkTouchBottom(of: object)
             checkTouchTop(of: object)
             checkCollision(of: object)
+            renderer.render(for: object)
         }
     }
 
@@ -109,21 +119,22 @@ class PhysicsEngine2D {
         }
     }
 
-    /// Registers a new `GameObject` into this `PhysicsEngine`. The movement
-    /// and collision detection of this `GameObject` will be managed by this
-    /// `PhysicsEngine` from now on.
+    /// Registers a new `GameObject` into this `GameEngine`, which will be managed
+    /// by the game engine from now on. You should deregister this `GameObject`
+    /// before you call this method if it has been registered into any `GameEngine`
+    /// before.
     /// - Parameter toRegister: The `PhysicsObject` being registered.
     func registerPhysicsObject(_ toRegister: PhysicsBody) {
         physicsObjects.append(toRegister)
+        renderer.appear(toRegister)
     }
 
-    /// Deregisters a `PhysicsObject` from this `PhysicsEngine`, who will not be in
-    /// charge of its movement and collision detection from on.
+    /// Deregisters a `GameObject` from this `GameEngine`, which will not be managed
+    /// by the game engine anymore. This method will do nothing if the `GameObject`
+    /// was not registered with this `GameEngine` before.
     /// - Parameter toDeregister: The `PhysicsObject` being deregistered.
     func deregisterPhysicsObject(_ toDeregister: PhysicsBody) {
         physicsObjects = physicsObjects.filter { $0 !== toDeregister }
-        if let object = toDeregister as? PhysicsObject {
-            gameEngine?.deregisterPhysicsObject(object)
-        }
+        renderer.disappear(toDeregister)
     }
 }

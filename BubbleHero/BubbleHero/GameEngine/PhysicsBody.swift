@@ -27,6 +27,8 @@ import UIKit
  - Date: Feb 2018
  */
 protocol PhysicsBody: AnyObject {
+    /// The `UIView` object associated with this `GameObject`.
+    var view: UIView { get }
     /// The current acceleration of the `PhysicsBody`.
     var acceleration: CGVector { get set }
     /// The current speed of the `PhysicsBody`.

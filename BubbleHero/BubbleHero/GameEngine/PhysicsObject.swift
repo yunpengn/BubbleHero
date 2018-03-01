@@ -17,7 +17,8 @@ import UIKit
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
  */
-class PhysicsObject: GameObject, PhysicsBody {
+class PhysicsObject: PhysicsBody {
+    var view: UIView
     var acceleration = CGVector.zero
     var speed = CGVector.zero
     var center: CGPoint
@@ -37,7 +38,7 @@ class PhysicsObject: GameObject, PhysicsBody {
         self.center = center
         self.radius = radius
         self.isRigidBody = isRigidBody
-        super.init(view: view)
+        self.view = view
     }
 
     /// Creates a `PhysicsObject` with the default setting that its visual center is its
@@ -49,7 +50,7 @@ class PhysicsObject: GameObject, PhysicsBody {
     }
 
     /// Creates a `PhysicsObject` with the default setting that it is a rigid body.
-    convenience override init(view: UIView) {
+    convenience init(view: UIView) {
         self.init(isRigidBody: true, view: view)
     }
 
