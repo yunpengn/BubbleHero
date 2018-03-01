@@ -17,8 +17,8 @@ import UIKit
  2. Each object has its own independent position, velocity and acceleration.
  The position is referred as the center of the circle.
  3. The object does not have a mass or volumn because it is a 2D idealized object.
- 4. The object can optionally be a rigid body. Collision can only happen between
- two rigid bodies.
+ 4. The object can optionally be collidable. Collision can only happen between
+ two collidable bodies.
  5. In this imaginary world, `PhysicsBody` is sticky, i.e., it can be "attached"
  to other `PhysicsBody`s. Notice that "attachment" should be double-way for it to
  make sense, i.e, A is attached to B implies B is attached to A.
@@ -39,8 +39,8 @@ protocol PhysicsBody: AnyObject {
     var center: CGPoint { get set }
     /// The radius of the `PhysicsBody`.
     var radius: CGFloat { get }
-    /// Indiciates whether the `PhysicsBody` is a rigid body.
-    var isRigidBody: Bool { get }
+    /// Indiciates whether the `PhysicsBody` is collidable.
+    var isCollidable: Bool { get }
 
     /// Moves the `PhysicsBody` by its current speed. If the current acceleration is
     /// not 0, its speed will be changed accordingly as well. Notice that this method

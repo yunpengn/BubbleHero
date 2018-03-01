@@ -23,7 +23,7 @@ class PhysicsObject: PhysicsBody {
     var velocity = CGVector.zero
     var center: CGPoint
     let radius: CGFloat
-    let isRigidBody: Bool
+    let isCollidable: Bool
 
     // An array of objects that it is attached to.
     private var attachedWith: [PhysicsBody] = []
@@ -32,26 +32,26 @@ class PhysicsObject: PhysicsBody {
     /// - Parameters:
     ///    - center: The coordinate for the center of the `PhysicsObject`.
     ///    - radius: The radius of this `PhysicsObject`.
-    ///    - isRigidBody: Indicates whether this `PhysicsObject` is a rigid body.
+    ///    - isCollidable: Indicates whether this `PhysicsObject` is collidable.
     ///    - view: The `UIView` object associated with.
-    init(center: CGPoint, radius: CGFloat, isRigidBody: Bool, view: UIView) {
+    init(center: CGPoint, radius: CGFloat, isCollidable: Bool, view: UIView) {
         self.center = center
         self.radius = radius
-        self.isRigidBody = isRigidBody
+        self.isCollidable = isCollidable
         self.view = view
     }
 
     /// Creates a `PhysicsObject` with the default setting that its visual center is its
     /// actual center.
-    convenience init(isRigidBody: Bool, view: UIView) {
+    convenience init(isCollidable: Bool, view: UIView) {
         let center = CGPoint(x: view.frame.midX, y: view.frame.midY)
         let radius = view.frame.width / 2
-        self.init(center: center, radius: radius, isRigidBody: isRigidBody, view: view)
+        self.init(center: center, radius: radius, isCollidable: isCollidable, view: view)
     }
 
     /// Creates a `PhysicsObject` with the default setting that it is a rigid body.
     convenience init(view: UIView) {
-        self.init(isRigidBody: true, view: view)
+        self.init(isCollidable: true, view: view)
     }
 
     func move() {
@@ -77,7 +77,7 @@ class PhysicsObject: PhysicsBody {
     }
 
     func didCollideWith(_ object: PhysicsBody) -> Bool {
-        guard isRigidBody && object.isRigidBody else {
+        guard isCollidable && object.isCollidable else {
             return false
         }
         let sqrX = (center.x - object.center.x) * (center.x - object.center.x)

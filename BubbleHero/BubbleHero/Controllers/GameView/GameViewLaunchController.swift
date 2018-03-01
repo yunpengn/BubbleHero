@@ -49,16 +49,14 @@ class GameViewLaunchController {
     /// should be in.
     func launchBubble(to point: CGPoint) {
         let angle = getShootAngle(by: point)
-        shootBubble(type: BubbleType.blue, angle: angle)
+        shootBubble(angle: angle)
         cannon.startAnimating()
         updateView()
     }
 
     /// Shoots a certain `BubbleType` of bubble towards the specific angle.
-    /// - Parameters:
-    ///    - type: The type of the bubble to be shot.
-    ///    - angle: The angle to shoot towards.
-    private func shootBubble(type: BubbleType, angle: CGFloat) {
+    /// - Parameter angle: The angle to shoot towards.
+    private func shootBubble(angle: CGFloat) {
         let newBubble = source.pop()
         let bubbleObject = Helpers.toBubbleObject(type: newBubble.type,
                                                 isSnapping: newBubble.isSnapping,

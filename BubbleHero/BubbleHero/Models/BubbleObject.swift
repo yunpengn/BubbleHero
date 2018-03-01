@@ -20,7 +20,7 @@ class BubbleObject: PhysicsObject {
     init(type: BubbleType, isSnapping: Bool, view: UIView) {
         self.type = type
         self.isSnapping = isSnapping
-        super.init(center: view.center, radius: view.frame.width / 2, isRigidBody: true, view: view)
+        super.init(center: view.center, radius: view.frame.width / 2, isCollidable: true, view: view)
     }
 
     convenience init(type: BubbleType, view: UIView) {
@@ -31,6 +31,8 @@ class BubbleObject: PhysicsObject {
         super.onCollideWith(object)
         if isSnapping {
             snapToNearbyCell()
+        } else {
+            adjustPosition()
         }
     }
 
@@ -46,5 +48,11 @@ class BubbleObject: PhysicsObject {
         let newX = column * FillableBubbleCell.diameter + leftOffset + radius
 
         move(to: CGPoint(x: newX, y: newY))
+    }
+
+    /// Adjusts the position a little bit so that a non-snapping can
+    /// barely touch its attached bubble.
+    private func adjustPosition() {
+
     }
 }

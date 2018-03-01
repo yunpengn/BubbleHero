@@ -58,7 +58,7 @@ class GameViewController: UIViewController {
             launchController?.launchBubble(to: location)
         }
     }
-
+    
     /// Loads a level to start the game with.
     private func loadLevel() {
         guard let startLevel = level else {
