@@ -33,15 +33,22 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Initializes the game and physics engine.
         let engine = PhysicsEngine2D(renderer: self, area: view.frame)
         physicsEngine = engine
+        loadLevel()
+
+        // Initializes the controller for bubble launch.
         launchController = GameViewLaunchController(cannon: cannonBody,
                                                     nextBubble: nextBubble,
                                                     nextSecondBubble: nextSecondBubble)
         launchController?.engine = engine
+
+        // Initializes the controller for bubble shooting and interactions.
         shootingController = GameViewShootingController(engine: engine)
         engine.controllerDelegate = shootingController
-        loadLevel()
+
     }
 
     /// Always hide the status bar on the top.

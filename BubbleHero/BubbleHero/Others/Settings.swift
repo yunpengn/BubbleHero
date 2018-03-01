@@ -45,8 +45,8 @@ class Settings {
     static let cellPerRow = 12
     /// The number of types of bubbles in the game currently.
     static let numOfTypes = UInt32(9)
-    /// The number of basic types of bubbles in the game currently.
-    static let numOfBasicTypes = UInt32(4)
+    /// The number of color types of bubbles in the game currently.
+    static let numOfColorTypes = UInt32(4)
     /// The inset for level gallery cells.
     static let levelGalleryCellInset = CGFloat(20)
     /// The number of levels to show in level gallery on each row.
@@ -80,7 +80,7 @@ class Settings {
     /// The speed in which the shooting bubble will travel.
     static let shootSpeed = CGFloat(15)
     /// The probability that the shooted bubble is snapping.
-    static let snappingThreshold = 0.7
+    static let snappingThreshold = 0.85
     /// The number of next bubbles to preview.
     static let numOfPreviewBubbles = 2
 

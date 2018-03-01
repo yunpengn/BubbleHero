@@ -49,6 +49,7 @@ class GameViewShootingController: EngineControllerDelegate {
         lhs.stop()
         rhs?.stop()
         addAttachment(object: lhs)
+        checkStarBubble(for: lhs)
         removeSameTypeConnectedBubbles(from: lhs)
         removeUnattachedBubbles()
     }
@@ -95,6 +96,38 @@ class GameViewShootingController: EngineControllerDelegate {
         from.move(by: CGVector(dx: -dx, dy: -dy))
     }
 
+    /// Checks whether a certain bubble is a neighbor of star bubble(s) and therefore
+    /// removes all bubbles of the same color and the star bubble(s).
+    /// - Parameter object: The bubble being checked.
+    private func checkStarBubble(for object: BubbleObject) {
+        guard object.type.isColorType else {
+            return
+        }
+
+        let stars = object.getNeighbors().filter { $0.type == .star }
+        if !stars.isEmpty {
+            let bubbles = getAllSameTypeBubbles(of: object.type)
+            engine.deregisterPhysicsObject(contentsOf: bubbles)
+            engine.deregisterPhysicsObject(contentsOf: stars)
+        }
+    }
+
+    /// Finds all the bubbles of a certain type currently.
+    /// - Parameter type: the type to find.
+    /// - Returns: An array of bubbles of that type.
+    private func getAllSameTypeBubbles(of type: BubbleType) -> [BubbleObject] {
+        var result: [BubbleObject] = []
+        for item in engine.physicsObjects {
+            guard let bubble = item as? BubbleObject else {
+                continue
+            }
+            if bubble.type == type {
+                result.append(bubble)
+            }
+        }
+        return result
+    }
+
     /// Removes the same-color connected bubbles if there are more than 3 of them.
     /// - Parameter object: The `BubbleObject` to start from.
     private func removeSameTypeConnectedBubbles(from object: BubbleObject) {
@@ -120,11 +153,6 @@ class GameViewShootingController: EngineControllerDelegate {
 
         // Starts a DFS to find all attached objects with the same color.
         while let next = toVisit.pop() {
-            // Star bubbles will automatically remove all bubbles with the same color.
-            if next.type == .star {
-                return getAllTypeColorBubbles(of: object.type)
-            }
-
             if !result.contains { $0 === next } {
                 result.append(next)
             }
@@ -144,22 +172,6 @@ class GameViewShootingController: EngineControllerDelegate {
             }
         }
 
-        return result
-    }
-
-    /// Finds all the bubbles of a certain type currently.
-    /// - Parameter type: the type to find.
-    /// - Returns: An array of bubbles of that type.
-    private func getAllTypeColorBubbles(of type: BubbleType) -> [BubbleObject] {
-        var result: [BubbleObject] = []
-        for item in engine.physicsObjects {
-            guard let bubble = item as? BubbleObject else {
-                continue
-            }
-            if bubble.type == type {
-                result.append(bubble)
-            }
-        }
         return result
     }
 

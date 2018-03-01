@@ -47,6 +47,11 @@ enum BubbleType: Int, Codable {
         }
     }
 
+    /// Checks whether it is one of the color types.
+    var isColorType: Bool {
+        return rawValue < Settings.numOfColorTypes
+    }
+
     /// Returns a pseudo-random type out of all possible `BubbleType`s.
     /// - Returns: The random type got.
     static func getRandomType() -> BubbleType {
@@ -61,7 +66,7 @@ enum BubbleType: Int, Codable {
     /// color types).
     /// - Returns: The random basic type got.
     static func getRandomBasicType() -> BubbleType {
-        let randomValue = Int(arc4random_uniform(Settings.numOfBasicTypes))
+        let randomValue = Int(arc4random_uniform(Settings.numOfColorTypes))
         guard let type = BubbleType(rawValue: randomValue) else {
             fatalError("The numOfTypes setting is wrong.")
         }
