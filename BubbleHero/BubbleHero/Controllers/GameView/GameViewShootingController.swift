@@ -127,6 +127,7 @@ class GameViewShootingController: EngineControllerDelegate {
                 continue
             }
             if !bubble.isAttachedToTop {
+                // A falling bubble cannot collide with others.
                 bubble.isCollidable = false
                 bubble.acceleration = CGVector(dx: 0, dy: Settings.gravityConstant)
             }

@@ -30,7 +30,8 @@ extension LoadLevelController {
     /// - Parameter sender: The gesture recognizer being triggered.
     @IBAction func handleLongPressGesture(_ sender: UILongPressGestureRecognizer) {
         let location = sender.location(in: galleryGrid)
-        guard let indexPath = galleryGrid.indexPathForItem(at: location) else {
+        guard let indexPath = galleryGrid.indexPathForItem(at: location),
+            indexPath.row != levelGallery.numOfLevels else {
             return
         }
 
@@ -48,6 +49,12 @@ extension LoadLevelController {
     /// - else, start the game with this level.
     /// - Parameter sender: The gesture recognizer being triggered.
     private func loadLevel(at index: Int) {
+        guard index != levelGallery.numOfLevels else {
+            loadRandomLevel()
+            return
+        }
+
+        // Loads the data.
         let dataPath = levelGallery.getDataPath(at: index)
         guard let jsonData = try? Data(contentsOf: dataPath),
             let level = try? JSONDecoder().decode(Level.self, from: jsonData) else {
@@ -63,14 +70,25 @@ extension LoadLevelController {
             navigationController?.popViewController(animated: true)
         } else {
             // Otherwise, starts the game with this level.
-            let id = Settings.gameViewControllerId
-            guard let gameViewController = storyboard?.instantiateViewController(withIdentifier: id)
-                as? GameViewController else {
-                    fatalError("Could not find the controller for game view")
-            }
-            gameViewController.level = level
-            present(gameViewController, animated: true, completion: nil)
+            loadGame(with: level)
         }
+    }
+
+    /// Loads a random level to start the game.
+    private func loadRandomLevel() {
+        loadGame(with: RandomDataHelpers.loadSampleLevel())
+    }
+
+    /// Starts the game by loading a certain level.
+    /// - Parameter level: The level to load.
+    private func loadGame(with level: Level) {
+        let id = Settings.gameViewControllerId
+        guard let gameViewController = storyboard?.instantiateViewController(withIdentifier: id)
+            as? GameViewController else {
+                fatalError("Could not find the controller for game view")
+        }
+        gameViewController.level = level
+        present(gameViewController, animated: true, completion: nil)
     }
 
     /// Deletes the level at a specific index.

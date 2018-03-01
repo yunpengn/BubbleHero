@@ -40,6 +40,8 @@ class Settings {
     static let levelGalleryCellInset = CGFloat(20)
     /// The number of levels to show in level gallery on each row.
     static let levelPerRow = CGFloat(3)
+    /// The name for the randomly generated level.
+    static let randomLevelName = "???"
 
     /// The identifier for cells in the collection view of level designer scene.
     static let designerCellId = "fillableBubbleCell"
