@@ -63,7 +63,7 @@ class Settings {
     /// The speed in which the shooting bubble will travel.
     static let shootSpeed = CGFloat(15)
     /// The probability that the shooted bubble is snapping.
-    static let snappingThreshold = 0.7
+    static let snappingThreshold = 0.9
     /// The number of next bubbles to preview.
     static let numOfPreviewBubbles = 2
 }
