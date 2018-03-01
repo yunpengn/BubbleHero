@@ -69,4 +69,3 @@ class FillableBubbleCell: UICollectionViewCell {
         background = imageView
     }
 }
-

@@ -25,7 +25,7 @@ extension LevelDesignerController: LevelDesignerControllerDelegate {
  Provides the ability to act as the delegate for level designer controller
  such that the controller can be notified when something changed.
  */
-protocol LevelDesignerControllerDelegate {
+protocol LevelDesignerControllerDelegate: AnyObject {
     /// Loads a new level into the level designer.
     /// - Parameter newLevel: The new level being loaded.
     func loadLevel(_ newLevel: Level)

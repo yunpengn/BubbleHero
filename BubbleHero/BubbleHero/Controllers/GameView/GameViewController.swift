@@ -17,18 +17,18 @@ import UIKit
  */
 class GameViewController: UIViewController {
     /// The body of the cannon used to shoot bubble.
-    @IBOutlet weak var cannonBody: CannonView!
+    @IBOutlet private weak var cannonBody: CannonView!
     /// The next bubble to be launched.
-    @IBOutlet weak var nextBubble: BubbleView!
+    @IBOutlet private weak var nextBubble: BubbleView!
     /// The next second bubble to be launched.
-    @IBOutlet weak var nextSecondBubble: BubbleView!
+    @IBOutlet private weak var nextSecondBubble: BubbleView!
     /// The controller for bubble launch.
     private var launchController: GameViewLaunchController?
     /// The physics engine for this controller.
     private var physicsEngine: PhysicsEngine2D?
     /// The level to start with.
     var level: Level?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         physicsEngine = PhysicsEngine2D(renderer: self, area: view.frame)

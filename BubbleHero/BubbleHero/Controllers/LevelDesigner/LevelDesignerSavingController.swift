@@ -50,7 +50,7 @@ class LevelDesignerSavingController {
                                   title: title,
                                   message: message,
                                   placeholder: placeholder,
-                                  onConfirm: { (input) in
+                                  onConfirm: { input in
             self.validateFileName(for: level, to: input)
         })
     }

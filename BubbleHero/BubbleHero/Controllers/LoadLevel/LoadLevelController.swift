@@ -21,8 +21,8 @@ class LoadLevelController: UIViewController {
     /// The model representation of all previously saved levels.
     let levelGallery = LevelGallery()
     /// Delegate for the controller to Level Designer view.
-    var designerDelegate: LevelDesignerControllerDelegate?
-    
+    weak var designerDelegate: LevelDesignerControllerDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         galleryGrid.delegate = self

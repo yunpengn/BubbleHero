@@ -40,7 +40,8 @@ class PaletteBubbleButton: UIButton {
     /// Highlights the currently selected button and also makes sure only one
     /// of the `PaletteBubbleButton`s can be selected at the same time.
     /// - Parameter sender: The button that is selected now.
-    @objc private func handleButtonPressed(_ sender: PaletteBubbleButton) {
+    @objc
+    private func handleButtonPressed(_ sender: PaletteBubbleButton) {
         if sender == PaletteBubbleButton.currentSelected {
             PaletteBubbleButton.currentSelected = nil
             applyDeselectEffect(on: sender)

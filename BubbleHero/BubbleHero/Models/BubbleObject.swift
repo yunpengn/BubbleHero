@@ -26,4 +26,8 @@ class BubbleObject: PhysicsObject {
     convenience init(type: BubbleType, view: UIView) {
         self.init(type: type, isSnapping: true, view: view)
     }
+
+    override func onCollideWith(_ object: PhysicsBody?) {
+        super.onCollideWith(object)
+    }
 }

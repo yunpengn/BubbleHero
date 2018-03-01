@@ -99,7 +99,7 @@ class PhysicsObject: PhysicsBody {
     }
 
     func isAttachedTo(_ object: PhysicsBody) -> Bool {
-        return attachedWith.first { $0 === object } != nil
+        return attachedWith.contains { $0 === object }
     }
 
     func reflectX() {

@@ -38,7 +38,7 @@ extension LoadLevelController {
                                     title: Messages.deleteLevelTitle,
                                     message: Messages.deleteLevelMessage,
                                     onConfirm: {
-                                        self.deleteLevel(at: indexPath.row)
+            self.deleteLevel(at: indexPath.row)
         })
     }
 

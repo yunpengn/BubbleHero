@@ -65,7 +65,8 @@ class PhysicsEngine2D {
     /// rendering engine.
     /// - Parameter displayLink: The timer object that synchronizes the drawing to
     /// the refresh rate of the display.
-    @objc private func step(displayLink: CADisplayLink) {
+    @objc
+    private func step(displayLink: CADisplayLink) {
         for object in physicsObjects {
             guard !object.isStatic else {
                 continue

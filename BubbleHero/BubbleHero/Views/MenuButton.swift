@@ -17,7 +17,7 @@ import UIKit
 class MenuButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = UIColor.init(red: 0.96, green: 0.96, blue: 0.98, alpha: 0.15)
+        backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.98, alpha: 0.15)
         layer.cornerRadius = frame.width / 9
         layer.borderWidth = 1
         layer.borderColor = UIColor.white.cgColor
