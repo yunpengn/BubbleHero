@@ -15,13 +15,9 @@ import UIKit
  - Date: Feb 2018
  */
 class CheckboxButton: UIButton {
-    @IBInspectable var isChecked: Bool = false {
+    @IBInspectable var isChecked: Bool = true {
         didSet {
-            if isChecked {
-                setImage(#imageLiteral(resourceName: "ok-green"), for: .normal)
-            } else {
-                setImage(nil, for: .normal)
-            }
+            toggle()
         }
     }
 
@@ -33,6 +29,7 @@ class CheckboxButton: UIButton {
         layer.borderColor = UIColor.lightGray.cgColor
         setImage(nil, for: .normal)
         addTarget(self, action: #selector(handleButtonPressed), for: .touchUpInside)
+        toggle()
     }
 
     /// Toggles between selected and not selected.
@@ -41,6 +38,14 @@ class CheckboxButton: UIButton {
     private func handleButtonPressed(_ sender: CheckboxButton) {
         if sender == self {
             isChecked = !isChecked
+        }
+    }
+
+    private func toggle() {
+        if isChecked {
+            setImage(#imageLiteral(resourceName: "ok-green"), for: .normal)
+        } else {
+            setImage(nil, for: .normal)
         }
     }
 }

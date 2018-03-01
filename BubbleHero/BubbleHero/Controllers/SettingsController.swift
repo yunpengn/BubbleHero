@@ -32,4 +32,9 @@ class SettingsController: UIViewController {
     @IBAction func backButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+
+    /// Turns the background music on/off.
+    @IBAction func backgroundMusicButtonPressed(_ sender: CheckboxButton) {
+        musicController?.toggle()
+    }
 }

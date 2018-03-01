@@ -29,4 +29,16 @@ class BackgroundMusicController {
         player?.prepareToPlay()
         player?.play()
     }
+
+    /// Pauses the music if it is not playing; resumes otherwise.
+    func toggle() {
+        guard let status = player?.isPlaying else {
+            return
+        }
+        if status {
+            player?.pause()
+        } else {
+            player?.play()
+        }
+    }
 }
