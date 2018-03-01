@@ -77,7 +77,7 @@ class PhysicsObject: GameObject, PhysicsBody {
         speed = CGVector.zero
     }
 
-    func willCollideWith(_ object: PhysicsBody) -> Bool {
+    func didCollideWith(_ object: PhysicsBody) -> Bool {
         guard isRigidBody && object.isRigidBody else {
             return false
         }

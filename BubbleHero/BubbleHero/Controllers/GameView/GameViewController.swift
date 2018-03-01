@@ -24,6 +24,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var nextSecondBubble: BubbleView!
     /// The controller for bubble launch.
     private var launchController: GameViewLaunchController?
+    /// The game engine for this controller.
+    private var gameEngine: GameEngine?
 
     override func viewDidLoad() {
         super.viewDidLoad()

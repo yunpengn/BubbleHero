@@ -94,7 +94,7 @@ class GameViewLaunchController {
     private func getShootAngle(by point: CGPoint) -> CGFloat {
         let deltaX = cannon.center.x - point.x
         let deltaY = cannon.center.y - point.y
-        let newDeltaY = deltaY > 0 ? deltaY : 0
+        let newDeltaY = max(deltaY, 0)
         return atan2(newDeltaY, deltaX)
     }
 

@@ -60,11 +60,11 @@ protocol PhysicsBody: AnyObject {
     /// without affecting its acceleration.
     func brake()
 
-    /// Checks whether this `PhysicsBody` will collide with another `PhysicsBody`. Notice
+    /// Checks whether this `PhysicsBody` did collide with another `PhysicsBody`. Notice
     /// that only two rigid bodies will collide with each other.
     /// - Parameter object: The other `PhysicsBody`.
     /// - Returns: true if they will collide; false otherwise.
-    func willCollideWith(_ object: PhysicsBody) -> Bool
+    func didCollideWith(_ object: PhysicsBody) -> Bool
 
     /// The handler when the `PhysicsBody` collides with others.
     /// - Parameter object: The other `PhysicsBody` collided with; nil if we do not know.

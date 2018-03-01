@@ -6,8 +6,6 @@
 //  Copyright © 2018 Yunpeng Niu. All rights reserved.
 //
 
-import Darwin
-
 /**
  Provides random `BubbleType`s continously, i.e., acts as the source for bubble
  launcher and the hint for next bubbles.

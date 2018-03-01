@@ -63,7 +63,7 @@ class PhysicsEngine2D {
             }
             object.move()
             checkHorizontalReflect(of: object)
-            checkTouchButtom(of: object)
+            checkTouchBottom(of: object)
             checkTouchTop(of: object)
             checkCollision(of: object)
         }
@@ -79,9 +79,9 @@ class PhysicsEngine2D {
         }
     }
 
-    /// Removes the `PhysicsBody` when it touches the buttom of the screen.
+    /// Removes the `PhysicsBody` when it touches the bottom of the screen.
     /// - Parameter object: The `PhysicsBody` being checked.
-    private func checkTouchButtom(of object: PhysicsBody) {
+    private func checkTouchBottom(of object: PhysicsBody) {
         if object.center.y + object.radius >= area.maxY {
             object.stop()
             deregisterPhysicsObject(object)
@@ -103,7 +103,7 @@ class PhysicsEngine2D {
         for otherObject in physicsObjects {
             // Notice: Here, the lhs object is the one that is moving and actively causes
             // the collision. The rhs object is static and waiting for being crashed.
-            if otherObject !== object && object.willCollideWith(otherObject) {
+            if otherObject !== object && object.didCollideWith(otherObject) {
                 object.onCollideWith(otherObject)
             }
         }
