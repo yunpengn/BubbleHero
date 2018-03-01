@@ -29,7 +29,7 @@ struct BubbleSource {
     init(next: Int) {
         self.next = next
         self.bubbles = FixedQueue(with: Array(0..<next).map { _ in
-            BubbleType.getRandomBasicType()
+            BubbleType.getRandomColorType()
         })
         self.snappings = FixedQueue(with: Array(0..<next).map { _ in
             BubbleSource.isSnapping()
@@ -40,7 +40,7 @@ struct BubbleSource {
     /// - Returns: a tuple indicating the type of the next bubble and whether
     /// it is snapping.
     mutating func pop() -> (type: BubbleType, isSnapping: Bool) {
-        let item = bubbles.pop(byAdd: BubbleType.getRandomBasicType())
+        let item = bubbles.pop(byAdd: BubbleType.getRandomColorType())
         let isSnapping = snappings.pop(byAdd: BubbleSource.isSnapping())
         return (item, isSnapping)
     }

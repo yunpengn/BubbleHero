@@ -49,8 +49,7 @@ class GameViewShootingController: EngineControllerDelegate {
         lhs.stop()
         rhs?.stop()
         addAttachment(object: lhs)
-        checkStarBubble(for: lhs)
-        removeSameTypeConnectedBubbles(from: lhs)
+        removeConnectedBubbles(from: lhs)
         removeUnattachedBubbles()
     }
 
@@ -69,17 +68,6 @@ class GameViewShootingController: EngineControllerDelegate {
         object.move(to: CGPoint(x: newX, y: newY))
     }
 
-    /// Attaches the bubble with the nearby bubbles (because it has snapped to a
-    /// certain cell).
-    private func addAttachment(object: BubbleObject) {
-        for item in engine.physicsObjects {
-            if object.canAttachWith(object: item) {
-                object.attachTo(item)
-                item.attachTo(object)
-            }
-        }
-    }
-
     /// Adjusts the position a little bit so that a non-snapping bubble can barely
     /// touch its attached bubble.
     private func adjustPosition(from: BubbleObject, to: BubbleObject?) {
@@ -96,19 +84,42 @@ class GameViewShootingController: EngineControllerDelegate {
         from.move(by: CGVector(dx: -dx, dy: -dy))
     }
 
+    /// Attaches the bubble with the nearby bubbles (because it has snapped to a
+    /// certain cell).
+    private func addAttachment(object: BubbleObject) {
+        for item in engine.physicsObjects {
+            if object.canAttachWith(object: item) {
+                object.attachTo(item)
+                item.attachTo(object)
+            }
+        }
+    }
+
+    /// Removes the connected bubbles either because they are of the same color or
+    /// some special effects are triggered.
+    /// - Parameter object: The `BubbleObject` to start from.
+    private func removeConnectedBubbles(from object: BubbleObject) {
+        var toRemove = checkStarBubble(for: object)
+        toRemove.append(contentsOf: checkLightningBubble(for: object))
+        toRemove.append(contentsOf: checkSameTypeConnectedBubbles(from: object))
+        if toRemove.count >= Settings.sameColorThreshold {
+            engine.deregisterPhysicsObject(contentsOf: toRemove)
+        }
+    }
+
     /// Checks whether a certain bubble is a neighbor of star bubble(s) and therefore
     /// removes all bubbles of the same color and the star bubble(s).
     /// - Parameter object: The bubble being checked.
-    private func checkStarBubble(for object: BubbleObject) {
-        guard object.type.isColorType else {
-            return
-        }
-
+    /// - Returns: an array of bubbles to remove if there is/are star bubble neighbor(s);
+    /// an empty array otherwise.
+    private func checkStarBubble(for object: BubbleObject) -> [BubbleObject] {
         let stars = object.getNeighbors().filter { $0.type == .star }
         if !stars.isEmpty {
-            let bubbles = getAllSameTypeBubbles(of: object.type)
-            engine.deregisterPhysicsObject(contentsOf: bubbles)
-            engine.deregisterPhysicsObject(contentsOf: stars)
+            var bubbles = getAllSameTypeBubbles(of: object.type)
+            bubbles.append(contentsOf: stars)
+            return bubbles
+        } else {
+            return []
         }
     }
 
@@ -128,51 +139,20 @@ class GameViewShootingController: EngineControllerDelegate {
         return result
     }
 
-    /// Removes the same-color connected bubbles if there are more than 3 of them.
-    /// - Parameter object: The `BubbleObject` to start from.
-    private func removeSameTypeConnectedBubbles(from object: BubbleObject) {
-        let sameColor = getSameTypeConnectedBubbles(from: object)
-        if sameColor.count >= Settings.sameColorThreshold {
-            engine.deregisterPhysicsObject(contentsOf: sameColor)
-        }
-    }
-
-    /// Gets the connected bubbles (with the same type) starting from this bubble.
-    /// The result includes this bubble itself.
-    /// - Parameter object: The `BubbleObject` to start from.
-    /// - Returns: An array of attached `BubbleObject`s of the same color.
-    private func getSameTypeConnectedBubbles(from object: BubbleObject) -> [BubbleObject] {
-        // Indestructble bubbles cannot be removed through same-color connected bubbles.
-        if object.type == .indestructible {
+    /// Checks whether a certain bubble is a neighbor of lightning bubble(s) and
+    /// therefore removes all bubbles in the same row and lightning bubble(s).
+    /// - Parameter object: The bubble being checked.
+    /// - Returns: an array of bubbles to remove if there is/are star lightning
+    /// neighbor(s); an empty array otherwise.
+    private func checkLightningBubble(for object: BubbleObject) -> [BubbleObject] {
+        let lightnings = object.getNeighbors().filter { $0.type == .lightning }
+        if !lightnings.isEmpty {
+            var bubbles = lightnings.map(getSameRowBubbles).reduce([], +)
+            bubbles.append(contentsOf: lightnings)
+            return bubbles
+        } else {
             return []
         }
-
-        var result: [BubbleObject] = []
-        var toVisit = Stack<BubbleObject>()
-        toVisit.push(object)
-
-        // Starts a DFS to find all attached objects with the same color.
-        while let next = toVisit.pop() {
-            if !result.contains { $0 === next } {
-                result.append(next)
-            }
-            for neighbor in next.getSameColorNeighbors() {
-                if !result.contains { $0 === neighbor } {
-                    toVisit.push(neighbor)
-                }
-            }
-
-            // Adds all bubbles in the same row if it is a lightning bubble.
-            if next.type == .lightning {
-                for sameRow in getSameRowBubbles(of: next) {
-                    if !result.contains { $0 === sameRow } {
-                        toVisit.push(sameRow)
-                    }
-                }
-            }
-        }
-
-        return result
     }
 
     /// Finds all bubbles in the same role as a certain bubble.
@@ -188,6 +168,30 @@ class GameViewShootingController: EngineControllerDelegate {
                 result.append(bubble)
             }
         }
+        return result
+    }
+
+    /// Gets the connected bubbles (with the same type) starting from this bubble.
+    /// The result includes this bubble itself.
+    /// - Parameter object: The `BubbleObject` to start from.
+    /// - Returns: An array of attached `BubbleObject`s of the same color.
+    private func checkSameTypeConnectedBubbles(from object: BubbleObject) -> [BubbleObject] {
+        var result: [BubbleObject] = []
+        var toVisit = Stack<BubbleObject>()
+        toVisit.push(object)
+
+        // Starts a DFS to find all attached objects with the same color.
+        while let next = toVisit.pop() {
+            if !result.contains { $0 === next } {
+                result.append(next)
+            }
+            for neighbor in next.getSameColorNeighbors() {
+                if !result.contains { $0 === neighbor } {
+                    toVisit.push(neighbor)
+                }
+            }
+        }
+
         return result
     }
 
