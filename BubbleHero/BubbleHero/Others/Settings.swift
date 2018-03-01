@@ -65,7 +65,7 @@ class Settings {
     /// The speed in which the shooting bubble will travel.
     static let shootSpeed = CGFloat(15)
     /// The probability that the shooted bubble is snapping.
-    static let snappingThreshold = 0.9
+    static let snappingThreshold = 0.7
     /// The number of next bubbles to preview.
     static let numOfPreviewBubbles = 2
 
@@ -73,4 +73,6 @@ class Settings {
     static let sameColorThreshold = 3
     /// The constant that represents the gravitational force.
     static let gravityConstant = CGFloat(0.6)
+    /// The unit for adjusting the position of non-snapping bubbles.
+    static let adjustmentUnit = CGFloat(0.05)
 }

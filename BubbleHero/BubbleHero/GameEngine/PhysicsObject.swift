@@ -53,7 +53,7 @@ class PhysicsObject: PhysicsBody {
     }
 
     func move(by delta: CGVector) {
-        center = CGPoint(x: center.x + velocity.dx, y: center.y + velocity.dy)
+        center = CGPoint(x: center.x + delta.dx, y: center.y + delta.dy)
     }
 
     func move(to point: CGPoint) {

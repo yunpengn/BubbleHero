@@ -27,8 +27,6 @@ class GameViewShootingController: EngineControllerDelegate {
     }
 
     func onCollide(lhs: PhysicsBody, rhs: PhysicsBody?) {
-        lhs.stop()
-        rhs?.stop()
         if let bubble1 = lhs as? BubbleObject, let bubble2 = rhs as? BubbleObject? {
             handleCollsion(lhs: bubble1, rhs: bubble2)
         }
@@ -36,13 +34,18 @@ class GameViewShootingController: EngineControllerDelegate {
 
     /// Handles the collsion between two `BubbleObject`s.
     private func handleCollsion(lhs: BubbleObject, rhs: BubbleObject?) {
+        if let other = rhs, !other.isSnapping {
+            lhs.isSnapping = false
+        }
         // Moves the bubble according to whether it is snapping bubble.
         if lhs.isSnapping {
             snapToNearbyCell(lhs)
-            addAttachment(object: lhs)
         } else {
             adjustPosition(from: lhs, to: rhs)
         }
+        lhs.stop()
+        rhs?.stop()
+        addAttachment(object: lhs)
         removeSameColorConnectedBubbles(from: lhs)
         removeUnattachedBubbles()
     }
@@ -77,10 +80,16 @@ class GameViewShootingController: EngineControllerDelegate {
     /// touch its attached bubble.
     private func adjustPosition(from: BubbleObject, to: BubbleObject?) {
         guard let other = to else {
+            from.center.y = 0
             return
         }
-        from.attachTo(other)
-        other.attachTo(from)
+        // Adjusts it until they can merely attach to each other.
+        let dx = -from.velocity.dx * Settings.adjustmentUnit
+        let dy = -from.velocity.dy * Settings.adjustmentUnit
+        while from.canAttachWith(object: other) {
+            from.move(by: CGVector(dx: dx, dy: dy))
+        }
+        from.move(by: CGVector(dx: -dx, dy: -dy))
     }
 
     /// Removes the same-color connected bubbles if there are more than 3 of them.

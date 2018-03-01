@@ -17,7 +17,7 @@ class BubbleObject: PhysicsObject {
     /// The type of this bubble.
     let type: BubbleType
     /// Indicates whether the bubble is a snapping bubble.
-    let isSnapping: Bool
+    var isSnapping: Bool
     /// Indicates whether the bubble is attached to the top wall (either directly or indirectly).
     var isAttachedToTop = false
     /// Assists the traversal when checking unattached bubbles.

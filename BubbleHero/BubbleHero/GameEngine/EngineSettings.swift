@@ -20,5 +20,5 @@ class EngineSettings {
     /// through.
     static let collisionThreshold = CGFloat(0.9)
     /// The threshold for attaching two `BubbleObject`s.
-    static let attachmentThreshold = CGFloat(1.05)
+    static let attachmentThreshold = CGFloat(1.03)
 }
