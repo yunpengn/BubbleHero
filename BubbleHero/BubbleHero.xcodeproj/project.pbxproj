@@ -32,6 +32,8 @@
 		F261007B204822550002864B /* String+Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261007A204822550002864B /* String+Pattern.swift */; };
 		F261007D20482E020002864B /* BackgroundMusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261007C20482E020002864B /* BackgroundMusicController.swift */; };
 		F2610082204832350002864B /* Now_Its_Time.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2610081204832350002864B /* Now_Its_Time.mp3 */; };
+		F2610084204834B40002864B /* SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2610083204834B40002864B /* SettingsMenu.swift */; };
+		F2610086204838110002864B /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2610085204838110002864B /* CheckboxButton.swift */; };
 		F29045692045A4CB003CAF7C /* CannonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29045682045A4CB003CAF7C /* CannonView.swift */; };
 		F290456B2045B5A0003CAF7C /* BubbleSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290456A2045B5A0003CAF7C /* BubbleSource.swift */; };
 		F29CD045203D203800C94061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD044203D203800C94061 /* AppDelegate.swift */; };
@@ -108,6 +110,8 @@
 		F261007A204822550002864B /* String+Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Pattern.swift"; sourceTree = "<group>"; };
 		F261007C20482E020002864B /* BackgroundMusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicController.swift; sourceTree = "<group>"; };
 		F2610081204832350002864B /* Now_Its_Time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Now_Its_Time.mp3; sourceTree = "<group>"; };
+		F2610083204834B40002864B /* SettingsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
+		F2610085204838110002864B /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		F29045682045A4CB003CAF7C /* CannonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannonView.swift; sourceTree = "<group>"; };
 		F290456A2045B5A0003CAF7C /* BubbleSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSource.swift; sourceTree = "<group>"; };
 		F29CD041203D203800C94061 /* BubbleHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,10 +197,12 @@
 			children = (
 				F2B2A52F20466FBF00B4FD6A /* BubbleView.swift */,
 				F29045682045A4CB003CAF7C /* CannonView.swift */,
+				F2610085204838110002864B /* CheckboxButton.swift */,
 				F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */,
 				F252D49620450475004FDA03 /* LevelGalleryCell.swift */,
 				F23CD6992043C2EE0053A099 /* MenuButton.swift */,
 				F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */,
+				F2610083204834B40002864B /* SettingsMenu.swift */,
 				F252D4A620454704004FDA03 /* UIImage+Slice.swift */,
 				F29CD04B203D203800C94061 /* Assets.xcassets */,
 				F29CD04D203D203800C94061 /* LaunchScreen.storyboard */,
@@ -580,6 +586,7 @@
 				F2CAFB1E20442D51002078B2 /* FillableBubbleCell.swift in Sources */,
 				F23CD6A22043F5D20053A099 /* Settings.swift in Sources */,
 				F290456B2045B5A0003CAF7C /* BubbleSource.swift in Sources */,
+				F2610086204838110002864B /* CheckboxButton.swift in Sources */,
 				F29CD047203D203800C94061 /* MenuViewController.swift in Sources */,
 				F2B2A5432046DCC600B4FD6A /* EngineSettings.swift in Sources */,
 				F252D4A3204522B9004FDA03 /* SettingsController.swift in Sources */,
@@ -611,6 +618,7 @@
 				F2B2A5472046FA7A00B4FD6A /* BubbleObject.swift in Sources */,
 				F252D4A920455F26004FDA03 /* Helpers.swift in Sources */,
 				F2B2A5492047036600B4FD6A /* Game.swift in Sources */,
+				F2610084204834B40002864B /* SettingsMenu.swift in Sources */,
 				F25A29652047D64900C90576 /* GameViewShootingController.swift in Sources */,
 				F2CAFB462044568A002078B2 /* DialogHelpers.swift in Sources */,
 				F2CAFB2720443020002078B2 /* Level.swift in Sources */,

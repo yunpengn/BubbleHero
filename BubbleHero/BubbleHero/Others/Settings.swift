@@ -15,6 +15,17 @@ import UIKit
  - Date: Feb 2018
  */
 class Settings {
+    /// The suitable background for buttons (semi-transparent).
+    static let menuBackgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.98, alpha: 0.15)
+    /// The border width for menu buttons
+    static let menuBorderWidth = CGFloat(1)
+    /// The border width for checkbox buttons
+    static let checkboxBorderWidth = CGFloat(5)
+    /// The constant coefficient for menu corner radius.
+    static let menuCornerRadius = CGFloat(0.15)
+    /// The constant coefficient for checkbox button corner radius.
+    static let checkboxCornerRadius = CGFloat(0.3)
+
     /// The alpha value for bubble buttons in the palette when it is selected.
     static let alphaPaletteBubbleSelected = CGFloat(1)
     /// The alpha value for bubble buttons in the palette when it is not selected.
@@ -51,6 +62,8 @@ class Settings {
     static let galleryCellId = "levelGalleryCell"
     /// The identifier for `GameViewController` in main storyboard.
     static let gameViewControllerId = "gameViewController"
+    /// The identifier for the segue from menu to setting view.
+    static let menuToSettingsSegueId = "menuToSettings"
 
     /// The extension file name for data storage.
     static let extensionNameData = ".json"

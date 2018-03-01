@@ -30,6 +30,9 @@ class MenuViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        if segue.identifier == Settings.menuToSettingsSegueId,
+            let controller = segue.destination as? SettingsController {
+            controller.musicController = musicController
+        }
     }
 }

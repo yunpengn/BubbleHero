@@ -15,6 +15,9 @@ import UIKit
  - Date: Feb 2018
  */
 class SettingsController: UIViewController {
+    /// The controller for background music.
+    var musicController: BackgroundMusicController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -17,9 +17,9 @@ import UIKit
 class MenuButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.98, alpha: 0.15)
-        layer.cornerRadius = frame.width / 9
-        layer.borderWidth = 1
+        backgroundColor = Settings.menuBackgroundColor
+        layer.cornerRadius = frame.width * Settings.menuCornerRadius
+        layer.borderWidth = Settings.menuBorderWidth
         layer.borderColor = UIColor.white.cgColor
         setTitleColor(UIColor.darkGray, for: .normal)
         contentHorizontalAlignment = .center
