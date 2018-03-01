@@ -67,27 +67,6 @@ class GameViewLaunchController {
         engine?.registerPhysicsObject(bubbleObject)
     }
 
-    /// Updates the status of the view elements after one bubble in shot.
-    private func updateView() {
-        guard let nextOne = source.getBubble(at: 0),
-            let nextSecond = source.getBubble(at: 1) else {
-            fatalError("Some internal settings are wrong.")
-        }
-
-        nextBubble.image = Helpers.toBubbleImage(of: nextOne.type)
-        if !nextOne.isSnapping {
-            nextBubble.addBorder()
-        } else {
-            nextBubble.removeBorder()
-        }
-        nextSecondBubble.image = Helpers.toBubbleImage(of: nextSecond.type)
-        if !nextSecond.isSnapping {
-            nextSecondBubble.addBorder()
-        } else {
-            nextSecondBubble.removeBorder()
-        }
-    }
-
     /// Given a point at which the user touches, computes the initial angle of the
     /// bubble being shot.
     ///
@@ -119,5 +98,26 @@ class GameViewLaunchController {
         let x = cannon.center.x + diff * cos(CGFloat.pi - angle)
         let y = cannon.center.y + diff * sin(CGFloat.pi - angle)
         return CGPoint(x: x, y: y)
+    }
+
+    /// Updates the status of the view elements after one bubble in shot.
+    private func updateView() {
+        guard let nextOne = source.getBubble(at: 0),
+            let nextSecond = source.getBubble(at: 1) else {
+                fatalError("Some internal settings are wrong.")
+        }
+
+        nextBubble.image = Helpers.toBubbleImage(of: nextOne.type)
+        if !nextOne.isSnapping {
+            nextBubble.addBorder()
+        } else {
+            nextBubble.removeBorder()
+        }
+        nextSecondBubble.image = Helpers.toBubbleImage(of: nextSecond.type)
+        if !nextSecond.isSnapping {
+            nextSecondBubble.addBorder()
+        } else {
+            nextSecondBubble.removeBorder()
+        }
     }
 }
