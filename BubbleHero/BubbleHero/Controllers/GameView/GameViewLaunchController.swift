@@ -46,7 +46,7 @@ class GameViewLaunchController {
     }
 
     /// Launches a bubble in the direction of a point.
-    /// - Parameter point: The point that the direction of the shooted bubble
+    /// - Parameter point: The point that the direction of the shot bubble
     /// should be in.
     func launchBubble(to point: CGPoint) {
         let angle = getShootAngle(by: point)
@@ -57,13 +57,13 @@ class GameViewLaunchController {
 
     /// Shoots a certain `BubbleType` of bubble towards the specific angle.
     /// - Parameters:
-    ///    - type: The type of the bubble to be shooted.
+    ///    - type: The type of the bubble to be shot.
     ///    - angle: The angle to shoot towards.
     private func shootBubble(type: BubbleType, angle: CGFloat) {
         let _ = source.pop()
     }
 
-    /// Updates the status of the view elements after one bubble in shooted.
+    /// Updates the status of the view elements after one bubble in shot.
     private func updateView() {
         guard let nextOne = source.getBubble(at: 0),
             let nextSecond = source.getBubble(at: 1) else {
@@ -85,7 +85,7 @@ class GameViewLaunchController {
     }
 
     /// Given a point at which the user touches, computes the initial angle of the
-    /// bubble being shooted.
+    /// bubble being shot.
     ///
     /// The angle computed will increment when rotating anti-clockwise in the range
     /// of [0, PI]. Notice that we only allow the user to launch bubbles upwards.
@@ -98,9 +98,9 @@ class GameViewLaunchController {
         return atan2(newDeltaY, deltaX)
     }
 
-    /// Computes the initial speed of the shooted bubble according to the angle.
-    /// - Parameter angle: The angle in which the bubble is shooted.
-    /// - Returns: A `CGVector` representing the speed of the shooted bubble.
+    /// Computes the initial speed of the shot bubble according to the angle.
+    /// - Parameter angle: The angle in which the bubble is shot.
+    /// - Returns: A `CGVector` representing the speed of the shot bubble.
     private func getShootSpeed(by angle: CGFloat) -> CGVector {
         let dX = -Settings.shootSpeed * cos(angle)
         let dY = -Settings.shootSpeed * sin(angle)
