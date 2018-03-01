@@ -26,6 +26,8 @@ class GameViewLaunchController {
     private var cannonAngle = CGFloat(CGFloat.pi / 2)
     /// The source for bubbles to launch.
     private var source = BubbleSource(next: Settings.numOfPreviewBubbles)
+    /// The engine to take over the control for bubbles shot.
+    var engine: PhysicsEngine2D?
 
     init(cannon: CannonView, nextBubble: BubbleView, nextSecondBubble: BubbleView) {
         self.cannon = cannon
@@ -38,9 +40,6 @@ class GameViewLaunchController {
     /// - Parameter point: The point that the cannon is supposed to face.
     func rotateCannon(to point: CGPoint) {
         let newAngle = getShootAngle(by: point)
-        guard isAcceptedAngle(newAngle) else {
-            return
-        }
         cannon.transform = cannon.transform.rotated(by: newAngle - cannonAngle)
         cannonAngle = newAngle
     }
@@ -60,7 +59,12 @@ class GameViewLaunchController {
     ///    - type: The type of the bubble to be shot.
     ///    - angle: The angle to shoot towards.
     private func shootBubble(type: BubbleType, angle: CGFloat) {
-        let _ = source.pop()
+        let newBubble = source.pop()
+        let bubbleObject = Helpers.toBubbleObject(type: newBubble.type,
+                                                isSnapping: newBubble.isSnapping,
+                                                center: getShootCenter(by: angle))
+        bubbleObject.velocity = getShootVelocity(by: angle)
+        engine?.registerPhysicsObject(bubbleObject)
     }
 
     /// Updates the status of the view elements after one bubble in shot.
@@ -94,22 +98,23 @@ class GameViewLaunchController {
     private func getShootAngle(by point: CGPoint) -> CGFloat {
         let deltaX = cannon.center.x - point.x
         let deltaY = cannon.center.y - point.y
-        let newDeltaY = max(deltaY, 0)
+        let newDeltaY = max(deltaY, Settings.launchVerticalLimit)
         return atan2(newDeltaY, deltaX)
     }
 
-    /// Computes the initial speed of the shot bubble according to the angle.
+    /// Computes the initial velocity of the shot bubble according to the angle.
     /// - Parameter angle: The angle in which the bubble is shot.
     /// - Returns: A `CGVector` representing the speed of the shot bubble.
-    private func getShootSpeed(by angle: CGFloat) -> CGVector {
+    private func getShootVelocity(by angle: CGFloat) -> CGVector {
         let dX = -Settings.shootSpeed * cos(angle)
         let dY = -Settings.shootSpeed * sin(angle)
         return CGVector(dx: dX, dy: dY)
     }
 
-    /// Checks whether the given angle is accepted, i.e., the angle must be upwards.
-    private func isAcceptedAngle(_ angle: CGFloat) -> Bool {
-        return angle > Settings.launchAngleLowerLimit
-            && angle < Settings.launchAngleUpperLimit
+    /// Computes the center of the shot bubble to decide its initial position.
+    /// - Parameter angle: The angle in which the bubble is shot.
+    /// - Returns: A `CGPoint` representing the position of the shot bubble.
+    private func getShootCenter(by angle: CGFloat) -> CGPoint {
+        return cannon.center
     }
 }

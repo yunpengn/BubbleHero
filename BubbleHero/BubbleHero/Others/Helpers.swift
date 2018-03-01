@@ -74,4 +74,23 @@ class Helpers {
     static func toBubbleObject(type: BubbleType, row: Int, column: Int) -> BubbleObject {
         return toBubbleObject(type: type, isSnapping: true, row: row, column: column)
     }
+
+    /// Creates a `BubbleObject` from a certain bubble type and its information.
+    /// - Parameters:
+    ///    - type: The type of this bubble.
+    ///    - isSnapping: Indicates whether this bubble is a snapping bubble.
+    ///    - center: The visual center of this bubble.
+    /// - Returns: The `BubbleObject` created.
+    static func toBubbleObject(type: BubbleType, isSnapping: Bool, center: CGPoint) -> BubbleObject {
+        let diameter = FillableBubbleCell.diameter
+        let x = center.x - FillableBubbleCell.radius
+        let y = center.y - FillableBubbleCell.radius
+
+        let view = BubbleView(frame: CGRect(x: x, y: y, width: diameter, height: diameter))
+        view.image = toBubbleImage(of: type)
+        if !isSnapping {
+            view.addBorder()
+        }
+        return BubbleObject(type: type, isSnapping: isSnapping, view: view)
+    }
 }

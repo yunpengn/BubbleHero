@@ -53,10 +53,8 @@ class Settings {
     /// The extension file name for image storage.
     static let extensionNameImage = ".png"
 
-    /// The lower limit for launch angle.
-    static let launchAngleLowerLimit = CGFloat.pi / 10
-    /// The upper limit for launch angle.
-    static let launchAngleUpperLimit = CGFloat.pi / 10 * 9
+    /// To avoid the user from shooting a bubble with nearly the angle of 0/180 degrees.
+    static let launchVerticalLimit = CGFloat(60)
     /// The anchor point for the launch cannon.
     static let launchCannonAnchorPoint = CGPoint(x: 0.5, y: 0.9)
     /// The offset transform for the launch cannon.
