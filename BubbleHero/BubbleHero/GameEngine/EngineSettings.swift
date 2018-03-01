@@ -19,4 +19,6 @@ class EngineSettings {
     /// "collision" when the gap can let the bubble merely pass
     /// through.
     static let collisionThreshold = CGFloat(0.9)
+    /// The threshold for attaching two `BubbleObject`s.
+    static let attachmentThreshold = CGFloat(1.05)
 }

@@ -76,6 +76,11 @@ protocol PhysicsBody: AnyObject {
     /// Checks whether this `PhysicsBody` is attached to another `PhysicsBody`.
     func isAttachedTo(_ object: PhysicsBody) -> Bool
 
+    /// Checks whether this bubble can attach to another bubble.
+    /// - Parameter object: The other bubble.
+    /// - Returns: True if they can attach; false otherwise.
+    func canAttachWith(object: PhysicsBody) -> Bool
+
     /// Reverses the x-component of the speed to simulate a horizontal "reflect".
     func reflectX()
 

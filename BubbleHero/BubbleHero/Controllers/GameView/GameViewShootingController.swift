@@ -37,6 +37,7 @@ class GameViewShootingController: EngineControllerDelegate {
     private func handleCollsion(lhs: BubbleObject, rhs: BubbleObject?) {
         if lhs.isSnapping {
             snapToNearbyCell(lhs)
+            addAttachment(object: lhs)
         } else {
             adjustPosition(to: rhs)
         }
@@ -59,6 +60,18 @@ class GameViewShootingController: EngineControllerDelegate {
         let newX = column * FillableBubbleCell.diameter + leftOffset + object.radius
 
         object.move(to: CGPoint(x: newX, y: newY))
+    }
+
+    /// Attaches the bubble with the nearby bubbles (because it has snapped to a
+    /// certain cell).
+    private func addAttachment(object: BubbleObject) {
+        for item in engine.physicsObjects {
+            if object.canAttachWith(object: item) {
+                object.attachTo(item)
+                item.attachTo(object)
+            }
+        }
+        print(object.attachedWith.count)
     }
 
     /// Adjusts the position a little bit so that a non-snapping bubble can barely

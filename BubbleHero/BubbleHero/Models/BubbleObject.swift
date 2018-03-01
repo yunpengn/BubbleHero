@@ -27,15 +27,21 @@ class BubbleObject: PhysicsObject {
         self.init(type: type, isSnapping: true, view: view)
     }
 
-    /// Gets the same color neighbors of this `BubbleObject`.
-    /// - Returns: An array of same color neighbors if there exists; empty array otherwise.
-    func getSameColorNeighbors() -> [BubbleObject] {
+    /// Gets the neighbors of this `BubbleObject`.
+    /// - Returns: An array of neighbors if there exists; empty array otherwise.
+    func getNeighbors() -> [BubbleObject] {
         var neighbors: [BubbleObject] = []
         for item in attachedWith {
             if let bubble = item as? BubbleObject {
                 neighbors.append(bubble)
             }
         }
-        return neighbors.filter { $0.type == type }
+        return neighbors
+    }
+
+    /// Gets the same color neighbors of this `BubbleObject`.
+    /// - Returns: An array of same color neighbors if there exists; empty array otherwise.
+    func getSameColorNeighbors() -> [BubbleObject] {
+        return getNeighbors().filter { $0.type == type }
     }
 }

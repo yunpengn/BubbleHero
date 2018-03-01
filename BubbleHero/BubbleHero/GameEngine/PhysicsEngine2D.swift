@@ -42,7 +42,7 @@ import UIKit
  */
 class PhysicsEngine2D {
     /// A list of all `PhysicsBody`s controlled by this `PhysicsEngine`.
-    private var physicsObjects: [PhysicsBody] = []
+    var physicsObjects: [PhysicsBody] = []
     /// The rendering engine for this game engine.
     private let renderer: Renderer
     /// The area for this physics engine, in which all `PhysicsBody`s should reside.

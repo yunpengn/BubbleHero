@@ -87,7 +87,7 @@ class PhysicsObject: PhysicsBody {
     }
 
     func attachTo(_ object: PhysicsBody) {
-        guard !isAttachedTo(object) else {
+        guard object !== self && !isAttachedTo(object) else {
             return
         }
         attachedWith.append(object)
@@ -95,6 +95,13 @@ class PhysicsObject: PhysicsBody {
 
     func isAttachedTo(_ object: PhysicsBody) -> Bool {
         return attachedWith.contains { $0 === object }
+    }
+
+    func canAttachWith(object: PhysicsBody) -> Bool {
+        let sqrX = (center.x - object.center.x) * (center.x - object.center.x)
+        let sqrY = (center.y - object.center.y) * (center.y - object.center.y)
+        let sqrRadius = (radius + object.radius) * (radius + object.radius)
+        return sqrX + sqrY <= sqrRadius * EngineSettings.attachmentThreshold
     }
 
     func reflectX() {
