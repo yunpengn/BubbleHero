@@ -58,7 +58,7 @@ class LevelDesignerController: UIViewController {
             as? GameViewController else {
             fatalError("Could not find the controller for game view")
         }
-        gameViewController.loadLevel(level)
+        gameViewController.level = level
         present(gameViewController, animated: true, completion: nil)
     }
 

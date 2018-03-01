@@ -62,13 +62,41 @@ class Game {
         var neighbors: [BubbleObject?] = []
 
         let nearRowOffset = (row % 2 == 0) ? -1 : 1
-        neighbors.append(bubbles[row][column - 1])
-        neighbors.append(bubbles[row][column + 1])
-        neighbors.append(bubbles[row - 1][column])
-        neighbors.append(bubbles[row - 1][column + nearRowOffset])
-        neighbors.append(bubbles[row + 1][column])
-        neighbors.append(bubbles[row + 1][column + nearRowOffset])
+        neighbors.append(getObjectAt(row: row, column: column - 1))
+        neighbors.append(getObjectAt(row: row, column: column + 1))
+        neighbors.append(getObjectAt(row: row - 1, column: column))
+        neighbors.append(getObjectAt(row: row - 1, column: column + nearRowOffset))
+        neighbors.append(getObjectAt(row: row + 1, column: column))
+        neighbors.append(getObjectAt(row: row + 1, column: column + nearRowOffset))
 
         return neighbors.flatMap { $0 }
+    }
+
+    /// Gets the `BubbleObject` located at the specified location.
+    /// - Parameters:
+    ///    - row: The row number of the intended location (zero-based).
+    ///    - column: The column number of the intended location (zero-based).
+    /// - Returns: the object at that location if it exists; nil otherwise.
+    private func getObjectAt(row: Int, column: Int) -> BubbleObject? {
+        guard isValidLocation(row: row, column: column) else {
+            return nil
+        }
+        return bubbles[row][column]
+    }
+
+    /// Checks whether a certain location is valid in the `Game`.
+    /// - Parameters:
+    ///    - row: The row number of the checked location (zero-based).
+    ///    - column: The column number of the checked location (zero-based).
+    func isValidLocation(row: Int, column: Int) -> Bool {
+        guard row >= 0 && row < bubbles.count else {
+            return false
+        }
+
+        if row % 2 == 0 {
+            return column >= 0 && column < evenCount
+        } else {
+            return column >= 0 && column < oddCount
+        }
     }
 }

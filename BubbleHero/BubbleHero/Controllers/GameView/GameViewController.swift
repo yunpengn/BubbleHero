@@ -28,6 +28,8 @@ class GameViewController: UIViewController {
     private var launchController: GameViewLaunchController?
     /// The physics engine for this controller.
     private var physicsEngine: PhysicsEngine2D?
+    /// The level to start with.
+    var level: Level?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,7 @@ class GameViewController: UIViewController {
                                                     nextBubble: nextBubble,
                                                     nextSecondBubble: nextSecondBubble)
         physicsEngine = PhysicsEngine2D(renderer: self, area: gameArea.frame)
+        loadLevel()
     }
 
     /// Always hide the status bar on the top.
@@ -56,8 +59,13 @@ class GameViewController: UIViewController {
             launchController?.launchBubble(to: location)
         }
     }
-    
-    func loadLevel(_ level: Level) {
-        
+
+    /// Loads a level to start the game with.
+    private func loadLevel() {
+        guard let startLevel = level else {
+            return
+        }
+        let game = Game(from: startLevel)
+        game.bubbleObjects.forEach { physicsEngine?.registerPhysicsObject($0) }
     }
 }
