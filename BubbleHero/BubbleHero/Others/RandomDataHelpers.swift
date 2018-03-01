@@ -44,6 +44,6 @@ class RandomDataHelpers {
     ///    - row: The row number of the new bubble.
     ///    - column: The column number of the new bubble.
     private static func addRandomTypeBubble(to level: Level, row: Int, column: Int) {
-        level.addOrUpdateBubble(BubbleType.getRandomType(), row: row, column: column)
+        level.addOrUpdateBubble(BubbleType.getRandomBasicType(), row: row, column: column)
     }
 }

@@ -147,6 +147,8 @@ class GameViewShootingController: EngineControllerDelegate {
             if bubble.canTouchTopWall {
                 bubble.isAttachedToTop = true
                 toCheck.push(bubble)
+            } else {
+                bubble.isAttachedToTop = false
             }
             bubble.visited = false
         }
