@@ -48,7 +48,18 @@ class BubbleObject: PhysicsObject {
     /// Gets the same color neighbors of this `BubbleObject`.
     /// - Returns: An array of same color neighbors if there exists; empty array otherwise.
     func getSameColorNeighbors() -> [BubbleObject] {
+        // Bomb bubbles can be seen as the same color as all neighboring bubbles.
+        guard type != .bomb else {
+            return getNeighbors()
+        }
         return getNeighbors().filter { $0.type == type }
+    }
+
+    /// Checks whether this bubble is in the same row as the other bubble.
+    /// - Parameter bubble: The other bubble to check.
+    /// - Returns: true if they are in the same row; false otherwise.
+    func isInSameRow(as bubble: BubbleObject) -> Bool {
+        return center.y == bubble.center.y
     }
 
     /// Indicates whether this bubble can touch the top wall directly.
