@@ -26,7 +26,7 @@ class PhysicsObject: PhysicsBody {
     let isCollidable: Bool
 
     // An array of objects that it is attached to.
-    private var attachedWith: [PhysicsBody] = []
+    var attachedWith: [PhysicsBody] = []
 
     /// Creates a `PhysicsObject` by associating it with a `UIView` object.
     /// - Parameters:
@@ -84,11 +84,6 @@ class PhysicsObject: PhysicsBody {
         let sqrY = (center.y - object.center.y) * (center.y - object.center.y)
         let sqrRadius = (radius + object.radius) * (radius + object.radius)
         return sqrX + sqrY <= sqrRadius * EngineSettings.collisionThreshold
-    }
-
-    func onCollideWith(_ object: PhysicsBody?) {
-        stop()
-        object?.stop()
     }
 
     func attachTo(_ object: PhysicsBody) {

@@ -70,10 +70,6 @@ protocol PhysicsBody: AnyObject {
     /// - Returns: true if they will collide; false otherwise.
     func didCollideWith(_ object: PhysicsBody) -> Bool
 
-    /// The handler when the `PhysicsBody` collides with others.
-    /// - Parameter object: The other `PhysicsBody` collided with; nil if we do not know.
-    func onCollideWith(_ object: PhysicsBody?)
-
     /// Attachs this `PhysicsBody` to another `PhysicsBody`.
     func attachTo(_ object: PhysicsBody)
 

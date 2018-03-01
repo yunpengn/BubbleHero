@@ -24,6 +24,8 @@ class GameViewController: UIViewController {
     @IBOutlet private weak var nextSecondBubble: BubbleView!
     /// The controller for bubble launch.
     private var launchController: GameViewLaunchController?
+    /// The controller for bubble shooting.
+    private var shootingController: GameViewShootingController?
     /// The physics engine for this controller.
     private var physicsEngine: PhysicsEngine2D?
     /// The level to start with.
@@ -31,11 +33,14 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        physicsEngine = PhysicsEngine2D(renderer: self, area: view.frame)
+        let engine = PhysicsEngine2D(renderer: self, area: view.frame)
+        physicsEngine = engine
         launchController = GameViewLaunchController(cannon: cannonBody,
                                                     nextBubble: nextBubble,
                                                     nextSecondBubble: nextSecondBubble)
-        launchController?.engine = physicsEngine
+        launchController?.engine = engine
+        shootingController = GameViewShootingController(engine: engine)
+        engine.controllerDelegate = shootingController
         loadLevel()
     }
 

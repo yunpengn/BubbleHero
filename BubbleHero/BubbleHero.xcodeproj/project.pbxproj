@@ -25,6 +25,9 @@
 		F252D4A920455F26004FDA03 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4A820455F26004FDA03 /* Helpers.swift */; };
 		F252D4AD20456C8A004FDA03 /* GameViewLaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */; };
 		F25A295F2047972D00C90576 /* GameViewController+Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A295E2047972D00C90576 /* GameViewController+Renderer.swift */; };
+		F25A29632047D22200C90576 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A29622047D22200C90576 /* Stack.swift */; };
+		F25A29652047D64900C90576 /* GameViewShootingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A29642047D64900C90576 /* GameViewShootingController.swift */; };
+		F25A29692047D95F00C90576 /* EngineControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A29682047D95F00C90576 /* EngineControllerDelegate.swift */; };
 		F29045692045A4CB003CAF7C /* CannonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29045682045A4CB003CAF7C /* CannonView.swift */; };
 		F290456B2045B5A0003CAF7C /* BubbleSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290456A2045B5A0003CAF7C /* BubbleSource.swift */; };
 		F29CD045203D203800C94061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD044203D203800C94061 /* AppDelegate.swift */; };
@@ -94,6 +97,9 @@
 		F252D4A820455F26004FDA03 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewLaunchController.swift; sourceTree = "<group>"; };
 		F25A295E2047972D00C90576 /* GameViewController+Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Renderer.swift"; sourceTree = "<group>"; };
+		F25A29622047D22200C90576 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		F25A29642047D64900C90576 /* GameViewShootingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewShootingController.swift; sourceTree = "<group>"; };
+		F25A29682047D95F00C90576 /* EngineControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineControllerDelegate.swift; sourceTree = "<group>"; };
 		F29045682045A4CB003CAF7C /* CannonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannonView.swift; sourceTree = "<group>"; };
 		F290456A2045B5A0003CAF7C /* BubbleSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSource.swift; sourceTree = "<group>"; };
 		F29CD041203D203800C94061 /* BubbleHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +296,7 @@
 				F252D4A420452559004FDA03 /* GameViewController.swift */,
 				F25A295E2047972D00C90576 /* GameViewController+Renderer.swift */,
 				F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */,
+				F25A29642047D64900C90576 /* GameViewShootingController.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -297,6 +304,7 @@
 		F2B2A5352046875C00B4FD6A /* GameEngine */ = {
 			isa = PBXGroup;
 			children = (
+				F25A29682047D95F00C90576 /* EngineControllerDelegate.swift */,
 				F2B2A5422046DCC600B4FD6A /* EngineSettings.swift */,
 				F2B2A5362046879000B4FD6A /* PhysicsEngine2D.swift */,
 				F2B2A5382046956400B4FD6A /* Renderer.swift */,
@@ -316,6 +324,7 @@
 				F2B2A5482047036600B4FD6A /* Game.swift */,
 				F2CAFB2620443020002078B2 /* Level.swift */,
 				F252D49C20450EF0004FDA03 /* LevelGallery.swift */,
+				F25A29622047D22200C90576 /* Stack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -567,6 +576,7 @@
 				F252D4992045086A004FDA03 /* LoadLevelController+Gallery.swift in Sources */,
 				F2B2A52A2046583900B4FD6A /* FixedQueue.swift in Sources */,
 				F252D4A720454704004FDA03 /* UIImage+Slice.swift in Sources */,
+				F25A29692047D95F00C90576 /* EngineControllerDelegate.swift in Sources */,
 				F252D4AD20456C8A004FDA03 /* GameViewLaunchController.swift in Sources */,
 				F252D49B20450DE8004FDA03 /* LoadLevelController+Gesture.swift in Sources */,
 				F2B2A5392046956400B4FD6A /* Renderer.swift in Sources */,
@@ -578,10 +588,12 @@
 				F2B2A5472046FA7A00B4FD6A /* BubbleObject.swift in Sources */,
 				F252D4A920455F26004FDA03 /* Helpers.swift in Sources */,
 				F2B2A5492047036600B4FD6A /* Game.swift in Sources */,
+				F25A29652047D64900C90576 /* GameViewShootingController.swift in Sources */,
 				F2CAFB462044568A002078B2 /* DialogHelpers.swift in Sources */,
 				F2CAFB2720443020002078B2 /* Level.swift in Sources */,
 				F29045692045A4CB003CAF7C /* CannonView.swift in Sources */,
 				F252D4A520452559004FDA03 /* GameViewController.swift in Sources */,
+				F25A29632047D22200C90576 /* Stack.swift in Sources */,
 				F2C70E372045909B00C27EBC /* AboutViewController.swift in Sources */,
 				F23CD6A02043ED1A0053A099 /* PaletteBubbleButton.swift in Sources */,
 				F2B2A5372046879000B4FD6A /* PhysicsEngine2D.swift in Sources */,

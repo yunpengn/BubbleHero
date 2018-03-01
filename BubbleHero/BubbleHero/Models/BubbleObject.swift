@@ -27,32 +27,15 @@ class BubbleObject: PhysicsObject {
         self.init(type: type, isSnapping: true, view: view)
     }
 
-    override func onCollideWith(_ object: PhysicsBody?) {
-        super.onCollideWith(object)
-        if isSnapping {
-            snapToNearbyCell()
-        } else {
-            adjustPosition()
+    /// Gets the same color neighbors of this `BubbleObject`.
+    /// - Returns: An array of same color neighbors if there exists; empty array otherwise.
+    func getSameColorNeighbors() -> [BubbleObject] {
+        var neighbors: [BubbleObject] = []
+        for item in attachedWith {
+            if let bubble = item as? BubbleObject {
+                neighbors.append(bubble)
+            }
         }
-    }
-
-    /// Finds the position of the nearby cell and moves to it.
-    private func snapToNearbyCell() {
-        let minY = max(center.y - radius, 0)
-        let row = round((minY) / FillableBubbleCell.height)
-        let newY = row * FillableBubbleCell.height + radius
-
-        let leftOffset = (Int(row) % 2 == 0) ? 0 : FillableBubbleCell.leftOffset
-        let minX = max(center.x - radius, leftOffset)
-        let column = round((minX - leftOffset) / FillableBubbleCell.diameter)
-        let newX = column * FillableBubbleCell.diameter + leftOffset + radius
-
-        move(to: CGPoint(x: newX, y: newY))
-    }
-
-    /// Adjusts the position a little bit so that a non-snapping can
-    /// barely touch its attached bubble.
-    private func adjustPosition() {
-
+        return neighbors.filter { $0.type == type }
     }
 }

@@ -66,4 +66,7 @@ class Settings {
     static let snappingThreshold = 0.9
     /// The number of next bubbles to preview.
     static let numOfPreviewBubbles = 2
+
+    /// The minimum number of same-color bubbles to start removing.
+    static let sameColorThreshold = 3
 }
