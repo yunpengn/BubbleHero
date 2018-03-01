@@ -115,6 +115,9 @@ class GameViewLaunchController {
     /// - Parameter angle: The angle in which the bubble is shot.
     /// - Returns: A `CGPoint` representing the position of the shot bubble.
     private func getShootCenter(by angle: CGFloat) -> CGPoint {
-        return cannon.center
+        let diff = Settings.launchCannonTransformY
+        let x = cannon.center.x + diff * cos(CGFloat.pi - angle)
+        let y = cannon.center.y + diff * sin(CGFloat.pi - angle)
+        return CGPoint(x: x, y: y)
     }
 }
