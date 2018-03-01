@@ -16,13 +16,20 @@ import UIKit
  - Date: Feb 2018
  */
 class MenuViewController: UIViewController {
+    /// The controller for background music.
+    private var musicController: BackgroundMusicController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        musicController = BackgroundMusicController(for: Settings.musicNameMenu)
     }
 
     // Always hide the status bar on the top.
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
     }
 }

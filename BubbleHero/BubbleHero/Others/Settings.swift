@@ -77,4 +77,9 @@ class Settings {
     static let gravityConstant = CGFloat(0.6)
     /// The unit for adjusting the position of non-snapping bubbles.
     static let adjustmentUnit = CGFloat(0.05)
+
+    /// Sets the background music to loop infinitely.
+    static let musicInfiniteLoop = -1
+    /// The file name for background music in menu view.
+    static let musicNameMenu = "Now_Its_Time.mp3"
 }
