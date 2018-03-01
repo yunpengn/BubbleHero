@@ -29,7 +29,7 @@ class BubbleView: UIImageView {
     private func setup() {
         super.awakeFromNib()
         layer.cornerRadius = frame.width / 2
-        layer.borderWidth = 2
+        layer.borderWidth = 4
         removeBorder()
     }
 

@@ -36,6 +36,9 @@ class GameViewShootingController: EngineControllerDelegate {
     private func handleCollsion(lhs: BubbleObject, rhs: BubbleObject?) {
         if let other = rhs, !other.isSnapping {
             lhs.isSnapping = false
+            if let view = lhs.view as? BubbleView {
+                view.addBorder()
+            }
         }
         // Moves the bubble according to whether it is snapping bubble.
         if lhs.isSnapping {
