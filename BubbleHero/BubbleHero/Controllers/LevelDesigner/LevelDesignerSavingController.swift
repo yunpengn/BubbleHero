@@ -60,12 +60,12 @@ class LevelDesignerSavingController {
     ///    - level: The level to be saved.
     ///    - fileName: The name of the file being saved to.
     private func validateFileName(for level: Level, to fileName: String) {
-        // Asks the user to enter a new name if the name is empty.
-        if fileName == "" {
+        // Asks the user to enter a new name if the name is invalid.
+        if !fileName.match(Settings.fileNameRegex) {
             promptLevelName(level: level,
                             title: Messages.saveLevelTitle,
-                            message: Messages.saveLevelEmptyMessage,
-                            placeholder: Messages.saveLevelEmptyPlaceholder)
+                            message: Messages.saveLevelInvalidNameMessage,
+                            placeholder: Messages.saveLevelInvalidNamePlaceholder)
             return
         }
 

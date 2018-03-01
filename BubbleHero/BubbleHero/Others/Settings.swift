@@ -42,6 +42,8 @@ class Settings {
     static let levelPerRow = CGFloat(3)
     /// The name for the randomly generated level.
     static let randomLevelName = "???"
+    /// The regular expression to check a file name.
+    static let fileNameRegex = "[^a-zA-Z0-9_]+"
 
     /// The identifier for cells in the collection view of level designer scene.
     static let designerCellId = "fillableBubbleCell"

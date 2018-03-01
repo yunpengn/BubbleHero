@@ -27,13 +27,14 @@ class Messages {
     /// The title for saving level.
     static let saveLevelTitle = "Save Level"
     /// The normal message for saving level.
-    static let saveLevelNormalMessage = "Enter a name for this Level"
+    static let saveLevelNormalMessage = "Enter a name for this Level."
     /// The normal placeholder for saving level.
     static let saveLevelNormalPlaceholder = "Enter name:"
     /// The prompt message when level name is emtpy.
-    static let saveLevelEmptyMessage = "The name cannot be empty."
+    static let saveLevelInvalidNameMessage = "The name is invalid. A legal name can only contains"
+        + "alphanumeric characters (a-z, A-Z, 0-9)."
     /// The prompt placeholder when level name is empty.
-    static let saveLevelEmptyPlaceholder = "Enter a non-empty name:"
+    static let saveLevelInvalidNamePlaceholder = "Enter a legal name:"
     /// The prompt message when level name already exists.
     static let saveLevelExistingMessage = "The name already exists. Choose a different one."
     /// The prompt placeholder when level name already exists.
