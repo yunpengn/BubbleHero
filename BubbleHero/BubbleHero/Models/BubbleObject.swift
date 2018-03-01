@@ -26,7 +26,7 @@ class BubbleObject: PhysicsObject {
     init(type: BubbleType, isSnapping: Bool, view: UIView) {
         self.type = type
         self.isSnapping = isSnapping
-        super.init(center: view.center, radius: view.frame.width / 2, isCollidable: true, view: view)
+        super.init(center: view.center, radius: view.frame.width / 2, view: view)
     }
 
     convenience init(type: BubbleType, view: UIView) {

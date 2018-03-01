@@ -69,4 +69,6 @@ class Settings {
 
     /// The minimum number of same-color bubbles to start removing.
     static let sameColorThreshold = 3
+    /// The constant that represents the gravitational force.
+    static let gravityConstant = CGFloat(0.6)
 }

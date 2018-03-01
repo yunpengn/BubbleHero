@@ -23,7 +23,7 @@ class PhysicsObject: PhysicsBody {
     var velocity = CGVector.zero
     var center: CGPoint
     let radius: CGFloat
-    let isCollidable: Bool
+    var isCollidable = true
 
     // An array of objects that it is attached to.
     var attachedWith: [PhysicsBody] = []
@@ -32,26 +32,19 @@ class PhysicsObject: PhysicsBody {
     /// - Parameters:
     ///    - center: The coordinate for the center of the `PhysicsObject`.
     ///    - radius: The radius of this `PhysicsObject`.
-    ///    - isCollidable: Indicates whether this `PhysicsObject` is collidable.
     ///    - view: The `UIView` object associated with.
-    init(center: CGPoint, radius: CGFloat, isCollidable: Bool, view: UIView) {
+    init(center: CGPoint, radius: CGFloat, view: UIView) {
         self.center = center
         self.radius = radius
-        self.isCollidable = isCollidable
         self.view = view
     }
 
     /// Creates a `PhysicsObject` with the default setting that its visual center is its
     /// actual center.
-    convenience init(isCollidable: Bool, view: UIView) {
+    convenience init(view: UIView) {
         let center = CGPoint(x: view.frame.midX, y: view.frame.midY)
         let radius = view.frame.width / 2
-        self.init(center: center, radius: radius, isCollidable: isCollidable, view: view)
-    }
-
-    /// Creates a `PhysicsObject` with the default setting that it is a rigid body.
-    convenience init(view: UIView) {
-        self.init(isCollidable: true, view: view)
+        self.init(center: center, radius: radius, view: view)
     }
 
     func move() {

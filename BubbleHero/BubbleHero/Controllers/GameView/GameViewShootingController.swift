@@ -23,6 +23,7 @@ class GameViewShootingController: EngineControllerDelegate {
     /// - Parameter engine: The physics engine attached.
     init(engine: PhysicsEngine2D) {
         self.engine = engine
+        removeUnattachedBubbles()
     }
 
     func onCollide(lhs: PhysicsBody, rhs: PhysicsBody?) {
@@ -126,7 +127,8 @@ class GameViewShootingController: EngineControllerDelegate {
                 continue
             }
             if !bubble.isAttachedToTop {
-                engine.deregisterPhysicsObject(bubble)
+                bubble.isCollidable = false
+                bubble.acceleration = CGVector(dx: 0, dy: Settings.gravityConstant)
             }
         }
     }
