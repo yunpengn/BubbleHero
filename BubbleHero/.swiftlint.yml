@@ -5,6 +5,7 @@ disabled_rules:
   - type_name
   - valid_docs
   - trailing_comma
+  - trailing_closure
 
 opt_in_rules:
   - array_init
@@ -29,7 +30,6 @@ opt_in_rules:
   - redundant_nil_coalescing
   - single_test_class
   - sorted_first_last
-  - trailing_closure
   - unneeded_parentheses_in_closure_argument
   - yoda_condition
 
