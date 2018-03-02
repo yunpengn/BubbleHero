@@ -25,6 +25,12 @@ struct Stack<T> {
         internalArray.append(item)
     }
 
+    /// Adds an array of elements on the top of the stack.
+    /// - Parameter items: The elements to be added to the stack.
+    mutating func push(contentOf items: [T]) {
+        internalArray.append(contentsOf: items)
+    }
+
     /// Removes the element at the top of the stack and return it.
     /// - Returns: the element at the top of the stack if the stack is not
     /// empty; otherwise, nil.

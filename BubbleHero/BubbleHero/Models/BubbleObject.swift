@@ -55,6 +55,12 @@ class BubbleObject: PhysicsObject {
         return getNeighbors().filter { $0.type == type }
     }
 
+    /// Gets the neighbors of this `BubbleObject` who are special types (power-up bubbles).
+    /// - Returns: An array of such bubble(s) if there exists; empty array otherwise.
+    func getSpecialNeighbors() -> [BubbleObject] {
+        return getNeighbors().filter { !$0.type.isColorType }
+    }
+
     /// Checks whether this bubble is in the same row as the other bubble.
     /// - Parameter bubble: The other bubble to check.
     /// - Returns: true if they are in the same row; false otherwise.
