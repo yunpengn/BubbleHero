@@ -23,14 +23,14 @@ import GameEngine
  - Date: March 2018
  */
 class MagneticBubbleObject: BubbleObject, MagneticBody {
-    var isAttractable = true
+    var canAttract = true
 
     init(view: BubbleView) {
         super.init(type: .magnetic, view: view)
     }
 
     func attract(object: PhysicsBody) {
-        guard isAttractable, object !== self, !object.isStatic else {
+        guard canAttract, object.isAttractable, object !== self, !object.isStatic else {
             return
         }
         // Gets the unit for the attraction effect (by distance square).
