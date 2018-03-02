@@ -57,14 +57,14 @@ enum BubbleType: Int, Codable {
         return self == .lightning || self == .bomb || self == .star
     }
 
-    /// Returns a pseudo-random type out of all possible `BubbleType`s.
+    /// Returns a random type out of all possible `BubbleType`s.
     /// - Returns: The random type got.
     static func getRandomType() -> BubbleType {
-        let randomValue = Int(arc4random_uniform(Settings.numOfTypes))
-        guard let type = BubbleType(rawValue: randomValue) else {
-            fatalError("The numOfTypes setting is wrong.")
+        if Double.random > Settings.colorTypeThreshold {
+            return getRandomNonColorType()
+        } else {
+            return getRandomColorType()
         }
-        return type
     }
 
     /// Returns a pseudo-random type out of all basic `BubbleType`s (only including
@@ -73,6 +73,16 @@ enum BubbleType: Int, Codable {
     static func getRandomColorType() -> BubbleType {
         let randomValue = Int(arc4random_uniform(Settings.numOfColorTypes))
         guard let type = BubbleType(rawValue: randomValue) else {
+            fatalError("The numOfTypes setting is wrong.")
+        }
+        return type
+    }
+
+    /// Returns a pseudo-random type out of all non-color `BubbleType`s.
+    /// - Returns: The random non-color type got.
+    static func getRandomNonColorType() -> BubbleType {
+        let randomValue = arc4random_uniform(Settings.numOfNonColorTypes) + Settings.numOfColorTypes
+        guard let type = BubbleType(rawValue: Int(randomValue)) else {
             fatalError("The numOfTypes setting is wrong.")
         }
         return type
