@@ -137,22 +137,22 @@ class GameViewShootingController: EngineControllerDelegate {
                 result.append(next)
                 next.visited = true
             }
-            // Checks for the special effect of star bubble.
+            // Checks for the special effects.
+            var bubbles: [BubbleObject] = []
             if next.type == .star {
-                for bubble in getAllSameTypeBubbles(of: object.type) {
-                    if !bubble.visited {
-                        // Since there is no more same-color bubbles, directly append to result.
-                        result.append(bubble)
-                        bubble.visited = true
-                    }
-                }
+                bubbles.append(contentsOf: getAllSameTypeBubbles(of: object.type))
             }
-            // Checks for the special effect of lightning bubbles.
             if next.type == .lightning {
-                for bubble in getSameRowBubbles(of: next) {
-                    if !bubble.visited {
-                        toVisit.push(bubble)
-                    }
+                bubbles.append(contentsOf: getSameRowBubbles(of: next))
+            }
+            if next.type == .bomb {
+                bubbles.append(contentsOf: next.getNeighbors())
+            }
+            for bubble in bubbles {
+                if !bubble.visited {
+                    // Only allows "direct" chaining effect.
+                    result.append(bubble)
+                    bubble.visited = true
                 }
             }
             // Checks for same-color connected bubble.

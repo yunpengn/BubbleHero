@@ -52,6 +52,11 @@ enum BubbleType: Int, Codable {
         return rawValue < Settings.numOfColorTypes
     }
 
+    /// Checks whether it has any special effects.
+    var isSpecialType: Bool {
+        return self == .lightning || self == .bomb || self == .star
+    }
+
     /// Returns a pseudo-random type out of all possible `BubbleType`s.
     /// - Returns: The random type got.
     static func getRandomType() -> BubbleType {
