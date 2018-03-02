@@ -35,7 +35,7 @@ import UIKit
  ## Attraction:
  Any `MagneticPhysicsBody` can attract other objects. Due to the natural of the application,
  the calculation here is a bit different from the actual physics. A `MagnetricPhysicsBody`
- will actually move every moving object by a certain distance.
+ will actually move every moving object by a varying distance.
 
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
