@@ -9,7 +9,14 @@
 import UIKit
 
 /**
- `MagneticBubbleObject` is a special kind of bubble that is magnetic.
+ `MagneticBubbleObject` is a special kind of bubble that is magnetic. A magnetic
+ bubble will atract other moving objects, of which the attraction force between
+ then is proportional to the square of distance between them. However, notice the
+ objects here do not obey Newton's 2nd Law.
+
+ In the imaginary world, attraction force is single-way. In other words, the magnetic
+ body will not move. It will only instruct other objects being attracted to move.
+ This violates Newton's 3rd Law.
 
  - Author: Niu Yunpeng @ CS3217
  - Date: March 2018
@@ -23,10 +30,14 @@ class MagneticBubbleObject: BubbleObject, MagneticBody {
         guard !object.isStatic else {
             return
         }
+        // Gets the unit for the attraction effect (by distance square).
         let sqrX = (center.x - object.center.x) * (center.x - object.center.x)
         let sqrY = (center.y - object.center.y) * (center.y - object.center.y)
         let unit = Settings.magneticConstant / (sqrX + sqrY)
-        let delta = CGVector(dx: velocity.dx * unit, dy: velocity.dy * unit)
-        move(by: delta)
+
+        // Gets the direction of the attraction effect.
+        let dx = unit * sqrX / (sqrX + sqrY) * (center.x - object.center.x).sign
+        let dy = unit * sqrY / (sqrX + sqrY) * (center.y - object.center.y).sign
+        object.move(by: CGVector(dx: dx, dy: dy))
     }
 }

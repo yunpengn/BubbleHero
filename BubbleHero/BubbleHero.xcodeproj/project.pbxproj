@@ -31,6 +31,7 @@
 		F25A296B2047F1D400C90576 /* RandomDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A296A2047F1D400C90576 /* RandomDataHelpers.swift */; };
 		F25E7A0720490152005E5803 /* MagneticBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E7A0620490152005E5803 /* MagneticBody.swift */; };
 		F25E7A0920490188005E5803 /* MagneticBubbleObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E7A0820490188005E5803 /* MagneticBubbleObject.swift */; };
+		F25E7A0E20490812005E5803 /* CGFloat+Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E7A0D20490812005E5803 /* CGFloat+Sign.swift */; };
 		F261007B204822550002864B /* String+Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261007A204822550002864B /* String+Pattern.swift */; };
 		F261007D20482E020002864B /* BackgroundMusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261007C20482E020002864B /* BackgroundMusicController.swift */; };
 		F2610082204832350002864B /* Now_Its_Time.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2610081204832350002864B /* Now_Its_Time.mp3 */; };
@@ -111,6 +112,7 @@
 		F25A296A2047F1D400C90576 /* RandomDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDataHelpers.swift; sourceTree = "<group>"; };
 		F25E7A0620490152005E5803 /* MagneticBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticBody.swift; sourceTree = "<group>"; };
 		F25E7A0820490188005E5803 /* MagneticBubbleObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticBubbleObject.swift; sourceTree = "<group>"; };
+		F25E7A0D20490812005E5803 /* CGFloat+Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Sign.swift"; sourceTree = "<group>"; };
 		F261007A204822550002864B /* String+Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Pattern.swift"; sourceTree = "<group>"; };
 		F261007C20482E020002864B /* BackgroundMusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicController.swift; sourceTree = "<group>"; };
 		F2610081204832350002864B /* Now_Its_Time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Now_Its_Time.mp3; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				F29CD044203D203800C94061 /* AppDelegate.swift */,
+				F25E7A0D20490812005E5803 /* CGFloat+Sign.swift */,
 				F2CAFB452044568A002078B2 /* DialogHelpers.swift */,
 				F2B2A52D204660A400B4FD6A /* Double+Random.swift */,
 				F252D4A820455F26004FDA03 /* Helpers.swift */,
@@ -645,6 +648,7 @@
 				F25A296B2047F1D400C90576 /* RandomDataHelpers.swift in Sources */,
 				F23CD6A02043ED1A0053A099 /* PaletteBubbleButton.swift in Sources */,
 				F2B2A5372046879000B4FD6A /* PhysicsEngine2D.swift in Sources */,
+				F25E7A0E20490812005E5803 /* CGFloat+Sign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
