@@ -22,12 +22,14 @@ import UIKit
  - Date: March 2018
  */
 class MagneticBubbleObject: BubbleObject, MagneticBody {
+    var isAttractable = true
+
     init(view: BubbleView) {
         super.init(type: .magnetic, view: view)
     }
 
     func attract(object: PhysicsBody) {
-        guard !object.isStatic else {
+        guard isAttractable, object !== self, !object.isStatic else {
             return
         }
         // Gets the unit for the attraction effect (by distance square).
@@ -38,7 +40,6 @@ class MagneticBubbleObject: BubbleObject, MagneticBody {
         // Gets the direction of the attraction effect.
         let dx = unit * sqrX / (sqrX + sqrY) * (center.x - object.center.x).sign
         let dy = unit * sqrY / (sqrX + sqrY) * (center.y - object.center.y).sign
-        print(dx, dy)
         object.move(by: CGVector(dx: dx, dy: dy))
     }
 }

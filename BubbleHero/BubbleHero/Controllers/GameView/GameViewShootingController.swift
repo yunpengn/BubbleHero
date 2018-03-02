@@ -210,6 +210,10 @@ class GameViewShootingController: EngineControllerDelegate {
             if !bubble.isAttachedToTop {
                 // A falling bubble cannot collide with others.
                 bubble.isCollidable = false
+                // Magnetic bubbles should lose magnetism now.
+                if let magnetism = bubble as? MagneticBubbleObject {
+                    magnetism.isAttractable = false
+                }
                 bubble.acceleration = CGVector(dx: 0, dy: Settings.gravityConstant)
             }
         }
