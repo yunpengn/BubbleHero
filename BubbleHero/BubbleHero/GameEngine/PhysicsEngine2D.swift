@@ -29,8 +29,8 @@ import UIKit
  between the centers of two objects with the sum of their radii to check whether any
  collision occurs between them.
 
- In addition, collision can only happen between two rigid bodies. This idea of "rigid
- body" is inspired by Unity3d game engine.
+ In addition, collision can only happen between two collidable bodies. This concept is
+ inspired by Unity3d game engine.
 
  ## Attraction:
  Any `MagneticPhysicsBody` can attract other objects. Due to the natural of the application,
@@ -70,6 +70,9 @@ class PhysicsEngine2D {
     @objc
     private func step(displayLink: CADisplayLink) {
         for object in physicsObjects {
+            if let body = object as? MagneticBody {
+                attract(by: body)
+            }
             guard !object.isStatic else {
                 continue
             }
@@ -80,6 +83,12 @@ class PhysicsEngine2D {
             checkCollision(of: object)
             renderer.render(for: object)
         }
+    }
+
+    /// Applies the attraction effect by a magnetic object.
+    /// - Parameter object: The object that is magnetic.
+    private func attract(by object: MagneticBody) {
+        physicsObjects.forEach { object.attract(object: $0) }
     }
 
     /// Reflects (by reversing the x-component of its speed) when it touches the left

@@ -38,6 +38,7 @@ class MagneticBubbleObject: BubbleObject, MagneticBody {
         // Gets the direction of the attraction effect.
         let dx = unit * sqrX / (sqrX + sqrY) * (center.x - object.center.x).sign
         let dy = unit * sqrY / (sqrX + sqrY) * (center.y - object.center.y).sign
+        print(dx, dy)
         object.move(by: CGVector(dx: dx, dy: dy))
     }
 }

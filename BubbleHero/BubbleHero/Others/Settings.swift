@@ -93,7 +93,7 @@ class Settings {
     /// The constant that represents the gravitational force.
     static let gravityConstant = CGFloat(0.6)
     /// The constant that represents the Coulomb force.
-    static let magneticConstant = CGFloat(10)
+    static let magneticConstant = CGFloat(150000)
     /// The unit for adjusting the position of non-snapping bubbles.
     static let adjustmentUnit = CGFloat(0.05)
 
