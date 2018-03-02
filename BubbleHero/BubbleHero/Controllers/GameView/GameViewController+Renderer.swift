@@ -6,6 +6,8 @@
 //  Copyright © 2018 Yunpeng Niu. All rights reserved.
 //
 
+import GameEngine
+
 /**
  Extension for `GameViewController`, which provides related functionalities to work
  as a `Renderer`.

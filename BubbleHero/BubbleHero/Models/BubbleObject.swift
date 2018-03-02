@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameEngine
 
 /**
  Creates a bubble object of the type `PhysicsObject` such that it can be managed by

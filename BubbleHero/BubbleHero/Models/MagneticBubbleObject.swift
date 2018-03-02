@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameEngine
 
 /**
  `MagneticBubbleObject` is a special kind of bubble that is magnetic. A magnetic

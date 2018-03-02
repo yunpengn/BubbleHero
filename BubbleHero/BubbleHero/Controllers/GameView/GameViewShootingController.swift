@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameEngine
 
 /**
  Controller for interactions between bubbles in game view, which assists `GameViewController`

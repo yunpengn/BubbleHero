@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameEngine
 
 /**
  Controller for the bubble launcher in game view, which assists `GameViewController`

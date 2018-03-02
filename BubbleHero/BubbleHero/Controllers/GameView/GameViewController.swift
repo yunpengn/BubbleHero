@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameEngine
 
 /**
  Controller for the game view, which is the scene for the player to play the
