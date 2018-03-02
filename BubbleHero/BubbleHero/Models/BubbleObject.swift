@@ -9,6 +9,8 @@
 import UIKit
 
 /**
+ Creates a bubble object of the type `PhysicsObject` such that it can be managed by
+ the physics engine.
 
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
@@ -23,14 +25,15 @@ class BubbleObject: PhysicsObject {
     /// Assists the traversal when checking unattached bubbles.
     var visited = false
 
-    init(type: BubbleType, isSnapping: Bool, view: UIView) {
+    /// Creates a new bubble object.
+    /// - Parameters:
+    ///    - type: The type of the bubble.
+    ///    - view: The view associated with the bubble.
+    ///    - isSnapping: Indicates whether the bubble is a snapping bubble (default true).
+    init(type: BubbleType, view: UIView, isSnapping: Bool = true) {
         self.type = type
         self.isSnapping = isSnapping
         super.init(center: view.center, radius: view.frame.width / 2, view: view)
-    }
-
-    convenience init(type: BubbleType, view: UIView) {
-        self.init(type: type, isSnapping: true, view: view)
     }
 
     /// Gets the neighbors of this `BubbleObject`.

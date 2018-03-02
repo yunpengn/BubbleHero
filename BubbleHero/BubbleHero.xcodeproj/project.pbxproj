@@ -29,6 +29,8 @@
 		F25A29652047D64900C90576 /* GameViewShootingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A29642047D64900C90576 /* GameViewShootingController.swift */; };
 		F25A29692047D95F00C90576 /* EngineControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A29682047D95F00C90576 /* EngineControllerDelegate.swift */; };
 		F25A296B2047F1D400C90576 /* RandomDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A296A2047F1D400C90576 /* RandomDataHelpers.swift */; };
+		F25E7A0720490152005E5803 /* MagneticBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E7A0620490152005E5803 /* MagneticBody.swift */; };
+		F25E7A0920490188005E5803 /* MagneticBubbleObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E7A0820490188005E5803 /* MagneticBubbleObject.swift */; };
 		F261007B204822550002864B /* String+Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261007A204822550002864B /* String+Pattern.swift */; };
 		F261007D20482E020002864B /* BackgroundMusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261007C20482E020002864B /* BackgroundMusicController.swift */; };
 		F2610082204832350002864B /* Now_Its_Time.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2610081204832350002864B /* Now_Its_Time.mp3 */; };
@@ -107,6 +109,8 @@
 		F25A29642047D64900C90576 /* GameViewShootingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewShootingController.swift; sourceTree = "<group>"; };
 		F25A29682047D95F00C90576 /* EngineControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineControllerDelegate.swift; sourceTree = "<group>"; };
 		F25A296A2047F1D400C90576 /* RandomDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDataHelpers.swift; sourceTree = "<group>"; };
+		F25E7A0620490152005E5803 /* MagneticBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticBody.swift; sourceTree = "<group>"; };
+		F25E7A0820490188005E5803 /* MagneticBubbleObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticBubbleObject.swift; sourceTree = "<group>"; };
 		F261007A204822550002864B /* String+Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Pattern.swift"; sourceTree = "<group>"; };
 		F261007C20482E020002864B /* BackgroundMusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicController.swift; sourceTree = "<group>"; };
 		F2610081204832350002864B /* Now_Its_Time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Now_Its_Time.mp3; sourceTree = "<group>"; };
@@ -240,6 +244,15 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
+		F25E7A0C204901A6005E5803 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F2B2A5292046583900B4FD6A /* FixedQueue.swift */,
+				F25A29622047D22200C90576 /* Stack.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F261007E204831B10002864B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +347,7 @@
 				F2B2A5422046DCC600B4FD6A /* EngineSettings.swift */,
 				F2B2A5362046879000B4FD6A /* PhysicsEngine2D.swift */,
 				F2B2A5382046956400B4FD6A /* Renderer.swift */,
+				F25E7A0620490152005E5803 /* MagneticBody.swift */,
 				F2B2A5402046CA3F00B4FD6A /* PhysicsBody.swift */,
 				F2B2A53E2046C6D700B4FD6A /* PhysicsObject.swift */,
 			);
@@ -343,14 +357,14 @@
 		F2CAFB2320442FB4002078B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F25E7A0C204901A6005E5803 /* Helpers */,
 				F2CAFB2420442FC6002078B2 /* BubbleType.swift */,
 				F2B2A5462046FA7A00B4FD6A /* BubbleObject.swift */,
 				F290456A2045B5A0003CAF7C /* BubbleSource.swift */,
-				F2B2A5292046583900B4FD6A /* FixedQueue.swift */,
 				F2B2A5482047036600B4FD6A /* Game.swift */,
 				F2CAFB2620443020002078B2 /* Level.swift */,
 				F252D49C20450EF0004FDA03 /* LevelGallery.swift */,
-				F25A29622047D22200C90576 /* Stack.swift */,
+				F25E7A0820490188005E5803 /* MagneticBubbleObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -607,6 +621,7 @@
 				F252D4A720454704004FDA03 /* UIImage+Slice.swift in Sources */,
 				F25A29692047D95F00C90576 /* EngineControllerDelegate.swift in Sources */,
 				F252D4AD20456C8A004FDA03 /* GameViewLaunchController.swift in Sources */,
+				F25E7A0920490188005E5803 /* MagneticBubbleObject.swift in Sources */,
 				F261007B204822550002864B /* String+Pattern.swift in Sources */,
 				F252D49B20450DE8004FDA03 /* LoadLevelController+Gesture.swift in Sources */,
 				F2B2A5392046956400B4FD6A /* Renderer.swift in Sources */,
@@ -617,6 +632,7 @@
 				F25A295F2047972D00C90576 /* GameViewController+Renderer.swift in Sources */,
 				F2B2A5472046FA7A00B4FD6A /* BubbleObject.swift in Sources */,
 				F252D4A920455F26004FDA03 /* Helpers.swift in Sources */,
+				F25E7A0720490152005E5803 /* MagneticBody.swift in Sources */,
 				F2B2A5492047036600B4FD6A /* Game.swift in Sources */,
 				F2610084204834B40002864B /* SettingsMenu.swift in Sources */,
 				F25A29652047D64900C90576 /* GameViewShootingController.swift in Sources */,

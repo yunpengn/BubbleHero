@@ -62,7 +62,7 @@ class Helpers {
             view.addBorder()
         }
 
-        return BubbleObject(type: type, isSnapping: isSnapping, view: view)
+        return BubbleObject(type: type, view: view, isSnapping: isSnapping)
     }
 
     /// Creates a snapping `BubbleObject` from a certain bubble type and its information.
@@ -91,6 +91,6 @@ class Helpers {
         if !isSnapping {
             view.addBorder()
         }
-        return BubbleObject(type: type, isSnapping: isSnapping, view: view)
+        return BubbleObject(type: type, view: view, isSnapping: isSnapping)
     }
 }
