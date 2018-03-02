@@ -61,7 +61,9 @@ class Helpers {
         if !isSnapping {
             view.addBorder()
         }
-
+        if type == .magnetic {
+            return MagneticBubbleObject(view: view)
+        }
         return BubbleObject(type: type, view: view, isSnapping: isSnapping)
     }
 
@@ -90,6 +92,9 @@ class Helpers {
         view.image = toBubbleImage(of: type)
         if !isSnapping {
             view.addBorder()
+        }
+        if type == .magnetic {
+            return MagneticBubbleObject(view: view)
         }
         return BubbleObject(type: type, view: view, isSnapping: isSnapping)
     }
