@@ -115,4 +115,9 @@ class Settings {
     static let lightningDuration = TimeInterval(0.15)
     /// The duration for sound effects.
     static let soundEffectDuration = 1.5
+
+    /// The time for each game (in seconds).
+    static let timePerGame = 120
+    /// The number of seconds per minute.
+    static let secondPerMinute = 60
 }

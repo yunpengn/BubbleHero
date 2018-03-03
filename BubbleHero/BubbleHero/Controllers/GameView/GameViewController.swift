@@ -23,10 +23,14 @@ class GameViewController: UIViewController {
     @IBOutlet private weak var nextBubble: BubbleView!
     /// The next second bubble to be launched.
     @IBOutlet private weak var nextSecondBubble: BubbleView!
+    /// The timer to indicate the number of seconds left.
+    @IBOutlet weak var timerLabel: UILabel!
     /// The controller for bubble launch.
     private var launchController: GameViewLaunchController?
     /// The controller for bubble shooting.
     private var shootingController: GameViewShootingController?
+    /// The controller for timer.
+    private var timerController: GameViewTimerController?
     /// The physics engine for this controller.
     private var physicsEngine: PhysicsEngine2D?
     /// The level to start with.
@@ -50,6 +54,10 @@ class GameViewController: UIViewController {
         shootingController = GameViewShootingController(engine: engine, view: view)
         shootingController?.launchControllerDelegate = launchController
         engine.controllerDelegate = shootingController
+
+        // Initializes the controller for timer.
+        timerController = GameViewTimerController(label: timerLabel)
+        timerController?.begin()
     }
 
     /// Always hide the status bar on the top.
@@ -71,7 +79,7 @@ class GameViewController: UIViewController {
             launchController?.launchBubble(to: location)
         }
     }
-    
+
     /// Loads a level to start the game with.
     private func loadLevel() {
         guard let startLevel = level else {

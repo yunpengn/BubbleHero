@@ -752,12 +752,21 @@
                                     <constraint firstAttribute="height" constant="40" id="Nmm-3n-FL7"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kc-Fq-3bP" userLabel="Timer">
+                                <rect key="frame" x="100" y="936" width="85" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5kc-Fq-3bP" firstAttribute="leading" secondItem="seM-ed-1kp" secondAttribute="leading" constant="100" id="0G5-hD-P0Z"/>
+                            <constraint firstItem="5kc-Fq-3bP" firstAttribute="centerY" secondItem="uh5-k4-cwU" secondAttribute="centerY" id="2z4-F4-IBP"/>
                             <constraint firstItem="vsV-kG-o4L" firstAttribute="top" secondItem="xGH-vM-5tf" secondAttribute="top" id="A30-FX-WUn"/>
                             <constraint firstItem="poj-Yf-att" firstAttribute="trailing" secondItem="seM-ed-1kp" secondAttribute="trailing" constant="-100" id="EYx-4w-wQ8"/>
                             <constraint firstItem="vsV-kG-o4L" firstAttribute="leading" secondItem="seM-ed-1kp" secondAttribute="leading" id="Fhg-Xw-bq5"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5kc-Fq-3bP" secondAttribute="trailing" constant="20" symbolic="YES" id="IbJ-1e-6dc"/>
                             <constraint firstItem="44i-uH-q2k" firstAttribute="centerX" secondItem="js1-VT-KKL" secondAttribute="centerX" id="N1y-cS-qFp"/>
                             <constraint firstItem="uh5-k4-cwU" firstAttribute="centerY" secondItem="js1-VT-KKL" secondAttribute="top" id="Ubh-gx-Lrs"/>
                             <constraint firstItem="vsV-kG-o4L" firstAttribute="bottom" secondItem="seM-ed-1kp" secondAttribute="bottom" id="V6B-kn-Bmp"/>
@@ -777,6 +786,7 @@
                         <outlet property="cannonBody" destination="44i-uH-q2k" id="saV-Ek-SaH"/>
                         <outlet property="nextBubble" destination="uh5-k4-cwU" id="cBA-yp-ECj"/>
                         <outlet property="nextSecondBubble" destination="poj-Yf-att" id="a3A-R5-cl7"/>
+                        <outlet property="timerLabel" destination="5kc-Fq-3bP" id="yzG-jy-zxR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFO-us-cgA" userLabel="First Responder" sceneMemberID="firstResponder"/>

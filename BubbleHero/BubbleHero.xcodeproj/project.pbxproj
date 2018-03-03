@@ -67,6 +67,7 @@
 		F2CAFB4220444B46002078B2 /* BubbleTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB4120444B46002078B2 /* BubbleTypeTests.swift */; };
 		F2CAFB44204454BF002078B2 /* LevelDesignerSavingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB43204454BF002078B2 /* LevelDesignerSavingController.swift */; };
 		F2CAFB462044568A002078B2 /* DialogHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB452044568A002078B2 /* DialogHelpers.swift */; };
+		F2DC6956204AFA21008C6C8E /* GameViewTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DC6955204AFA21008C6C8E /* GameViewTimerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		F2CAFB4120444B46002078B2 /* BubbleTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTypeTests.swift; sourceTree = "<group>"; };
 		F2CAFB43204454BF002078B2 /* LevelDesignerSavingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDesignerSavingController.swift; sourceTree = "<group>"; };
 		F2CAFB452044568A002078B2 /* DialogHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelpers.swift; sourceTree = "<group>"; };
+		F2DC6955204AFA21008C6C8E /* GameViewTimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewTimerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +350,7 @@
 				F24F0247204ACA9500875CFC /* GameViewLaunchController+Delegate.swift */,
 				F25A29642047D64900C90576 /* GameViewShootingController.swift */,
 				F24F0241204AA59600875CFC /* GameViewSnapController.swift */,
+				F2DC6955204AFA21008C6C8E /* GameViewTimerController.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				F252D49D20450EF0004FDA03 /* LevelGallery.swift in Sources */,
 				F2CAFB2520442FC6002078B2 /* BubbleType.swift in Sources */,
 				F252D4992045086A004FDA03 /* LoadLevelController+Gallery.swift in Sources */,
+				F2DC6956204AFA21008C6C8E /* GameViewTimerController.swift in Sources */,
 				F2B2A52A2046583900B4FD6A /* FixedQueue.swift in Sources */,
 				F252D4A720454704004FDA03 /* UIImage+Slice.swift in Sources */,
 				F252D4AD20456C8A004FDA03 /* GameViewLaunchController.swift in Sources */,
