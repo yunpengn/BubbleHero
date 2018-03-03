@@ -27,6 +27,6 @@ class CannonView: UIImageView {
 
         image = CannonView.sprite[0]
         animationImages = CannonView.sprite
-        animationRepeatCount = 1
+        animationRepeatCount = Settings.animationRepeatCount
     }
 }

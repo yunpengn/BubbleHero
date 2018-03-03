@@ -147,6 +147,7 @@ class GameViewShootingController: EngineControllerDelegate {
                 bubbles.append(contentsOf: getSameRowBubbles(of: next))
             }
             if next.type == .bomb {
+                explode(around: next)
                 bubbles.append(contentsOf: next.getNeighbors())
             }
             for bubble in bubbles {
@@ -156,6 +157,7 @@ class GameViewShootingController: EngineControllerDelegate {
                     bubble.visited = true
                 }
             }
+
             // Checks for same-color connected bubble.
             for neighbor in next.getSameColorNeighbors() {
                 if !neighbor.visited {
@@ -197,6 +199,22 @@ class GameViewShootingController: EngineControllerDelegate {
             }
         }
         return result
+    }
+
+    /// Adds explosion animation to a bomb bubble and bubbles around it.
+    /// - Parameter bomb: The bomb bubble.
+    private func explode(around bomb: BubbleObject) {
+        guard bomb.type == .bomb else {
+            return
+        }
+        if let bombView = bomb.view as? BubbleView {
+            bombView.startAnimating()
+        }
+        for bubble in bomb.getNeighbors() {
+            if let view = bubble.view as? BubbleView {
+                view.startAnimating()
+            }
+        }
     }
 
     /// Finds and removes the unattached bubbles. A bubble is defined as "unattached"

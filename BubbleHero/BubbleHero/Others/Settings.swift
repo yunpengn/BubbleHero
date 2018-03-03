@@ -101,4 +101,6 @@ class Settings {
     static let musicInfiniteLoop = -1
     /// The file name for background music in menu view.
     static let musicNameMenu = "Now_Its_Time.mp3"
+    /// The count for animation repeat.
+    static let animationRepeatCount = 1
 }

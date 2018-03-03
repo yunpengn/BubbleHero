@@ -15,6 +15,11 @@ import UIKit
  - Date: Feb 2018
  */
 class BubbleView: UIImageView {
+    /// An array of images used as the explosion animation spritesheet.
+    private static let sprite = Array(0..<4).map { index in
+        return #imageLiteral(resourceName: "bubble-burst").slice(index: index, numOfRows: 1, numOfColumns: 4) ?? #imageLiteral(resourceName: "bubble-indestructible")
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -31,6 +36,9 @@ class BubbleView: UIImageView {
         layer.cornerRadius = frame.width / 2
         layer.borderWidth = 4
         removeBorder()
+
+        animationImages = BubbleView.sprite
+        animationRepeatCount = Settings.animationRepeatCount
     }
 
     /// Adds a purple border with a width of 2 around the bubble image.
