@@ -59,16 +59,19 @@ class GameViewShootingController: EngineControllerDelegate {
     /// - Parameter object: The `BubbleObject` to start from.
     private func removeConnectedBubbles(from object: BubbleObject) {
         // Checks whether there are any neighbors of special types.
-        var toRemove = object.getSpecialNeighbors()
+        let specials = object.getSpecialNeighbors()
         // Special bubbles should always be triggered.
-        let shouldRemove = !toRemove.isEmpty
+        let shouldRemove = !specials.isEmpty
 
         // Checks the same color bubbles and chaining effect.
-        toRemove = checkSameTypeBubbles(startWith: toRemove, from: object)
+        let toRemove = checkSameTypeBubbles(startWith: specials, from: object)
         // Removes them either the number of bubbles achieve threshold or there exists
         // special bubbles around.
         if toRemove.count >= Settings.sameColorThreshold || shouldRemove {
-            engine.deregisterPhysicsObject(contentsOf: toRemove)
+            for bubble in toRemove {
+                animator.animate(object: bubble.object, effect: bubble.effect)
+                engine.deregisterPhysicsObject(bubble.object)
+            }
         }
     }
 
@@ -77,9 +80,10 @@ class GameViewShootingController: EngineControllerDelegate {
     /// - Parameters:
     ///    - startWith: Some `BubbleObject`s that have been included due to special effects.
     ///    - object: The `BubbleObject` to start from.
-    /// - Returns: An array of attached `BubbleObject`s of the same color.
-    private func checkSameTypeBubbles(startWith: [BubbleObject], from object: BubbleObject) -> [BubbleObject] {
-        var result: [BubbleObject] = []
+    /// - Returns: An array of `BubbleObjects` to remove and their reasons of being removed.
+    private func checkSameTypeBubbles(startWith: [BubbleObject], from object: BubbleObject)
+        -> [(object: BubbleObject, effect: RemoveAnimation)] {
+        var result: [(object: BubbleObject, effect: RemoveAnimation)] = []
         var toVisit = Stack<BubbleObject>()
         toVisit.push(object)
         toVisit.push(contentOf: startWith)
@@ -92,28 +96,32 @@ class GameViewShootingController: EngineControllerDelegate {
         }
         // Starts a DFS to find all attached objects with the same color.
         while let next = toVisit.pop() {
-            if !next.visited {
-                result.append(next)
-                next.visited = true
-            }
-
-            // Checks for the special effects.
-            var bubbles: [BubbleObject] = []
+            // Checks for the special effects (and only allows 2nd-order chaing effect).
             if next.type == .star {
-                bubbles.append(contentsOf: getAllSameTypeBubbles(of: object.type))
-            }
-            if next.type == .lightning {
-                bubbles.append(contentsOf: getSameRowBubbles(of: next))
-            }
-            if next.type == .bomb {
-                bubbles.append(contentsOf: next.getNeighbors())
-            }
-            for bubble in bubbles {
-                if !bubble.visited {
-                    // Only allows "direct" chaining effect.
-                    result.append(bubble)
+                for bubble in getAllSameTypeBubbles(of: object.type) {
                     bubble.visited = true
+                    result.append((bubble, .star))
                 }
+                next.visited = true
+                result.append((next, .star))
+            } else if next.type == .lightning {
+                animator.addLightningLine(at: next.view.frame.midX)
+                for bubble in getSameRowBubbles(of: next) {
+                    bubble.visited = true
+                    result.append((bubble, .none))
+                }
+                next.visited = true
+                result.append((next, .none))
+            } else if next.type == .bomb {
+                for bubble in next.getNeighbors() {
+                    bubble.visited = true
+                    result.append((bubble, .bomb))
+                }
+                next.visited = true
+                result.append((next, .bomb))
+            } else if !next.visited {
+                result.append((next, .none))
+                next.visited = true
             }
 
             // Checks for same-color connected bubble.
@@ -158,4 +166,13 @@ class GameViewShootingController: EngineControllerDelegate {
         }
         return result
     }
+}
+
+/**
+ An enum indicating the animation to use when removing a bubble.
+ */
+enum RemoveAnimation {
+    case none
+    case bomb
+    case star
 }
