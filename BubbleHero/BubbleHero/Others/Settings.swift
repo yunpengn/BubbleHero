@@ -87,6 +87,8 @@ class Settings {
     static let colorTypeThreshold = 0.9
     /// The number of next bubbles to preview.
     static let numOfPreviewBubbles = 2
+    /// The border width for non-snapping bubbles.
+    static let bubbleViewBorderWidth = CGFloat(4)
 
     /// The minimum number of same-color bubbles to start removing.
     static let sameColorThreshold = 3
@@ -103,4 +105,8 @@ class Settings {
     static let musicNameMenu = "Now_Its_Time.mp3"
     /// The count for animation repeat.
     static let animationRepeatCount = 1
+    /// The duration for fade away effect.
+    static let fadeAwayDuration = TimeInterval(0.5)
+    /// The duration for explosion animation.
+    static let explodeDuration = TimeInterval(0.15)
 }

@@ -12,7 +12,6 @@
 		F23CD69D2043DC880053A099 /* LevelDesignerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CD69C2043DC880053A099 /* LevelDesignerController.swift */; };
 		F23CD6A02043ED1A0053A099 /* PaletteBubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */; };
 		F23CD6A22043F5D20053A099 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CD6A12043F5D20053A099 /* Settings.swift */; };
-		F24F023E204A872200875CFC /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F023D204A872200875CFC /* UIView+Animations.swift */; };
 		F24F0242204AA59600875CFC /* GameViewSnapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0241204AA59600875CFC /* GameViewSnapController.swift */; };
 		F24F0244204AA8C900875CFC /* GameViewFallingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0243204AA8C900875CFC /* GameViewFallingController.swift */; };
 		F24F0246204AA9EC00875CFC /* GameViewAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0245204AA9EC00875CFC /* GameViewAnimationController.swift */; };
@@ -90,7 +89,6 @@
 		F23CD69C2043DC880053A099 /* LevelDesignerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDesignerController.swift; sourceTree = "<group>"; };
 		F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteBubbleButton.swift; sourceTree = "<group>"; };
 		F23CD6A12043F5D20053A099 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		F24F023D204A872200875CFC /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
 		F24F0241204AA59600875CFC /* GameViewSnapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewSnapController.swift; sourceTree = "<group>"; };
 		F24F0243204AA8C900875CFC /* GameViewFallingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewFallingController.swift; sourceTree = "<group>"; };
 		F24F0245204AA9EC00875CFC /* GameViewAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewAnimationController.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 				F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */,
 				F2610083204834B40002864B /* SettingsMenu.swift */,
 				F252D4A620454704004FDA03 /* UIImage+Slice.swift */,
-				F24F023D204A872200875CFC /* UIView+Animations.swift */,
 				F29CD04B203D203800C94061 /* Assets.xcassets */,
 				F29CD04D203D203800C94061 /* LaunchScreen.storyboard */,
 				F29CD048203D203800C94061 /* Main.storyboard */,
@@ -604,7 +601,6 @@
 				F2B2A52A2046583900B4FD6A /* FixedQueue.swift in Sources */,
 				F252D4A720454704004FDA03 /* UIImage+Slice.swift in Sources */,
 				F252D4AD20456C8A004FDA03 /* GameViewLaunchController.swift in Sources */,
-				F24F023E204A872200875CFC /* UIView+Animations.swift in Sources */,
 				F25E7A0920490188005E5803 /* MagneticBubbleObject.swift in Sources */,
 				F261007B204822550002864B /* String+Pattern.swift in Sources */,
 				F252D49B20450DE8004FDA03 /* LoadLevelController+Gesture.swift in Sources */,

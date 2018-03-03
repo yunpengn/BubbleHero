@@ -18,13 +18,8 @@ import SpriteKit
 class BubbleView: UIImageView {
     /// An array of images used as the explosion animation spritesheet.
     private static let sprite = Array(0..<4).map { index in
-        return SKTexture(image: #imageLiteral(resourceName: "bubble-burst").slice(index: index, numOfRows: 1, numOfColumns: 4) ?? #imageLiteral(resourceName: "bubble-indestructible"))
+        return #imageLiteral(resourceName: "bubble-burst").slice(index: index, numOfRows: 1, numOfColumns: 4) ?? #imageLiteral(resourceName: "bubble-indestructible")
     }
-    /// The action for explosion animation.
-    private static let action = SKAction.animate(with: BubbleView.sprite,
-                                                 timePerFrame: 0.1,
-                                                 resize: false,
-                                                 restore: true)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,8 +35,12 @@ class BubbleView: UIImageView {
     private func setup() {
         super.awakeFromNib()
         layer.cornerRadius = frame.width / 2
-        layer.borderWidth = 4
+        layer.borderWidth = Settings.bubbleViewBorderWidth
         removeBorder()
+
+        animationImages = BubbleView.sprite
+        animationRepeatCount = 1
+        animationDuration = Settings.explodeDuration
     }
 
     /// Adds a purple border with a width of 2 around the bubble image.
@@ -56,9 +55,8 @@ class BubbleView: UIImageView {
 
     /// Adds explode animation to the bubble view. This method is not thread safe.
     /// - Parameter handler: The handler when the effect has completed.
-    func explode(onComplete handler: @escaping () -> Void) {
-        let node = SKSpriteNode(texture: BubbleView.sprite[0])
-        node.position = center
-        node.run(BubbleView.action, completion: handler)
+    func explode() {
+        startAnimating()
+        perform(#selector(removeFromSuperview), with: nil, afterDelay: animationDuration)
     }
 }
