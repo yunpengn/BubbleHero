@@ -21,12 +21,15 @@ class GameViewShootingController: EngineControllerDelegate {
     let engine: PhysicsEngine2D
     /// The controller for logics related to snapping/non-snapping bubbles.
     let snapController = GameViewSnapController()
+    /// The controller for falling bubbles.
+    let fallingController: GameViewFallingController
 
     /// Creates a shooting controller with its associated physics engine.
     /// - Parameter engine: The physics engine attached.
     init(engine: PhysicsEngine2D) {
         self.engine = engine
-        removeUnattachedBubbles()
+        fallingController = GameViewFallingController(engine: engine)
+        fallingController.removeUnattachedBubbles()
     }
 
     func onCollide(lhs: PhysicsBody, rhs: PhysicsBody?) {
@@ -34,7 +37,7 @@ class GameViewShootingController: EngineControllerDelegate {
             snapController.snap(lhs: bubble1, rhs: bubble2)
             addAttachment(object: bubble1)
             removeConnectedBubbles(from: bubble1)
-            removeUnattachedBubbles()
+            fallingController.removeUnattachedBubbles()
         }
     }
 
@@ -120,60 +123,5 @@ class GameViewShootingController: EngineControllerDelegate {
         }
 
         return result
-    }
-
-    /// Finds and removes the unattached bubbles. A bubble is defined as "unattached"
-    /// if it is not connected to the top wall or any other attached bubbles.
-    private func removeUnattachedBubbles() {
-        updateAttachToTop()
-        // Removes those "unattached" ones.
-        for item in engine.physicsObjects {
-            guard let bubble = item as? BubbleObject else {
-                continue
-            }
-            if !bubble.isAttachedToTop {
-                // A falling bubble cannot collide with others.
-                bubble.isCollidable = false
-                bubble.isAttractable = false
-                // Magnetic bubbles should lose magnetism now.
-                if let magnetism = bubble as? MagneticBubbleObject {
-                    magnetism.canAttract = false
-                }
-                bubble.acceleration = CGVector(dx: 0, dy: Settings.gravityConstant)
-            }
-        }
-    }
-
-    /// Updates the status of all bubbles regarding whether they are attached to the
-    /// top wall, either directly or indirectly.
-    private func updateAttachToTop() {
-        var toCheck = Stack<BubbleObject>()
-
-        // Gets those who can directly touch the top wall first.
-        for item in engine.physicsObjects {
-            guard let bubble = item as? BubbleObject else {
-                continue
-            }
-            if bubble.canTouchTopWall {
-                bubble.isAttachedToTop = true
-                toCheck.push(bubble)
-            } else {
-                bubble.isAttachedToTop = false
-            }
-            bubble.visited = false
-        }
-
-        // Starts a DFS to update the status of all bubbles.
-        while let next = toCheck.pop() {
-            if next.visited {
-                continue
-            }
-
-            next.visited = true
-            for neighbor in next.getNeighbors() where !neighbor.visited {
-                neighbor.isAttachedToTop = true
-                toCheck.push(neighbor)
-            }
-        }
     }
 }
