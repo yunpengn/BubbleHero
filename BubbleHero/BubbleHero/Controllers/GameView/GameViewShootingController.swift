@@ -24,16 +24,19 @@ class GameViewShootingController: EngineControllerDelegate {
     /// The controller for falling bubbles.
     let fallingController: GameViewFallingController
     /// The controller for animation.
-    let animator = GameViewAnimationController()
+    let animator: GameViewAnimationController
     /// The delegate for launch controller.
     weak var launchControllerDelegate: GameViewLaunchControllerDelegate?
 
     /// Creates a shooting controller with its associated physics engine.
-    /// - Parameter engine: The physics engine attached.
-    init(engine: PhysicsEngine2D) {
+    /// - Parameter
+    ///    - engine: The physics engine attached.
+    ///    - view: The game area.
+    init(engine: PhysicsEngine2D, view: UIView) {
         self.engine = engine
         fallingController = GameViewFallingController(engine: engine)
         fallingController.removeUnattachedBubbles()
+        animator = GameViewAnimationController(view: view)
     }
 
     func onCollide(lhs: PhysicsBody, rhs: PhysicsBody?) {
@@ -108,7 +111,7 @@ class GameViewShootingController: EngineControllerDelegate {
                 next.visited = true
                 result.append((next, .star))
             } else if next.type == .lightning {
-                animator.addLightningLine(at: next.view.frame.midX)
+                animator.addLightningLine(at: next.view.frame.midY)
                 for bubble in getSameRowBubbles(of: next) {
                     bubble.visited = true
                     result.append((bubble, .none))

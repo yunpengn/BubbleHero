@@ -16,6 +16,7 @@
 		F24F0244204AA8C900875CFC /* GameViewFallingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0243204AA8C900875CFC /* GameViewFallingController.swift */; };
 		F24F0246204AA9EC00875CFC /* GameViewAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0245204AA9EC00875CFC /* GameViewAnimationController.swift */; };
 		F24F0248204ACA9500875CFC /* GameViewLaunchController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0247204ACA9500875CFC /* GameViewLaunchController+Delegate.swift */; };
+		F24F024A204AD17A00875CFC /* LightningLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0249204AD17A00875CFC /* LightningLine.swift */; };
 		F252D4932044F751004FDA03 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4922044F751004FDA03 /* Messages.swift */; };
 		F252D495204500B5004FDA03 /* LoadLevelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D494204500B5004FDA03 /* LoadLevelController.swift */; };
 		F252D49720450475004FDA03 /* LevelGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D49620450475004FDA03 /* LevelGalleryCell.swift */; };
@@ -94,6 +95,7 @@
 		F24F0243204AA8C900875CFC /* GameViewFallingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewFallingController.swift; sourceTree = "<group>"; };
 		F24F0245204AA9EC00875CFC /* GameViewAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewAnimationController.swift; sourceTree = "<group>"; };
 		F24F0247204ACA9500875CFC /* GameViewLaunchController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewLaunchController+Delegate.swift"; sourceTree = "<group>"; };
+		F24F0249204AD17A00875CFC /* LightningLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightningLine.swift; sourceTree = "<group>"; };
 		F252D4922044F751004FDA03 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		F252D494204500B5004FDA03 /* LoadLevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadLevelController.swift; sourceTree = "<group>"; };
 		F252D49620450475004FDA03 /* LevelGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGalleryCell.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				F2610085204838110002864B /* CheckboxButton.swift */,
 				F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */,
 				F252D49620450475004FDA03 /* LevelGalleryCell.swift */,
+				F24F0249204AD17A00875CFC /* LightningLine.swift */,
 				F23CD6992043C2EE0053A099 /* MenuButton.swift */,
 				F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */,
 				F2610083204834B40002864B /* SettingsMenu.swift */,
@@ -592,6 +595,7 @@
 				F252D4932044F751004FDA03 /* Messages.swift in Sources */,
 				F252D49F20451C29004FDA03 /* LevelDesignerController+Delegate.swift in Sources */,
 				F23CD69D2043DC880053A099 /* LevelDesignerController.swift in Sources */,
+				F24F024A204AD17A00875CFC /* LightningLine.swift in Sources */,
 				F29CD045203D203800C94061 /* AppDelegate.swift in Sources */,
 				F252D495204500B5004FDA03 /* LoadLevelController.swift in Sources */,
 				F2CAFB44204454BF002078B2 /* LevelDesignerSavingController.swift in Sources */,

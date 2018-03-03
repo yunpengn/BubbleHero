@@ -47,7 +47,7 @@ class GameViewController: UIViewController {
         launchController?.engine = engine
 
         // Initializes the controller for bubble shooting and interactions.
-        shootingController = GameViewShootingController(engine: engine)
+        shootingController = GameViewShootingController(engine: engine, view: view)
         shootingController?.launchControllerDelegate = launchController
         engine.controllerDelegate = shootingController
     }

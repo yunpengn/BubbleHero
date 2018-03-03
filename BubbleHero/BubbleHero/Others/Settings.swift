@@ -106,7 +106,11 @@ class Settings {
     /// The count for animation repeat.
     static let animationRepeatCount = 1
     /// The duration for fade away effect.
-    static let fadeAwayDuration = TimeInterval(0.5)
+    static let fadeAwayDuration = TimeInterval(0.3)
     /// The duration for explosion animation.
-    static let explodeDuration = TimeInterval(0.15)
+    static let explodeDuration = TimeInterval(0.1)
+    /// The height of the lightning line
+    static let lightningLineHeight = CGFloat(4)
+    /// The duration for the lightning line
+    static let lightningDuration = TimeInterval(0.15)
 }

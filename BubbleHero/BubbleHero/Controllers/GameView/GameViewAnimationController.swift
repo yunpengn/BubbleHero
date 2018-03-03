@@ -8,7 +8,19 @@
 
 import UIKit
 
+/**
+ Controller for the animations in the game view.
+
+ - Author: Niu Yunpeng @ CS3217
+ - Date: Feb 2018
+ */
 class GameViewAnimationController {
+    private let view: UIView
+
+    init(view: UIView) {
+        self.view = view
+    }
+
     func animate(object: BubbleObject, effect: RemoveAnimation) {
         let newView = clone(object: object)
         switch effect {
@@ -22,7 +34,9 @@ class GameViewAnimationController {
     }
 
     func addLightningLine(at x: CGFloat) {
-        
+        let line = LightningLine(midY: x)
+        view.addSubview(line)
+        line.animate()
     }
 
     private func clone(object: BubbleObject) -> BubbleView {
@@ -30,13 +44,13 @@ class GameViewAnimationController {
         if !object.isSnapping {
             newView.addBorder()
         }
-        object.view.superview?.addSubview(newView)
+        newView.image = Helpers.toBubbleImage(of: object.type)
+        view.addSubview(newView)
         return newView
     }
 
     private func fadeAway(view: BubbleView) {
-        UIView.animate(withDuration: Settings.fadeAwayDuration,
-                       delay: 0.1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: Settings.fadeAwayDuration, animations: {
             view.alpha = 0
         }, completion: { _ in
             view.removeFromSuperview()
