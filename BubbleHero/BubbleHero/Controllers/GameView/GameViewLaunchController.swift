@@ -29,6 +29,8 @@ class GameViewLaunchController {
     private var source = BubbleSource(next: Settings.numOfPreviewBubbles)
     /// The engine to take over the control for bubbles shot.
     var engine: PhysicsEngine2D?
+    /// Indicates whether it is ready for the next launch.
+    var readyForLaunch = true
 
     init(cannon: CannonView, nextBubble: BubbleView, nextSecondBubble: BubbleView) {
         self.cannon = cannon
@@ -40,6 +42,9 @@ class GameViewLaunchController {
     /// Rotates the cannon body so that it faces a certain point.
     /// - Parameter point: The point that the cannon is supposed to face.
     func rotateCannon(to point: CGPoint) {
+        guard readyForLaunch else {
+            return
+        }
         let newAngle = getShootAngle(by: point)
         cannon.transform = cannon.transform.rotated(by: newAngle - cannonAngle)
         cannonAngle = newAngle
@@ -49,10 +54,14 @@ class GameViewLaunchController {
     /// - Parameter point: The point that the direction of the shot bubble
     /// should be in.
     func launchBubble(to point: CGPoint) {
+        guard readyForLaunch else {
+            return
+        }
         let angle = getShootAngle(by: point)
         shootBubble(angle: angle)
         cannon.startAnimating()
         updateView()
+        readyForLaunch = false
     }
 
     /// Shoots a certain `BubbleType` of bubble towards the specific angle.

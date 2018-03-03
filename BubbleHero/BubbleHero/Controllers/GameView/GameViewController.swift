@@ -48,8 +48,8 @@ class GameViewController: UIViewController {
 
         // Initializes the controller for bubble shooting and interactions.
         shootingController = GameViewShootingController(engine: engine)
+        shootingController?.launchControllerDelegate = launchController
         engine.controllerDelegate = shootingController
-
     }
 
     /// Always hide the status bar on the top.

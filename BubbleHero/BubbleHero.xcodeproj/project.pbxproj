@@ -15,6 +15,7 @@
 		F24F0242204AA59600875CFC /* GameViewSnapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0241204AA59600875CFC /* GameViewSnapController.swift */; };
 		F24F0244204AA8C900875CFC /* GameViewFallingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0243204AA8C900875CFC /* GameViewFallingController.swift */; };
 		F24F0246204AA9EC00875CFC /* GameViewAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0245204AA9EC00875CFC /* GameViewAnimationController.swift */; };
+		F24F0248204ACA9500875CFC /* GameViewLaunchController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0247204ACA9500875CFC /* GameViewLaunchController+Delegate.swift */; };
 		F252D4932044F751004FDA03 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4922044F751004FDA03 /* Messages.swift */; };
 		F252D495204500B5004FDA03 /* LoadLevelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D494204500B5004FDA03 /* LoadLevelController.swift */; };
 		F252D49720450475004FDA03 /* LevelGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D49620450475004FDA03 /* LevelGalleryCell.swift */; };
@@ -92,6 +93,7 @@
 		F24F0241204AA59600875CFC /* GameViewSnapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewSnapController.swift; sourceTree = "<group>"; };
 		F24F0243204AA8C900875CFC /* GameViewFallingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewFallingController.swift; sourceTree = "<group>"; };
 		F24F0245204AA9EC00875CFC /* GameViewAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewAnimationController.swift; sourceTree = "<group>"; };
+		F24F0247204ACA9500875CFC /* GameViewLaunchController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewLaunchController+Delegate.swift"; sourceTree = "<group>"; };
 		F252D4922044F751004FDA03 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		F252D494204500B5004FDA03 /* LoadLevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadLevelController.swift; sourceTree = "<group>"; };
 		F252D49620450475004FDA03 /* LevelGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGalleryCell.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				F24F0245204AA9EC00875CFC /* GameViewAnimationController.swift */,
 				F24F0243204AA8C900875CFC /* GameViewFallingController.swift */,
 				F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */,
+				F24F0247204ACA9500875CFC /* GameViewLaunchController+Delegate.swift */,
 				F25A29642047D64900C90576 /* GameViewShootingController.swift */,
 				F24F0241204AA59600875CFC /* GameViewSnapController.swift */,
 			);
@@ -615,6 +618,7 @@
 				F24F0244204AA8C900875CFC /* GameViewFallingController.swift in Sources */,
 				F2610084204834B40002864B /* SettingsMenu.swift in Sources */,
 				F25A29652047D64900C90576 /* GameViewShootingController.swift in Sources */,
+				F24F0248204ACA9500875CFC /* GameViewLaunchController+Delegate.swift in Sources */,
 				F2CAFB462044568A002078B2 /* DialogHelpers.swift in Sources */,
 				F2CAFB2720443020002078B2 /* Level.swift in Sources */,
 				F29045692045A4CB003CAF7C /* CannonView.swift in Sources */,

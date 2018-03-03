@@ -25,6 +25,8 @@ class GameViewShootingController: EngineControllerDelegate {
     let fallingController: GameViewFallingController
     /// The controller for animation.
     let animator = GameViewAnimationController()
+    /// The delegate for launch controller.
+    weak var launchControllerDelegate: GameViewLaunchControllerDelegate?
 
     /// Creates a shooting controller with its associated physics engine.
     /// - Parameter engine: The physics engine attached.
@@ -39,6 +41,7 @@ class GameViewShootingController: EngineControllerDelegate {
             snapController.snap(lhs: bubble1, rhs: bubble2)
             addAttachment(object: bubble1)
             removeConnectedBubbles(from: bubble1)
+            launchControllerDelegate?.prepareForNextLaunch()
             fallingController.removeUnattachedBubbles()
         }
     }
