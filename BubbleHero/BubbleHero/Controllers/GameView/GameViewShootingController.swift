@@ -18,7 +18,9 @@ import GameEngine
  */
 class GameViewShootingController: EngineControllerDelegate {
     /// The physics engine associated with this controller.
-    private let engine: PhysicsEngine2D
+    let engine: PhysicsEngine2D
+    /// The controller for logics related to snapping/non-snapping bubbles.
+    let snapController = GameViewSnapController()
 
     /// Creates a shooting controller with its associated physics engine.
     /// - Parameter engine: The physics engine attached.
@@ -29,60 +31,11 @@ class GameViewShootingController: EngineControllerDelegate {
 
     func onCollide(lhs: PhysicsBody, rhs: PhysicsBody?) {
         if let bubble1 = lhs as? BubbleObject, let bubble2 = rhs as? BubbleObject? {
-            handleCollsion(lhs: bubble1, rhs: bubble2)
+            snapController.snap(lhs: bubble1, rhs: bubble2)
+            addAttachment(object: bubble1)
+            removeConnectedBubbles(from: bubble1)
+            removeUnattachedBubbles()
         }
-    }
-
-    /// Handles the collsion between two `BubbleObject`s.
-    private func handleCollsion(lhs: BubbleObject, rhs: BubbleObject?) {
-        if let other = rhs, !other.isSnapping {
-            lhs.isSnapping = false
-            if let view = lhs.view as? BubbleView {
-                view.addBorder()
-            }
-        }
-        // Moves the bubble according to whether it is snapping bubble.
-        if lhs.isSnapping {
-            snapToNearbyCell(lhs)
-        } else {
-            adjustPosition(from: lhs, to: rhs)
-        }
-        lhs.stop()
-        rhs?.stop()
-        addAttachment(object: lhs)
-        removeConnectedBubbles(from: lhs)
-        removeUnattachedBubbles()
-    }
-
-    /// Finds the position of the nearby cell and moves to it.
-    /// - Parameter object: The `BubbleObject` to move.
-    private func snapToNearbyCell(_ object: BubbleObject) {
-        let minY = max(object.center.y - object.radius, 0)
-        let row = round((minY) / FillableBubbleCell.height)
-        let newY = row * FillableBubbleCell.height + object.radius
-
-        let leftOffset = (Int(row) % 2 == 0) ? 0 : FillableBubbleCell.leftOffset
-        let minX = max(object.center.x - object.radius, leftOffset)
-        let column = round((minX - leftOffset) / FillableBubbleCell.diameter)
-        let newX = column * FillableBubbleCell.diameter + leftOffset + object.radius
-
-        object.move(to: CGPoint(x: newX, y: newY))
-    }
-
-    /// Adjusts the position a little bit so that a non-snapping bubble can barely
-    /// touch its attached bubble.
-    private func adjustPosition(from: BubbleObject, to: BubbleObject?) {
-        guard let other = to else {
-            from.center.y = from.radius
-            return
-        }
-        // Adjusts it until they can merely attach to each other.
-        let dx = -from.velocity.dx * Settings.adjustmentUnit
-        let dy = -from.velocity.dy * Settings.adjustmentUnit
-        while from.canAttachWith(object: other) {
-            from.move(by: CGVector(dx: dx, dy: dy))
-        }
-        from.move(by: CGVector(dx: -dx, dy: -dy))
     }
 
     /// Attaches the bubble with the nearby bubbles (because it has snapped to a
@@ -138,6 +91,7 @@ class GameViewShootingController: EngineControllerDelegate {
                 result.append(next)
                 next.visited = true
             }
+
             // Checks for the special effects.
             var bubbles: [BubbleObject] = []
             if next.type == .star {
@@ -147,7 +101,6 @@ class GameViewShootingController: EngineControllerDelegate {
                 bubbles.append(contentsOf: getSameRowBubbles(of: next))
             }
             if next.type == .bomb {
-                explode(around: next)
                 bubbles.append(contentsOf: next.getNeighbors())
             }
             for bubble in bubbles {
@@ -167,54 +120,6 @@ class GameViewShootingController: EngineControllerDelegate {
         }
 
         return result
-    }
-
-    /// Finds all the bubbles of a certain type currently.
-    /// - Parameter type: the type to find.
-    /// - Returns: An array of bubbles of that type.
-    private func getAllSameTypeBubbles(of type: BubbleType) -> [BubbleObject] {
-        var result: [BubbleObject] = []
-        for item in engine.physicsObjects {
-            guard let bubble = item as? BubbleObject else {
-                continue
-            }
-            if bubble.type == type {
-                result.append(bubble)
-            }
-        }
-        return result
-    }
-
-    /// Finds all bubbles in the same role as a certain bubble.
-    /// - Parameter object: The `BubbleObject` in concern.
-    /// - Returns: An array of bubbles in the same role.
-    private func getSameRowBubbles(of object: BubbleObject) -> [BubbleObject] {
-        var result: [BubbleObject] = []
-        for item in engine.physicsObjects {
-            guard let bubble = item as? BubbleObject else {
-                continue
-            }
-            if object.isInSameRow(as: bubble) {
-                result.append(bubble)
-            }
-        }
-        return result
-    }
-
-    /// Adds explosion animation to a bomb bubble and bubbles around it.
-    /// - Parameter bomb: The bomb bubble.
-    private func explode(around bomb: BubbleObject) {
-        guard bomb.type == .bomb else {
-            return
-        }
-        if let bombView = bomb.view as? BubbleView {
-            bombView.startAnimating()
-        }
-        for bubble in bomb.getNeighbors() {
-            if let view = bubble.view as? BubbleView {
-                view.startAnimating()
-            }
-        }
     }
 
     /// Finds and removes the unattached bubbles. A bubble is defined as "unattached"

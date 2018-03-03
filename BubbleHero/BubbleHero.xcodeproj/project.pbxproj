@@ -13,6 +13,8 @@
 		F23CD6A02043ED1A0053A099 /* PaletteBubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */; };
 		F23CD6A22043F5D20053A099 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CD6A12043F5D20053A099 /* Settings.swift */; };
 		F24F023E204A872200875CFC /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F023D204A872200875CFC /* UIView+Animations.swift */; };
+		F24F0240204A964F00875CFC /* GameViewShootingController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F023F204A964F00875CFC /* GameViewShootingController+Helpers.swift */; };
+		F24F0242204AA59600875CFC /* GameViewSnapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0241204AA59600875CFC /* GameViewSnapController.swift */; };
 		F252D4932044F751004FDA03 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4922044F751004FDA03 /* Messages.swift */; };
 		F252D495204500B5004FDA03 /* LoadLevelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D494204500B5004FDA03 /* LoadLevelController.swift */; };
 		F252D49720450475004FDA03 /* LevelGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D49620450475004FDA03 /* LevelGalleryCell.swift */; };
@@ -88,6 +90,8 @@
 		F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteBubbleButton.swift; sourceTree = "<group>"; };
 		F23CD6A12043F5D20053A099 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F24F023D204A872200875CFC /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		F24F023F204A964F00875CFC /* GameViewShootingController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewShootingController+Helpers.swift"; sourceTree = "<group>"; };
+		F24F0241204AA59600875CFC /* GameViewSnapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewSnapController.swift; sourceTree = "<group>"; };
 		F252D4922044F751004FDA03 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		F252D494204500B5004FDA03 /* LoadLevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadLevelController.swift; sourceTree = "<group>"; };
 		F252D49620450475004FDA03 /* LevelGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGalleryCell.swift; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 				F25A295E2047972D00C90576 /* GameViewController+Renderer.swift */,
 				F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */,
 				F25A29642047D64900C90576 /* GameViewShootingController.swift */,
+				F24F023F204A964F00875CFC /* GameViewShootingController+Helpers.swift */,
+				F24F0241204AA59600875CFC /* GameViewSnapController.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				F2B2A53020466FBF00B4FD6A /* BubbleView.swift in Sources */,
 				F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */,
 				F2B2A52E204660A400B4FD6A /* Double+Random.swift in Sources */,
+				F24F0240204A964F00875CFC /* GameViewShootingController+Helpers.swift in Sources */,
 				F23CD69A2043C2EE0053A099 /* MenuButton.swift in Sources */,
 				F25A295F2047972D00C90576 /* GameViewController+Renderer.swift in Sources */,
 				F2B2A5472046FA7A00B4FD6A /* BubbleObject.swift in Sources */,
@@ -614,6 +621,7 @@
 				F252D4A520452559004FDA03 /* GameViewController.swift in Sources */,
 				F25A29632047D22200C90576 /* Stack.swift in Sources */,
 				F2C70E372045909B00C27EBC /* AboutViewController.swift in Sources */,
+				F24F0242204AA59600875CFC /* GameViewSnapController.swift in Sources */,
 				F25A296B2047F1D400C90576 /* RandomDataHelpers.swift in Sources */,
 				F23CD6A02043ED1A0053A099 /* PaletteBubbleButton.swift in Sources */,
 				F25E7A0E20490812005E5803 /* CGFloat+Sign.swift in Sources */,
@@ -792,7 +800,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nus.cs3217.a0162492a.BubbleHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -808,7 +816,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nus.cs3217.a0162492a.BubbleHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
