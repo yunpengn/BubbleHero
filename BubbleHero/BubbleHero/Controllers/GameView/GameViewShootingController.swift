@@ -23,6 +23,8 @@ class GameViewShootingController: EngineControllerDelegate {
     let snapController = GameViewSnapController()
     /// The controller for falling bubbles.
     let fallingController: GameViewFallingController
+    /// The controller for animation.
+    let animator = GameViewAnimationController()
 
     /// Creates a shooting controller with its associated physics engine.
     /// - Parameter engine: The physics engine attached.
@@ -122,6 +124,38 @@ class GameViewShootingController: EngineControllerDelegate {
             }
         }
 
+        return result
+    }
+
+    /// Finds all the bubbles of a certain type currently.
+    /// - Parameter type: the type to find.
+    /// - Returns: An array of bubbles of that type.
+    func getAllSameTypeBubbles(of type: BubbleType) -> [BubbleObject] {
+        var result: [BubbleObject] = []
+        for item in engine.physicsObjects {
+            guard let bubble = item as? BubbleObject else {
+                continue
+            }
+            if bubble.type == type {
+                result.append(bubble)
+            }
+        }
+        return result
+    }
+
+    /// Finds all bubbles in the same role as a certain bubble.
+    /// - Parameter object: The `BubbleObject` in concern.
+    /// - Returns: An array of bubbles in the same role.
+    func getSameRowBubbles(of object: BubbleObject) -> [BubbleObject] {
+        var result: [BubbleObject] = []
+        for item in engine.physicsObjects {
+            guard let bubble = item as? BubbleObject else {
+                continue
+            }
+            if object.isInSameRow(as: bubble) {
+                result.append(bubble)
+            }
+        }
         return result
     }
 }
