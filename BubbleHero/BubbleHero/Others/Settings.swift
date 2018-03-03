@@ -120,4 +120,6 @@ class Settings {
     static let timePerGame = 120
     /// The number of seconds per minute.
     static let secondPerMinute = 60
+    /// The format for the timer label.
+    static let timerLabelFormat = "%02i:%02i"
 }

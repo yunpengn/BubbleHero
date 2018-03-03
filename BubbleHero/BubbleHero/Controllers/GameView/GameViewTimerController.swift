@@ -51,7 +51,7 @@ class GameViewTimerController {
             status = newStatus
         }
 
-        label.text = String(format: "%02i:%02i",
+        label.text = String(format: Settings.timerLabelFormat,
                             seconds / Settings.secondPerMinute,
                             seconds % Settings.secondPerMinute)
         seconds -= 1
