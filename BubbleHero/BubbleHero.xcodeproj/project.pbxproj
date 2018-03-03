@@ -17,6 +17,9 @@
 		F24F0246204AA9EC00875CFC /* GameViewAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0245204AA9EC00875CFC /* GameViewAnimationController.swift */; };
 		F24F0248204ACA9500875CFC /* GameViewLaunchController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0247204ACA9500875CFC /* GameViewLaunchController+Delegate.swift */; };
 		F24F024A204AD17A00875CFC /* LightningLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F0249204AD17A00875CFC /* LightningLine.swift */; };
+		F24F026A204AE14000875CFC /* thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F24F0269204AE13F00875CFC /* thunder.mp3 */; };
+		F24F026C204AE16100875CFC /* SoundEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F026B204AE16100875CFC /* SoundEffectController.swift */; };
+		F24F026E204AE40100875CFC /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F24F026D204AE40000875CFC /* bomb.mp3 */; };
 		F252D4932044F751004FDA03 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D4922044F751004FDA03 /* Messages.swift */; };
 		F252D495204500B5004FDA03 /* LoadLevelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D494204500B5004FDA03 /* LoadLevelController.swift */; };
 		F252D49720450475004FDA03 /* LevelGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252D49620450475004FDA03 /* LevelGalleryCell.swift */; };
@@ -96,6 +99,9 @@
 		F24F0245204AA9EC00875CFC /* GameViewAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewAnimationController.swift; sourceTree = "<group>"; };
 		F24F0247204ACA9500875CFC /* GameViewLaunchController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewLaunchController+Delegate.swift"; sourceTree = "<group>"; };
 		F24F0249204AD17A00875CFC /* LightningLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightningLine.swift; sourceTree = "<group>"; };
+		F24F0269204AE13F00875CFC /* thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thunder.mp3; sourceTree = "<group>"; };
+		F24F026B204AE16100875CFC /* SoundEffectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectController.swift; sourceTree = "<group>"; };
+		F24F026D204AE40000875CFC /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
 		F252D4922044F751004FDA03 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		F252D494204500B5004FDA03 /* LoadLevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadLevelController.swift; sourceTree = "<group>"; };
 		F252D49620450475004FDA03 /* LevelGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGalleryCell.swift; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 				F2C70E362045909B00C27EBC /* AboutViewController.swift */,
 				F261007C20482E020002864B /* BackgroundMusicController.swift */,
 				F252D4A2204522B9004FDA03 /* SettingsController.swift */,
+				F24F026B204AE16100875CFC /* SoundEffectController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +263,8 @@
 		F261007E204831B10002864B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F24F026D204AE40000875CFC /* bomb.mp3 */,
+				F24F0269204AE13F00875CFC /* thunder.mp3 */,
 				F2610081204832350002864B /* Now_Its_Time.mp3 */,
 			);
 			path = Resources;
@@ -491,8 +500,10 @@
 				F29CD04F203D203800C94061 /* LaunchScreen.storyboard in Resources */,
 				F29CD04C203D203800C94061 /* Assets.xcassets in Resources */,
 				F29CD066203D217900C94061 /* README.md in Resources */,
+				F24F026E204AE40100875CFC /* bomb.mp3 in Resources */,
 				F29CD04A203D203800C94061 /* Main.storyboard in Resources */,
 				F2610082204832350002864B /* Now_Its_Time.mp3 in Resources */,
+				F24F026A204AE14000875CFC /* thunder.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +633,7 @@
 				F24F0244204AA8C900875CFC /* GameViewFallingController.swift in Sources */,
 				F2610084204834B40002864B /* SettingsMenu.swift in Sources */,
 				F25A29652047D64900C90576 /* GameViewShootingController.swift in Sources */,
+				F24F026C204AE16100875CFC /* SoundEffectController.swift in Sources */,
 				F24F0248204ACA9500875CFC /* GameViewLaunchController+Delegate.swift in Sources */,
 				F2CAFB462044568A002078B2 /* DialogHelpers.swift in Sources */,
 				F2CAFB2720443020002078B2 /* Level.swift in Sources */,

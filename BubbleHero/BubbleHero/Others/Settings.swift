@@ -113,4 +113,6 @@ class Settings {
     static let lightningLineHeight = CGFloat(4)
     /// The duration for the lightning line
     static let lightningDuration = TimeInterval(0.15)
+    /// The duration for sound effects.
+    static let soundEffectDuration = 1.5
 }

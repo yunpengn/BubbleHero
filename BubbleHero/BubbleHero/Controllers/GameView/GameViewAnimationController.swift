@@ -16,6 +16,7 @@ import UIKit
  */
 class GameViewAnimationController {
     private let view: UIView
+    private let soundPlayer = SoundEffectController()
 
     init(view: UIView) {
         self.view = view
@@ -28,12 +29,14 @@ class GameViewAnimationController {
             fadeAway(view: newView)
         case .bomb:
             newView.explode()
+            soundPlayer.play(.bomb)
         case .star:
             fadeAway(view: newView)
         }
     }
 
     func addLightningLine(at x: CGFloat) {
+        soundPlayer.play(.thunder)
         let line = LightningLine(midY: x)
         view.addSubview(line)
         line.animate()
