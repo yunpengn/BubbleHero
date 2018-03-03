@@ -41,10 +41,10 @@ class GameViewShootingController: EngineControllerDelegate {
 
     func onCollide(lhs: PhysicsBody, rhs: PhysicsBody?) {
         if let bubble1 = lhs as? BubbleObject, let bubble2 = rhs as? BubbleObject? {
+            launchControllerDelegate?.prepareForNextLaunch()
             snapController.snap(lhs: bubble1, rhs: bubble2)
             addAttachment(object: bubble1)
             removeConnectedBubbles(from: bubble1)
-            launchControllerDelegate?.prepareForNextLaunch()
             fallingController.removeUnattachedBubbles()
         }
     }
