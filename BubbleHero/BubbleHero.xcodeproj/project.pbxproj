@@ -354,13 +354,11 @@
 		F2B2A5332046845000B4FD6A /* GameView */ = {
 			isa = PBXGroup;
 			children = (
+				F2F6EC53204BBF1F00263AE8 /* Helpers */,
 				F252D4A420452559004FDA03 /* GameViewController.swift */,
-				F2BCB81D204B8EE0005B216A /* GameViewController+Delegate.swift */,
-				F25A295E2047972D00C90576 /* GameViewController+Renderer.swift */,
 				F24F0245204AA9EC00875CFC /* GameViewAnimationController.swift */,
 				F24F0243204AA8C900875CFC /* GameViewFallingController.swift */,
 				F252D4AC20456C8A004FDA03 /* GameViewLaunchController.swift */,
-				F24F0247204ACA9500875CFC /* GameViewLaunchController+Delegate.swift */,
 				F2F6EC51204BBC8200263AE8 /* GameViewScoreController.swift */,
 				F25A29642047D64900C90576 /* GameViewShootingController.swift */,
 				F24F0241204AA59600875CFC /* GameViewSnapController.swift */,
@@ -401,6 +399,16 @@
 				F2CAFB3F20444A38002078B2 /* LevelTests.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F2F6EC53204BBF1F00263AE8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F2BCB81D204B8EE0005B216A /* GameViewController+Delegate.swift */,
+				F25A295E2047972D00C90576 /* GameViewController+Renderer.swift */,
+				F24F0247204ACA9500875CFC /* GameViewLaunchController+Delegate.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
