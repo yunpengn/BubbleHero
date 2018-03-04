@@ -112,19 +112,19 @@ class GameViewShootingController: EngineControllerDelegate {
                 continue
             }
 
-            // Adds the current bubble to result
+            // Adds the current bubble to result.
             next.visited = true
             result.append((next, .fromBubbleType(next.type)))
 
             // Checks for special effects.
-            let specialEffect = getSpecialAffectedBubbles(by: next)
+            let specialEffect = getSpecialAffectedBubbles(by: next, from: object)
             specialEffect.forEach { bubble in
                 // Allows chaining effect of special bubbles.
                 if bubble.type.isSpecialType {
                     toVisit.push(bubble)
                 } else {
                     bubble.visited = true
-                    result.append((bubble, .fromBubbleType(bubble.type)))
+                    result.append((bubble, .fromBubbleType(next.type)))
                 }
             }
 
@@ -138,13 +138,16 @@ class GameViewShootingController: EngineControllerDelegate {
     }
 
     /// Finds all the bubbles affected by a certain special effect.
-    /// - Parameter bubble: The bubble in concer.
+    /// - Parameters:
+    ///    - bubble: The bubble in concer now.
+    ///    - object: The launched bubble.
     /// - Returns: an array of bubbles affected by the special effect; an empty array
     /// if there is no special effect.
-    func getSpecialAffectedBubbles(by bubble: BubbleObject) -> [BubbleObject] {
+    func getSpecialAffectedBubbles(by bubble: BubbleObject,
+                                   from object: BubbleObject) -> [BubbleObject] {
         switch bubble.type {
         case .star:
-            return getAllSameTypeBubbles(of: bubble.type)
+            return getAllSameTypeBubbles(of: object.type)
         case .lightning:
             return getSameRowBubbles(of: bubble)
         case .bomb:
