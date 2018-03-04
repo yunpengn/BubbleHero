@@ -26,8 +26,13 @@ class GameViewWinController: UIViewController {
         return true
     }
 
+    /// Continues the workflow when the button has been pressed.
+    /// - Parameter sender: The button being pressed.
+    @IBAction func continueButtonPressed(_ sender: UIButton) {
+    }
+
     /// Updates the text inside the score label.
     private func updateLabel() {
-        scoreLabel.text = String(format: Settings.scoreLabelFormat, levelName, score)
+        scoreLabel.text = "Level: \(levelName)  Score: \(score)"
     }
 }

@@ -131,10 +131,8 @@ class GameViewShootingController: EngineControllerDelegate {
             }
 
             // Checks for same-color connected bubble.
-            for neighbor in next.getSameColorNeighbors() {
-                if !neighbor.visited {
-                    toVisit.push(neighbor)
-                }
+            for neighbor in next.getSameColorNeighbors() where !neighbor.visited {
+                toVisit.push(neighbor)
             }
         }
 

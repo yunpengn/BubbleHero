@@ -24,7 +24,7 @@ class GameViewTimerController {
     /// The current status of the time.
     private var status = TimerStatus.normal
     /// The delegate for `GameViewController`.
-    var controllerDelegate: GameViewControllerDelegate?
+    weak var controllerDelegate: GameViewControllerDelegate?
     /// The controller for playing sound effects.
     let soundEffectController = SoundEffectController()
 

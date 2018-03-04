@@ -67,4 +67,3 @@ struct Stack<T> {
         return internalArray.reversed()
     }
 }
-

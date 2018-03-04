@@ -101,7 +101,7 @@ class Settings {
     /// The constant that represents the gravitational force.
     static let gravityConstant = CGFloat(0.6)
     /// The constant that represents the Coulomb force.
-    static let magneticConstant = CGFloat(150000)
+    static let magneticConstant = CGFloat(150_000)
     /// The unit for adjusting the position of non-snapping bubbles.
     static let adjustmentUnit = CGFloat(0.05)
 
@@ -128,7 +128,4 @@ class Settings {
     static let secondPerMinute = 60
     /// The format for the timer label.
     static let timerLabelFormat = "%02i:%02i"
-
-    /// The format for winning view score.
-    static let scoreLabelFormat = "Level: %a  Score: %i"
 }

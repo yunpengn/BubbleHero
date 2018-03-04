@@ -31,12 +31,12 @@ class GameViewSnapController {
         if lhs.isSnapping {
             snapToNearbyCell(lhs)
         } else {
-            adjustPosition(from: lhs, to: rhs)
+            adjustPosition(from: lhs, until: rhs)
         }
         lhs.stop()
         rhs?.stop()
     }
-    
+
     /// Finds the position of the nearby cell and moves to it.
     /// - Parameter object: The `BubbleObject` to move.
     private func snapToNearbyCell(_ object: BubbleObject) {
@@ -54,8 +54,8 @@ class GameViewSnapController {
 
     /// Adjusts the position a little bit so that a non-snapping bubble can barely
     /// touch its attached bubble.
-    private func adjustPosition(from: BubbleObject, to: BubbleObject?) {
-        guard let other = to else {
+    private func adjustPosition(from: BubbleObject, until: BubbleObject?) {
+        guard let other = until else {
             from.center.y = from.radius
             return
         }

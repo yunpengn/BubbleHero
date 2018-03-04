@@ -841,6 +841,9 @@
                                         <state key="normal" title="Continue">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="continueButtonPressed:" destination="ID0-xe-80O" eventType="touchUpInside" id="ibC-Ls-t3P"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
