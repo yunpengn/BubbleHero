@@ -102,6 +102,44 @@ See description in the rules of the game.
 
 #### Black-box testing
 
+- Test menu screen
+    - When clicking on the `start` button, I expect level selection screen to show.
+    - When clicking on the `design` button, I expect level designer screen to show.
+    - When clicking on the `settings` button, I expect the settings screen to show.
+    - When clicking on the `about` button, I expect the about screen to show.
+    - I expect the background music to be playing.
+- Test level designer
+- Test level selection
+- Test game play
+    - Test the launch of a bubble
+        - When I single-tap on a location of the screen that is not at least slighlt higher than the position of the bubble launcher, I expect the input is rejected and nothing will happen.
+        - When I already have a shooted bubble travelling (collision not happened yet), I expect the input is rejected and nothing will happen.
+        - Otherwise, I expect the bubble is launched in the direction towards the point of the single-tap gesture.
+    - Test the movement of a bubble
+        - When a bubble has been launched (shooted) successfully, I expect the travelling speed to be a positive constant. I also expect the bubble travels in a staight line (as long as no collision with screen edge or other bubbles happen).
+        - When a bubble is falling down, I expect it to be a free falling process (without the effect of air resistance), i.e., its acceleration is a positive constant. Visually, the velocity should increase (although human eyes may not be able to observe the change). I also expect the falling down in straight downward direction.
+    - Test collision between two bubbles
+        - When a shooted bubble collides with a remaining static bubble, I expect the shooted bubble to stop moving and snap to the nearest empty cell.
+        - Following above, when there are more than 3 connected bubbles of the same color, I expect them to be removed with a fading away effect.
+        - Following above, when there are bubbles unattached to the top wall, I expect them to be removed by falling down out of the screen.
+        - When a shooted bubble "collides" with a falling bubble, I expect no collision will happen and they will bypass each other.
+    - Test collision between a bubble and a screen edge
+        - When a shooted bubble collides with the side wall (left or right), I expect a reflection happens. In other words, the (horizontal component of the) moving direction of the bubble should reverse.
+        - When a shooted bubble collides with the top wall, I expect it to stop moving and snap to the nearest empty cell.
+        - Following above, after snapping to the nearest empty cell, normal behavior should happen if it collides with any other static bubble.
+- Test settings screen
+    - I expect the background music checkbox to be initially checked and the background music is playing.
+    - When clicking on the checkbox, I expect the checkbox to be unchecked and the music pauses.
+    - When clicking on the checkbox again, I expect the checkbox to be checked and the music resumes.
+- Test about screen
+    - When clicking on the middle image for only once or twice, I expect nothing should happen.
+    - When clicking on the middle image for much more times, I expect the image to change.
+    - When clicking on the middle image for even more times, I expect the image to change again.
+
+#### Glass-box testing
+
+According to software testing cost & benefit analysis, glass-box testing may not be the most suitable method.
+
 ### Problem 9: The Bells & Whistles
 
 The following extra features are added to the game:
