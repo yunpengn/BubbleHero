@@ -67,9 +67,10 @@ The new items enqueued are randomly generated: first we determine its type(among
 
 ### Problem 3: Integration
 
-There are a few ways to integrate the game engine and they are discussed as follows:
+In some sense, there are generally two integration approaches, top-down integration and bottom-up integration. The current choice is top-down integration.
 
--
+- **Current approach**: This approach is more suitable in this problem set. The major advantage is that we can find problems earlier. Top-down approach requires us to look at the problem at a larger scale, without focusing too much on the details. Thanks to problem set 4, the requirements and functionalities of a game engine should be clear now. Thus, we can just list out all the APIs of the game engine and let the controllers for the game to call these APIs. Then, we need to check whether all requirements can be fulfilled by only using these APIs. If not, we can find out earlier and change the APIs. One possible disadvantage is that we have to be very clear about the requirements.
+- Alternative: This approach is easier and is more suitable we start from scratch and are not really sure about the requirements. We can try to integrate small components first and see how along the way. However, this is dangerous because major problems may be delayed to be observed. The public APIs will determine the whole internal implementation of the game engine. If we use bottom-up approach, it is possible that we suddenly find we have to re-write the whole thing at a later stage.
 
 ### Problem 4.4
 
