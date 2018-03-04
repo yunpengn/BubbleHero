@@ -252,13 +252,12 @@
 			isa = PBXGroup;
 			children = (
 				F2B2A5332046845000B4FD6A /* GameView */,
+				F2F6EC63204C220E00263AE8 /* Helpers */,
 				F2B2A5312046765900B4FD6A /* LevelDesigner */,
 				F2B2A5322046768100B4FD6A /* LoadLevel */,
 				F29CD046203D203800C94061 /* MenuViewController.swift */,
 				F2C70E362045909B00C27EBC /* AboutViewController.swift */,
-				F261007C20482E020002864B /* BackgroundMusicController.swift */,
 				F252D4A2204522B9004FDA03 /* SettingsController.swift */,
-				F24F026B204AE16100875CFC /* SoundEffectController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -438,6 +437,15 @@
 				F2F6EC59204BDBB900263AE8 /* uniform.png */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		F2F6EC63204C220E00263AE8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F261007C20482E020002864B /* BackgroundMusicController.swift */,
+				F24F026B204AE16100875CFC /* SoundEffectController.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
