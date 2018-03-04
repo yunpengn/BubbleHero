@@ -15,13 +15,21 @@ import UIKit
  - Date: Feb 2018
  */
 class GameViewAnimationController {
+    /// The view area to show animation.
     private let view: UIView
+    /// The controller for sound effects.
     private let soundPlayer = SoundEffectController()
 
+    /// Creates an animator with a certain view.
+    /// - Parameter view: The view of the controller.
     init(view: UIView) {
         self.view = view
     }
 
+    /// Animates the effect of a bubble according to the reason being removed.
+    /// - Parameters:
+    ///   - object: The bubble being removed.
+    ///   - effect: The type of the effect to animate.
     func animate(object: BubbleObject, effect: RemoveAnimation) {
         let newView = clone(object: object)
         switch effect {
@@ -35,6 +43,8 @@ class GameViewAnimationController {
         }
     }
 
+    /// Animates the lightning effect.
+    /// - Parameter x: The mid-x coordinate of the lightning line.
     func addLightningLine(at x: CGFloat) {
         soundPlayer.play(.thunder)
         let line = LightningLine(midY: x)

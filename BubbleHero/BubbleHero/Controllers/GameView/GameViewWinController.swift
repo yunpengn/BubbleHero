@@ -15,11 +15,12 @@ class GameViewWinController: UIViewController {
     var levelName = ""
     /// The score got.
     var score = 0
+    /// The navigation passed in order to clear all previous scenes.
     var navigation: UINavigationController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateLabel()
+        scoreLabel.text = "Level: \(levelName)  Score: \(score)"
     }
 
     /// Always hide the status bar on the top.
@@ -32,10 +33,5 @@ class GameViewWinController: UIViewController {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
         navigation?.popToRootViewController(animated: true)
-    }
-
-    /// Updates the text inside the score label.
-    private func updateLabel() {
-        scoreLabel.text = "Level: \(levelName)  Score: \(score)"
     }
 }

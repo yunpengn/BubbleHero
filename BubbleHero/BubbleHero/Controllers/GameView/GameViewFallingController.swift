@@ -8,9 +8,18 @@
 
 import GameEngine
 
+/**
+ Controller for the falling bubbles in the game view.
+
+ - Author: Niu Yunpeng @ CS3217
+ - Date: Feb 2018
+ */
 class GameViewFallingController {
+    /// The physics engine associated with the controller.
     private let engine: PhysicsEngine2D
 
+    /// Creates a new falling controller.
+    /// - Parameter engine: The game engine associated.
     init(engine: PhysicsEngine2D) {
         self.engine = engine
     }

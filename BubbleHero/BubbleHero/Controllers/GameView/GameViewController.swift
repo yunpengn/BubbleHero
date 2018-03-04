@@ -29,6 +29,8 @@ class GameViewController: UIViewController {
     private var launchController: GameViewLaunchController?
     /// The controller for bubble shooting.
     private var shootingController: GameViewShootingController?
+    /// The controller for scores.
+    var scoreController: GameViewScoreController?
     /// The controller for timer.
     private var timerController: GameViewTimerController?
     /// The physics engine for this controller.
@@ -61,6 +63,9 @@ class GameViewController: UIViewController {
         timerController = GameViewTimerController(label: timerLabel)
         timerController?.controllerDelegate = self
         timerController?.begin()
+
+        /// Initializes the controller for scores.
+        scoreController = GameViewScoreController(view: view)
     }
 
     /// Always hide the status bar on the top.
