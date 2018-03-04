@@ -26,7 +26,9 @@ extension GameViewController: GameViewControllerDelegate {
         }
         winController.navigation = navigationController
         winController.levelName = levelName
-        winController.score = 0
+        if let score = scoreController?.score {
+            winController.score = score
+        }
     }
 }
 
