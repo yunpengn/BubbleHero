@@ -100,7 +100,7 @@ See description in the rules of the game.
 
 ### Problem 8: Testing
 
-Your answer here
+#### Black-box testing
 
 ### Problem 9: The Bells & Whistles
 
