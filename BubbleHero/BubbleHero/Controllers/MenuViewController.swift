@@ -22,9 +22,10 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         musicController = BackgroundMusicController(for: Settings.musicNameMenu)
+        checkPreloadLevels()
     }
 
-    // Always hide the status bar on the top.
+    /// Always hide the status bar on the top.
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -34,5 +35,13 @@ class MenuViewController: UIViewController {
             let controller = segue.destination as? SettingsController {
             controller.musicController = musicController
         }
+    }
+
+    /// Checks whether the pre-loaded levels have been loaded before.
+    private func checkPreloadLevels() {
+        guard UserDefaults.standard.string(forKey: Settings.preloadLevelKey) == nil else {
+            return
+        }
+        
     }
 }

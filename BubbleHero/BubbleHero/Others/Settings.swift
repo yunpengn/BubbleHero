@@ -29,6 +29,8 @@ class Settings {
     static let buttonCornerRadius = CGFloat(0.15)
     /// The constant coefficient for checkbox button corner radius.
     static let checkboxCornerRadius = CGFloat(0.3)
+    /// The key for checking whether preloaded levels have been loaded before.
+    static let preloadLevelKey = "preloadCompleted"
 
     /// The alpha value for bubble buttons in the palette when it is selected.
     static let alphaPaletteBubbleSelected = CGFloat(1)
@@ -74,9 +76,9 @@ class Settings {
     static let gameViewWinSegueId = "gameViewToWin"
 
     /// The extension file name for data storage.
-    static let extensionNameData = ".json"
+    static let extensionNameData = "json"
     /// The extension file name for image storage.
-    static let extensionNameImage = ".png"
+    static let extensionNameImage = "png"
 
     /// To avoid the user from shooting a bubble with nearly the angle of 0/180 degrees.
     static let launchVerticalLimit = CGFloat(60)

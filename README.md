@@ -16,7 +16,7 @@ CS3217 Problem Set 5
 
 ### Rules of Your Game
 
-Your answer here
+1. 
 
 ### Problem 1: Cannon Direction
 

@@ -137,16 +137,20 @@ class LevelDesignerSavingController {
     /// - Parameter fileName: The name of the JSON file.
     /// - Returns: The URL of the JSON file.
     private func getJsonPath(to fileName: String) -> URL {
-        let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        return folder.appendingPathComponent(fileName + Settings.extensionNameData)
+        var folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        folder.appendPathComponent(fileName)
+        folder.appendPathExtension(Settings.extensionNameData)
+        return folder
     }
 
     /// Given a file name, gets the URL to the PNG image.
     /// - Parameter fileName: The name of the PNG image.
     /// - Returns: The URL of the PNG image.
     private func getImagePath(to fileName: String) -> URL {
-        let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        return folder.appendingPathComponent(fileName + Settings.extensionNameImage)
+        var folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        folder.appendPathComponent(fileName)
+        folder.appendPathExtension(Settings.extensionNameImage)
+        return folder
     }
 
     /// Shows an alert message to the user.

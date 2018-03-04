@@ -36,9 +36,9 @@ class LevelGallery {
         }
 
         // Gets the urls of the files & screenshoots being saved to.
-        imageURLs = files.filter { $0.pathExtension == "png" }
+        imageURLs = files.filter { $0.pathExtension == Settings.extensionNameImage }
         dataURLs = imageURLs.map { imageURL in
-            return imageURL.deletingPathExtension().appendingPathExtension("json")
+            return imageURL.deletingPathExtension().appendingPathExtension(Settings.extensionNameData)
         }
     }
 

@@ -74,6 +74,12 @@
 		F2F6EC50204BAB4D00263AE8 /* WinViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F6EC4F204BAB4D00263AE8 /* WinViewButton.swift */; };
 		F2F6EC52204BBC8200263AE8 /* GameViewScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F6EC51204BBC8200263AE8 /* GameViewScoreController.swift */; };
 		F2F6EC55204BCA5600263AE8 /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F6EC54204BCA5600263AE8 /* ScoreLabel.swift */; };
+		F2F6EC5D204BDBB900263AE8 /* puzzle.json in Resources */ = {isa = PBXBuildFile; fileRef = F2F6EC57204BDBB900263AE8 /* puzzle.json */; };
+		F2F6EC5E204BDBB900263AE8 /* puzzle.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6EC58204BDBB900263AE8 /* puzzle.png */; };
+		F2F6EC5F204BDBB900263AE8 /* uniform.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6EC59204BDBB900263AE8 /* uniform.png */; };
+		F2F6EC60204BDBB900263AE8 /* uniform.json in Resources */ = {isa = PBXBuildFile; fileRef = F2F6EC5A204BDBB900263AE8 /* uniform.json */; };
+		F2F6EC61204BDBB900263AE8 /* blockWall.json in Resources */ = {isa = PBXBuildFile; fileRef = F2F6EC5B204BDBB900263AE8 /* blockWall.json */; };
+		F2F6EC62204BDBB900263AE8 /* blockWall.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6EC5C204BDBB900263AE8 /* blockWall.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +175,12 @@
 		F2F6EC4F204BAB4D00263AE8 /* WinViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewButton.swift; sourceTree = "<group>"; };
 		F2F6EC51204BBC8200263AE8 /* GameViewScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewScoreController.swift; sourceTree = "<group>"; };
 		F2F6EC54204BCA5600263AE8 /* ScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
+		F2F6EC57204BDBB900263AE8 /* puzzle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = puzzle.json; sourceTree = "<group>"; };
+		F2F6EC58204BDBB900263AE8 /* puzzle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puzzle.png; sourceTree = "<group>"; };
+		F2F6EC59204BDBB900263AE8 /* uniform.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uniform.png; sourceTree = "<group>"; };
+		F2F6EC5A204BDBB900263AE8 /* uniform.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = uniform.json; sourceTree = "<group>"; };
+		F2F6EC5B204BDBB900263AE8 /* blockWall.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = blockWall.json; sourceTree = "<group>"; };
+		F2F6EC5C204BDBB900263AE8 /* blockWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blockWall.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +291,7 @@
 		F261007E204831B10002864B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F2F6EC56204BDBA100263AE8 /* Data */,
 				F24F026D204AE40000875CFC /* bomb.mp3 */,
 				F2BCB81F204B913B005B216A /* doorbell.mp3 */,
 				F24F0269204AE13F00875CFC /* thunder.mp3 */,
@@ -414,6 +427,19 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		F2F6EC56204BDBA100263AE8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F2F6EC5B204BDBB900263AE8 /* blockWall.json */,
+				F2F6EC5C204BDBB900263AE8 /* blockWall.png */,
+				F2F6EC57204BDBB900263AE8 /* puzzle.json */,
+				F2F6EC58204BDBB900263AE8 /* puzzle.png */,
+				F2F6EC5A204BDBB900263AE8 /* uniform.json */,
+				F2F6EC59204BDBB900263AE8 /* uniform.png */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -526,12 +552,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F6EC60204BDBB900263AE8 /* uniform.json in Resources */,
 				F29CD04F203D203800C94061 /* LaunchScreen.storyboard in Resources */,
+				F2F6EC5F204BDBB900263AE8 /* uniform.png in Resources */,
 				F29CD04C203D203800C94061 /* Assets.xcassets in Resources */,
 				F29CD066203D217900C94061 /* README.md in Resources */,
+				F2F6EC5D204BDBB900263AE8 /* puzzle.json in Resources */,
 				F24F026E204AE40100875CFC /* bomb.mp3 in Resources */,
 				F29CD04A203D203800C94061 /* Main.storyboard in Resources */,
 				F2BCB820204B913B005B216A /* doorbell.mp3 in Resources */,
+				F2F6EC61204BDBB900263AE8 /* blockWall.json in Resources */,
+				F2F6EC5E204BDBB900263AE8 /* puzzle.png in Resources */,
+				F2F6EC62204BDBB900263AE8 /* blockWall.png in Resources */,
 				F2610082204832350002864B /* Now_Its_Time.mp3 in Resources */,
 				F24F026A204AE14000875CFC /* thunder.mp3 in Resources */,
 			);
