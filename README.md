@@ -51,11 +51,17 @@ CS3217 Problem Set 5
 
 ### Problem 1: Cannon Direction
 
-Your answer here
+1. The cannon below will be used to shoot bubbles.
+2. You should drag (rather than single-tap) to launch bubbles. Your finger should be a height higher than the cannon.
+3. The cannon will face towards the direction of your finger, which will be the direction in which the bubble will be launched.
 
 ### Problem 2: Upcoming Bubbles
 
-Your answer here
+A `BubbleSource` type is implemented to support the decision of the colors of the next few bubbles. This `BubbleSource` is in turn supported by a customize data structure called `FixedQueue`.
+
+A `FixedQueue` is still a queue, meaning that it still supports first-in & first-out behavior (FIFO). However, it is fixed size, meaning that the number of items inside it is fixed. Its size is determined by the size of array passed in during initialization. Whenever an item is popped (or dequeued), a new item must be pushed (or enqueued) at the same time. Let's the size of a `FixedQueue` is `n`, you can always safely get the item at index `m` (where `0 <= m < n`) because its size is fixed.
+
+`FixedQueue` helps `BubbleSource` to maintain its data integrity. If we want to display next `x` bubbles, we just need a `FixedQueue` with size `x`. Whenever a new bubble is launched, we dequeue an item and enqueue a random new one at the same time. The next few bubbles can be displayed because we can safely get the item at index `m` (where `0 <= m < x`).
 
 ### Problem 3: Integration
 
