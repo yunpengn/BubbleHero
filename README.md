@@ -22,7 +22,7 @@ We would like appreciate the wonderful resources provided by the following websi
 - Sound Bible [http://soundbible.com]
 - Free Music Archive [http://freemusicarchive.org]
 
-### Rules of Your Game
+## Rules of Your Game
 
 1. Make sure you have uninstalled all previous (or older) versions of _Bubble Hero_.
 2. Install and open the game, you should see `Start`, `Design`, `Settings` and `About` four buttons.
@@ -54,8 +54,10 @@ We would like appreciate the wonderful resources provided by the following websi
 9. If any launched bubble touches a bomb bubble, the bubbles around the bomb will be removed and you should hear an explosion sound effect. The bomb itself will also be removed. _Notice that sometimes you may feel a non-snapping bubble "around" the bomb is not removed, this is because there exists some space between the non-snapping bubble and the bomb (which may be invisible)._
 10. If any launched bubble touches a lightning bubble, any bubble on the same row as the lightning bubble will be removed and you should hear a thunder sound effect. The lightning bubble itself will also be removed. _Notice that most likely non-snapping bubbles cannot be removed by a lightning bubble, because their height is not an integer multiple of the standard height value._
 11. If any launched bubble touches a star bubble, any bubble with the same color as the launched bubble will be removed. The star bubble itself will also be removed.
-12. Special bubbles allow chaining effect. On the one hand, any special bubble itself removed by the special effect of another special bubble will be triggered; on the other hand, the same-type neighbors of a special bubble being triggered will also be triggered.
-13. The score is calculated according to the reason a bubble is removed: same-color - 5 points, star - 10 points, lightning - 12 points, bomb - 15 points, falling - 8 points.
+12. Indestructible bubbles and magnetic bubbles can only be removed by special effects or by falling.
+13. Magnetic bubbles will attract the launched bubbles, whose force is inverse proportional to the square of the distance between them.
+14. Special bubbles allow chaining effect. On the one hand, any special bubble itself removed by the special effect of another special bubble will be triggered; on the other hand, the same-type neighbors of a special bubble being triggered will also be triggered.
+15. The score is calculated according to the reason a bubble is removed: same-color - 5 points, star - 10 points, lightning - 12 points, bomb - 15 points, falling - 8 points.
 
 ### Problem 1: Cannon Direction
 
