@@ -92,7 +92,7 @@ extension LoadLevelController {
         }
         gameViewController.level = level
         gameViewController.levelName = name
-        present(gameViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(gameViewController, animated: true)
     }
 
     /// Deletes the level at a specific index.

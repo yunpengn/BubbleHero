@@ -3,7 +3,7 @@
 //  BubbleHero
 //
 //  Created by Yunpeng Niu on 04/03/18.
-//  Copyright © 2018年 Yunpeng Niu. All rights reserved.
+//  Copyright © 2018 Yunpeng Niu. All rights reserved.
 //
 
 import UIKit
@@ -15,6 +15,7 @@ class GameViewWinController: UIViewController {
     var levelName = ""
     /// The score got.
     var score = 0
+    var navigation: UINavigationController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,11 @@ class GameViewWinController: UIViewController {
         return true
     }
 
-    /// Continues the workflow when the button has been pressed.
+    /// Continues (and restarts) the workflow when the button has been pressed.
     /// - Parameter sender: The button being pressed.
     @IBAction func continueButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+        navigation?.popToRootViewController(animated: true)
     }
 
     /// Updates the text inside the score label.

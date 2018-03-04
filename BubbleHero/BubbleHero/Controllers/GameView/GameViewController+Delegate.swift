@@ -24,6 +24,7 @@ extension GameViewController: GameViewControllerDelegate {
             let winController = segue.destination as? GameViewWinController else {
             return
         }
+        winController.navigation = navigationController
         winController.levelName = levelName
     }
 }

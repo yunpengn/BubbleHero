@@ -808,7 +808,7 @@
         <!--GameViewWinController-->
         <scene sceneID="w52-54-AyJ">
             <objects>
-                <viewController id="ID0-xe-80O" userLabel="GameViewWinController" customClass="GameViewWinController" customModule="BubbleHero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameViewWinController" id="ID0-xe-80O" userLabel="GameViewWinController" customClass="GameViewWinController" customModule="BubbleHero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DxQ-MU-I6g">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
