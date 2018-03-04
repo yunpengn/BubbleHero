@@ -752,7 +752,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble-green" translatesAutoresizingMaskIntoConstraints="NO" id="poj-Yf-att" userLabel="NextSecondBubble" customClass="BubbleView" customModule="BubbleHero" customModuleProvider="target">
-                                <rect key="frame" x="628" y="934" width="40" height="40"/>
+                                <rect key="frame" x="678" y="934" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="JEx-Co-PCO"/>
                                     <constraint firstAttribute="height" constant="40" id="Nmm-3n-FL7"/>
@@ -764,23 +764,36 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCn-RJ-VfC" userLabel="ExchangeButton">
+                                <rect key="frame" x="586" y="922" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Sya-2O-XX0"/>
+                                    <constraint firstAttribute="height" constant="64" id="q2S-lf-IuS"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="purple-exchange"/>
+                                <connections>
+                                    <action selector="exchangeButtonPressed:" destination="6AN-0y-jQ3" eventType="touchUpInside" id="khu-aP-4Vh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5kc-Fq-3bP" firstAttribute="leading" secondItem="seM-ed-1kp" secondAttribute="leading" constant="100" id="0G5-hD-P0Z"/>
                             <constraint firstItem="5kc-Fq-3bP" firstAttribute="centerY" secondItem="uh5-k4-cwU" secondAttribute="centerY" id="2z4-F4-IBP"/>
                             <constraint firstItem="vsV-kG-o4L" firstAttribute="top" secondItem="xGH-vM-5tf" secondAttribute="top" id="A30-FX-WUn"/>
-                            <constraint firstItem="poj-Yf-att" firstAttribute="trailing" secondItem="seM-ed-1kp" secondAttribute="trailing" constant="-100" id="EYx-4w-wQ8"/>
+                            <constraint firstItem="poj-Yf-att" firstAttribute="trailing" secondItem="seM-ed-1kp" secondAttribute="trailing" constant="-50" id="EYx-4w-wQ8"/>
                             <constraint firstItem="vsV-kG-o4L" firstAttribute="leading" secondItem="seM-ed-1kp" secondAttribute="leading" id="Fhg-Xw-bq5"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5kc-Fq-3bP" secondAttribute="trailing" constant="20" symbolic="YES" id="IbJ-1e-6dc"/>
+                            <constraint firstItem="UCn-RJ-VfC" firstAttribute="centerY" secondItem="js1-VT-KKL" secondAttribute="top" id="KgY-wo-O45"/>
                             <constraint firstItem="44i-uH-q2k" firstAttribute="centerX" secondItem="js1-VT-KKL" secondAttribute="centerX" id="N1y-cS-qFp"/>
                             <constraint firstItem="uh5-k4-cwU" firstAttribute="centerY" secondItem="js1-VT-KKL" secondAttribute="top" id="Ubh-gx-Lrs"/>
                             <constraint firstItem="vsV-kG-o4L" firstAttribute="bottom" secondItem="seM-ed-1kp" secondAttribute="bottom" id="V6B-kn-Bmp"/>
                             <constraint firstItem="js1-VT-KKL" firstAttribute="centerX" secondItem="seM-ed-1kp" secondAttribute="centerX" id="alq-u6-n9p"/>
                             <constraint firstItem="poj-Yf-att" firstAttribute="centerY" secondItem="js1-VT-KKL" secondAttribute="top" id="dAJ-41-73j"/>
-                            <constraint firstItem="uh5-k4-cwU" firstAttribute="trailing" secondItem="poj-Yf-att" secondAttribute="trailing" constant="-100" id="djx-7B-JbB"/>
+                            <constraint firstItem="uh5-k4-cwU" firstAttribute="trailing" secondItem="poj-Yf-att" secondAttribute="trailing" constant="-150" id="djx-7B-JbB"/>
                             <constraint firstItem="44i-uH-q2k" firstAttribute="bottom" secondItem="js1-VT-KKL" secondAttribute="top" constant="28" id="iTK-Bl-WIY"/>
                             <constraint firstItem="js1-VT-KKL" firstAttribute="bottom" secondItem="seM-ed-1kp" secondAttribute="bottom" id="lHV-ho-1P9"/>
+                            <constraint firstItem="UCn-RJ-VfC" firstAttribute="centerX" secondItem="poj-Yf-att" secondAttribute="trailing" constant="-100" id="n1L-aG-IdW"/>
                             <constraint firstItem="vsV-kG-o4L" firstAttribute="trailing" secondItem="seM-ed-1kp" secondAttribute="trailing" id="n1x-cL-ulT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="seM-ed-1kp"/>
@@ -913,6 +926,7 @@
         <image name="gold-trophy" width="128" height="128"/>
         <image name="logo" width="200" height="200"/>
         <image name="ok-green" width="128" height="128"/>
+        <image name="purple-exchange" width="64" height="64"/>
         <image name="studio_brand" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>

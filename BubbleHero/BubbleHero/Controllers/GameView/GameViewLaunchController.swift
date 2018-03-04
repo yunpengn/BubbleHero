@@ -65,6 +65,12 @@ class GameViewLaunchController {
         readyForLaunch = false
     }
 
+    /// Exchanges the next and next second bubble.
+    func exchange() {
+        source.exchange(lhs: 0, rhs: 1)
+        updateView()
+    }
+
     /// Shoots a certain `BubbleType` of bubble towards the specific angle.
     /// - Parameter angle: The angle to shoot towards.
     private func shootBubble(angle: CGFloat) {

@@ -2,17 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "gold-trophy.png",
+      "filename" : "purple-exchange.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "gold-trophy@2x.png",
+      "filename" : "purple-exchange@2x.png",
       "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
     }
   ],
   "info" : {

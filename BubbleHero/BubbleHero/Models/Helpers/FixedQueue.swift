@@ -42,12 +42,23 @@ struct FixedQueue<T> {
         return internalArray.removeFirst()
     }
 
+    /// Exchanges the two items.
+    /// - Parameters:
+    ///    - lhs: The index of the 1st item.
+    ///    - rhs: The index of the 2nd item.
+    mutating func exchangeItems(lhs: Int, rhs: Int) {
+        guard isValidIndex(lhs), isValidIndex(rhs) else {
+            return
+        }
+        internalArray.swapAt(lhs, rhs)
+    }
+
     /// Gets the value of the item at a certain index, which must be within the size
     /// of the fixed queue.
     /// - Parameter index: The intended index.
     /// - Returns: The item if the index is valid; nil otherwise.
     func getItem(at index: Int) -> T? {
-        guard index < size else {
+        guard isValidIndex(index) else {
             return nil
         }
         return internalArray[index]
@@ -58,5 +69,12 @@ struct FixedQueue<T> {
     /// - Returns: array of elements in their respective dequeue order
     func toArray() -> [T] {
         return internalArray
+    }
+
+    /// Checks whether a given index is valid.
+    /// - Parameter index: The index being checked.
+    /// - Returns: true if it is valid; false otherwise.
+    private func isValidIndex(_ index: Int) -> Bool {
+        return index >= 0 && index < size
     }
 }

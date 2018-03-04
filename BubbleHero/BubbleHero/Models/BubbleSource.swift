@@ -45,6 +45,14 @@ struct BubbleSource {
         return (item, isSnapping)
     }
 
+    /// Exchanges the two items.
+    /// - Parameters:
+    ///    - lhs: The index of the 1st item.
+    ///    - rhs: The index of the 2nd item.
+    mutating func exchange(lhs: Int, rhs: Int) {
+        bubbles.exchangeItems(lhs: lhs, rhs: rhs)
+    }
+
     /// Gets the nth next bubble. The bubble that is going to be launched next
     /// has an index of 0.
     /// - Returns: a tuple indicating the type of the  bubble and whether it is

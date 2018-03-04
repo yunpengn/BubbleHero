@@ -89,6 +89,12 @@ class GameViewController: UIViewController {
         }
     }
 
+    /// Exchanges the next and next second bubble.
+    /// - Parameter sender: The button being pressed.
+    @IBAction func exchangeButtonPressed(_ sender: UIButton) {
+        launchController?.exchange()
+    }
+
     /// Loads a level to start the game with.
     private func loadLevel() {
         guard let startLevel = level else {
