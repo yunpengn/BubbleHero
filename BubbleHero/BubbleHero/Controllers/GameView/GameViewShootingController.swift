@@ -28,7 +28,7 @@ class GameViewShootingController: EngineControllerDelegate {
     /// The delegate for launch controller.
     weak var launchControllerDelegate: GameViewLaunchControllerDelegate?
     /// The delegate for score controller.
-    let scoreControllerDelegate: GameViewScoreControllerDelegate
+    weak var scoreControllerDelegate: GameViewScoreControllerDelegate?
 
     /// Creates a shooting controller with its associated physics engine.
     /// - Parameter
@@ -38,7 +38,8 @@ class GameViewShootingController: EngineControllerDelegate {
     init(engine: PhysicsEngine2D, view: UIView, score: GameViewScoreControllerDelegate) {
         self.engine = engine
         self.scoreControllerDelegate = score
-        fallingController = GameViewFallingController(engine: engine, score: score)
+        fallingController = GameViewFallingController(engine: engine)
+        fallingController.scoreControllerDelegate = score
         fallingController.removeUnattachedBubbles()
         animator = GameViewAnimationController(view: view)
     }
@@ -79,7 +80,7 @@ class GameViewShootingController: EngineControllerDelegate {
         // special bubbles around.
         if toRemove.count >= Settings.sameColorThreshold || shouldRemove {
             for bubble in toRemove {
-                scoreControllerDelegate.addScore(for: bubble.object, by: .fromEffect(bubble.effect))
+                scoreControllerDelegate?.addScore(for: bubble.object, by: .fromEffect(bubble.effect))
                 animator.animate(object: bubble.object, effect: bubble.effect)
                 engine.deregisterPhysicsObject(bubble.object)
             }
@@ -149,6 +150,7 @@ class GameViewShootingController: EngineControllerDelegate {
         case .star:
             return getAllSameTypeBubbles(of: object.type)
         case .lightning:
+            animator.addLightningLine(with: bubble.view.frame.midX)
             return getSameRowBubbles(of: bubble)
         case .bomb:
             return bubble.getNeighbors()

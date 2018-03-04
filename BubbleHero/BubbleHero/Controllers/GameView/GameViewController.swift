@@ -24,7 +24,7 @@ class GameViewController: UIViewController {
     /// The next second bubble to be launched.
     @IBOutlet private weak var nextSecondBubble: BubbleView!
     /// The timer to indicate the number of seconds left.
-    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet private weak var timerLabel: UILabel!
     /// The controller for bubble launch.
     private var launchController: GameViewLaunchController?
     /// The controller for bubble shooting.

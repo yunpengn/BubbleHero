@@ -18,15 +18,12 @@ class GameViewFallingController {
     /// The physics engine associated with the controller.
     private let engine: PhysicsEngine2D
     /// The delegate for score controller.
-    let scoreControllerDelegate: GameViewScoreControllerDelegate
+    weak var scoreControllerDelegate: GameViewScoreControllerDelegate?
 
     /// Creates a new falling controller.
-    /// - Parameters:
-    ///    - engine: The game engine associated.
-    ///    - score: The score controller.
-    init(engine: PhysicsEngine2D, score: GameViewScoreControllerDelegate) {
+    /// - Parameter engine: The game engine associated.
+    init(engine: PhysicsEngine2D) {
         self.engine = engine
-        self.scoreControllerDelegate = score
     }
 
     /// Finds and removes the unattached bubbles. A bubble is defined as "unattached"
@@ -39,7 +36,7 @@ class GameViewFallingController {
                 continue
             }
             if !bubble.isAttachedToTop {
-                scoreControllerDelegate.addScore(for: bubble, by: .falling)
+                scoreControllerDelegate?.addScore(for: bubble, by: .falling)
                 // A falling bubble cannot collide with others.
                 bubble.isCollidable = false
                 bubble.isAttractable = false

@@ -10,7 +10,7 @@ import UIKit
 
 class GameViewWinController: UIViewController {
     /// The label for displaying the score.
-    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet private weak var scoreLabel: UILabel!
     /// The name of the level.
     var levelName = ""
     /// The score got.

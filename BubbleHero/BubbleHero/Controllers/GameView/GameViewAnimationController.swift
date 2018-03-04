@@ -42,10 +42,10 @@ class GameViewAnimationController {
     }
 
     /// Animates the lightning effect.
-    /// - Parameter x: The mid-x coordinate of the lightning line.
-    func addLightningLine(at x: CGFloat) {
+    /// - Parameter midY: The mid-Y coordinate of the lightning line.
+    func addLightningLine(with midY: CGFloat) {
         soundPlayer.play(.thunder)
-        let line = LightningLine(midY: x)
+        let line = LightningLine(midY: midY)
         view.addSubview(line)
         line.animate()
     }
