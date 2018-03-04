@@ -150,7 +150,7 @@ class GameViewShootingController: EngineControllerDelegate {
         case .star:
             return getAllSameTypeBubbles(of: object.type)
         case .lightning:
-            animator.addLightningLine(with: bubble.view.frame.midX)
+            animator.addLightningLine(with: bubble.view.frame.midY)
             return getSameRowBubbles(of: bubble)
         case .bomb:
             return bubble.getNeighbors()
