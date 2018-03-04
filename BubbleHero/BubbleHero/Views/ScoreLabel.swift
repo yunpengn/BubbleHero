@@ -24,6 +24,7 @@ class ScoreLabel: UILabel {
         center = bubble.center
         text = "+\(score)"
         textColor = UIColor.white
+        textAlignment = .center
         UIView.animate(withDuration: Settings.scoreLabelDuration, animations: {
             self.alpha = 0
         }, completion: { _ in

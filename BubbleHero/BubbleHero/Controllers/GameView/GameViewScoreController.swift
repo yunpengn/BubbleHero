@@ -14,7 +14,7 @@ import UIKit
  - Author: Niu Yunpeng @ CS3217
  - Date: Feb 2018
  */
-class GameViewScoreController {
+class GameViewScoreController: GameViewScoreControllerDelegate {
     /// The view area of the game.
     private let view: UIView
     /// The current score.
@@ -26,10 +26,6 @@ class GameViewScoreController {
         self.view = view
     }
 
-    /// Adds score when a new bubble is removed.
-    /// - Parameters:
-    ///    - bubble: The bubble being removed.
-    ///    - reason: The reason why the bubble is removed.
     func addScore(for bubble: BubbleObject, by reason: RemoveReason) {
         score += reason.rawValue
         let scoreLabel = ScoreLabel(bubble: bubble.view, score: reason.rawValue)
@@ -46,4 +42,31 @@ enum RemoveReason: Int {
     case lightning = 12
     case bomb = 15
     case falling = 8
+
+    /// Converts from `RemoveAnimation` to `RemoveReason`.
+    /// - Parameter effect: The type of `RemoveAnimation`.
+    /// - Returns: The `RemoveReason` converted.
+    static func fromEffect(_ effect: RemoveAnimation) -> RemoveReason {
+        switch effect {
+        case .none:
+            return .normal
+        case .bomb:
+            return .bomb
+        case .star:
+            return .star
+        case .lightning:
+            return .lightning
+        }
+    }
+}
+
+/**
+ Delegate for `GameViewScoreController`.
+ */
+protocol GameViewScoreControllerDelegate: AnyObject {
+    /// Adds score when a new bubble is removed.
+    /// - Parameters:
+    ///    - bubble: The bubble being removed.
+    ///    - reason: The reason why the bubble is removed.
+    func addScore(for bubble: BubbleObject, by reason: RemoveReason)
 }

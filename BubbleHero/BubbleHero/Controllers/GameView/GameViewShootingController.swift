@@ -27,14 +27,18 @@ class GameViewShootingController: EngineControllerDelegate {
     let animator: GameViewAnimationController
     /// The delegate for launch controller.
     weak var launchControllerDelegate: GameViewLaunchControllerDelegate?
+    /// The delegate for score controller.
+    let scoreControllerDelegate: GameViewScoreControllerDelegate
 
     /// Creates a shooting controller with its associated physics engine.
     /// - Parameter
     ///    - engine: The physics engine attached.
     ///    - view: The game area.
-    init(engine: PhysicsEngine2D, view: UIView) {
+    ///    - score: The delegate for score controller.
+    init(engine: PhysicsEngine2D, view: UIView, score: GameViewScoreControllerDelegate) {
         self.engine = engine
-        fallingController = GameViewFallingController(engine: engine)
+        self.scoreControllerDelegate = score
+        fallingController = GameViewFallingController(engine: engine, score: score)
         fallingController.removeUnattachedBubbles()
         animator = GameViewAnimationController(view: view)
     }
@@ -75,6 +79,7 @@ class GameViewShootingController: EngineControllerDelegate {
         // special bubbles around.
         if toRemove.count >= Settings.sameColorThreshold || shouldRemove {
             for bubble in toRemove {
+                scoreControllerDelegate.addScore(for: bubble.object, by: .fromEffect(bubble.effect))
                 animator.animate(object: bubble.object, effect: bubble.effect)
                 engine.deregisterPhysicsObject(bubble.object)
             }
@@ -114,10 +119,10 @@ class GameViewShootingController: EngineControllerDelegate {
                 animator.addLightningLine(at: next.view.frame.midY)
                 for bubble in getSameRowBubbles(of: next) {
                     bubble.visited = true
-                    result.append((bubble, .none))
+                    result.append((bubble, .lightning))
                 }
                 next.visited = true
-                result.append((next, .none))
+                result.append((next, .lightning))
             } else if next.type == .bomb {
                 for bubble in next.getNeighbors() {
                     bubble.visited = true
@@ -126,8 +131,8 @@ class GameViewShootingController: EngineControllerDelegate {
                 next.visited = true
                 result.append((next, .bomb))
             } else if !next.visited {
-                result.append((next, .none))
                 next.visited = true
+                result.append((next, .none))
             }
 
             // Checks for same-color connected bubble.
@@ -179,4 +184,5 @@ enum RemoveAnimation {
     case none
     case bomb
     case star
+    case lightning
 }

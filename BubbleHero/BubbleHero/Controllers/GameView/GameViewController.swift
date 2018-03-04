@@ -54,8 +54,12 @@ class GameViewController: UIViewController {
                                                     nextSecondBubble: nextSecondBubble)
         launchController?.engine = engine
 
+        /// Initializes the controller for scores.
+        let score = GameViewScoreController(view: view)
+        scoreController = score
+
         // Initializes the controller for bubble shooting and interactions.
-        shootingController = GameViewShootingController(engine: engine, view: view)
+        shootingController = GameViewShootingController(engine: engine, view: view, score: score)
         shootingController?.launchControllerDelegate = launchController
         engine.controllerDelegate = shootingController
 
@@ -63,9 +67,6 @@ class GameViewController: UIViewController {
         timerController = GameViewTimerController(label: timerLabel)
         timerController?.controllerDelegate = self
         timerController?.begin()
-
-        /// Initializes the controller for scores.
-        scoreController = GameViewScoreController(view: view)
     }
 
     /// Always hide the status bar on the top.

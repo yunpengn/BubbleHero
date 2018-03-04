@@ -33,13 +33,11 @@ class GameViewAnimationController {
     func animate(object: BubbleObject, effect: RemoveAnimation) {
         let newView = clone(object: object)
         switch effect {
-        case .none:
+        case .none, .lightning, .star:
             fadeAway(view: newView)
         case .bomb:
             newView.explode()
             soundPlayer.play(.bomb)
-        case .star:
-            fadeAway(view: newView)
         }
     }
 
