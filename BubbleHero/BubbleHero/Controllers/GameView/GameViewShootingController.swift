@@ -119,8 +119,13 @@ class GameViewShootingController: EngineControllerDelegate {
             // Checks for special effects.
             let specialEffect = getSpecialAffectedBubbles(by: next)
             specialEffect.forEach { bubble in
-                bubble.visited = true
-                result.append((bubble, .fromBubbleType(bubble.type)))
+                // Allows chaining effect of special bubbles.
+                if bubble.type.isSpecialType {
+                    toVisit.push(bubble)
+                } else {
+                    bubble.visited = true
+                    result.append((bubble, .fromBubbleType(bubble.type)))
+                }
             }
 
             // Checks for same-color connected bubble.
