@@ -63,13 +63,20 @@ A `FixedQueue` is still a queue, meaning that it still supports first-in & first
 
 `FixedQueue` helps `BubbleSource` to maintain its data integrity. If we want to display next `x` bubbles, we just need a `FixedQueue` with size `x`. Whenever a new bubble is launched, we dequeue an item and enqueue a random new one at the same time. The next few bubbles can be displayed because we can safely get the item at index `m` (where `0 <= m < x`).
 
+The new items enqueued are randomly generated: first we determine its type(among all 4 basic color types) and then decide whether it is snapping.
+
 ### Problem 3: Integration
 
-Your answer here
+There are a few ways to integrate the game engine and they are discussed as follows:
+
+-
 
 ### Problem 4.4
 
-Your answer here
+There are generally two ways to implement these special behaviours:
+
+- **Current approach**: add the different logic in `GameViewShootingController`. Although the disadvantage is that `GameViewShootingController` will become longer, it is still a better approach. All logic for interactions between bubbles are within one class and this class does nothing else, which is following single responsibility principle. If we want to add new types in the future, we simply need to add more `case`s in the `switch` statements, which is simple to do.
+- Subclass `BubbleObject` for each special bubbles. This alternative is good because we can separate the logic for each type of special bubbles. However, it can be much more complicated. We need to have separate logic when loading the level, which adds more logic to `GameViewController`. And the coupling is higher and single responsibility principle is violated. Take lightning bubbles as an example. To trigger lightning effect, we need to find and remove all bubbles on the same row. That means, `LightningBubbleObject` class now tries to manage all bubbles in the game, which is actually the responsibility of `GameViewShootingController`. Also, if we add a new type of bubble in the future, we may need to modify all subclasses of `BubbleObject`.
 
 ### Problem 7: Class Diagram
 
