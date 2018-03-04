@@ -18,6 +18,8 @@ class Messages {
     /// The title for fail alert.
     static let failAlertTitle = "Failed"
 
+    /// The alert message when initial data cannot be loaded.
+    static let failPreloadMessage = "Failed to load some initial data."
     /// The confirm title before level design is reset.
     static let resetLevelDesignTitle = "Reset Level Design"
     /// The confirm message before level design is reset.

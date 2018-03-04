@@ -29,8 +29,13 @@ class Settings {
     static let buttonCornerRadius = CGFloat(0.15)
     /// The constant coefficient for checkbox button corner radius.
     static let checkboxCornerRadius = CGFloat(0.3)
+
     /// The key for checking whether preloaded levels have been loaded before.
     static let preloadLevelKey = "preloadCompleted"
+    /// The items to preload.
+    static let preloadData = ["blockWall.json", "blockWall.png",
+                              "puzzle.json", "puzzle.png",
+                              "uniform.json", "uniform.png"]
 
     /// The alpha value for bubble buttons in the palette when it is selected.
     static let alphaPaletteBubbleSelected = CGFloat(1)

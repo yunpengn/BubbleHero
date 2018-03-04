@@ -42,6 +42,28 @@ class MenuViewController: UIViewController {
         guard UserDefaults.standard.string(forKey: Settings.preloadLevelKey) == nil else {
             return
         }
-        
+        Settings.preloadData.forEach { loadData($0) }
+        UserDefaults.standard.set(true, forKey: Settings.preloadLevelKey)
+    }
+
+    /// Loads the data from a certain file name into the document directory.
+    /// - Parameter fileName: The file name of loaded data.
+    private func loadData(_ fileName: String) {
+        /// The URL we copy data from.
+        guard let from = Bundle.main.url(forResource: fileName, withExtension: nil) else {
+            return
+        }
+        /// The URL we will copy data to.
+        var to = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        to.appendPathComponent(fileName)
+
+        /// Copies the item over.
+        do {
+            try FileManager.default.copyItem(at: from, to: to)
+        } catch {
+            DialogHelpers.showAlertMessage(in: self,
+                                           title: Messages.failAlertTitle,
+                                           message: Messages.failPreloadMessage)
+        }
     }
 }
