@@ -16,7 +16,34 @@ CS3217 Problem Set 5
 
 ### Rules of Your Game
 
-1. 
+1. Make sure you have uninstalled all previous (or older) versions of _Bubble Hero_.
+2. Install and open the game, you should see `Start`, `Design`, `Settings` and `About` four buttons.
+3. `Start` button will lead to the level selection screen, `Design` will lead to the level designer screen, both of which will be discussed in details as follows.
+
+##### Level Designer
+1. You can select all different types of bubbles from the palette to fill the bubble grid. They include 4 basic types (blue, green, yellow & red) and 5 special types (indestructible, lightning, bomb, star & magnetic). You can also use the eraser to erase filled bubbles.
+2. `Back` button will lead you back to the main menu screen.
+3. `Start` button will start a new game with the current design (but will not save the design).
+4. `Save` button will allow you to save the current design (and thus can be used later). The name of the level design can only include alphanumeric characters (both upper-size and lower-case). It cannot be empty or the same as any previous design that has been saved.
+5. `Load` button will lead to the level selection screen, in which you can select a previously-saved design and continue your design based on it. Long-press will delete a previously-saved design.
+6. `Reset` will clear all bubbles in the current design, which is irreversible. You need to confirm this action.
+
+##### Level Selection
+1. You can single-tap to select any level, long-press to delete any level.
+2. If you come from level designer, it will go back to level designer screen after single-tap; if you come from menu screen, it will start a new game after single-tap.
+3. If you come from menu screen, the last item in level gallery will be marked with a question mark, which denotes it is a random level design automatically generated. You can select it to start a game for fun. This random design cannot be deleted.
+4. When you open the game for the first time, three levels will be pre-loaded for you. You can design more levels on your own.
+
+##### Game Play
+1. Each game has a time limit of 90 seconds. The ultimate goal is to earn more points. Removing more bubbles does not necessarily mean higher score. We appreciate your wisdom.
+2. The cannon below will be used to shoot bubbles. You should drag (rather than single-tap) to launch bubbles. The cannon will face towards the direction of your finger.
+3. The two bubbles at the right bottom of the screen shows the next & next second bubbles to be launched, which can be a useful hint.
+4. The time at the left bottom of the screen shows the time left. You cannot shoot bubbles anymore when time is up.
+5. The cannon will launch only basic-type (blue, green, yellow & red) bubbles (either snapping or non-snapping).
+6. You can only launch the next bubble after the current bubble stops.
+7. If no special effect is triggered, same-color bubbles will be removed only if they form a connected group of at least 3.
+8. Hanging bubbles (not attached to the top wall, either directly or indirectly) will always be removed.
+9. If any launched bubble touches a bomb bubble,
 
 ### Problem 1: Cannon Direction
 

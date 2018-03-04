@@ -107,33 +107,29 @@ class GameViewShootingController: EngineControllerDelegate {
         }
         // Starts a DFS to find all attached objects with the same color.
         while let next = toVisit.pop() {
-            // Checks for the special effects (and only allows 2nd-order chaing effect).
+            guard !next.visited else {
+                continue
+            }
+
             if next.type == .star {
                 for bubble in getAllSameTypeBubbles(of: object.type) {
                     bubble.visited = true
                     result.append((bubble, .star))
                 }
-                next.visited = true
-                result.append((next, .star))
             } else if next.type == .lightning {
                 animator.addLightningLine(at: next.view.frame.midY)
                 for bubble in getSameRowBubbles(of: next) {
                     bubble.visited = true
                     result.append((bubble, .lightning))
                 }
-                next.visited = true
-                result.append((next, .lightning))
             } else if next.type == .bomb {
                 for bubble in next.getNeighbors() {
                     bubble.visited = true
                     result.append((bubble, .bomb))
                 }
-                next.visited = true
-                result.append((next, .bomb))
-            } else if !next.visited {
-                next.visited = true
-                result.append((next, .none))
             }
+            next.visited = true
+            result.append((next, .fromBubbleType(next.type)))
 
             // Checks for same-color connected bubble.
             for neighbor in next.getSameColorNeighbors() where !neighbor.visited {
@@ -185,4 +181,20 @@ enum RemoveAnimation {
     case bomb
     case star
     case lightning
+
+    /// Converts from `BubbleType` to `RemoveAnimation`.
+    /// - Parameter type: The `BubbleType`.
+    /// - Returns: The `RemoveAnimation` converted.
+    static func fromBubbleType(_ type: BubbleType) -> RemoveAnimation {
+        switch type {
+        case .lightning:
+            return .lightning
+        case .bomb:
+            return .bomb
+        case .star:
+            return .star
+        default:
+            return .none
+        }
+    }
 }
