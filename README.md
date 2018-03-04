@@ -110,7 +110,7 @@ The following extra features are added to the game:
 - When a lightning bubble is triggered, there is a blinky white line to simulate the effect and there is a thunder sound effect.
 - Each removed bubble will add some scores. The scores added are different according to the reason the bubble is removed. And the total score will be shown when the game stops.
 - Adds the end-game screen to tell the user the level name and scores obtained.
-- Adds a time limit to the game and user should try to get higher scores in the limited time.
+- Adds a time limit to the game and user should try to get higher scores in the limited time. The text color for the label at the left-bottom of the screen will change according to the time left.
 - Adds background music and adds a setting screen to turn on/off the background music.
 
 ### Problem 10: Final Reflection
