@@ -57,7 +57,7 @@ We would like appreciate the wonderful resources provided by the following websi
 12. Indestructible bubbles and magnetic bubbles can only be removed by special effects or by falling.
 13. Magnetic bubbles will attract the launched bubbles, whose force is inverse proportional to the square of the distance between them.
 14. Special bubbles allow chaining effect. On the one hand, any special bubble itself removed by the special effect of another special bubble will be triggered; on the other hand, the same-type neighbors of a special bubble being triggered will also be triggered.
-15. Bubbles with a purple border are non-snapping ones. They will snap to the standard cells. Instead, they will stop immediately after they touch any other bubbles. However, they are also normal color bubbles. They can also be removed when forming a connected same-color group of at least 3. Any later launched bubbles which touch it will also become non-snapping.
+15. Bubbles with a purple border are non-snapping ones. They will not snap to the standard cells. Instead, they will stop immediately after they touch any other bubbles. However, they are also normal color bubbles. They can also be removed when forming a connected same-color group of at least 3. Any later launched bubbles which touch it will also become non-snapping.
 16. The score is calculated according to the reason a bubble is removed: same-color - 5 points, star - 10 points, lightning - 12 points, bomb - 15 points, falling - 8 points.
 
 ### Problem 1: Cannon Direction
@@ -133,6 +133,8 @@ See description in the rules of the game.
         - When I drag and release on a location of the screen that is not at least slighlt higher than the position of the bubble launcher, I expect the input is rejected and nothing will happen.
         - When I already have a shooted bubble travelling (collision not happened yet), I expect the input is rejected and nothing will happen.
         - Otherwise, I expect the bubble is launched in the direction towards the point of the single-tap gesture.
+        - I expect only basic color type bubbles to be launched.
+        - I expect both snapping bubbles and non-snapping bubbles to be launched, of which the latter has a much lower probability.
     - Test the movement of a bubble
         - When a bubble has been launched (shooted) successfully, I expect the travelling speed to be a positive constant. I also expect the bubble travels in a staight line (as long as no collision with screen edge or other bubbles happen).
         - When a bubble is falling down, I expect it to be a free falling process (without the effect of air resistance), i.e., its acceleration is a positive constant. Visually, the velocity should increase (although human eyes may not be able to observe the change). I also expect the falling down in straight downward direction.
@@ -145,6 +147,20 @@ See description in the rules of the game.
         - When a shooted bubble collides with the side wall (left or right), I expect a reflection happens. In other words, the (horizontal component of the) moving direction of the bubble should reverse.
         - When a shooted bubble collides with the top wall, I expect it to stop moving and snap to the nearest empty cell.
         - Following above, after snapping to the nearest empty cell, normal behavior should happen if it collides with any other static bubble.
+    - Test bomb bubble: When a launched bubble touches a bomb, I expect the burst effect to be seen on all neighbors of the bomb (after which they will disappear), and hear an explosion sound effect.
+    - Test lightning bubble: When a launched bubble touches a lightning bubble, I expect all bubbles on the same row to disappear. Also, there is a blinky white line on the same height as the center of the lightning bubble.
+    - Test star bubble: When a launched bubble touches a star bubble, I expect all bubbles with the same color as the launched bubble to disappear.
+    - Test magnetic bubble: When a launched bubble goes nearby a magnetic bubble, I expect magnetic bubbles will attract the launched bubbles, whose force is inverse proportional to the square of the distance between them.
+        - I expect magnetic bubbles to lose magnetism when they fall down.
+        - I expect magnetic bubbles to not attract falling bubbles (no matter whether they themselves are falling).
+    - Test chaining effect:
+        - I expect any special bubble itself removed by the special effect of another special bubble will be triggered;
+        - I expect the same-type neighbors of a special bubble being triggered will also be triggered.
+    - Test non-snapping bubbles:
+        - I expectnon-snapping bubbles to have a purple border.
+        - I expect they will not snap to the standard cells. Instead, they will stop immediately after they touch any other bubbles.
+        - I expect they are also normal color bubbles. They can also be removed when forming a connected same-color group of at least 3.
+        - I expect any later launched bubbles which touch it will also become non-snapping.
 - Test settings screen
     - I expect the background music checkbox to be initially checked and the background music is playing.
     - When clicking on the checkbox, I expect the checkbox to be unchecked and the music pauses.
