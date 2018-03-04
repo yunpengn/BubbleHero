@@ -36,8 +36,8 @@ class GameViewAnimationController {
         case .none, .lightning, .star:
             fadeAway(view: newView)
         case .bomb:
-            newView.explode()
             soundPlayer.play(.bomb)
+            newView.explode()
         }
     }
 

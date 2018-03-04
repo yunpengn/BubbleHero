@@ -125,7 +125,7 @@ class Settings {
     static let soundEffectDuration = 1.5
 
     /// The time for each game (in seconds).
-    static let timePerGame = 120
+    static let timePerGame = 90
     /// The number of seconds per minute.
     static let secondPerMinute = 60
     /// The format for the timer label.
