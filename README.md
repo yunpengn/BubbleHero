@@ -199,6 +199,7 @@ The following extra features are added to the game:
 - Adds the end-game screen to tell the user the level name and scores obtained.
 - Adds a time limit to the game and user should try to get higher scores in the limited time. The text color for the label at the left-bottom of the screen will change according to the time left.
 - Adds background music and adds a setting screen to turn on/off the background music.
+- Allows the user to exchange the next bubble and next second bubble using the purple exchange button at the right bottom corner of the game play screen.
 
 ### Problem 10: Final Reflection
 
