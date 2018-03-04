@@ -148,7 +148,7 @@ See description in the rules of the game.
         - When a shooted bubble collides with the top wall, I expect it to stop moving and snap to the nearest empty cell.
         - Following above, after snapping to the nearest empty cell, normal behavior should happen if it collides with any other static bubble.
     - Test bomb bubble: When a launched bubble touches a bomb, I expect the burst effect to be seen on all neighbors of the bomb (after which they will disappear), and hear an explosion sound effect.
-    - Test lightning bubble: When a launched bubble touches a lightning bubble, I expect all bubbles on the same row to disappear. Also, there is a blinky white line on the same height as the center of the lightning bubble.
+    - Test lightning bubble: When a launched bubble touches a lightning bubble, I expect all bubbles on the same row to disappear. Also, there is a blinky white line on the same height as the center of the lightning bubble, and hear a thunder sound effect.
     - Test star bubble: When a launched bubble touches a star bubble, I expect all bubbles with the same color as the launched bubble to disappear.
     - Test magnetic bubble: When a launched bubble goes nearby a magnetic bubble, I expect magnetic bubbles will attract the launched bubbles, whose force is inverse proportional to the square of the distance between them.
         - I expect magnetic bubbles to lose magnetism when they fall down.
