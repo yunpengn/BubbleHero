@@ -59,6 +59,7 @@
 		F2B2A5492047036600B4FD6A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A5482047036600B4FD6A /* Game.swift */; };
 		F2BCB81E204B8EE0005B216A /* GameViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BCB81D204B8EE0005B216A /* GameViewController+Delegate.swift */; };
 		F2BCB820204B913B005B216A /* doorbell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2BCB81F204B913B005B216A /* doorbell.mp3 */; };
+		F2BCB824204B99F7005B216A /* GameViewWinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BCB823204B99F7005B216A /* GameViewWinController.swift */; };
 		F2C70E372045909B00C27EBC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70E362045909B00C27EBC /* AboutViewController.swift */; };
 		F2CAFB1E20442D51002078B2 /* FillableBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */; };
 		F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */; };
@@ -148,6 +149,7 @@
 		F2B2A5482047036600B4FD6A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F2BCB81D204B8EE0005B216A /* GameViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Delegate.swift"; sourceTree = "<group>"; };
 		F2BCB81F204B913B005B216A /* doorbell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = doorbell.mp3; sourceTree = "<group>"; };
+		F2BCB823204B99F7005B216A /* GameViewWinController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewWinController.swift; sourceTree = "<group>"; };
 		F2C70E362045909B00C27EBC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillableBubbleCell.swift; sourceTree = "<group>"; };
 		F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+BubbleGrid.swift"; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				F25A29642047D64900C90576 /* GameViewShootingController.swift */,
 				F24F0241204AA59600875CFC /* GameViewSnapController.swift */,
 				F2DC6955204AFA21008C6C8E /* GameViewTimerController.swift */,
+				F2BCB823204B99F7005B216A /* GameViewWinController.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				F2B2A5492047036600B4FD6A /* Game.swift in Sources */,
 				F24F0244204AA8C900875CFC /* GameViewFallingController.swift in Sources */,
 				F2BCB81E204B8EE0005B216A /* GameViewController+Delegate.swift in Sources */,
+				F2BCB824204B99F7005B216A /* GameViewWinController.swift in Sources */,
 				F2610084204834B40002864B /* SettingsMenu.swift in Sources */,
 				F25A29652047D64900C90576 /* GameViewShootingController.swift in Sources */,
 				F24F026C204AE16100875CFC /* SoundEffectController.swift in Sources */,

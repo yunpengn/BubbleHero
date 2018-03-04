@@ -56,6 +56,7 @@ extension LoadLevelController {
 
         // Loads the data.
         let dataPath = levelGallery.getDataPath(at: index)
+        let levelName = dataPath.deletingPathExtension().lastPathComponent
         guard let jsonData = try? Data(contentsOf: dataPath),
             let level = try? JSONDecoder().decode(Level.self, from: jsonData) else {
                 DialogHelpers.showAlertMessage(in: self,
@@ -70,24 +71,27 @@ extension LoadLevelController {
             navigationController?.popViewController(animated: true)
         } else {
             // Otherwise, starts the game with this level.
-            loadGame(with: level)
+            loadGame(with: level, name: levelName)
         }
     }
 
     /// Loads a random level to start the game.
     private func loadRandomLevel() {
-        loadGame(with: RandomDataHelpers.loadSampleLevel())
+        loadGame(with: RandomDataHelpers.loadSampleLevel(), name: Settings.randomLevelName)
     }
 
     /// Starts the game by loading a certain level.
-    /// - Parameter level: The level to load.
-    private func loadGame(with level: Level) {
+    /// - Parameters:
+    ///    - level: The level to load.
+    ///    - name: The name of the level
+    private func loadGame(with level: Level, name: String) {
         let id = Settings.gameViewControllerId
         guard let gameViewController = storyboard?.instantiateViewController(withIdentifier: id)
             as? GameViewController else {
                 fatalError("Could not find the controller for game view")
         }
         gameViewController.level = level
+        gameViewController.levelName = name
         present(gameViewController, animated: true, completion: nil)
     }
 

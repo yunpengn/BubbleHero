@@ -14,6 +14,12 @@
         <array key="Papyrus.ttc">
             <string>Papyrus</string>
         </array>
+        <array key="Savoye.ttc">
+            <string>SavoyeLetPlain</string>
+        </array>
+        <array key="SnellRoundhand.ttc">
+            <string>SnellRoundhand</string>
+        </array>
     </customFonts>
     <scenes>
         <!--SettingsController-->
@@ -798,6 +804,49 @@
             </objects>
             <point key="canvasLocation" x="198.4375" y="1466.6015625"/>
         </scene>
+        <!--GameViewWinController-->
+        <scene sceneID="w52-54-AyJ">
+            <objects>
+                <viewController storyboardIdentifier="gameViewWinController" id="ID0-xe-80O" userLabel="GameViewWinController" customClass="GameViewWinController" customModule="BubbleHero" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DxQ-MU-I6g">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gold-trophy" translatesAutoresizingMaskIntoConstraints="NO" id="jGk-sJ-Liv" userLabel="GoldTrophy">
+                                <rect key="frame" x="320" y="394" width="128" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've made it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkP-I1-Rmi">
+                                <rect key="frame" x="266.5" y="334" width="235.5" height="50"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: XXX Score: ???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-cr-okg">
+                                <rect key="frame" x="271" y="532" width="227.5" height="42"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vdV-cr-okg" firstAttribute="top" secondItem="jGk-sJ-Liv" secondAttribute="bottom" constant="10" id="KfE-tc-BT5"/>
+                            <constraint firstItem="jGk-sJ-Liv" firstAttribute="centerX" secondItem="8xY-VL-xbl" secondAttribute="centerX" id="LuO-ph-AbN"/>
+                            <constraint firstItem="zkP-I1-Rmi" firstAttribute="centerX" secondItem="8xY-VL-xbl" secondAttribute="centerX" id="NXK-uz-ji0"/>
+                            <constraint firstItem="jGk-sJ-Liv" firstAttribute="bottom" secondItem="8xY-VL-xbl" secondAttribute="centerY" id="Pwf-VR-bS8"/>
+                            <constraint firstItem="zkP-I1-Rmi" firstAttribute="bottom" secondItem="jGk-sJ-Liv" secondAttribute="top" constant="-10" id="jpM-yE-vVA"/>
+                            <constraint firstItem="vdV-cr-okg" firstAttribute="centerX" secondItem="8xY-VL-xbl" secondAttribute="centerX" id="tof-1f-tUp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8xY-VL-xbl"/>
+                    </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="vdV-cr-okg" id="bv6-c4-fj2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ssl-tq-ZAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="2122"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Txg-eZ-nsX">
             <objects>
@@ -832,6 +881,7 @@
         <image name="cannon-base" width="133" height="139"/>
         <image name="cannon-single" width="126" height="253"/>
         <image name="erase" width="168" height="168"/>
+        <image name="gold-trophy" width="128" height="128"/>
         <image name="logo" width="200" height="200"/>
         <image name="ok-green" width="128" height="128"/>
         <image name="studio_brand" width="200" height="200"/>

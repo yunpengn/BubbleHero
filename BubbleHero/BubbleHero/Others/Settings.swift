@@ -64,6 +64,8 @@ class Settings {
     static let galleryCellId = "levelGalleryCell"
     /// The identifier for `GameViewController` in main storyboard.
     static let gameViewControllerId = "gameViewController"
+    /// The identifier for `GameViewWinController` in main storyboard.
+    static let gameViewWinControllerId = "gameViewWinController"
     /// The identifier for the segue from menu to setting view.
     static let menuToSettingsSegueId = "menuToSettings"
 

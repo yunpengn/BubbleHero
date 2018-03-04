@@ -35,6 +35,8 @@ class GameViewController: UIViewController {
     private var physicsEngine: PhysicsEngine2D?
     /// The level to start with.
     var level: Level?
+    /// The name of the level.
+    var levelName = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
