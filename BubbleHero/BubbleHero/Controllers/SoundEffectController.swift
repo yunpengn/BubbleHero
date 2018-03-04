@@ -37,4 +37,5 @@ class SoundEffectController {
 enum SoundEffect: String {
     case thunder = "thunder.mp3"
     case bomb = "bomb.mp3"
+    case timeup = "doorbell.mp3"
 }

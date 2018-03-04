@@ -23,6 +23,10 @@ class GameViewTimerController {
     private var seconds = Settings.timePerGame
     /// The current status of the time.
     private var status = TimerStatus.normal
+    /// The delegate for `GameViewController`.
+    var controllerDelegate: GameViewControllerDelegate?
+    /// The controller for playing sound effects.
+    let soundEffectController = SoundEffectController()
 
     /// Creates a new timer by associating with a label.
     /// - Parameter label: The label in view associated.
@@ -58,6 +62,8 @@ class GameViewTimerController {
 
         if seconds < 0 {
             timer?.invalidate()
+            controllerDelegate?.stopGame()
+            soundEffectController.play(.timeup)
         }
     }
 }

@@ -57,6 +57,7 @@ class GameViewController: UIViewController {
 
         // Initializes the controller for timer.
         timerController = GameViewTimerController(label: timerLabel)
+        timerController?.controllerDelegate = self
         timerController?.begin()
     }
 

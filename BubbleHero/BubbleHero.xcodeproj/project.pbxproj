@@ -57,6 +57,8 @@
 		F2B2A53020466FBF00B4FD6A /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A52F20466FBF00B4FD6A /* BubbleView.swift */; };
 		F2B2A5472046FA7A00B4FD6A /* BubbleObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A5462046FA7A00B4FD6A /* BubbleObject.swift */; };
 		F2B2A5492047036600B4FD6A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A5482047036600B4FD6A /* Game.swift */; };
+		F2BCB81E204B8EE0005B216A /* GameViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BCB81D204B8EE0005B216A /* GameViewController+Delegate.swift */; };
+		F2BCB820204B913B005B216A /* doorbell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2BCB81F204B913B005B216A /* doorbell.mp3 */; };
 		F2C70E372045909B00C27EBC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70E362045909B00C27EBC /* AboutViewController.swift */; };
 		F2CAFB1E20442D51002078B2 /* FillableBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */; };
 		F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */; };
@@ -144,6 +146,8 @@
 		F2B2A52F20466FBF00B4FD6A /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		F2B2A5462046FA7A00B4FD6A /* BubbleObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleObject.swift; sourceTree = "<group>"; };
 		F2B2A5482047036600B4FD6A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		F2BCB81D204B8EE0005B216A /* GameViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Delegate.swift"; sourceTree = "<group>"; };
+		F2BCB81F204B913B005B216A /* doorbell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = doorbell.mp3; sourceTree = "<group>"; };
 		F2C70E362045909B00C27EBC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F2CAFB1D20442D51002078B2 /* FillableBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillableBubbleCell.swift; sourceTree = "<group>"; };
 		F2CAFB1F20442F57002078B2 /* LevelDesignerController+BubbleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+BubbleGrid.swift"; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				F24F026D204AE40000875CFC /* bomb.mp3 */,
+				F2BCB81F204B913B005B216A /* doorbell.mp3 */,
 				F24F0269204AE13F00875CFC /* thunder.mp3 */,
 				F2610081204832350002864B /* Now_Its_Time.mp3 */,
 			);
@@ -343,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				F252D4A420452559004FDA03 /* GameViewController.swift */,
+				F2BCB81D204B8EE0005B216A /* GameViewController+Delegate.swift */,
 				F25A295E2047972D00C90576 /* GameViewController+Renderer.swift */,
 				F24F0245204AA9EC00875CFC /* GameViewAnimationController.swift */,
 				F24F0243204AA8C900875CFC /* GameViewFallingController.swift */,
@@ -505,6 +511,7 @@
 				F29CD066203D217900C94061 /* README.md in Resources */,
 				F24F026E204AE40100875CFC /* bomb.mp3 in Resources */,
 				F29CD04A203D203800C94061 /* Main.storyboard in Resources */,
+				F2BCB820204B913B005B216A /* doorbell.mp3 in Resources */,
 				F2610082204832350002864B /* Now_Its_Time.mp3 in Resources */,
 				F24F026A204AE14000875CFC /* thunder.mp3 in Resources */,
 			);
@@ -635,6 +642,7 @@
 				F252D4A920455F26004FDA03 /* Helpers.swift in Sources */,
 				F2B2A5492047036600B4FD6A /* Game.swift in Sources */,
 				F24F0244204AA8C900875CFC /* GameViewFallingController.swift in Sources */,
+				F2BCB81E204B8EE0005B216A /* GameViewController+Delegate.swift in Sources */,
 				F2610084204834B40002864B /* SettingsMenu.swift in Sources */,
 				F25A29652047D64900C90576 /* GameViewShootingController.swift in Sources */,
 				F24F026C204AE16100875CFC /* SoundEffectController.swift in Sources */,
