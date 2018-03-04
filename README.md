@@ -121,6 +121,13 @@ See description in the rules of the game.
     - When user long presses on any **filled** cell in the bubble grid, its color should be cleared. Nothing will happen if the cell is not filled at all.
     - When user presses the `Load` button, the level selection view should be shown. A level gallery will be displayed and show all previously saved levels (with a screenshot preview and its name).
 - Test level selection
+    - When coming from the menu screen, pressing the green back button on the left top will go back to menu.
+    - When coming from the level designer screen, pressing the green back button on the left top will go back to level designer.
+    - When coming from the menu screen, single-tap on any level design screenshot will start a game with that level and show game play screen.
+    - When coming from the level designer screen, single-tap on any level design screenshot will load that level and allow continuing design based on this and show game play screen.
+    - Long-ress on any level design screenshot, I expect a dialog window to open and ask me to confirm whether to delete that level
+        - If confirm, I expect the level gallery to have one fewer level design.
+        - If not confirm, I expect nothing changes.
 - Test game play
     - Test the launch of a bubble
         - When I drag and release on a location of the screen that is not at least slighlt higher than the position of the bubble launcher, I expect the input is rejected and nothing will happen.
@@ -149,7 +156,7 @@ See description in the rules of the game.
 
 #### Glass-box testing
 
-According to software testing cost & benefit analysis, glass-box testing may not be the most suitable method.
+According to software testing cost & benefit [analysis](https://www.agileconnection.com/sites/default/files/article/file/2014/Cost-Benefit%20Analysis%20of%20Test%20Automation.pdf), glass-box testing may not be the most suitable method.
 
 ### Problem 9: The Bells & Whistles
 
