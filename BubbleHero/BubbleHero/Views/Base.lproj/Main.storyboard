@@ -793,6 +793,7 @@
                         <outlet property="nextBubble" destination="uh5-k4-cwU" id="cBA-yp-ECj"/>
                         <outlet property="nextSecondBubble" destination="poj-Yf-att" id="a3A-R5-cl7"/>
                         <outlet property="timerLabel" destination="5kc-Fq-3bP" id="yzG-jy-zxR"/>
+                        <segue destination="ID0-xe-80O" kind="presentation" identifier="gameViewToWin" modalPresentationStyle="overCurrentContext" modalTransitionStyle="flipHorizontal" id="e29-cI-wxc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFO-us-cgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -807,35 +808,60 @@
         <!--GameViewWinController-->
         <scene sceneID="w52-54-AyJ">
             <objects>
-                <viewController storyboardIdentifier="gameViewWinController" id="ID0-xe-80O" userLabel="GameViewWinController" customClass="GameViewWinController" customModule="BubbleHero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ID0-xe-80O" userLabel="GameViewWinController" customClass="GameViewWinController" customModule="BubbleHero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DxQ-MU-I6g">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gold-trophy" translatesAutoresizingMaskIntoConstraints="NO" id="jGk-sJ-Liv" userLabel="GoldTrophy">
-                                <rect key="frame" x="320" y="394" width="128" height="128"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've made it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkP-I1-Rmi">
-                                <rect key="frame" x="266.5" y="334" width="235.5" height="50"/>
-                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: XXX Score: ???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-cr-okg">
-                                <rect key="frame" x="271" y="532" width="227.5" height="42"/>
-                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hZ-ZV-CyW" userLabel="WinArea" customClass="SettingsMenu" customModule="BubbleHero" customModuleProvider="target">
+                                <rect key="frame" x="159" y="347" width="450" height="350"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gold-trophy" translatesAutoresizingMaskIntoConstraints="NO" id="jGk-sJ-Liv" userLabel="GoldTrophy">
+                                        <rect key="frame" x="161" y="80" width="128" height="128"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've made it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkP-I1-Rmi">
+                                        <rect key="frame" x="107.5" y="20" width="235.5" height="50"/>
+                                        <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: XXX Score: ???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-cr-okg">
+                                        <rect key="frame" x="111.5" y="228" width="227.5" height="42"/>
+                                        <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6S5-Ow-SV5" userLabel="ContinueButton" customClass="WinViewButton" customModule="BubbleHero" customModuleProvider="target">
+                                        <rect key="frame" x="125" y="270" width="200" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="XRc-Wd-NVZ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="uhA-Ot-pvb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="vdV-cr-okg" firstAttribute="top" secondItem="jGk-sJ-Liv" secondAttribute="bottom" constant="20" id="DuT-1n-bId"/>
+                                    <constraint firstItem="6S5-Ow-SV5" firstAttribute="centerX" secondItem="7hZ-ZV-CyW" secondAttribute="centerX" id="L5Z-cK-hbo"/>
+                                    <constraint firstItem="zkP-I1-Rmi" firstAttribute="top" secondItem="7hZ-ZV-CyW" secondAttribute="top" constant="20" id="MaE-Yi-Npd"/>
+                                    <constraint firstItem="jGk-sJ-Liv" firstAttribute="top" secondItem="zkP-I1-Rmi" secondAttribute="bottom" constant="10" id="TLl-cV-u1i"/>
+                                    <constraint firstItem="jGk-sJ-Liv" firstAttribute="centerX" secondItem="7hZ-ZV-CyW" secondAttribute="centerX" id="YfC-WZ-3xk"/>
+                                    <constraint firstAttribute="height" constant="350" id="aA4-UJ-QfI"/>
+                                    <constraint firstItem="6S5-Ow-SV5" firstAttribute="bottom" secondItem="7hZ-ZV-CyW" secondAttribute="bottom" constant="-10" id="dIy-gY-J7s"/>
+                                    <constraint firstItem="zkP-I1-Rmi" firstAttribute="centerX" secondItem="7hZ-ZV-CyW" secondAttribute="centerX" id="hM5-Jm-WII"/>
+                                    <constraint firstItem="vdV-cr-okg" firstAttribute="centerX" secondItem="7hZ-ZV-CyW" secondAttribute="centerX" id="sPX-Vj-xl6"/>
+                                    <constraint firstAttribute="width" constant="450" id="swo-Ul-Tde"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vdV-cr-okg" firstAttribute="top" secondItem="jGk-sJ-Liv" secondAttribute="bottom" constant="10" id="KfE-tc-BT5"/>
-                            <constraint firstItem="jGk-sJ-Liv" firstAttribute="centerX" secondItem="8xY-VL-xbl" secondAttribute="centerX" id="LuO-ph-AbN"/>
-                            <constraint firstItem="zkP-I1-Rmi" firstAttribute="centerX" secondItem="8xY-VL-xbl" secondAttribute="centerX" id="NXK-uz-ji0"/>
-                            <constraint firstItem="jGk-sJ-Liv" firstAttribute="bottom" secondItem="8xY-VL-xbl" secondAttribute="centerY" id="Pwf-VR-bS8"/>
-                            <constraint firstItem="zkP-I1-Rmi" firstAttribute="bottom" secondItem="jGk-sJ-Liv" secondAttribute="top" constant="-10" id="jpM-yE-vVA"/>
-                            <constraint firstItem="vdV-cr-okg" firstAttribute="centerX" secondItem="8xY-VL-xbl" secondAttribute="centerX" id="tof-1f-tUp"/>
+                            <constraint firstItem="7hZ-ZV-CyW" firstAttribute="centerY" secondItem="8xY-VL-xbl" secondAttribute="centerY" id="P9d-yo-5HV"/>
+                            <constraint firstItem="7hZ-ZV-CyW" firstAttribute="centerX" secondItem="8xY-VL-xbl" secondAttribute="centerX" id="PYh-lO-OAw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8xY-VL-xbl"/>
                     </view>
@@ -845,7 +871,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ssl-tq-ZAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="198" y="2122"/>
+            <point key="canvasLocation" x="198" y="2171"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Txg-eZ-nsX">

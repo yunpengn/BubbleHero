@@ -17,12 +17,16 @@ import UIKit
 class Settings {
     /// The suitable background for buttons (semi-transparent).
     static let menuBackgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.98, alpha: 0.15)
+    /// The suitable background for winning buttons.
+    static let winButtonsColor = UIColor(red: 0.74, green: 0.78, blue: 0.79, alpha: 0.3)
     /// The border width for menu buttons
     static let menuBorderWidth = CGFloat(1)
+    /// The border width for winning buttons
+    static let winBorderWidth = CGFloat(3)
     /// The border width for checkbox buttons
     static let checkboxBorderWidth = CGFloat(5)
     /// The constant coefficient for menu corner radius.
-    static let menuCornerRadius = CGFloat(0.15)
+    static let buttonCornerRadius = CGFloat(0.15)
     /// The constant coefficient for checkbox button corner radius.
     static let checkboxCornerRadius = CGFloat(0.3)
 
@@ -64,10 +68,10 @@ class Settings {
     static let galleryCellId = "levelGalleryCell"
     /// The identifier for `GameViewController` in main storyboard.
     static let gameViewControllerId = "gameViewController"
-    /// The identifier for `GameViewWinController` in main storyboard.
-    static let gameViewWinControllerId = "gameViewWinController"
     /// The identifier for the segue from menu to setting view.
     static let menuToSettingsSegueId = "menuToSettings"
+    /// The identifier for the segue from game view to win view.
+    static let gameViewWinSegueId = "gameViewToWin"
 
     /// The extension file name for data storage.
     static let extensionNameData = ".json"
@@ -119,9 +123,12 @@ class Settings {
     static let soundEffectDuration = 1.5
 
     /// The time for each game (in seconds).
-    static let timePerGame = 120
+    static let timePerGame = 5
     /// The number of seconds per minute.
     static let secondPerMinute = 60
     /// The format for the timer label.
     static let timerLabelFormat = "%02i:%02i"
+
+    /// The format for winning view score.
+    static let scoreLabelFormat = "Level: %a  Score: %i"
 }

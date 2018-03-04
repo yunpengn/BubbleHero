@@ -11,7 +11,7 @@ import UIKit
 class SettingsMenu: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = frame.width * Settings.menuCornerRadius
+        layer.cornerRadius = frame.width * Settings.buttonCornerRadius
         layer.borderWidth = Settings.menuBorderWidth
         layer.borderColor = UIColor.white.cgColor
     }

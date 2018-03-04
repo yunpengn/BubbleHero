@@ -26,7 +26,8 @@ class GameViewWinController: UIViewController {
         return true
     }
 
+    /// Updates the text inside the score label.
     private func updateLabel() {
-
+        scoreLabel.text = String(format: Settings.scoreLabelFormat, levelName, score)
     }
 }

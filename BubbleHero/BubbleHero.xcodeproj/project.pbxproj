@@ -71,6 +71,7 @@
 		F2CAFB44204454BF002078B2 /* LevelDesignerSavingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB43204454BF002078B2 /* LevelDesignerSavingController.swift */; };
 		F2CAFB462044568A002078B2 /* DialogHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAFB452044568A002078B2 /* DialogHelpers.swift */; };
 		F2DC6956204AFA21008C6C8E /* GameViewTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DC6955204AFA21008C6C8E /* GameViewTimerController.swift */; };
+		F2F6EC50204BAB4D00263AE8 /* WinViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F6EC4F204BAB4D00263AE8 /* WinViewButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,7 @@
 		F2CAFB43204454BF002078B2 /* LevelDesignerSavingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDesignerSavingController.swift; sourceTree = "<group>"; };
 		F2CAFB452044568A002078B2 /* DialogHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelpers.swift; sourceTree = "<group>"; };
 		F2DC6955204AFA21008C6C8E /* GameViewTimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewTimerController.swift; sourceTree = "<group>"; };
+		F2F6EC4F204BAB4D00263AE8 /* WinViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */,
 				F2610083204834B40002864B /* SettingsMenu.swift */,
 				F252D4A620454704004FDA03 /* UIImage+Slice.swift */,
+				F2F6EC4F204BAB4D00263AE8 /* WinViewButton.swift */,
 				F29CD04B203D203800C94061 /* Assets.xcassets */,
 				F29CD04D203D203800C94061 /* LaunchScreen.storyboard */,
 				F29CD048203D203800C94061 /* Main.storyboard */,
@@ -640,6 +643,7 @@
 				F2CAFB2020442F57002078B2 /* LevelDesignerController+BubbleGrid.swift in Sources */,
 				F2B2A52E204660A400B4FD6A /* Double+Random.swift in Sources */,
 				F23CD69A2043C2EE0053A099 /* MenuButton.swift in Sources */,
+				F2F6EC50204BAB4D00263AE8 /* WinViewButton.swift in Sources */,
 				F25A295F2047972D00C90576 /* GameViewController+Renderer.swift in Sources */,
 				F2B2A5472046FA7A00B4FD6A /* BubbleObject.swift in Sources */,
 				F252D4A920455F26004FDA03 /* Helpers.swift in Sources */,
