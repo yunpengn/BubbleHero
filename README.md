@@ -14,6 +14,14 @@ CS3217 Problem Set 5
 3. A Swiftlint configuration file is provided for you. It is recommended for you to use Swiftlint and follow this configuration. Keep in mind that, ultimately, this tool is only a guideline; some exceptions may be made as long as code quality is not compromised.
 4. Do not burn out. Have fun!
 
+## Acknowledgements
+
+We would like appreciate the wonderful resources provided by the following websites:
+- Pexels [https://www.pexels.com]
+- Flat Icons [https://www.flaticon.com]
+- Sound Bible [http://soundbible.com]
+- Free Music Archive [http://freemusicarchive.org]
+
 ### Rules of Your Game
 
 1. Make sure you have uninstalled all previous (or older) versions of _Bubble Hero_.
