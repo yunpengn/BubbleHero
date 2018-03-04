@@ -105,31 +105,23 @@ class GameViewShootingController: EngineControllerDelegate {
                 bubble.visited = false
             }
         }
+
         // Starts a DFS to find all attached objects with the same color.
         while let next = toVisit.pop() {
             guard !next.visited else {
                 continue
             }
 
-            if next.type == .star {
-                for bubble in getAllSameTypeBubbles(of: object.type) {
-                    bubble.visited = true
-                    result.append((bubble, .star))
-                }
-            } else if next.type == .lightning {
-                animator.addLightningLine(at: next.view.frame.midY)
-                for bubble in getSameRowBubbles(of: next) {
-                    bubble.visited = true
-                    result.append((bubble, .lightning))
-                }
-            } else if next.type == .bomb {
-                for bubble in next.getNeighbors() {
-                    bubble.visited = true
-                    result.append((bubble, .bomb))
-                }
-            }
+            // Adds the current bubble to result
             next.visited = true
             result.append((next, .fromBubbleType(next.type)))
+
+            // Checks for special effects.
+            let specialEffect = getSpecialAffectedBubbles(by: next)
+            specialEffect.forEach { bubble in
+                bubble.visited = true
+                result.append((bubble, .fromBubbleType(bubble.type)))
+            }
 
             // Checks for same-color connected bubble.
             for neighbor in next.getSameColorNeighbors() where !neighbor.visited {
@@ -138,6 +130,23 @@ class GameViewShootingController: EngineControllerDelegate {
         }
 
         return result
+    }
+
+    /// Finds all the bubbles affected by a certain special effect.
+    /// - Parameter bubble: The bubble in concer.
+    /// - Returns: an array of bubbles affected by the special effect; an empty array
+    /// if there is no special effect.
+    func getSpecialAffectedBubbles(by bubble: BubbleObject) -> [BubbleObject] {
+        switch bubble.type {
+        case .star:
+            return getAllSameTypeBubbles(of: bubble.type)
+        case .lightning:
+            return getSameRowBubbles(of: bubble)
+        case .bomb:
+            return bubble.getNeighbors()
+        default:
+            return []
+        }
     }
 
     /// Finds all the bubbles of a certain type currently.
