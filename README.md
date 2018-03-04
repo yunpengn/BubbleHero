@@ -161,6 +161,21 @@ See description in the rules of the game.
         - I expect they will not snap to the standard cells. Instead, they will stop immediately after they touch any other bubbles.
         - I expect they are also normal color bubbles. They can also be removed when forming a connected same-color group of at least 3.
         - I expect any later launched bubbles which touch it will also become non-snapping.
+    - Test scores:
+        - For each removed bubble, I expect a tiny white-color label to show the number of points added.
+        - Same-color - 5 points, star - 10 points, lightning - 12 points, bomb - 15 points, falling - 8 points.
+    - Test timer:
+        - When the time left > 1min, I expect the text color to be white.
+        - When 0.5min < the time left < 1min, I expect the text color to be yellow.
+        - When the time left < 0.5min, I expect the text color to be red.
+        - I expect the text to be updated per second.
+        - I expect the timer to stop after reaching 0 and the game view screen to be shown.
+    - Test next two bubbles:
+        - I expect the next two bubbles to be shown on the bottom right of the screen.
+        - I expect the next second bubble to be a bit smaller than the next bubble.
+- Test game win screen
+    - I expect the win screen to be shown over the game play screen. Its background should be transparent such that the game play screen still can be seen, albeit cannot launch bubbles anymore.
+    - I expect the level name and total score to be shown correctly.
 - Test settings screen
     - I expect the background music checkbox to be initially checked and the background music is playing.
     - When clicking on the checkbox, I expect the checkbox to be unchecked and the music pauses.
