@@ -57,7 +57,8 @@ We would like appreciate the wonderful resources provided by the following websi
 12. Indestructible bubbles and magnetic bubbles can only be removed by special effects or by falling.
 13. Magnetic bubbles will attract the launched bubbles, whose force is inverse proportional to the square of the distance between them.
 14. Special bubbles allow chaining effect. On the one hand, any special bubble itself removed by the special effect of another special bubble will be triggered; on the other hand, the same-type neighbors of a special bubble being triggered will also be triggered.
-15. The score is calculated according to the reason a bubble is removed: same-color - 5 points, star - 10 points, lightning - 12 points, bomb - 15 points, falling - 8 points.
+15. Bubbles with a purple border are non-snapping ones. They will snap to the standard cells. Instead, they will stop immediately after they touch any other bubbles. However, they are also normal color bubbles. They can also be removed when forming a connected same-color group of at least 3. Any later launched bubbles which touch it will also become non-snapping.
+16. The score is calculated according to the reason a bubble is removed: same-color - 5 points, star - 10 points, lightning - 12 points, bomb - 15 points, falling - 8 points.
 
 ### Problem 1: Cannon Direction
 
@@ -89,6 +90,10 @@ There are generally two ways to implement these special behaviours:
 - **Current approach**: add the different logic in `GameViewShootingController`. Although the disadvantage is that `GameViewShootingController` will become longer, it is still a better approach. All logic for interactions between bubbles are within one class and this class does nothing else, which is following single responsibility principle. If we want to add new types in the future, we simply need to add more `case`s in the `switch` statements, which is simple to do.
 - Subclass `BubbleObject` for each special bubbles. This alternative is good because we can separate the logic for each type of special bubbles. However, it can be much more complicated. We need to have separate logic when loading the level, which adds more logic to `GameViewController`. And the coupling is higher and single responsibility principle is violated. Take lightning bubbles as an example. To trigger lightning effect, we need to find and remove all bubbles on the same row. That means, `LightningBubbleObject` class now tries to manage all bubbles in the game, which is actually the responsibility of `GameViewShootingController`. Also, if we add a new type of bubble in the future, we may need to modify all subclasses of `BubbleObject`.
 
+### Problem 5
+
+See description in the rules of the game.
+
 ### Problem 7: Class Diagram
 
 ![Class Diagram](class-diagram.png)
@@ -99,7 +104,14 @@ Your answer here
 
 ### Problem 9: The Bells & Whistles
 
-Your answer here
+The following extra features are added to the game:
+
+- When a bomb bubble is triggered, the sprite `bubble-burst.png` will be used to animate and there is an explosion sound effect.
+- When a lightning bubble is triggered, there is a blinky white line to simulate the effect and there is a thunder sound effect.
+- Each removed bubble will add some scores. The scores added are different according to the reason the bubble is removed. And the total score will be shown when the game stops.
+- Adds the end-game screen to tell the user the level name and scores obtained.
+- Adds a time limit to the game and user should try to get higher scores in the limited time.
+- Adds background music and adds a setting screen to turn on/off the background music.
 
 ### Problem 10: Final Reflection
 
