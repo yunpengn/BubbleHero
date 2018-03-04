@@ -73,6 +73,7 @@
 		F2DC6956204AFA21008C6C8E /* GameViewTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DC6955204AFA21008C6C8E /* GameViewTimerController.swift */; };
 		F2F6EC50204BAB4D00263AE8 /* WinViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F6EC4F204BAB4D00263AE8 /* WinViewButton.swift */; };
 		F2F6EC52204BBC8200263AE8 /* GameViewScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F6EC51204BBC8200263AE8 /* GameViewScoreController.swift */; };
+		F2F6EC55204BCA5600263AE8 /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F6EC54204BCA5600263AE8 /* ScoreLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		F2DC6955204AFA21008C6C8E /* GameViewTimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewTimerController.swift; sourceTree = "<group>"; };
 		F2F6EC4F204BAB4D00263AE8 /* WinViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewButton.swift; sourceTree = "<group>"; };
 		F2F6EC51204BBC8200263AE8 /* GameViewScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewScoreController.swift; sourceTree = "<group>"; };
+		F2F6EC54204BCA5600263AE8 /* ScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				F24F0249204AD17A00875CFC /* LightningLine.swift */,
 				F23CD6992043C2EE0053A099 /* MenuButton.swift */,
 				F23CD69F2043ED1A0053A099 /* PaletteBubbleButton.swift */,
+				F2F6EC54204BCA5600263AE8 /* ScoreLabel.swift */,
 				F2610083204834B40002864B /* SettingsMenu.swift */,
 				F252D4A620454704004FDA03 /* UIImage+Slice.swift */,
 				F2F6EC4F204BAB4D00263AE8 /* WinViewButton.swift */,
@@ -676,6 +679,7 @@
 				F25A296B2047F1D400C90576 /* RandomDataHelpers.swift in Sources */,
 				F23CD6A02043ED1A0053A099 /* PaletteBubbleButton.swift in Sources */,
 				F25E7A0E20490812005E5803 /* CGFloat+Sign.swift in Sources */,
+				F2F6EC55204BCA5600263AE8 /* ScoreLabel.swift in Sources */,
 				F2F6EC52204BBC8200263AE8 /* GameViewScoreController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

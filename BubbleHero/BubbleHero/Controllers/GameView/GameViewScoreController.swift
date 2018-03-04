@@ -26,7 +26,24 @@ class GameViewScoreController {
         self.view = view
     }
 
-    func addScore(for bubble: BubbleObject, by reason: RemoveAnimation) {
-        
+    /// Adds score when a new bubble is removed.
+    /// - Parameters:
+    ///    - bubble: The bubble being removed.
+    ///    - reason: The reason why the bubble is removed.
+    func addScore(for bubble: BubbleObject, by reason: RemoveReason) {
+        score += reason.rawValue
+        let scoreLabel = ScoreLabel(bubble: bubble.view, score: reason.rawValue)
+        view.addSubview(scoreLabel)
     }
+}
+
+/**
+ An enum indicating the reason why a bubble is removed.
+ */
+enum RemoveReason: Int {
+    case normal = 5
+    case star = 10
+    case lightning = 12
+    case bomb = 15
+    case falling = 8
 }

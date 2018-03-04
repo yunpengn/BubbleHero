@@ -32,6 +32,7 @@ class GameViewLaunchController {
     /// Indicates whether it is ready for the next launch.
     var readyForLaunch = true
 
+    /// Creates a new controller for bubble launch.
     init(cannon: CannonView, nextBubble: BubbleView, nextSecondBubble: BubbleView) {
         self.cannon = cannon
         self.nextBubble = nextBubble

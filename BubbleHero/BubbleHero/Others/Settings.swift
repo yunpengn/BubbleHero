@@ -115,6 +115,8 @@ class Settings {
     static let fadeAwayDuration = TimeInterval(0.3)
     /// The duration for explosion animation.
     static let explodeDuration = TimeInterval(0.1)
+    /// The duration for score label.
+    static let scoreLabelDuration = TimeInterval(2)
     /// The height of the lightning line
     static let lightningLineHeight = CGFloat(4)
     /// The duration for the lightning line
