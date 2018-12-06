@@ -2,6 +2,8 @@
 
 This is an iOS game similar to Bubble Blast Saga, built with Swift 4 and latest API from iOS 11. It was built by [Yunpeng](https://yunpengn.github.io/) in 2018.
 
+[![watch this video](preview.gif)](https://www.youtube.com/watch?v=40IImvwUhj0)
+
 ## Rules of the Game
 
 1. Make sure you have uninstalled all previous (or older) versions of _Bubble Hero_.
