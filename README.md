@@ -2,7 +2,9 @@
 
 This is an iOS game similar to Bubble Blast Saga, built with Swift 4 and latest API from iOS 11. It was built by [Yunpeng](https://yunpengn.github.io/) in 2018.
 
-[![watch this video](preview.gif)](https://www.youtube.com/watch?v=40IImvwUhj0)
+<p align="center">
+    <a href="https://www.youtube.com/watch?v=40IImvwUhj0"><img src="preview.gif" alt="watch this video"></a>
+</p>
 
 ## Rules of the Game
 
