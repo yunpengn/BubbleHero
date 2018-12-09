@@ -48,13 +48,16 @@ This is an iOS game similar to Bubble Blast Saga, built with Swift 4 and latest 
 
 ![Class Diagram](class-diagram.png)
 
+_(Credit to [ProcessOn](https://www.processon.com/) for providing us with an excellent online tool to draw UML diagram)_
+
 ## Acknowledgements
 
 We would like appreciate the wonderful resources provided by the following websites:
-- Pexels [https://www.pexels.com]
-- Flat Icons [https://www.flaticon.com]
-- Sound Bible [http://soundbible.com]
 - Free Music Archive [http://freemusicarchive.org]
+- Flat Icons [https://www.flaticon.com]
+- Pexels [https://www.pexels.com]
+- ProcessOn [https://www.processon.com/]
+- Sound Bible [http://soundbible.com]
 
 ## Licence
 
