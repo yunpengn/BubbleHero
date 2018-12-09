@@ -2,6 +2,8 @@
 
 This is an iOS game similar to Bubble Blast Saga, built with Swift 4 and latest API from iOS 11. It was built by [Yunpeng](https://yunpengn.github.io/) in 2018.
 
+It uses a tailor-made game engine, which is in a separate repository at [here](https://github.com/yunpengn/BubbleHeroEngine).
+
 <p align="center">
     <a href="https://www.youtube.com/watch?v=40IImvwUhj0" target="_blank"><img src="preview.gif" alt="watch this video"></a>
 </p>
@@ -53,8 +55,8 @@ _(Credit to [ProcessOn](https://www.processon.com/) for providing us with an exc
 ## Acknowledgements
 
 We would like appreciate the wonderful resources provided by the following websites:
-- Free Music Archive [http://freemusicarchive.org]
 - Flat Icons [https://www.flaticon.com]
+- Free Music Archive [http://freemusicarchive.org]
 - Pexels [https://www.pexels.com]
 - ProcessOn [https://www.processon.com/]
 - Sound Bible [http://soundbible.com]
