@@ -6,5 +6,5 @@ target 'BubbleHero' do
   use_frameworks!
 
   # Pods for BubbleHero
-  pod 'GameEngine', :git => 'git@github.com:cs3217/2018-ps4-yunpengn.git', :branch => 'cocoapod'
+  pod 'GameEngine', :git => 'git@github.com:yunpengn/BubbleHeroEngine.git', :branch => 'master'
 end
